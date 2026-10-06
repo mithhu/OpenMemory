@@ -89,22 +89,6 @@ async function readError(res: Response) {
   try { const j = await res.json(); return j?.error?.message ?? res.statusText; } catch { return res.statusText; }
 }
 
-export async function transcribe(blob: Blob, apiKey: string): Promise<string> {
-  const type = blob.type || "audio/webm";
-  const ext = type.includes("mp4") ? "mp4" : type.includes("ogg") ? "ogg" : type.includes("wav") ? "wav" : type.includes("mpeg") ? "mp3" : "webm";
-  const fd = new FormData();
-  fd.append("file", new File([blob], `memory.${ext}`, { type: type.split(";")[0] ?? type }));
-  fd.append("model", "gpt-transcribe");
-  const res = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-    method: "POST", headers: { Authorization: `Bearer ${apiKey}` }, body: fd,
-  });
-  if (!res.ok) throw new Error(await readError(res));
-  const j = await res.json();
-  const text = (j.text ?? "").trim();
-  if (!text) throw new Error("Empty transcript");
-  return text;
-}
-
 export interface AstraResult {
   action: "create" | "update" | "clarify";
   matchedMemoryId: string | null;
@@ -142,19 +126,17 @@ const schema = {
   },
 };
 
-const RULES = `You are Echo, a voice memory assistant. Today is {TODAY}.
-Given a new voice transcript and the user's existing memories, produce a structured memory.
+const RULES = `You are Echo, a memory assistant. Today is {TODAY}.
+Given a new note typed by the user and the user's existing memories, produce a structured memory.
 
-Steps: understand the subject; extract facts; decide whether it refers to an existing memory; determine what is already known (from the transcript, existing memory summaries, AND logged answers); pick the single most useful missing piece; ask exactly one follow-up question with exactly two short plausible suggested answers.
+Steps: understand the subject; extract facts; decide whether it refers to an existing memory; determine what is already known (from the note, existing memory summaries, AND logged answers); pick the single most useful missing piece; ask exactly one follow-up question with exactly two short plausible suggested answers.
 
-SPEECH NOTE: The transcript comes from automatic speech recognition and may contain sound-alike mistakes. Work out what the user actually said and use the corrected words and proper names (e.g. "list about spidering" -> "watch Spider-Man").
+FIDELITY RULE: Never invent, embellish, reinterpret, or strengthen what the user said. The summary (and "why") may contain ONLY information explicitly stated in the new note or explicitly present in an existing memory or its logged answers. Prefer the user's own wording (e.g. "I heard it's pretty exciting" -> "Heard it's pretty exciting", NOT "Likes its spirit"). No added adjectives, feelings, or interpretations.
 
-FIDELITY RULE: Never invent, embellish, reinterpret, or strengthen what the user said. The summary (and "why") may contain ONLY information explicitly stated (after fixing speech-recognition mistakes) in the new transcript or explicitly present in an existing memory or its logged answers. Prefer the user's own wording (e.g. "I heard it's pretty exciting" -> "Heard it's pretty exciting", NOT "Likes its spirit"). No added adjectives, feelings, or interpretations.
-
-ABSOLUTE RULE: Every logged answer is known information. NEVER ask for information that is already known from the transcript, existing memories, or logged answers.
+ABSOLUTE RULE: Every logged answer is known information. NEVER ask for information that is already known from the note, existing memories, or logged answers.
 
 Continuity:
-- If the transcript clearly refers to ONE existing memory, action="update", matchedMemoryId=its id. Write a merged summary that preserves previous information and adds the new.
+- If the note clearly refers to ONE existing memory, action="update", matchedMemoryId=its id. Write a merged summary that preserves previous information and adds the new.
 - If it is ambiguous and several existing memories could match (e.g. "that movie I told you about"), action="clarify", candidateMemoryIds=the matching ids, clarificationQuestion like "Which movie do you mean?". Do not guess. Other fields may be best-effort.
 - Otherwise action="create", matchedMemoryId=null.
 - If a FORCED_MATCH id is given, action must be "update" with that id.
