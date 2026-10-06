@@ -1,20 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Mic, Square, KeyRound, Loader2 } from "lucide-react";
+import { KeyRound, Loader2, SendHorizontal } from "lucide-react";
 import {
   type Memory, type AstraResult, loadMemories, saveMemories, loadKey, saveKey,
-  transcribe, askAstra, applyResult, convertWishlist,
+  askAstra, applyResult, convertWishlist,
 } from "@/lib/echo";
 import { MemoryCard } from "@/components/MemoryCard";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Echo — Voice memories that ask the right question" },
-      { name: "description", content: "Speak about something you want to remember. Echo turns it into a memory card and asks one smart follow-up." },
-      { property: "og:title", content: "Echo — Voice memories" },
-      { property: "og:description", content: "Speak naturally. Echo remembers, and never asks what it already knows." },
+      { title: "Echo — Memories that ask the right question" },
+      { name: "description", content: "Jot down something you want to remember. Echo turns it into a memory card and asks one smart follow-up." },
+      { property: "og:title", content: "Echo — Memories" },
+      { property: "og:description", content: "Write naturally. Echo remembers, and never asks what it already knows." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -22,24 +22,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Phase = "idle" | "recording" | "transcribing" | "thinking" | "saving" | "clarify";
+type Phase = "idle" | "thinking" | "saving" | "clarify";
 
 function Index() {
   const [memories, setMemories] = useState<Memory[]>([]);
   const [apiKey, setApiKey] = useState("");
   const [keyDraft, setKeyDraft] = useState("");
   const [phase, setPhase] = useState<Phase>("idle");
-  const [seconds, setSeconds] = useState(0);
-  const [levels, setLevels] = useState<number[]>(Array(24).fill(0.08));
-  const [heard, setHeard] = useState("");
-  const [pending, setPending] = useState<{ transcript: string; result: AstraResult } | null>(null);
-
-  const recRef = useRef<MediaRecorder | null>(null);
-  const chunks = useRef<Blob[]>([]);
-  const streamRef = useRef<MediaStream | null>(null);
-  const rafRef = useRef<number>(0);
-  const timerRef = useRef<number>(0);
-  const audioCtxRef = useRef<AudioContext | null>(null);
+  const [draft, setDraft] = useState("");
+  const [pending, setPending] = useState<{ text: string; result: AstraResult } | null>(null);
 
   useEffect(() => {
     setMemories(loadMemories());
@@ -48,48 +39,23 @@ function Index() {
 
   const persist = (next: Memory[]) => { setMemories(next); saveMemories(next); };
 
-  const cleanup = () => {
-    cancelAnimationFrame(rafRef.current);
-    clearInterval(timerRef.current);
-    streamRef.current?.getTracks().forEach((t) => t.stop());
-    audioCtxRef.current?.close().catch(() => {});
-    audioCtxRef.current = null;
-    setLevels(Array(24).fill(0.08));
-  };
-  useEffect(() => cleanup, []);
-
-  const process = async (blob: Blob) => {
-    let transcript = "";
-    try {
-      setPhase("transcribing");
-      transcript = await transcribe(blob, apiKey);
-      setHeard(transcript);
-    } catch (e) {
-      console.error("Transcription failed:", e instanceof Error ? e.message : e);
-      toast.error("Couldn't transcribe your recording. Please try again.");
-      setPhase("idle");
-      return;
-    }
-    await think(transcript);
-  };
-
-  const think = async (transcript: string, forcedId?: string) => {
+  const think = async (text: string, forcedId?: string) => {
     try {
       setPhase("thinking");
       const current = loadMemories();
-      const result = await askAstra(transcript, current, apiKey, forcedId);
+      const result = await askAstra(text, current, apiKey, forcedId);
       if (result.action === "clarify" && !forcedId) {
         const cands = result.candidateMemoryIds.filter((id) => current.some((m) => m.id === id));
         if (cands.length > 1) {
-          setPending({ transcript, result: { ...result, candidateMemoryIds: cands } });
+          setPending({ text, result: { ...result, candidateMemoryIds: cands } });
           setPhase("clarify");
           return;
         }
-        if (cands.length === 1) return think(transcript, cands[0]);
+        if (cands.length === 1) return think(text, cands[0]);
         throw new Error("Clarification without candidates");
       }
       setPhase("saving");
-      persist(applyResult(current, result, transcript));
+      persist(applyResult(current, result, text));
       toast.success(result.action === "update" ? `Updated “${result.title}”` : "Memory saved");
     } catch (e) {
       console.error("Astra failed:", e instanceof Error ? e.message : e);
@@ -99,59 +65,21 @@ function Index() {
     setPhase("idle");
   };
 
-  const start = async () => {
-    if (!apiKey) { toast.error("Add your OpenAI API key to start recording."); return; }
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true, channelCount: 1 } });
-      streamRef.current = stream;
-      const mime = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg"].find((t) => MediaRecorder.isTypeSupported?.(t));
-      const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
-      chunks.current = [];
-      rec.ondataavailable = (e) => e.data.size && chunks.current.push(e.data);
-      rec.onstop = () => {
-        const blob = new Blob(chunks.current, { type: rec.mimeType || mime || "audio/webm" });
-        cleanup();
-        if (blob.size < 1000) { toast.error("Recording was too short. Please try again."); setPhase("idle"); return; }
-        void process(blob);
-      };
-      rec.start();
-      recRef.current = rec;
-
-      const ctx = new AudioContext();
-      audioCtxRef.current = ctx;
-      const an = ctx.createAnalyser();
-      an.fftSize = 64;
-      ctx.createMediaStreamSource(stream).connect(an);
-      const data = new Uint8Array(an.frequencyBinCount);
-      const tick = () => {
-        an.getByteFrequencyData(data);
-        setLevels(Array.from({ length: 24 }, (_, i) => Math.max(0.08, (data[i + 2] ?? 0) / 255)));
-        rafRef.current = requestAnimationFrame(tick);
-      };
-      tick();
-
-      setSeconds(0);
-      timerRef.current = window.setInterval(() => setSeconds((s) => s + 1), 1000);
-      setPhase("recording");
-    } catch (e) {
-      console.error("Microphone error:", e instanceof Error ? e.message : e);
-      cleanup();
-      toast.error("Microphone access is needed to record a memory.");
-    }
+  const submit = () => {
+    const text = draft.trim();
+    if (!text) return;
+    if (!apiKey) { toast.error("Add your OpenAI API key to log a memory."); return; }
+    setDraft("");
+    void think(text);
   };
 
-  const stop = () => recRef.current?.state === "recording" && recRef.current.stop();
-
-  const busy = phase === "transcribing" || phase === "thinking" || phase === "saving";
+  const busy = phase === "thinking" || phase === "saving";
   const statusText: Record<Phase, string> = {
-    idle: apiKey ? "Tap to record a memory" : "Add your OpenAI API key to start recording.",
-    recording: "Recording...",
-    transcribing: "Transcribing your memory...",
+    idle: apiKey ? "Type a memory and press Log" : "Add your OpenAI API key to log a memory.",
     thinking: "Echo is thinking...",
     saving: "Saving memory...",
     clarify: pending?.result.clarificationQuestion || "Which one do you mean?",
   };
-  const mmss = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
 
   const update = (id: string, fn: (m: Memory) => Memory) =>
     persist(memories.map((m) => (m.id === id ? fn(m) : m)));
@@ -184,42 +112,32 @@ function Index() {
         <span className="font-medium text-primary">Prototype:</span> your API key stays in this browser and is sent only to OpenAI. Browser-side keys are fine for this demo only — don't use a production key.
       </p>
 
-      <section className="flex flex-col items-center pt-14 pb-12">
-        <div className="relative grid place-items-center">
-          {phase === "recording" && (
-            <>
-              <span className="absolute h-44 w-44 rounded-full bg-primary/40 animate-pulse-ring" />
-              <span className="absolute h-44 w-44 rounded-full bg-primary/30 animate-pulse-ring [animation-delay:0.9s]" />
-            </>
-          )}
-          <button
-            onClick={phase === "recording" ? stop : start}
+      <section className="flex flex-col items-center pt-10 pb-12">
+        <form
+          onSubmit={(e) => { e.preventDefault(); submit(); }}
+          className="w-full rounded-2xl border bg-card p-3 shadow-record"
+        >
+          <textarea
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } }}
+            placeholder="I want to watch the new Spider-Man movie. I heard it's pretty exciting..."
+            rows={3}
             disabled={busy || phase === "clarify"}
-            aria-label={phase === "recording" ? "Stop recording" : "Record a memory"}
-            className="relative grid h-44 w-44 place-items-center rounded-full bg-primary text-primary-foreground shadow-record transition active:scale-95 disabled:opacity-50"
-          >
-            {busy ? <Loader2 className="h-10 w-10 animate-spin" /> : phase === "recording" ? (
-              <span className="flex flex-col items-center gap-2"><Square className="h-9 w-9 fill-current" /><span className="text-sm font-medium">Stop</span></span>
-            ) : (
-              <span className="flex flex-col items-center gap-2"><Mic className="h-10 w-10" /><span className="text-sm font-medium">Record a memory</span></span>
-            )}
-          </button>
-        </div>
-
-        <div className="mt-8 flex h-10 items-center gap-[3px]" aria-hidden>
-          {levels.map((l, i) => (
-            <span key={i} className="w-[3px] rounded-full bg-primary transition-[height] duration-75" style={{ height: `${Math.round(l * 40)}px`, opacity: phase === "recording" ? 1 : 0.2 }} />
-          ))}
-        </div>
-        <p className="mt-3 text-sm text-muted-foreground">
-          {statusText[phase]} {phase === "recording" && <span className="ml-1 font-mono text-foreground">{mmss}</span>}
-        </p>
-
-        {heard && phase !== "recording" && (
-          <p className="mt-4 max-w-sm text-center text-xs leading-relaxed text-muted-foreground">
-            <span className="uppercase tracking-widest">Heard</span> · “{heard}”
-          </p>
-        )}
+            className="w-full resize-none bg-transparent px-2 py-1 text-[15px] leading-relaxed outline-none placeholder:text-muted-foreground disabled:opacity-50"
+          />
+          <div className="flex items-center justify-between gap-3 pt-1">
+            <p className="px-2 text-xs text-muted-foreground">{statusText[phase]}</p>
+            <button
+              type="submit"
+              disabled={busy || phase === "clarify" || !draft.trim()}
+              className="flex min-h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground transition active:scale-95 disabled:opacity-50"
+            >
+              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <SendHorizontal className="h-4 w-4" />}
+              Log
+            </button>
+          </div>
+        </form>
 
         {phase === "clarify" && pending && (
           <div className="mt-5 w-full animate-in fade-in rounded-2xl border bg-card p-4">
@@ -227,7 +145,7 @@ function Index() {
               {pending.result.candidateMemoryIds.map((id) => {
                 const m = memories.find((x) => x.id === id);
                 return m ? (
-                  <button key={id} onClick={() => think(pending.transcript, id)} className="min-h-12 rounded-xl bg-secondary px-4 text-left text-sm hover:bg-accent">
+                  <button key={id} onClick={() => think(pending.text, id)} className="min-h-12 rounded-xl bg-secondary px-4 text-left text-sm hover:bg-accent">
                     {m.title}
                   </button>
                 ) : null;
@@ -241,7 +159,7 @@ function Index() {
       <section>
         <h2 className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">Your memories</h2>
         {memories.length === 0 ? (
-          <p className="rounded-3xl border border-dashed p-8 text-center text-sm text-muted-foreground">Nothing yet. Record your first memory.</p>
+          <p className="rounded-3xl border border-dashed p-8 text-center text-sm text-muted-foreground">Nothing yet. Log your first memory.</p>
         ) : (
           <div className="grid gap-4">
             {memories.map((m) => (

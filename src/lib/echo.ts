@@ -89,22 +89,6 @@ async function readError(res: Response) {
   try { const j = await res.json(); return j?.error?.message ?? res.statusText; } catch { return res.statusText; }
 }
 
-export async function transcribe(blob: Blob, apiKey: string): Promise<string> {
-  const type = blob.type || "audio/webm";
-  const ext = type.includes("mp4") ? "mp4" : type.includes("ogg") ? "ogg" : type.includes("wav") ? "wav" : type.includes("mpeg") ? "mp3" : "webm";
-  const fd = new FormData();
-  fd.append("file", new File([blob], `memory.${ext}`, { type: type.split(";")[0] ?? type }));
-  fd.append("model", "gpt-transcribe");
-  const res = await fetch("https://api.openai.com/v1/audio/transcriptions", {
-    method: "POST", headers: { Authorization: `Bearer ${apiKey}` }, body: fd,
-  });
-  if (!res.ok) throw new Error(await readError(res));
-  const j = await res.json();
-  const text = (j.text ?? "").trim();
-  if (!text) throw new Error("Empty transcript");
-  return text;
-}
-
 export interface AstraResult {
   action: "create" | "update" | "clarify";
   matchedMemoryId: string | null;
