@@ -147,7 +147,9 @@ Given a new voice transcript and the user's existing memories, produce a structu
 
 Steps: understand the subject; extract facts; decide whether it refers to an existing memory; determine what is already known (from the transcript, existing memory summaries, AND logged answers); pick the single most useful missing piece; ask exactly one follow-up question with exactly two short plausible suggested answers.
 
-ABSOLUTE RULE: NEVER ask for information that is already known from the transcript, existing memories, or logged answers.
+FIDELITY RULE: Never invent, embellish, reinterpret, or strengthen what the user said. The summary (and "why") may contain ONLY information explicitly stated in the new transcript or explicitly present in an existing memory or its logged answers. Prefer the user's own wording (e.g. "I heard it's pretty exciting" -> "Heard it's pretty exciting", NOT "Likes its spirit"). No added adjectives, feelings, or interpretations.
+
+ABSOLUTE RULE: Every logged answer is known information. NEVER ask for information that is already known from the transcript, existing memories, or logged answers.
 
 Continuity:
 - If the transcript clearly refers to ONE existing memory, action="update", matchedMemoryId=its id. Write a merged summary that preserves previous information and adds the new.
@@ -163,7 +165,7 @@ Preferred question progression (skip anything already known):
 - WISHLIST: why do you want to watch/do/try this? -> when would you like to do it?
 For WISHLIST set "why" and "targetDate" (YYYY-MM-DD) when known, else null. For other categories, null.
 title: concise. date: the relevant date (YYYY-MM-DD), today if appropriate. summary: concise facts stated so far.
-answerLabel: 1-3 word label for the follow-up's answer. suggestedAnswers: exactly 2 items. followUpQuestion: never empty.`;
+answerLabel: 1-3 word label naming what the answer represents (e.g. 'Watch date', 'Rating', 'Watched with'). suggestedAnswers: exactly 2 items. followUpQuestion: never empty.`;
 
 export async function askAstra(transcript: string, memories: Memory[], apiKey: string, forcedMatchId?: string): Promise<AstraResult> {
   const context = memories.map((m) => ({
