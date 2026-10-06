@@ -75,7 +75,7 @@ function Index() {
 
   const busy = phase === "thinking" || phase === "saving";
   const statusText: Record<Phase, string> = {
-    idle: apiKey ? "Type a memory and press Log" : "Add your OpenAI API key to log a memory.",
+    idle: apiKey ? "Type a memory and press Remember" : "Add your OpenAI API key to remember something.",
     thinking: "OpenMemory is thinking...",
     saving: "Saving memory...",
     clarify: pending?.result.clarificationQuestion || "Which one do you mean?",
@@ -113,6 +113,10 @@ function Index() {
       </p>
 
       <section className="flex flex-col items-center pt-10 pb-12">
+        <div className="mb-5 text-center">
+          <h2 className="font-display text-3xl leading-none">OpenMemory</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Remember more. Write less.</p>
+        </div>
         <form
           onSubmit={(e) => { e.preventDefault(); submit(); }}
           className="w-full rounded-2xl border bg-card p-3 shadow-record"
