@@ -59,7 +59,7 @@ function sampleMemories(): Memory[] {
     {
       id: uid(), title: "Mum's birthday dinner", category: "NOTE", date: daysAgo(3),
       summary: "Booking a table at the Italian place on Elm Street for mum's birthday.",
-      followUpQuestion: "When should Echo remind you?", suggestedAnswers: ["A week before", "The day before"], answerLabel: "Reminder",
+      followUpQuestion: "When should OpenMemory remind you?", suggestedAnswers: ["A week before", "The day before"], answerLabel: "Reminder",
       answers: [{ label: "Remember", question: "What should you remember?", value: "She's vegetarian — check the menu", at: iso(3e6) }],
       transcripts: [], createdAt: iso(3e6), updatedAt: iso(3e6),
     },
@@ -126,7 +126,7 @@ const schema = {
   },
 };
 
-const RULES = `You are Echo, a memory assistant. Today is {TODAY}.
+const RULES = `You are OpenMemory, a memory assistant. Today is {TODAY}.
 Given a new note typed by the user and the user's existing memories, produce a structured memory.
 
 Steps: understand the subject; extract facts; decide whether it refers to an existing memory; determine what is already known (from the note, existing memory summaries, AND logged answers); pick the single most useful missing piece; ask exactly one follow-up question with exactly two short plausible suggested answers.
@@ -144,8 +144,8 @@ Continuity:
 Categories (exactly one): MOVIE, LESSON, NOTE, WISHLIST (things the user wants to watch/do/try in the future).
 Preferred question progression (skip anything already known):
 - MOVIE: what hit hardest? -> rating /10 -> who did you watch it with?
-- LESSON: hardest concept? -> what do you want to remember? -> when should Echo remind you?
-- NOTE: what should you remember? -> when should Echo remind you?
+- LESSON: hardest concept? -> what do you want to remember? -> when should OpenMemory remind you?
+- NOTE: what should you remember? -> when should OpenMemory remind you?
 - WISHLIST: why do you want to watch/do/try this? -> when would you like to do it?
 For WISHLIST set "why" and "targetDate" (YYYY-MM-DD) when known, else null. For other categories, null.
 title: concise. date: the relevant date (YYYY-MM-DD), today if appropriate. summary: concise facts stated so far.

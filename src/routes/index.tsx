@@ -11,10 +11,10 @@ import { MemoryCard } from "@/components/MemoryCard";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Echo — Memories that ask the right question" },
-      { name: "description", content: "Jot down something you want to remember. Echo turns it into a memory card and asks one smart follow-up." },
-      { property: "og:title", content: "Echo — Memories" },
-      { property: "og:description", content: "Write naturally. Echo remembers, and never asks what it already knows." },
+      { title: "OpenMemory — Memories that ask the right question" },
+      { name: "description", content: "Jot down something you want to remember. OpenMemory turns it into a memory card and asks one smart follow-up." },
+      { property: "og:title", content: "OpenMemory — Memories" },
+      { property: "og:description", content: "Write naturally. OpenMemory remembers, and never asks what it already knows." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -76,7 +76,7 @@ function Index() {
   const busy = phase === "thinking" || phase === "saving";
   const statusText: Record<Phase, string> = {
     idle: apiKey ? "Type a memory and press Log" : "Add your OpenAI API key to log a memory.",
-    thinking: "Echo is thinking...",
+    thinking: "OpenMemory is thinking...",
     saving: "Saving memory...",
     clarify: pending?.result.clarificationQuestion || "Which one do you mean?",
   };
@@ -87,7 +87,7 @@ function Index() {
   return (
     <div className="mx-auto min-h-screen max-w-xl px-5 pb-24">
       <header className="flex items-start justify-between gap-4 pt-6">
-        <h1 className="font-display text-4xl leading-none">Echo</h1>
+        <h1 className="font-display text-4xl leading-none">OpenMemory</h1>
         <div className="w-48 sm:w-60">
           {apiKey ? (
             <div className="flex min-h-10 items-center justify-between gap-2 rounded-xl border bg-card px-3 text-sm">
