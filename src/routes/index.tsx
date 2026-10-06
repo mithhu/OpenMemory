@@ -75,7 +75,7 @@ function Index() {
 
   const busy = phase === "thinking" || phase === "saving";
   const statusText: Record<Phase, string> = {
-    idle: apiKey ? "Type a memory and press Log" : "Add your OpenAI API key to log a memory.",
+    idle: apiKey ? "Type a memory and press Remember" : "Add your OpenAI API key to remember something.",
     thinking: "OpenMemory is thinking...",
     saving: "Saving memory...",
     clarify: pending?.result.clarificationQuestion || "Which one do you mean?",
@@ -113,6 +113,10 @@ function Index() {
       </p>
 
       <section className="flex flex-col items-center pt-10 pb-12">
+        <div className="mb-5 text-center">
+          <h2 className="font-display text-3xl leading-none">OpenMemory</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Remember more. Write less.</p>
+        </div>
         <form
           onSubmit={(e) => { e.preventDefault(); submit(); }}
           className="w-full rounded-2xl border bg-card p-3 shadow-record"
@@ -121,7 +125,7 @@ function Index() {
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } }}
-            placeholder="I want to watch the new Spider-Man movie. I heard it's pretty exciting..."
+            placeholder="What do you want to remember?"
             rows={3}
             disabled={busy || phase === "clarify"}
             className="w-full resize-none bg-transparent px-2 py-1 text-[15px] leading-relaxed outline-none placeholder:text-muted-foreground disabled:opacity-50"
@@ -134,7 +138,7 @@ function Index() {
               className="flex min-h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground transition active:scale-95 disabled:opacity-50"
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <SendHorizontal className="h-4 w-4" />}
-              Log
+              Remember →
             </button>
           </div>
         </form>
