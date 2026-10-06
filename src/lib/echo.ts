@@ -95,6 +95,7 @@ export async function transcribe(blob: Blob, apiKey: string): Promise<string> {
   const fd = new FormData();
   fd.append("file", new File([blob], `memory.${ext}`, { type: type.split(";")[0] ?? type }));
   fd.append("model", "gpt-transcribe");
+  fd.append("prompt", "Casual spoken personal memo about movies, lessons, notes, or things I want to do. e.g. \"I wanna watch the new Spider-Man movie. I heard it's pretty exciting.\" \"I want to remember to call mum.\"");
   const res = await fetch("https://api.openai.com/v1/audio/transcriptions", {
     method: "POST", headers: { Authorization: `Bearer ${apiKey}` }, body: fd,
   });
@@ -147,7 +148,7 @@ Given a new voice transcript and the user's existing memories, produce a structu
 
 Steps: understand the subject; extract facts; decide whether it refers to an existing memory; determine what is already known (from the transcript, existing memory summaries, AND logged answers); pick the single most useful missing piece; ask exactly one follow-up question with exactly two short plausible suggested answers.
 
-FIDELITY RULE: Never invent, embellish, reinterpret, or strengthen what the user said. The summary (and "why") may contain ONLY information explicitly stated in the new transcript or explicitly present in an existing memory or its logged answers. Prefer the user's own wording (e.g. "I heard it's pretty exciting" -> "Heard it's pretty exciting", NOT "Likes its spirit"). No added adjectives, feelings, or interpretations.
+TRANSCRIPTION NOTE: The transcript comes from speech recognition and may contain mishearings. Silently correct obvious sound-alike errors using context (e.g. "my one too watch" -> "I want to watch", "wanna" = "want to"). This is not embellishment.\n\nFIDELITY RULE: Never invent, embellish, reinterpret, or strengthen what the user said. The summary (and "why") may contain ONLY information explicitly stated in the new transcript or explicitly present in an existing memory or its logged answers. Prefer the user's own wording (e.g. "I heard it's pretty exciting" -> "Heard it's pretty exciting", NOT "Likes its spirit"). No added adjectives, feelings, or interpretations.
 
 ABSOLUTE RULE: Every logged answer is known information. NEVER ask for information that is already known from the transcript, existing memories, or logged answers.
 
