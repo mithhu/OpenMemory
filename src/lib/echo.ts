@@ -93,7 +93,7 @@ export async function transcribe(blob: Blob, apiKey: string): Promise<string> {
   const type = blob.type || "audio/webm";
   const ext = type.includes("mp4") ? "mp4" : type.includes("ogg") ? "ogg" : type.includes("wav") ? "wav" : type.includes("mpeg") ? "mp3" : "webm";
   const fd = new FormData();
-  fd.append("file", new File([blob], `memory.${ext}`, { type: type.split(";")[0] }));
+  fd.append("file", new File([blob], `memory.${ext}`, { type: type.split(";")[0] ?? type }));
   fd.append("model", "gpt-transcribe");
   const res = await fetch("https://api.openai.com/v1/audio/transcriptions", {
     method: "POST", headers: { Authorization: `Bearer ${apiKey}` }, body: fd,
@@ -229,7 +229,7 @@ export function convertWishlist(m: Memory): Memory {
 }
 
 export const formatDate = (d: string) => {
-  const [y, mo, da] = d.split("-").map(Number);
+  const [y, mo = 1, da = 1] = d.split("-").map(Number);
   if (!y) return d;
   return new Date(y, mo - 1, da).toLocaleDateString("en-US", { month: "short", day: "numeric" }).toUpperCase();
 };
