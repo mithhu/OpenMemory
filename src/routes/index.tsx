@@ -244,7 +244,12 @@ function Index() {
                 onDone={() => persist([convertWishlist(m), ...memories.filter((x) => x.id !== m.id)])}
                 onLog={(value) => update(m.id, (x) => ({
                   ...x,
-                  answers: [...x.answers, { label: x.answerLabel, question: x.followUpQuestion, value, at: new Date().toISOString() }],
+                  answers: [
+                    ...x.answers.filter((a) => a.label.toLowerCase() !== x.answerLabel.toLowerCase()),
+                    { label: x.answerLabel, question: x.followUpQuestion, value, at: new Date().toISOString() },
+                  ],
+                  followUpQuestion: "",
+                  suggestedAnswers: [],
                   ...(x.category === "WISHLIST" && /why/i.test(x.followUpQuestion) && !x.why ? { why: value } : {}),
                   updatedAt: new Date().toISOString(),
                 }))}

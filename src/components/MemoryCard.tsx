@@ -65,7 +65,7 @@ export function MemoryCard({ memory: m, onLog, onDelete, onDone }: Props) {
       {m.answers.length > 0 && (
         <dl className="mt-4 grid gap-3 border-t pt-4">
           {m.answers.map((a, i) => (
-            <div key={i} className="flex items-baseline justify-between gap-4">
+            <div key={i} className="animate-in fade-in slide-in-from-top-1 duration-500 flex items-baseline justify-between gap-4">
               <dt className="shrink-0 text-xs uppercase tracking-wider text-muted-foreground">{a.label}</dt>
               <dd className="text-right text-sm">{a.value}</dd>
             </div>
@@ -73,6 +73,7 @@ export function MemoryCard({ memory: m, onLog, onDelete, onDone }: Props) {
         </dl>
       )}
 
+      {m.followUpQuestion && (
       <div className="mt-5 border-t pt-5">
         <p className="text-[15px] font-medium">{m.followUpQuestion}</p>
         <div className="mt-3 grid grid-cols-2 gap-2">
@@ -101,6 +102,7 @@ export function MemoryCard({ memory: m, onLog, onDelete, onDone }: Props) {
           </button>
         </form>
       </div>
+      )}
 
       {isWish && (
         <button onClick={onDone} className="mt-3 flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-cat-wishlist/30 text-sm text-cat-wishlist transition hover:bg-cat-wishlist/10">
