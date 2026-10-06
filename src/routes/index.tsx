@@ -125,7 +125,7 @@ function Index() {
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(); } }}
-            placeholder="I want to watch the new Spider-Man movie. I heard it's pretty exciting..."
+            placeholder="What do you want to remember?"
             rows={3}
             disabled={busy || phase === "clarify"}
             className="w-full resize-none bg-transparent px-2 py-1 text-[15px] leading-relaxed outline-none placeholder:text-muted-foreground disabled:opacity-50"
@@ -138,7 +138,7 @@ function Index() {
               className="flex min-h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground transition active:scale-95 disabled:opacity-50"
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <SendHorizontal className="h-4 w-4" />}
-              Log
+              Remember →
             </button>
           </div>
         </form>
