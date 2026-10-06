@@ -180,6 +180,15 @@ export async function askAstra(transcript: string, memories: Memory[], apiKey: s
     for (const item of j.output) for (const c of item.content ?? []) if (c.type === "output_text") text += c.text;
   }
   const r = JSON.parse(text) as AstraResult;
+  const clean = (s: string) =>
+    s.replace(/\s*\(\s*\[[^\]]*\]\([^)]*\)\s*\)/g, "")
+      .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+      .replace(/\s*\(?https?:\/\/\S+\)?/g, "")
+      .replace(/\s{2,}/g, " ").trim();
+  for (const k of ["title", "summary", "why", "followUpQuestion", "clarificationQuestion", "answerLabel"] as const) {
+    if (typeof r[k] === "string") (r as any)[k] = clean(r[k] as string);
+  }
+  r.suggestedAnswers = (r.suggestedAnswers ?? []).map(clean);
   if (r.action !== "clarify") {
     if (!r.title?.trim() || !r.followUpQuestion?.trim() || !CATEGORIES.includes(r.category)) throw new Error("Incomplete response");
     r.suggestedAnswers = (r.suggestedAnswers ?? []).filter(Boolean).slice(0, 2);
