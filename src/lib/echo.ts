@@ -149,6 +149,8 @@ Preferred question progression (skip anything already known):
 - WISHLIST: why do you want to watch/do/try this? -> when would you like to do it?
 For WISHLIST set "why" and "targetDate" (YYYY-MM-DD) when known, else null. For other categories, null.
 title: concise. date: the relevant date (YYYY-MM-DD), today if appropriate. summary: concise facts stated so far.
+
+ENTITY RESOLUTION: If the note refers to a real-world entity indirectly (e.g. "the latest Spider-Man movie", "Nolan's new film"), use the web_search tool to find its exact current name, and use that resolved name as the title. Keep the user's original wording in summary/why. Only resolve when a reliable current source confirms it; never guess from memory alone. If the search is inconclusive, keep the user's literal phrase as the title. If there are several plausible matches, keep the literal phrase as the title and make the followUpQuestion "Which one do you mean?" with the two most likely exact names as suggestedAnswers (answerLabel "Title"). Do not search for notes that already name the entity exactly or have no real-world entity.
 answerLabel: 1-3 word label naming what the answer represents (e.g. 'Watch date', 'Rating', 'Watched with'). suggestedAnswers: exactly 2 items. followUpQuestion: never empty.`;
 
 export async function askAstra(transcript: string, memories: Memory[], apiKey: string, forcedMatchId?: string): Promise<AstraResult> {
@@ -167,6 +169,7 @@ export async function askAstra(transcript: string, memories: Memory[], apiKey: s
       store: false,
       instructions: RULES.replace("{TODAY}", today()),
       input,
+      tools: [{ type: "web_search" }],
       text: { format: { type: "json_schema", name: "echo_memory", strict: true, schema } },
     }),
   });
