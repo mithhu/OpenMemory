@@ -5,6 +5,13 @@
 //     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { loadEnv } from "vite";
+
+// Read server secrets for local development; never define them in the client bundle.
+const serverEnv = loadEnv(process.env["NODE_ENV"] || "development", process.cwd(), "");
+for (const name of ["OPEN_AI_KEY", "OPENAI_API_KEY", "ASTRA_API_KEY"]) {
+  if (!process.env[name] && serverEnv[name]) process.env[name] = serverEnv[name];
+}
 
 export default defineConfig({
   tanstackStart: {
