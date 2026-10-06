@@ -31,6 +31,7 @@ function Index() {
   const [phase, setPhase] = useState<Phase>("idle");
   const [seconds, setSeconds] = useState(0);
   const [levels, setLevels] = useState<number[]>(Array(24).fill(0.08));
+  const [heard, setHeard] = useState("");
   const [pending, setPending] = useState<{ transcript: string; result: AstraResult } | null>(null);
 
   const recRef = useRef<MediaRecorder | null>(null);
@@ -62,6 +63,7 @@ function Index() {
     try {
       setPhase("transcribing");
       transcript = await transcribe(blob, apiKey);
+      setHeard(transcript);
     } catch (e) {
       console.error("Transcription failed:", e instanceof Error ? e.message : e);
       toast.error("Couldn't transcribe your recording. Please try again.");
@@ -100,7 +102,7 @@ function Index() {
   const start = async () => {
     if (!apiKey) { toast.error("Add your OpenAI API key to start recording."); return; }
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true, channelCount: 1 } });
       streamRef.current = stream;
       const mime = ["audio/webm;codecs=opus", "audio/webm", "audio/mp4", "audio/ogg"].find((t) => MediaRecorder.isTypeSupported?.(t));
       const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
@@ -212,6 +214,12 @@ function Index() {
         <p className="mt-3 text-sm text-muted-foreground">
           {statusText[phase]} {phase === "recording" && <span className="ml-1 font-mono text-foreground">{mmss}</span>}
         </p>
+
+        {heard && phase !== "recording" && (
+          <p className="mt-4 max-w-sm text-center text-xs leading-relaxed text-muted-foreground">
+            <span className="uppercase tracking-widest">Heard</span> · “{heard}”
+          </p>
+        )}
 
         {phase === "clarify" && pending && (
           <div className="mt-5 w-full animate-in fade-in rounded-2xl border bg-card p-4">
