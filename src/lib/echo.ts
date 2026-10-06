@@ -66,7 +66,7 @@ function sampleMemories(): Memory[] {
     {
       id: uid(), title: "Parasite", category: "WISHLIST", date: daysAgo(4),
       summary: "Want to watch Bong Joon-ho's Parasite.", why: "Interested in its social commentary.", targetDate: null,
-      followUpQuestion: "When would you like to watch it?", suggestedAnswers: ["This weekend", "Next Friday"], answerLabel: "Target",
+      followUpQuestion: "When would you like to watch it?", suggestedAnswers: ["This weekend", "Next Friday"], answerLabel: "Watch date",
       answers: [], transcripts: [], createdAt: iso(4e6), updatedAt: iso(4e6),
     },
   ];
