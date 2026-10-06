@@ -181,6 +181,7 @@ function Index() {
                   followUpQuestion: "",
                   suggestedAnswers: [],
                   ...(x.category === "WISHLIST" && /why/i.test(x.followUpQuestion) && !x.why ? { why: value } : {}),
+                  ...(x.answerLabel.toLowerCase() === "title" ? { title: value } : {}),
                   updatedAt: new Date().toISOString(),
                 }))}
               />
