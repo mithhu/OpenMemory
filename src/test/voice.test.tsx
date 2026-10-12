@@ -119,7 +119,9 @@ describe("Voice notes require explicit transcription and review", () => {
     api.status.mockResolvedValue({ configured: false });
     setup();
     fireEvent.click(screen.getByRole("button", { name: "Speak a memory" }));
-    expect(await screen.findByRole("status")).toHaveTextContent("ELEVENLABS_API_KEY");
+    expect(await screen.findByRole("status")).toHaveTextContent(
+      "Voice transcription is unavailable",
+    );
   });
   it("handles denied microphone access without uploading", async () => {
     vi.mocked(navigator.mediaDevices.getUserMedia).mockRejectedValue(

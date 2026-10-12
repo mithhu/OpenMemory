@@ -14,6 +14,8 @@ export function PrivacyPanel({
   open,
   onClose,
   settings,
+  hosted = false,
+  onDisableAI,
   onSettings,
   encrypted,
   onEncrypt,
@@ -23,13 +25,15 @@ export function PrivacyPanel({
   open: boolean;
   onClose: () => void;
   settings: AISettings;
+  hosted?: boolean;
+  onDisableAI?: () => void;
   onSettings: (settings: AISettings) => void;
   encrypted: boolean;
   onEncrypt: (passphrase: string) => Promise<void>;
   onLock: () => void;
   busy: boolean;
 }) {
-  const [model, setModel] = useState(settings.model);
+  const [model, setModel] = useState(settings.provider === "astra" ? "qwen3.5:9b" : settings.model);
   const [models, setModels] = useState<string[]>([]);
   const [password, setPassword] = useState("");
   const [confirmation, setConfirmation] = useState("");
@@ -57,7 +61,7 @@ export function PrivacyPanel({
         </DialogHeader>
         <div className="provider-options">
           <button
-            disabled={busy || working}
+            disabled={busy || working || hosted}
             className={
               settings.provider === "ollama" && settings.captureEngine !== "ollama"
                 ? "selected"
@@ -68,10 +72,11 @@ export function PrivacyPanel({
             }
           >
             <HardDrive size={19} />
-            <strong>Local MLX · Default</strong>
+            <strong>{hosted ? "Local MLX · Mac app" : "Local MLX · Default"}</strong>
             <span>
-              Fine-tuned classification on your Mac, with local Ollama extraction. No cloud
-              fallback.
+              {hosted
+                ? "Run OpenMemory locally on your Mac to use the fine-tuned model. This website cannot run native MLX."
+                : "Fine-tuned classification on your Mac, with local Ollama extraction. No cloud fallback."}
             </span>
           </button>
           <button
@@ -85,7 +90,11 @@ export function PrivacyPanel({
           >
             <HardDrive size={19} />
             <strong>Local Ollama</strong>
-            <span>Requests go directly to this computer. No cloud fallback.</span>
+            <span>
+              {hosted
+                ? "Advanced: requires Ollama installed on your computer and permission for this website."
+                : "Requests go directly to this computer. No cloud fallback."}
+            </span>
           </button>
           <button
             disabled={busy || working}
@@ -99,6 +108,11 @@ export function PrivacyPanel({
             </span>
           </button>
         </div>
+        {hosted && onDisableAI && (
+          <button className="text-button" disabled={busy || working} onClick={onDisableAI}>
+            Use manual review only
+          </button>
+        )}
         <label className="privacy-label">
           Downloaded local model
           <input

@@ -158,10 +158,10 @@ export function saveGraph(graph: SavedGraph) {
   if (privateStorageActive()) return;
   localStorage.setItem(GRAPH_KEY, JSON.stringify(graph));
 }
-export function loadMemories(): Memory[] {
+export function loadMemories(seedDemo = true): Memory[] {
   const raw = localStorage.getItem(MEM_KEY);
   if (raw === null) {
-    const memories = demoMemories();
+    const memories = seedDemo ? demoMemories() : [];
     saveMemories(memories);
     return memories;
   }

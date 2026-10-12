@@ -2,6 +2,16 @@
 
 The normal local app now starts in **Local MLX**. OpenAI credentials in `.env` do not enable cloud processing. An old cloud preference is ignored; the user must explicitly choose OpenAI under **Privacy & AI** for this policy. The new provider preference persists across reloads. Switching back to either local mode clears its cloud opt-in.
 
+## Hosted consumer experience
+
+On a hosted origin, visitors start with manual review and a clear **Enable AI review** choice. Enabling it selects server-side OpenAI; visitors do not need an API key or installation. No capture, mapping, reflection or discovery request runs before that choice. Privacy & AI also allows returning to manual-only review. Native MLX is unavailable on the hosted site; advanced local Ollama requires a separately installed service and browser/origin permissions.
+
+For an isolated local preview of this hosted flow, run `VITE_APP_MODE=hosted npm run dev -- --host 127.0.0.1 --port 3006 --strictPort`. Leave this setting unset for the usual local MLX app.
+
+Memories remain in this browser's vault, with optional encryption and export. AI actions send the relevant memory context to the chosen provider. Voice sends audio to ElevenLabs only after **Transcribe**, then puts editable text into the composer; review and Save remain separate actions. Unavailable AI never prevents manual capture. Provider-side spending limits are managed by the project owner; this version does not enforce per-user quotas or require Redis.
+
+New hosted libraries start empty. Example memories are added only through **Explore the demo**; existing saved libraries are preserved.
+
 ## Running on this Mac
 
 ```sh

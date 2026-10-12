@@ -56,6 +56,12 @@ afterEach(() => {
 });
 
 describe("Memory continuity and storage", () => {
+  it("starts a fresh consumer library empty and preserves an existing library", () => {
+    expect(loadMemories(false)).toEqual([]);
+    const existing = demoMemories();
+    saveMemories(existing);
+    expect(loadMemories(false)).toEqual(existing);
+  });
   it("turns an explicitly completed step into a memory without inventing its outcome", () => {
     const memories = demoMemories();
     const next = recordAction(

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isHostedApp } from "./app-environment";
 import { planCapture, connectMemories, mapMemories, discoverLibrary } from "./astra";
 import { buildTaste, discoveryInstructions, discoveryJson, validateDiscovery } from "./discovery";
 import { captureInstructions, capturePlanJson, captureCatalog, validatePlan } from "./capture-plan";
@@ -33,14 +34,28 @@ export const defaultAISettings: AISettings = {
   model: "qwen3.5:9b",
   captureEngine: "mlx",
 };
-export function loadAISettings(): AISettings {
+export function hasHostedAIConsent(): boolean {
   try {
     const stored = JSON.parse(localStorage.getItem("openmemory.ai.v2") || "null");
-    if (!stored || (stored.provider === "astra" && stored.cloudOptIn !== true))
-      return defaultAISettings;
-    return aiSettingsSchema.parse(stored);
+    const settings = aiSettingsSchema.parse(stored);
+    return settings.provider === "astra"
+      ? stored.cloudOptIn === true
+      : settings.captureEngine === "ollama";
   } catch {
-    return defaultAISettings;
+    return false;
+  }
+}
+export function loadAISettings(hosted = isHostedApp()): AISettings {
+  const fallback: AISettings = hosted ? { provider: "astra", model: "astra" } : defaultAISettings;
+  try {
+    const stored = JSON.parse(localStorage.getItem("openmemory.ai.v2") || "null");
+    if (!stored || (stored.provider === "astra" && stored.cloudOptIn !== true)) return fallback;
+    const settings = aiSettingsSchema.parse(stored);
+    if (hosted && settings.provider === "ollama" && settings.captureEngine !== "ollama")
+      return fallback;
+    return settings;
+  } catch {
+    return fallback;
   }
 }
 export function saveAISettings(settings: AISettings) {

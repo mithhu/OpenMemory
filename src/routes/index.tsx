@@ -33,6 +33,7 @@ import {
   planWithProvider,
   connectWithProvider,
   loadAISettings,
+  hasHostedAIConsent,
   saveAISettings,
   defaultAISettings,
   type AISettings,
@@ -67,6 +68,7 @@ import { CaptureReview } from "@/components/CaptureReview";
 import { LifeDashboard, LifeHero } from "@/components/LifeDashboard";
 import { PrivacyPanel, VaultUnlock } from "@/components/PrivacyPanel";
 import { DiscoverPanel } from "@/components/DiscoverPanel";
+import { isHostedApp } from "@/lib/app-environment";
 import { activityCategories } from "@/lib/activity";
 import { type Recommendation } from "@/lib/discovery";
 import {
@@ -143,6 +145,8 @@ function OpenMemory() {
     classification?: ClassificationMetadata;
   } | null>(null);
   const [settings, setSettings] = useState<AISettings>(defaultAISettings);
+  const [hosted, setHosted] = useState(false);
+  const [consentRequired, setConsentRequired] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [encrypted, setEncrypted] = useState(false);
   const [locked, setLocked] = useState(false);
@@ -166,7 +170,11 @@ function OpenMemory() {
     retry: retryMap,
   } = useMemoryGraph(memories, {
     loaded,
-    enabled: (settings.provider === "ollama" || configured === true) && !storageError && !locked,
+    enabled:
+      !consentRequired &&
+      (settings.provider === "ollama" || configured === true) &&
+      !storageError &&
+      !locked,
     settings,
     paused: busy || Boolean(pending) || privacyOpen || view !== "constellation",
   });
@@ -189,6 +197,8 @@ function OpenMemory() {
   useEffect(() => {
     let cancelled = false;
     setSettings(loadAISettings());
+    setHosted(isHostedApp());
+    setConsentRequired(isHostedApp() && !hasHostedAIConsent());
     void (async () => {
       try {
         const envelope = await readVault();
@@ -200,7 +210,9 @@ function OpenMemory() {
           return;
         }
         const session = envelope ? await openEnvelope(envelope) : null;
-        const saved = session ? memorySchema.array().max(200).parse(session.data) : loadMemories();
+        const saved = session
+          ? memorySchema.array().max(200).parse(session.data)
+          : loadMemories(!isHostedApp());
         if (cancelled) return;
         setVaultSession(session ?? { key: null, salt: null });
         if (!envelope) {
@@ -283,19 +295,27 @@ function OpenMemory() {
       { duration: 8000 },
     );
   const ensureReady = () => {
+    if (consentRequired) {
+      toast.error("Enable AI review first, or review your note manually.");
+      return false;
+    }
     if (storageError) {
       toast.error("Resolve the saved-memory issue before making changes.");
       return false;
     }
     if (configured === false && settings.provider === "astra") {
       toast.error(
-        "OpenAI isn't connected. Choose a local model in Privacy & AI, or review your note manually.",
+        "AI review is unavailable right now. Your words are still here; review and save manually.",
       );
       return false;
     }
     return loaded && !locked && !savingRef.current && !requestLock.current;
   };
   const capture = async (text: string) => {
+    if (consentRequired || (settings.provider === "astra" && configured === false)) {
+      reviewManually();
+      return;
+    }
     if (!ensureReady() || !text.trim()) return;
     requestLock.current = true;
     const controller = new AbortController();
@@ -304,9 +324,10 @@ function OpenMemory() {
     setTask("capture");
     try {
       const input = { text, today: today(), memories: memoryRef.current };
-      const result = settings.provider === "ollama" && settings.captureEngine !== "ollama"
-        ? await captureWithLocalMlx(input, controller.signal)
-        : { plan: await planWithProvider(input, settings, controller.signal) };
+      const result =
+        settings.provider === "ollama" && settings.captureEngine !== "ollama"
+          ? await captureWithLocalMlx(input, controller.signal)
+          : { plan: await planWithProvider(input, settings, controller.signal) };
       if (controller.signal.aborted || captureController.current !== controller) return;
       setPending({ text, ...result });
     } catch (error) {
@@ -660,6 +681,7 @@ function OpenMemory() {
     try {
       saveAISettings(next);
       setSettings({ ...next, model: next.model || "astra" });
+      setConsentRequired(false);
       toast.success(
         next.provider === "ollama"
           ? "Local mode selected. No OpenAI fallback."
@@ -923,13 +945,17 @@ function OpenMemory() {
           <div className="topbar-right">
             <span className={`astra-status ${configured === false ? "unconfigured" : ""}`}>
               <i />
-              {settings.provider === "ollama" && settings.captureEngine !== "ollama" ? "Local MLX" : settings.provider === "ollama"
-                ? "Local Ollama"
-                : configured === null
-                  ? "Connecting…"
-                  : configured
-                    ? "OpenAI enabled"
-                    : "Set up OpenAI"}
+              {consentRequired
+                ? "Manual mode"
+                : settings.provider === "ollama" && settings.captureEngine !== "ollama"
+                  ? "Local MLX"
+                  : settings.provider === "ollama"
+                    ? "Local Ollama"
+                    : configured === null
+                      ? "Connecting…"
+                      : configured
+                        ? "OpenAI enabled"
+                        : "AI unavailable"}
             </span>
             <button
               className="profile-orb"
@@ -941,10 +967,40 @@ function OpenMemory() {
           </div>
         </header>
         <main className="workspace">
+          {loaded && !locked && consentRequired && (
+            <section className="hosted-welcome" aria-label="Choose AI processing">
+              <span className="eyebrow">YOUR MEMORIES, YOUR CHOICE</span>
+              <h2>A little help making sense of your day.</h2>
+              <p>
+                Save memories in this browser. Enable OpenAI to turn your words into suggestions you
+                can review. AI features send your note and relevant library context to OpenAI. No
+                installation or API key needed.
+              </p>
+              <p>
+                Voice is optional: audio goes to ElevenLabs only when you choose Transcribe. You can
+                also review and save notes manually.
+              </p>
+              <button
+                className="remember-button"
+                disabled={busy || configured !== true}
+                onClick={() => changeSettings({ provider: "astra", model: "astra" })}
+              >
+                Enable AI review
+              </button>
+              {configured === false && (
+                <p role="status">
+                  AI review is temporarily unavailable. You can still save manually.
+                </p>
+              )}
+            </section>
+          )}
           {settings.provider === "ollama" && settings.captureEngine !== "ollama" && (
             <div className="setup-banner" role="status">
               <ShieldCheck size={17} />
-              <span>Local-first · fine-tuned MLX classification with local Qwen extraction. Review suggestions before saving.</span>
+              <span>
+                Local-first · fine-tuned MLX classification with local Qwen extraction. Review
+                suggestions before saving.
+              </span>
             </div>
           )}
           {storageError && (
@@ -958,8 +1014,8 @@ function OpenMemory() {
             <div className="setup-banner">
               <ShieldCheck size={17} />
               <span>
-                OpenAI isn't connected. Choose a local model in Privacy & AI, or review and save
-                your notes manually.
+                AI review is unavailable right now. You can still review and save your notes
+                manually.
               </span>
               <button onClick={() => setPrivacyOpen(true)}>Choose AI</button>
             </div>
@@ -1065,7 +1121,13 @@ function OpenMemory() {
                   ) : (
                     <Sparkles size={15} />
                   )}
-                  <span>{task === "capture" ? "Understanding…" : "Review memory"}</span>
+                  <span>
+                    {task === "capture"
+                      ? "Understanding…"
+                      : consentRequired || (settings.provider === "astra" && configured === false)
+                        ? "Review manually"
+                        : "Review memory"}
+                  </span>
                   <ArrowUpRight size={15} />
                 </button>
               </form>
@@ -1076,20 +1138,22 @@ function OpenMemory() {
                     Stop waiting
                   </button>
                 )}
-                <button
-                  className="text-button"
-                  onClick={reviewManually}
-                  disabled={
-                    (busy && task !== "capture") ||
-                    saving ||
-                    voiceActive ||
-                    Boolean(pending) ||
-                    !draft.trim() ||
-                    Boolean(storageError)
-                  }
-                >
-                  {task === "capture" ? "Review manually now" : "Review manually"}
-                </button>
+                {!consentRequired && !(settings.provider === "astra" && configured === false) && (
+                  <button
+                    className="text-button"
+                    onClick={reviewManually}
+                    disabled={
+                      (busy && task !== "capture") ||
+                      saving ||
+                      voiceActive ||
+                      Boolean(pending) ||
+                      !draft.trim() ||
+                      Boolean(storageError)
+                    }
+                  >
+                    {task === "capture" ? "Review manually now" : "Review manually"}
+                  </button>
+                )}
               </div>
               {captureError && (
                 <p className="review-question" role="alert">
@@ -1128,7 +1192,14 @@ function OpenMemory() {
                 <DiscoverPanel
                   memories={memories}
                   settings={settings}
-                  busy={busy || !loaded || Boolean(storageError) || Boolean(pending)}
+                  busy={
+                    busy ||
+                    !loaded ||
+                    consentRequired ||
+                    (settings.provider === "astra" && configured !== true) ||
+                    Boolean(storageError) ||
+                    Boolean(pending)
+                  }
                   onSave={saveRecommendation}
                   onOpen={setSelectedId}
                   onWorking={(working) => {
@@ -1536,6 +1607,13 @@ function OpenMemory() {
         open={privacyOpen}
         onClose={() => setPrivacyOpen(false)}
         settings={settings}
+        hosted={hosted}
+        onDisableAI={() => {
+          localStorage.removeItem("openmemory.ai.v2");
+          setSettings({ provider: "astra", model: "astra" });
+          setConsentRequired(true);
+          toast.success("Manual review selected. OpenAI processing is off.");
+        }}
         onSettings={changeSettings}
         encrypted={encrypted}
         busy={busy || mapping || !loaded}

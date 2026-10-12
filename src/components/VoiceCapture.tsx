@@ -225,7 +225,7 @@ export function VoiceCapture({
           )}
           {configured === false ? (
             <p role="status">
-              Voice needs ELEVENLABS_API_KEY on the server. Restart the app after adding it.
+              Voice transcription is unavailable right now. You can keep typing your memory.
             </p>
           ) : (
             <>
@@ -290,7 +290,7 @@ export function VoiceCapture({
               )}
               {(phase === "ready" || phase === "transcribing") && (
                 <>
-                  <audio controls src={url} aria-label="Your recorded note" />
+                  {url && <audio controls src={url} aria-label="Your recorded note" />}
                   <div className="voice-actions">
                     <button
                       type="button"
