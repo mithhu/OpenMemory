@@ -9,7 +9,13 @@ import { loadEnv } from "vite";
 
 // Read server secrets for local development; never define them in the client bundle.
 const serverEnv = loadEnv(process.env["NODE_ENV"] || "development", process.cwd(), "");
-for (const name of ["OPEN_AI_KEY", "OPENAI_API_KEY", "ASTRA_API_KEY"]) {
+for (const name of [
+  "OPEN_AI_KEY",
+  "OPENAI_API_KEY",
+  "ASTRA_API_KEY",
+  "ELEVENLABS_API_KEY",
+  "OPENAI_MODEL",
+]) {
   if (!process.env[name] && serverEnv[name]) process.env[name] = serverEnv[name];
 }
 

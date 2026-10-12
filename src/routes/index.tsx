@@ -10,6 +10,9 @@ import {
   FileUp,
   GitBranch,
   Loader2,
+  Library,
+  LayoutDashboard,
+  Settings2,
   LockKeyhole,
   Menu,
   MessageCircle,
@@ -24,9 +27,49 @@ import {
 import { toast } from "sonner";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useMemoryGraph } from "@/hooks/use-memory-graph";
-import { captureMemory, connectMemories, getAstraStatus } from "@/lib/astra";
+import { getAstraStatus } from "@/lib/astra";
+import { captureWithLocalMlx } from "@/lib/local-mlx";
 import {
-  applyCapture,
+  planWithProvider,
+  connectWithProvider,
+  loadAISettings,
+  saveAISettings,
+  defaultAISettings,
+  type AISettings,
+} from "@/lib/ai-client";
+import {
+  applyCapturePlan,
+  importRecall,
+  type CapturePlan,
+  type UnquantifiedProgressReview,
+  type CompletionReview,
+} from "@/lib/capture-plan";
+import {
+  assertClassificationReview,
+  type ClassificationMetadata,
+  type ClassificationReviewDecision,
+} from "@/lib/classification";
+import { applyActivity, type ActivityCommand } from "@/lib/activity";
+import {
+  readVault,
+  readRawVault,
+  saveVault,
+  openEnvelope,
+  setVaultSession,
+  encryptVault,
+  saveRestoredVault,
+  lockVault,
+  clearPrivateCaches,
+  type VaultEnvelope,
+} from "@/lib/vault";
+import { VoiceCapture } from "@/components/VoiceCapture";
+import { CaptureReview } from "@/components/CaptureReview";
+import { LifeDashboard, LifeHero } from "@/components/LifeDashboard";
+import { PrivacyPanel, VaultUnlock } from "@/components/PrivacyPanel";
+import { DiscoverPanel } from "@/components/DiscoverPanel";
+import { activityCategories } from "@/lib/activity";
+import { type Recommendation } from "@/lib/discovery";
+import {
   categoryMeta,
   CATEGORIES,
   demoMemories,
@@ -37,10 +80,8 @@ import {
   logAnswer,
   recordAction,
   memorySchema,
-  saveMemories,
   saveSynthesis,
   today,
-  type CaptureResult,
   type Category,
   type Memory,
   type SavedSynthesis,
@@ -58,7 +99,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A memory companion that notices what matters. Capture a thought, find the hidden threads, and turn remembering into understanding. Powered by Astra.",
+          "A memory companion that notices what matters. Capture a thought, find the hidden threads, and turn remembering into understanding. Powered by OpenAI.",
       },
       { property: "og:title", content: "OpenMemory — Everything is connected" },
       {
@@ -69,8 +110,8 @@ export const Route = createFileRoute("/")({
   }),
   component: OpenMemory,
 });
-type View = "constellation" | "journal" | "ask";
-type Task = "capture" | "connect" | "ask" | null;
+type View = "today" | "library" | "constellation" | "journal" | "ask";
+type Task = "capture" | "connect" | "ask" | "discover" | null;
 const prompts = [
   "What am I missing?",
   "What should I make time for this week?",
@@ -85,16 +126,29 @@ function OpenMemory() {
   const [loaded, setLoaded] = useState(false);
   const [storageError, setStorageError] = useState("");
   const [configured, setConfigured] = useState<boolean | null>(null);
-  const [view, setView] = useState<View>("constellation");
+  const [view, setView] = useState<View>("today");
   const [draft, setDraft] = useState("");
+  const [captureError, setCaptureError] = useState("");
   const [question, setQuestion] = useState("");
   const [askedQuestion, setAskedQuestion] = useState("");
   const [synthesis, setSynthesis] = useState<SavedSynthesis | null>(null);
   const [answer, setAnswer] = useState<SavedSynthesis | null>(null);
   const [task, setTask] = useState<Task>(null);
   const requestLock = useRef(false);
+  const captureController = useRef<AbortController | null>(null);
   const [elapsed, setElapsed] = useState(0);
-  const [pending, setPending] = useState<{ text: string; result: CaptureResult } | null>(null);
+  const [pending, setPending] = useState<{
+    text: string;
+    plan: CapturePlan;
+    classification?: ClassificationMetadata;
+  } | null>(null);
+  const [settings, setSettings] = useState<AISettings>(defaultAISettings);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [encrypted, setEncrypted] = useState(false);
+  const [locked, setLocked] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const savingRef = useRef(false);
+  const [encryptedImport, setEncryptedImport] = useState<VaultEnvelope | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
   const [category, setCategory] = useState<Category | "ALL">("ALL");
@@ -102,7 +156,8 @@ function OpenMemory() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [doneActions, setDoneActions] = useState<string[]>([]);
   const importRef = useRef<HTMLInputElement>(null);
-  const busy = task !== null;
+  const [voiceActive, setVoiceActive] = useState(false);
+  const busy = task !== null || saving || voiceActive;
   const {
     graph,
     mapping,
@@ -111,44 +166,70 @@ function OpenMemory() {
     retry: retryMap,
   } = useMemoryGraph(memories, {
     loaded,
-    enabled: configured === true && !storageError,
-    paused: busy || Boolean(pending),
+    enabled: (settings.provider === "ollama" || configured === true) && !storageError && !locked,
+    settings,
+    paused: busy || Boolean(pending) || privacyOpen || view !== "constellation",
   });
 
-  useEffect(() => {
-    try {
-      const saved = loadMemories();
-      memoryRef.current = saved;
-      setMemories(saved);
-      setSynthesis(
-        loadSynthesis() ??
-          (saved.some((m) => m.id === "demo-morning") ? exampleSynthesis(saved) : null),
-      );
-      const done = JSON.parse(localStorage.getItem("openmemory.actions.v1") || "[]") as unknown;
-      const legacyDone = Array.isArray(done)
-        ? done.filter((item): item is string => typeof item === "string")
-        : [];
-      const reopened = saved
-        .filter((m) => m.completionStatus === "reopened")
-        .map((m) => m.completionFor);
-      setDoneActions(
-        [
-          ...new Set([
-            ...legacyDone,
-            ...saved
-              .filter((m) => m.completionStatus === "completed")
-              .map((m) => m.completionFor)
-              .filter((title): title is string => Boolean(title)),
-          ]),
-        ].filter((title) => !reopened.includes(title)),
-      );
-    } catch (error) {
-      setStorageError(error instanceof Error ? error.message : "Browser storage is unavailable.");
-    }
+  const installWorkspace = (saved: Memory[]) => {
+    memoryRef.current = saved;
+    setMemories(saved);
+    setSynthesis(
+      loadSynthesis() ??
+        (saved.some((m) => m.id === "demo-morning") ? exampleSynthesis(saved) : null),
+    );
+    setDoneActions(
+      saved
+        .filter((m) => m.completionStatus === "completed" && m.completionFor)
+        .map((m) => m.completionFor!),
+    );
     setLoaded(true);
+    setLocked(false);
+  };
+  useEffect(() => {
+    let cancelled = false;
+    setSettings(loadAISettings());
+    void (async () => {
+      try {
+        const envelope = await readVault();
+        if (cancelled) return;
+        if (envelope?.encrypted) {
+          lockVault();
+          setEncrypted(true);
+          setLocked(true);
+          return;
+        }
+        const session = envelope ? await openEnvelope(envelope) : null;
+        const saved = session ? memorySchema.array().max(200).parse(session.data) : loadMemories();
+        if (cancelled) return;
+        setVaultSession(session ?? { key: null, salt: null });
+        if (!envelope) {
+          await saveVault(saved);
+          // Migration is durable before the legacy copy is removed.
+          localStorage.removeItem("echo.memories.v1");
+        }
+        if (!cancelled) installWorkspace(saved);
+      } catch (error) {
+        if (!cancelled) {
+          setStorageError(
+            error instanceof Error ? error.message : "Browser storage is unavailable.",
+          );
+          setLoaded(true);
+        }
+      }
+    })();
     void getAstraStatus()
-      .then((status) => setConfigured(status.configured))
-      .catch(() => setConfigured(false));
+      .then((status) => {
+        if (!cancelled) setConfigured(status.configured);
+      })
+      .catch(() => {
+        if (!cancelled) setConfigured(false);
+      });
+    return () => {
+      cancelled = true;
+      captureController.current?.abort();
+      captureController.current = null;
+    };
   }, []);
   useEffect(() => {
     if (!busy) {
@@ -174,17 +255,26 @@ function OpenMemory() {
     };
   }, [selectedId, menuOpen]);
 
-  const persist = (next: Memory[]) => {
+  const persist = async (next: Memory[]) => {
+    if (savingRef.current || locked || storageError) return false;
+    savingRef.current = true;
+    setSaving(true);
     try {
-      saveMemories(next);
-      memoryRef.current = next;
-      setMemories(next);
+      const validated = memorySchema.array().max(200).parse(next);
+      await saveVault(validated);
+      memoryRef.current = validated;
+      setMemories(validated);
       return true;
-    } catch {
+    } catch (error) {
       toast.error(
-        "Couldn't save to this browser. Export a backup or free up storage and try again.",
+        error instanceof Error
+          ? error.message
+          : "Couldn't save to this browser. Export a backup and try again.",
       );
       return false;
+    } finally {
+      savingRef.current = false;
+      setSaving(false);
     }
   };
   const showError = (error: unknown) =>
@@ -197,47 +287,108 @@ function OpenMemory() {
       toast.error("Resolve the saved-memory issue before making changes.");
       return false;
     }
-    if (configured === false) {
-      toast.error("Add OPEN_AI_KEY to .env, then restart the dev server.");
+    if (configured === false && settings.provider === "astra") {
+      toast.error(
+        "OpenAI isn't connected. Choose a local model in Privacy & AI, or review your note manually.",
+      );
       return false;
     }
-    return loaded && !requestLock.current;
+    return loaded && !locked && !savingRef.current && !requestLock.current;
   };
-  const capture = async (text: string, forcedId?: string) => {
+  const capture = async (text: string) => {
     if (!ensureReady() || !text.trim()) return;
-    if (memoryRef.current.length >= 200 && !forcedId) {
-      toast.error("This demo supports 200 memories. Export a backup before making room.");
-      return;
-    }
     requestLock.current = true;
+    const controller = new AbortController();
+    captureController.current = controller;
+    setCaptureError("");
     setTask("capture");
     try {
-      const result = await captureMemory({
-        data: {
-          text,
-          today: today(),
-          memories: memoryRef.current,
-          ...(forcedId ? { forcedId } : {}),
-        },
-      });
-      if (result.action === "clarify") {
-        setPending({ text, result });
-        return;
-      }
-      if (persist(applyCapture(memoryRef.current, result, text))) {
-        setDraft("");
-        setPending(null);
-        toast.success(
-          result.action === "update"
-            ? `Connected to “${result.title}”`
-            : "A little moment, remembered.",
+      const input = { text, today: today(), memories: memoryRef.current };
+      const result = settings.provider === "ollama" && settings.captureEngine !== "ollama"
+        ? await captureWithLocalMlx(input, controller.signal)
+        : { plan: await planWithProvider(input, settings, controller.signal) };
+      if (controller.signal.aborted || captureController.current !== controller) return;
+      setPending({ text, ...result });
+    } catch (error) {
+      if (!controller.signal.aborted && captureController.current === controller)
+        setCaptureError(
+          error instanceof Error && error.name !== "ZodError"
+            ? error.message
+            : "The model returned an incomplete review. Your words are still here. Review manually or try again.",
         );
+    } finally {
+      if (captureController.current === controller) {
+        captureController.current = null;
+        requestLock.current = false;
+        setTask(null);
       }
+    }
+  };
+  const stopCapture = () => {
+    captureController.current?.abort();
+    captureController.current = null;
+    requestLock.current = false;
+    setTask(null);
+  };
+  const reviewManually = () => {
+    if (
+      !loaded ||
+      locked ||
+      saving ||
+      voiceActive ||
+      (task !== null && task !== "capture") ||
+      storageError ||
+      !draft.trim()
+    )
+      return;
+    if (task === "capture") stopCapture();
+    setCaptureError("");
+    setPending({
+      text: draft,
+      plan: {
+        entries: [
+          {
+            title: draft.trim().slice(0, 100),
+            summary: draft.trim().slice(0, 12000),
+            category: "NOTE",
+            date: today(),
+            matchedMemoryId: null,
+            candidateMemoryIds: [],
+            clarificationQuestion:
+              "Choose the type and title for this entry. You can save without an AI request.",
+            tags: [],
+            activity: null,
+          },
+        ],
+      },
+    });
+  };
+  const confirmCapture = async (
+    plan: CapturePlan,
+    classificationReview?: ClassificationReviewDecision,
+    progressReview?: UnquantifiedProgressReview,
+    completionReview?: CompletionReview,
+  ) => {
+    if (!pending) return false;
+    try {
+      assertClassificationReview(plan, pending.text, pending.classification, classificationReview);
+      const next = applyCapturePlan(
+        memoryRef.current,
+        plan,
+        pending.text,
+        progressReview,
+        completionReview,
+      );
+      if (!(await persist(next))) return false;
+      setDraft("");
+      setPending(null);
+      toast.success(
+        `${plan.entries.length} ${plan.entries.length === 1 ? "entry" : "entries"} remembered, just as you confirmed.`,
+      );
+      return true;
     } catch (error) {
       showError(error);
-    } finally {
-      requestLock.current = false;
-      setTask(null);
+      return false;
     }
   };
   const generate = async (query = "", asking = false) => {
@@ -250,14 +401,16 @@ function OpenMemory() {
     setTask(asking ? "ask" : "connect");
     const snapshot = [...memoryRef.current];
     try {
-      const result = await connectMemories({
-        data: { memories: snapshot, today: today(), question: query },
-      });
+      const result = await connectWithProvider(
+        { memories: snapshot, today: today(), question: query },
+        settings,
+      );
       const saved: SavedSynthesis = {
         result,
         fingerprint: fingerprint(snapshot),
         generatedAt: new Date().toISOString(),
         mode: "live",
+        provider: settings.provider,
       };
       if (asking) {
         setAnswer(saved);
@@ -285,14 +438,14 @@ function OpenMemory() {
   };
   const updateMemory = (id: string, update: (memory: Memory) => Memory) =>
     persist(memoryRef.current.map((m) => (m.id === id ? update(m) : m)));
-  const deleteMemory = (id: string) => {
-    if (persist(memoryRef.current.filter((m) => m.id !== id))) {
+  const deleteMemory = async (id: string) => {
+    if (await persist(memoryRef.current.filter((m) => m.id !== id))) {
       setSelectedId(null);
       toast.success("Memory removed.");
     }
   };
-  const completeWishlist = (id: string) => {
-    updateMemory(id, (m) => ({
+  const completeWishlist = async (id: string) => {
+    await updateMemory(id, (m) => ({
       ...m,
       category: /watch|film|movie/i.test(m.summary) ? "MOVIE" : "NOTE",
       date: today(),
@@ -304,7 +457,7 @@ function OpenMemory() {
     }));
     toast.success("From someday to a memory.");
   };
-  const toggleAction = (action: SuggestedAction) => {
+  const toggleAction = async (action: SuggestedAction) => {
     if (busy || storageError) return;
     const title = action.title;
     const completed = !doneActions.includes(title);
@@ -318,20 +471,15 @@ function OpenMemory() {
     const next = doneActions.includes(title)
       ? doneActions.filter((s) => s !== title)
       : [...doneActions, title];
-    if (!persist(recordAction(memoryRef.current, action, completed))) return;
+    if (!(await persist(recordAction(memoryRef.current, action, completed)))) return;
     setDoneActions(next);
-    try {
-      localStorage.setItem("openmemory.actions.v1", JSON.stringify(next));
-    } catch {
-      /* Completion is also stored in its memory, so it survives reloads. */
-    }
     toast.success(
       completed
-        ? "A next step became a memory. Astra can learn from it."
+        ? "A next step became a memory. OpenAI can learn from it."
         : "Step reopened. Your memory reflects the change.",
     );
   };
-  const addDemo = () => {
+  const addDemo = async () => {
     if (!loaded || busy || storageError) return;
     const existing = memoryRef.current;
     const additions = demoMemories().filter((m) => !existing.some((item) => item.id === m.id));
@@ -340,7 +488,7 @@ function OpenMemory() {
       return;
     }
     const next = [...additions, ...existing];
-    if (persist(next)) {
+    if (await persist(next)) {
       const example = exampleSynthesis(next);
       setSynthesis(example);
       setView("constellation");
@@ -353,24 +501,44 @@ function OpenMemory() {
       toast.success(
         additions.length
           ? "Demo story added alongside your memories."
-          : "You're exploring the demo story. Find the threads to hear from Astra.",
+          : "You're exploring the demo story. Find the threads to hear from OpenAI.",
       );
     }
   };
-  const exportMemories = () => {
-    const raw = storageError
-      ? localStorage.getItem("echo.memories.v1") || "[]"
-      : JSON.stringify(
-          { version: 1, exportedAt: new Date().toISOString(), memories: memoryRef.current },
-          null,
-          2,
+  const exportMemories = async () => {
+    if (savingRef.current) return;
+    if (storageError) {
+      try {
+        const raw = await readRawVault();
+        const legacy = localStorage.getItem("echo.memories.v1");
+        if (raw === null && !legacy)
+          throw new Error("The saved data is unavailable. No empty backup was generated.");
+        downloadBackup(
+          raw === null ? legacy! : JSON.stringify(raw),
+          `openmemory-recovery-${today()}.json`,
         );
-    const url = URL.createObjectURL(new Blob([raw], { type: "application/json" }));
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `openmemory-${today()}.json`;
-    link.click();
-    URL.revokeObjectURL(url);
+      } catch (error) {
+        showError(error);
+      }
+      return;
+    }
+    if (encrypted || locked) {
+      try {
+        const envelope = await readVault();
+        if (!envelope) throw new Error("No saved vault found.");
+        downloadBackup(JSON.stringify(envelope), `openmemory-encrypted-${today()}.json`);
+        toast.success("Encrypted backup exported. Keep your passphrase to restore it.");
+      } catch (error) {
+        showError(error);
+      }
+      return;
+    }
+    const raw = JSON.stringify(
+      { version: 1, exportedAt: new Date().toISOString(), memories: memoryRef.current },
+      null,
+      2,
+    );
+    downloadBackup(raw, `openmemory-${today()}.json`);
     toast.success("Your memories, to keep.");
   };
   const importMemories = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -385,14 +553,24 @@ function OpenMemory() {
       const text = await file.text();
       if (/\.json$/i.test(file.name)) {
         const data: unknown = JSON.parse(text);
+        if (data && typeof data === "object" && "encrypted" in data && data.encrypted === true) {
+          setEncryptedImport(data as VaultEnvelope);
+          return;
+        }
         const raw = Array.isArray(data)
           ? data
           : data && typeof data === "object" && "memories" in data
             ? data.memories
             : null;
-        if (!Array.isArray(raw))
-          throw new Error("Choose an OpenMemory export containing a memories array.");
-        const imported = raw.map((m: unknown) => memorySchema.parse(m));
+        const isRecall =
+          data &&
+          typeof data === "object" &&
+          ["courses", "movies", "books", "music", "logs"].some((key) => key in data);
+        if (!Array.isArray(raw) && !isRecall)
+          throw new Error("Choose an OpenMemory or Recall JSON export.");
+        const imported = Array.isArray(raw)
+          ? raw.map((m: unknown) => memorySchema.parse(m))
+          : importRecall(data);
         const additions = imported.filter(
           (m) => !memoryRef.current.some((current) => current.id === m.id),
         );
@@ -405,10 +583,11 @@ function OpenMemory() {
           throw new Error(
             "Export your saved data first. This file can't overwrite unreadable memories.",
           );
-        if (persist(unique))
+        if (await persist(unique))
           toast.success(`${addedCount} memories imported. Existing memories kept.`);
       } else {
         if (text.length > 16000) throw new Error("Keep each text import under 16,000 characters.");
+        setCaptureError("");
         setDraft(text.trim());
         setView("constellation");
         toast.success("Text added to the composer. Review it, then remember it.");
@@ -417,7 +596,101 @@ function OpenMemory() {
       showError(error);
     }
   };
+  const updateActivity = async (id: string, command: ActivityCommand, text: string) => {
+    try {
+      const memory = memoryRef.current.find((m) => m.id === id);
+      if (!memory?.activity) throw new Error("That item was removed. Please try again.");
+      const next = {
+        ...memory,
+        // This callback receives a deliberately submitted manual activity form,
+        // never a model extraction. Unknown amounts preserve existing counts.
+        activity: applyActivity(memory.activity, command, today(), text, {
+          allowUnquantifiedProgress: true,
+        }),
+        date: today(),
+        updatedAt: new Date().toISOString(),
+      };
+      const saved = await updateMemory(id, () => next);
+      if (saved) toast.success("Progress remembered.");
+      return saved;
+    } catch (error) {
+      showError(error);
+      return false;
+    }
+  };
+  const saveRecommendation = async (suggestion: Recommendation) => {
+    try {
+      const entry = {
+        title: suggestion.title,
+        category: activityCategories[suggestion.kind],
+        date: today(),
+        summary: `Added ${suggestion.title} to my wishlist. Recommendation: ${suggestion.reason}`,
+        tags: [],
+        matchedMemoryId: null,
+        candidateMemoryIds: [],
+        clarificationQuestion: null,
+        activity: {
+          kind: suggestion.kind,
+          intent: "wishlist" as const,
+          progress: null,
+          progressMode: "absolute" as const,
+          total: null,
+          lessonNumbers: [],
+          sentiment: null,
+          creator: suggestion.creator,
+        },
+      };
+      const next = applyCapturePlan(
+        memoryRef.current,
+        { entries: [entry] },
+        `I added ${suggestion.title} to my wishlist.`,
+      );
+      next[0]!.relatedMemoryIds = suggestion.memoryIds.filter((id) =>
+        memoryRef.current.some((m) => m.id === id),
+      );
+      if (!(await persist(next))) return false;
+      toast.success("Added to your wishlist.");
+      return true;
+    } catch (error) {
+      showError(error);
+      return false;
+    }
+  };
+  const changeSettings = (next: AISettings) => {
+    try {
+      saveAISettings(next);
+      setSettings({ ...next, model: next.model || "astra" });
+      toast.success(
+        next.provider === "ollama"
+          ? "Local mode selected. No OpenAI fallback."
+          : "OpenAI selected. Requests use cloud reasoning.",
+      );
+    } catch (error) {
+      showError(error);
+    }
+  };
+  const unlock = async (passphrase: string) => {
+    const envelope = await readVault();
+    if (!envelope) throw new Error("Your vault could not be found.");
+    const session = await openEnvelope(envelope, passphrase);
+    const saved = memorySchema.array().max(200).parse(session.data);
+    setVaultSession(session);
+    clearPrivateCaches();
+    installWorkspace(saved);
+  };
+  const downloadBackup = (raw: string, name: string) => {
+    const url = URL.createObjectURL(new Blob([raw], { type: "application/json" }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = name;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
   const navigate = (next: View) => {
+    if (voiceActive) {
+      toast.message("Finish or discard your voice note before changing views.");
+      return;
+    }
     setView(next);
     setMenuOpen(false);
     setHighlightedIds([]);
@@ -436,26 +709,71 @@ function OpenMemory() {
         .toLowerCase()
         .includes(search.toLowerCase()),
   );
-  const statusText =
-    task === "capture"
+  const statusText = voiceActive
+    ? "Voice note in progress. Check the transcript before saving."
+    : task === "capture"
       ? "Finding a place for your thought…"
-      : elapsed < 5
-        ? "Reading across your memories…"
-        : elapsed < 15
-          ? "Looking for the threads between them…"
-          : "Giving the bigger picture a little thought…";
+      : task === "discover"
+        ? "Finding something you might love…"
+        : saving
+          ? "Saving on this device…"
+          : elapsed < 5
+            ? "Reading across your memories…"
+            : elapsed < 15
+              ? "Looking for the threads between them…"
+              : "Giving the bigger picture a little thought…";
 
+  if (locked) return <VaultUnlock onUnlock={unlock} onExport={() => void exportMemories()} />;
+  if (!loaded)
+    return (
+      <div className="vault-unlock">
+        <Orbit size={36} />
+        <h1>Opening your space…</h1>
+      </div>
+    );
+  if (encryptedImport)
+    return (
+      <VaultUnlock
+        title="Restore your encrypted backup."
+        description={
+          encrypted
+            ? "Enter the backup’s passphrase. New memories will be added alongside your existing ones."
+            : "Enter the backup’s passphrase. Your merged workspace will be encrypted with this passphrase; existing memories will be kept."
+        }
+        onCancel={() => setEncryptedImport(null)}
+        onUnlock={async (passphrase) => {
+          const session = await openEnvelope(encryptedImport, passphrase);
+          const imported = memorySchema.array().max(200).parse(session.data);
+          const next = [
+            ...memoryRef.current,
+            ...imported.filter((m) => !memoryRef.current.some((old) => old.id === m.id)),
+          ];
+          if (savingRef.current || storageError)
+            throw new Error("Resolve the saved-memory issue before restoring this backup.");
+          const validated = memorySchema.array().max(200).parse(next);
+          savingRef.current = true;
+          setSaving(true);
+          try {
+            await saveRestoredVault(validated, passphrase);
+            memoryRef.current = validated;
+            setMemories(validated);
+            setEncrypted(true);
+          } finally {
+            savingRef.current = false;
+            setSaving(false);
+          }
+          setEncryptedImport(null);
+          toast.success("Backup restored. Existing memories kept.");
+        }}
+      />
+    );
   return (
     <div className="app-shell">
       <aside
         className={`sidebar ${menuOpen ? "mobile-open" : ""}`}
         inert={Boolean(selectedId) || (isMobile && !menuOpen)}
       >
-        <button
-          className="brand"
-          onClick={() => navigate("constellation")}
-          aria-label="OpenMemory home"
-        >
+        <button className="brand" onClick={() => navigate("today")} aria-label="OpenMemory home">
           <span className="brand-mark">
             <Orbit size={23} strokeWidth={1.5} />
           </span>
@@ -464,9 +782,28 @@ function OpenMemory() {
             <i />
           </span>
         </button>
-        <div className="sidebar-label">A LITTLE SPACE FOR YOU</div>
+        <div className="sidebar-label">YOUR SPACE</div>
         <nav className="main-nav" aria-label="Main navigation">
           <button
+            aria-current={view === "today" ? "page" : undefined}
+            className={view === "today" ? "active" : ""}
+            onClick={() => navigate("today")}
+          >
+            <LayoutDashboard size={18} />
+            Today
+            <span className="nav-dot" />
+          </button>
+          <button
+            aria-current={view === "library" ? "page" : undefined}
+            className={view === "library" ? "active" : ""}
+            onClick={() => navigate("library")}
+          >
+            <Library size={18} />
+            Your library
+            <span className="nav-count">{memories.filter((m) => m.activity).length}</span>
+          </button>
+          <button
+            aria-current={view === "constellation" ? "page" : undefined}
             className={view === "constellation" ? "active" : ""}
             onClick={() => navigate("constellation")}
           >
@@ -475,20 +812,25 @@ function OpenMemory() {
             <span className="nav-dot" />
           </button>
           <button
+            aria-current={view === "journal" ? "page" : undefined}
             className={view === "journal" ? "active" : ""}
             onClick={() => navigate("journal")}
           >
             <NotebookPen size={18} />
             Your memories<span className="nav-count">{memories.length}</span>
           </button>
-          <button className={view === "ask" ? "active" : ""} onClick={() => navigate("ask")}>
+          <button
+            aria-current={view === "ask" ? "page" : undefined}
+            className={view === "ask" ? "active" : ""}
+            onClick={() => navigate("ask")}
+          >
             <MessageCircle size={18} />
             Ask your memory
             <ArrowUpRight size={13} className="nav-arrow" />
           </button>
         </nav>
         <div className="sidebar-divider" />
-        <div className="sidebar-label">THE LITTLE THINGS</div>
+        <div className="sidebar-label">COLLECTIONS</div>
         <div className="topic-list">
           {categories.map((cat) => (
             <button
@@ -505,7 +847,7 @@ function OpenMemory() {
           ))}
         </div>
         <div className="sidebar-bottom">
-          <div className="demo-invite">
+          <div className="demo-invite" hidden={memories.length > 0}>
             <span className="demo-icon">
               <Compass size={19} strokeWidth={1.5} />
             </span>
@@ -530,12 +872,20 @@ function OpenMemory() {
               Import
             </button>
           </div>
+          <button className="privacy-nav" onClick={() => setPrivacyOpen(true)}>
+            <Settings2 size={14} />
+            Privacy & AI
+          </button>
           <div
             className="local-note"
-            title="Saved on this device. Your notes are sent to OpenAI when you capture, update connections automatically, or ask Astra."
+            title={
+              settings.provider === "ollama"
+                ? "AI requests go to local Ollama. No OpenAI fallback."
+                : "Saved on this device. Relevant memories are sent to OpenAI for AI requests."
+            }
           >
             <LockKeyhole size={12} />
-            Your memories stay in this browser.
+            {encrypted ? "Encrypted in this browser." : "Saved on this device."}
           </div>
         </div>
       </aside>
@@ -559,22 +909,44 @@ function OpenMemory() {
             <span>Your space</span>
             <ChevronRight size={12} />
             <span>
-              {view === "constellation"
-                ? "Constellation"
-                : view === "journal"
-                  ? "Your memories"
-                  : "Ask your memory"}
+              {view === "today"
+                ? "Today"
+                : view === "library"
+                  ? "Your library"
+                  : view === "constellation"
+                    ? "Constellation"
+                    : view === "journal"
+                      ? "Your memories"
+                      : "Ask your memory"}
             </span>
           </div>
           <div className="topbar-right">
             <span className={`astra-status ${configured === false ? "unconfigured" : ""}`}>
               <i />
-              {configured === null ? "Connecting…" : configured ? "Astra enabled" : "Set up Astra"}
+              {settings.provider === "ollama" && settings.captureEngine !== "ollama" ? "Local MLX" : settings.provider === "ollama"
+                ? "Local Ollama"
+                : configured === null
+                  ? "Connecting…"
+                  : configured
+                    ? "OpenAI enabled"
+                    : "Set up OpenAI"}
             </span>
-            <span className="profile-orb">You</span>
+            <button
+              className="profile-orb"
+              aria-label="Open privacy and AI settings"
+              onClick={() => setPrivacyOpen(true)}
+            >
+              You
+            </button>
           </div>
         </header>
         <main className="workspace">
+          {settings.provider === "ollama" && settings.captureEngine !== "ollama" && (
+            <div className="setup-banner" role="status">
+              <ShieldCheck size={17} />
+              <span>Local-first · fine-tuned MLX classification with local Qwen extraction. Review suggestions before saving.</span>
+            </div>
+          )}
           {storageError && (
             <div className="setup-banner" role="alert">
               <ShieldCheck size={17} />
@@ -582,68 +954,103 @@ function OpenMemory() {
               <button onClick={exportMemories}>Export backup</button>
             </div>
           )}
-          {configured === false && (
+          {configured === false && settings.provider === "astra" && (
             <div className="setup-banner">
               <ShieldCheck size={17} />
               <span>
-                To connect Astra, add <code>OPEN_AI_KEY</code> to <code>.env</code> and restart the
-                dev server. You can explore the example story now.
+                OpenAI isn't connected. Choose a local model in Privacy & AI, or review and save
+                your notes manually.
               </span>
+              <button onClick={() => setPrivacyOpen(true)}>Choose AI</button>
             </div>
           )}
-          {view === "constellation" && (
+          {(view === "constellation" || view === "today" || view === "library") && (
             <>
-              <section className="hero">
-                <div className="hero-eyebrow">
-                  <span className="little-star">✦</span> EVERY MOMENT HAS A THREAD
-                </div>
-                <h1>
-                  A little less scattered.
-                  <br />A lot more <em>connected.</em>
-                </h1>
-                <p>
-                  Your thoughts, experiences, and little things.
-                  <br className="desktop-break" /> Remember them. Then see what they mean together.
-                </p>
-                <div className="hero-flower" aria-hidden="true">
-                  <svg viewBox="0 0 200 200">
-                    {Array.from({ length: 7 }, (_, i) => (
-                      <ellipse
-                        key={i}
-                        cx="100"
-                        cy="67"
-                        rx="26"
-                        ry="53"
-                        transform={`rotate(${i * (360 / 7)} 100 100)`}
-                      />
-                    ))}
-                    <circle cx="100" cy="100" r="8" />
-                  </svg>
-                </div>
-              </section>
+              {view === "constellation" && (
+                <section className="hero">
+                  <div className="hero-eyebrow">
+                    <span className="little-star">✦</span> EVERY MOMENT HAS A THREAD
+                  </div>
+                  <h1>
+                    A little less scattered.
+                    <br />A lot more <em>connected.</em>
+                  </h1>
+                  <p>
+                    Your thoughts, experiences, and little things.
+                    <br className="desktop-break" /> Remember them. Then see what they mean
+                    together.
+                  </p>
+                  <div className="hero-flower" aria-hidden="true">
+                    <svg viewBox="0 0 200 200">
+                      {Array.from({ length: 7 }, (_, i) => (
+                        <ellipse
+                          key={i}
+                          cx="100"
+                          cy="67"
+                          rx="26"
+                          ry="53"
+                          transform={`rotate(${i * (360 / 7)} 100 100)`}
+                        />
+                      ))}
+                      <circle cx="100" cy="100" r="8" />
+                    </svg>
+                  </div>
+                </section>
+              )}
+              {view !== "constellation" && (
+                <LifeHero
+                  library={view === "library"}
+                  onCapture={(text) => {
+                    setCaptureError("");
+                    setDraft(text);
+                    document
+                      .querySelector<HTMLTextAreaElement>(".capture-composer textarea")
+                      ?.focus();
+                  }}
+                />
+              )}
               <form
                 className="capture-composer"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  void capture(draft.trim());
+                  void capture(draft);
                 }}
               >
-                <span className="composer-icon">
-                  <Plus size={21} strokeWidth={1.5} />
-                </span>
+                <div className="composer-heading">
+                  <span>
+                    <NotebookPen size={16} /> A little space for your thoughts
+                  </span>
+                  <span className="composer-step">01 / CAPTURE</span>
+                </div>
+                <label className="composer-label" htmlFor="memory-draft">
+                  What would you like to remember?
+                </label>
                 <textarea
+                  id="memory-draft"
                   value={draft}
-                  onChange={(e) => setDraft(e.target.value)}
-                  placeholder="A thought, a moment, something you don't want to lose…"
+                  onChange={(e) => {
+                    setCaptureError("");
+                    setDraft(e.target.value);
+                  }}
+                  placeholder="What happened? What did you learn, read, watch, or want to do?"
                   aria-label="A new memory"
-                  rows={draft.includes("\n") || draft.length > 100 ? 3 : 1}
+                  rows={3}
                   maxLength={16000}
-                  disabled={busy || Boolean(pending) || Boolean(storageError)}
+                  disabled={task !== null || saving || Boolean(pending) || Boolean(storageError)}
                   onKeyDown={(e) => {
                     if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
                       e.preventDefault();
-                      void capture(draft.trim());
+                      void capture(draft);
                     }
+                  }}
+                />
+                <VoiceCapture
+                  disabled={task !== null || saving || Boolean(pending) || Boolean(storageError)}
+                  remaining={16000 - draft.length - (draft.trim() ? 1 : 0)}
+                  onBusyChange={setVoiceActive}
+                  onTranscript={(text) => {
+                    setCaptureError("");
+                    setDraft((old) => (old.trim() ? `${old}\n${text}` : text));
                   }}
                 />
                 <button
@@ -658,152 +1065,206 @@ function OpenMemory() {
                   ) : (
                     <Sparkles size={15} />
                   )}
-                  <span>Remember</span>
+                  <span>{task === "capture" ? "Understanding…" : "Review memory"}</span>
                   <ArrowUpRight size={15} />
                 </button>
               </form>
               <div className="composer-caption">
-                <span>
-                  {busy ? statusText : "Write naturally. Astra will find a place for it."}
-                </span>
-                <span>⌘ / Ctrl + Enter</span>
+                <span>{busy ? statusText : "Nothing is saved until you review and confirm."}</span>
+                {task === "capture" && (
+                  <button type="button" className="text-button" onClick={stopCapture}>
+                    Stop waiting
+                  </button>
+                )}
+                <button
+                  className="text-button"
+                  onClick={reviewManually}
+                  disabled={
+                    (busy && task !== "capture") ||
+                    saving ||
+                    voiceActive ||
+                    Boolean(pending) ||
+                    !draft.trim() ||
+                    Boolean(storageError)
+                  }
+                >
+                  {task === "capture" ? "Review manually now" : "Review manually"}
+                </button>
               </div>
-              {pending && (
-                <div className="clarify-panel" role="status">
-                  <h3>{pending.result.clarificationQuestion || "Which memory did you mean?"}</h3>
-                  <div>
-                    {pending.result.candidateMemoryIds.map((id) => {
-                      const m = memories.find((item) => item.id === id);
-                      return m ? (
-                        <button
-                          key={id}
-                          disabled={busy}
-                          onClick={() => void capture(pending.text, id)}
-                        >
-                          {m.title}
-                          <ArrowUpRight size={13} />
-                        </button>
-                      ) : null;
-                    })}
-                    <button disabled={busy} onClick={() => setPending(null)}>
-                      Cancel
-                    </button>
-                  </div>
-                </div>
+              {captureError && (
+                <p className="review-question" role="alert">
+                  <span>Couldn't prepare your review</span>
+                  {captureError}
+                </p>
               )}
-              <div className="constellation-grid">
-                <section className="constellation-panel">
-                  <div className="section-heading">
-                    <div>
-                      <h2>
-                        Your constellation<span className="count-pill">{memories.length}</span>
-                      </h2>
-                      <p>Small moments. A bigger picture.</p>
-                    </div>
-                    <button
-                      className="connect-button"
-                      disabled={busy || !loaded || !memories.length || Boolean(storageError)}
-                      onClick={() => void generate()}
-                    >
-                      {task === "connect" ? (
-                        <Loader2 size={14} className="spin" />
-                      ) : (
-                        <GitBranch size={14} />
-                      )}
-                      <span>{task === "connect" ? "Connecting…" : "Find the hidden threads"}</span>
-                    </button>
-                  </div>
-                  <MemoryMap
-                    memories={memories}
-                    connections={connections}
-                    selectedId={selectedId}
-                    highlightedIds={highlightedIds}
-                    onSelect={setSelectedId}
-                    busy={mapping}
-                  />
-                  <CategoryLegend categories={categories} />
-                  <div className="map-footer">
-                    <span>
-                      <GitBranch size={12} />
-                      {connections.length}{" "}
-                      {!graph && synthesis?.mode === "example"
-                        ? "example connections"
-                        : "connections from Astra"}
-                      {mapping
-                        ? " · updating automatically…"
-                        : mapStale
-                          ? " · waiting to update"
-                          : ""}
-                    </span>
-                    <span>
-                      {!graph && synthesis?.mode === "example"
-                        ? "Illustrative links while your map updates"
-                        : "Dashed lines show possible connections."}
-                    </span>
-                  </div>
-                  {mapError && (
-                    <div className="map-error" role="status">
-                      <span>Connections couldn't update. {mapError}</span>
-                      <button onClick={retryMap}>Retry mapping</button>
-                    </div>
-                  )}
-                  {synthesis && (
-                    <div className="bigger-picture" key={synthesis.generatedAt}>
-                      <div className="bigger-picture-eyebrow">
-                        <Sparkles size={13} />
-                        <span>THE BIGGER PICTURE</span>
-                        <span className={`result-badge ${synthesis.mode === "live" ? "live" : ""}`}>
-                          {synthesis.mode === "live" ? "ASTRA" : "EXAMPLE"}
+              {pending && (
+                <CaptureReview
+                  key={pending.text}
+                  plan={pending.plan}
+                  text={pending.text}
+                  {...(pending.classification ? { classification: pending.classification } : {})}
+                  memories={memories}
+                  onSave={confirmCapture}
+                  onCancel={() => setPending(null)}
+                />
+              )}
+              {view !== "constellation" && (
+                <LifeDashboard
+                  memories={memories}
+                  library={view === "library"}
+                  busy={busy || Boolean(storageError) || !loaded}
+                  onOpen={setSelectedId}
+                  onCapture={(text) => {
+                    setCaptureError("");
+                    setDraft(text);
+                    document
+                      .querySelector<HTMLTextAreaElement>(".capture-composer textarea")
+                      ?.focus();
+                  }}
+                  onUpdate={updateActivity}
+                />
+              )}
+              {view === "library" && (
+                <DiscoverPanel
+                  memories={memories}
+                  settings={settings}
+                  busy={busy || !loaded || Boolean(storageError) || Boolean(pending)}
+                  onSave={saveRecommendation}
+                  onOpen={setSelectedId}
+                  onWorking={(working) => {
+                    requestLock.current = working;
+                    setTask(working ? "discover" : null);
+                  }}
+                />
+              )}
+              {view === "constellation" && (
+                <>
+                  <div className="constellation-grid">
+                    <section className="constellation-panel">
+                      <div className="section-heading">
+                        <div>
+                          <h2>
+                            Your constellation<span className="count-pill">{memories.length}</span>
+                          </h2>
+                          <p>Small moments. A bigger picture.</p>
+                        </div>
+                        <button
+                          className="connect-button"
+                          disabled={busy || !loaded || !memories.length || Boolean(storageError)}
+                          onClick={() => void generate()}
+                        >
+                          {task === "connect" ? (
+                            <Loader2 size={14} className="spin" />
+                          ) : (
+                            <GitBranch size={14} />
+                          )}
+                          <span>
+                            {task === "connect" ? "Connecting…" : "Find the hidden threads"}
+                          </span>
+                        </button>
+                      </div>
+                      <MemoryMap
+                        memories={memories}
+                        connections={connections}
+                        selectedId={selectedId}
+                        highlightedIds={highlightedIds}
+                        onSelect={setSelectedId}
+                        busy={mapping}
+                        engineName={settings.provider === "ollama" ? "Your local model" : "OpenAI"}
+                      />
+                      <CategoryLegend categories={categories} />
+                      <div className="map-footer">
+                        <span>
+                          <GitBranch size={12} />
+                          {connections.length}{" "}
+                          {!graph && synthesis?.mode === "example"
+                            ? "example connections"
+                            : (graph?.provider ?? synthesis?.provider) === "ollama"
+                              ? "connections from your local model"
+                              : "connections from OpenAI"}
+                          {mapping
+                            ? " · updating automatically…"
+                            : mapStale
+                              ? " · waiting to update"
+                              : ""}
+                        </span>
+                        <span>
+                          {!graph && synthesis?.mode === "example"
+                            ? "Illustrative links while your map updates"
+                            : "Dashed lines show possible connections."}
                         </span>
                       </div>
-                      <h3>{synthesis.result.headline}</h3>
-                      <p>{synthesis.result.answer}</p>
-                      <button onClick={() => navigate("ask")}>
-                        Follow your curiosity
-                        <ArrowUpRight size={13} />
-                      </button>
-                    </div>
+                      {mapError && (
+                        <div className="map-error" role="status">
+                          <span>Connections couldn't update. {mapError}</span>
+                          <button onClick={retryMap}>Retry mapping</button>
+                        </div>
+                      )}
+                      {synthesis && (
+                        <div className="bigger-picture" key={synthesis.generatedAt}>
+                          <div className="bigger-picture-eyebrow">
+                            <Sparkles size={13} />
+                            <span>THE BIGGER PICTURE</span>
+                            <span
+                              className={`result-badge ${synthesis.mode === "live" ? "live" : ""}`}
+                            >
+                              {synthesis.mode === "live"
+                                ? synthesis.provider === "ollama"
+                                  ? "LOCAL"
+                                  : "ASTRA"
+                                : "EXAMPLE"}
+                            </span>
+                          </div>
+                          <h3>{synthesis.result.headline}</h3>
+                          <p>{synthesis.result.answer}</p>
+                          <button onClick={() => navigate("ask")}>
+                            Follow your curiosity
+                            <ArrowUpRight size={13} />
+                          </button>
+                        </div>
+                      )}
+                    </section>
+                    <InsightPanel
+                      synthesis={synthesis}
+                      memories={memories}
+                      stale={stale}
+                      busy={busy}
+                      onGenerate={() => void generate()}
+                      onSelect={setSelectedId}
+                      onHighlight={setHighlightedIds}
+                    />
+                  </div>
+                  {synthesis && (
+                    <section className="next-section">
+                      <div className="section-heading">
+                        <div>
+                          <div className="section-eyebrow">FROM UNDERSTANDING TO DOING</div>
+                          <h2>A small next step.</h2>
+                        </div>
+                        <span className="subtle-label">
+                          Suggestions{" "}
+                          {synthesis.mode === "example"
+                            ? "from the demo story"
+                            : "grounded in your memories"}
+                        </span>
+                      </div>
+                      <div className="actions-grid">
+                        {synthesis.result.actions.map((action, i) => (
+                          <ActionCard
+                            key={action.title}
+                            action={action}
+                            index={i}
+                            memories={memories}
+                            onSelect={setSelectedId}
+                            done={doneActions.includes(action.title)}
+                            disabled={busy || Boolean(storageError)}
+                            onToggle={() => toggleAction(action)}
+                          />
+                        ))}
+                      </div>
+                    </section>
                   )}
-                </section>
-                <InsightPanel
-                  synthesis={synthesis}
-                  memories={memories}
-                  stale={stale}
-                  busy={busy}
-                  onGenerate={() => void generate()}
-                  onSelect={setSelectedId}
-                  onHighlight={setHighlightedIds}
-                />
-              </div>
-              {synthesis && (
-                <section className="next-section">
-                  <div className="section-heading">
-                    <div>
-                      <div className="section-eyebrow">FROM UNDERSTANDING TO DOING</div>
-                      <h2>A small next step.</h2>
-                    </div>
-                    <span className="subtle-label">
-                      Suggestions{" "}
-                      {synthesis.mode === "example"
-                        ? "from the demo story"
-                        : "grounded in your memories"}
-                    </span>
-                  </div>
-                  <div className="actions-grid">
-                    {synthesis.result.actions.map((action, i) => (
-                      <ActionCard
-                        key={action.title}
-                        action={action}
-                        index={i}
-                        memories={memories}
-                        onSelect={setSelectedId}
-                        done={doneActions.includes(action.title)}
-                        disabled={busy || Boolean(storageError)}
-                        onToggle={() => toggleAction(action)}
-                      />
-                    ))}
-                  </div>
-                </section>
+                </>
               )}
             </>
           )}
@@ -909,8 +1370,8 @@ function OpenMemory() {
                   Find <em>your</em> answer.
                 </h1>
                 <p>
-                  Astra thinks across your memories. Every insight comes back to something you've
-                  actually lived.
+                  Your companion thinks across your memories. Every insight comes back to something
+                  you've actually lived.
                 </p>
               </section>
               <form
@@ -945,7 +1406,7 @@ function OpenMemory() {
                   ) : (
                     <ArrowUpRight size={18} />
                   )}
-                  <span>Ask Astra</span>
+                  <span>{settings.provider === "ollama" ? "Ask locally" : "Ask OpenAI"}</span>
                 </button>
               </form>
               <div className="prompt-chips">
@@ -971,7 +1432,9 @@ function OpenMemory() {
               {answer && (
                 <section className="answer-result">
                   <div className="answer-result-heading">
-                    <span className="result-badge live">ASTRA · YOUR MEMORIES</span>
+                    <span className="result-badge live">
+                      {answer.provider === "ollama" ? "LOCAL" : "ASTRA"} · YOUR MEMORIES
+                    </span>
                     <span>
                       {answer.fingerprint !== currentFingerprint
                         ? "Memories changed since this answer"
@@ -1055,7 +1518,8 @@ function OpenMemory() {
             </span>
             <span>A little remembering. A little understanding.</span>
             <span>
-              Made with Astra <span className="little-star">✦</span>
+              {settings.provider === "ollama" ? "Thinking locally" : "Made with OpenAI"}{" "}
+              <span className="little-star">✦</span>
             </span>
           </footer>
         </main>
@@ -1067,6 +1531,33 @@ function OpenMemory() {
         className="sr-only"
         aria-label="Import memories"
         onChange={(event) => void importMemories(event)}
+      />
+      <PrivacyPanel
+        open={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+        settings={settings}
+        onSettings={changeSettings}
+        encrypted={encrypted}
+        busy={busy || mapping || !loaded}
+        onEncrypt={async (passphrase) => {
+          await encryptVault(memoryRef.current, passphrase);
+          setEncrypted(true);
+        }}
+        onLock={() => {
+          lockVault();
+          memoryRef.current = [];
+          setMemories([]);
+          setSynthesis(null);
+          setAnswer(null);
+          setPending(null);
+          setDraft("");
+          setQuestion("");
+          setSelectedId(null);
+          setDoneActions([]);
+          setLoaded(false);
+          setLocked(true);
+          setPrivacyOpen(false);
+        }}
       />
       {selected && (
         <MemoryDialog
@@ -1080,9 +1571,9 @@ function OpenMemory() {
           onLog={(value) => updateMemory(selected.id, (m) => logAnswer(m, value))}
           onDelete={() => deleteMemory(selected.id)}
           onDone={() => completeWishlist(selected.id)}
-          onEdit={(title, summary) => {
+          onEdit={async (title, summary) => {
             if (
-              updateMemory(selected.id, (m) => ({
+              await updateMemory(selected.id, (m) => ({
                 ...m,
                 title,
                 summary,
@@ -1093,7 +1584,7 @@ function OpenMemory() {
           }}
         />
       )}
-      {busy && view !== "ask" && (
+      {busy && !voiceActive && view !== "ask" && (
         <div className="activity-toast" role="status" aria-live="polite">
           <span className="processing-dot" />
           <span>{statusText}</span>
@@ -1253,6 +1744,20 @@ function MemoryDialog({
               );
             })}
           </div>
+        )}
+        {!!memory.activity?.history.length && (
+          <details className="original-notes">
+            <summary>
+              Activity history<span>{memory.activity.history.length} updates</span>
+            </summary>
+            {[...memory.activity.history].reverse().map((event, i) => (
+              <p key={i}>
+                <strong>{event.date}</strong>
+                <br />
+                {event.text}
+              </p>
+            ))}
+          </details>
         )}
         {!!memory.transcripts.length && (
           <details className="original-notes">

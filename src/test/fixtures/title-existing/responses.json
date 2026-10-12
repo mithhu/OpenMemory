@@ -1,0 +1,222 @@
+{
+  "scope": "Recorded model output for authored fictional app regression tests; not training data or an accuracy benchmark.",
+  "rows": [
+    {
+      "id": "existing-increment",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "Read 12 pages today.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": "fictional-existing-book",
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "Luminous Paths"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 12,
+              "progressMode": "increment",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "existing-more",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "Read 12 more pages.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": "fictional-existing-book",
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "Luminous Paths"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 12,
+              "progressMode": "increment",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "existing-bookmark",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "I'm on page 62 of Luminous Paths now.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": "fictional-existing-book",
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "Luminous Paths"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 62,
+              "progressMode": "absolute",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "existing-typo",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "Read 12 pages today.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": null,
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "progress"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 12,
+              "progressMode": "increment",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleSuggestion": {
+              "sourceTitle": "Luminus Paths",
+              "suggestedTitle": "Luminous Paths",
+              "basis": "catalog",
+              "catalogMemoryId": "fictional-existing-book",
+              "decision": "pending"
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "existing-reaction",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "Liked the book but did not read any pages today.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": null,
+            "candidateMemoryIds": [],
+            "clarificationQuestion": "Is this a new wishlist entry for Luminous Paths or a reaction to an existing one?",
+            "tags": [
+              "reading",
+              "book"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "reaction",
+              "progress": null,
+              "progressMode": "absolute",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": "loved",
+              "creator": null
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "existing-sequential",
+      "plan": {
+        "entries": [
+          {
+            "title": "Luminous Paths",
+            "summary": "Read 10 pages of Luminous Paths.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": "fictional-existing-book",
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "Luminous Paths"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 10,
+              "progressMode": "increment",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleReviewRequired": false
+          },
+          {
+            "title": "Luminous Paths",
+            "summary": "Read 20 more pages.",
+            "category": "BOOK",
+            "date": "2026-10-09",
+            "matchedMemoryId": "fictional-existing-book",
+            "candidateMemoryIds": [],
+            "clarificationQuestion": null,
+            "tags": [
+              "reading",
+              "Luminous Paths"
+            ],
+            "activity": {
+              "kind": "book",
+              "intent": "progress",
+              "progress": 20,
+              "progressMode": "increment",
+              "total": null,
+              "lessonNumbers": [],
+              "sentiment": null,
+              "creator": null
+            },
+            "titleReviewRequired": false
+          }
+        ]
+      }
+    }
+  ]
+}

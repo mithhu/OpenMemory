@@ -119,7 +119,11 @@ export function InsightPanel({
           <h2>Between the lines</h2>
         </div>
         <span className={`result-badge ${synthesis?.mode === "live" ? "live" : ""}`}>
-          {synthesis?.mode === "live" ? "ASTRA" : "PREVIEW"}
+          {synthesis?.mode === "live"
+            ? synthesis.provider === "ollama"
+              ? "LOCAL"
+              : "ASTRA"
+            : "PREVIEW"}
         </span>
       </div>
       <p className="panel-subtitle">The things your notes don't say alone.</p>
@@ -151,7 +155,10 @@ export function InsightPanel({
             <Sparkles size={26} strokeWidth={1} />
           </div>
           <h3>Some things only make sense together.</h3>
-          <p>Let Astra read across your memories and show you the threads you might have missed.</p>
+          <p>
+            Let your companion read across your memories and show you the threads you might have
+            missed.
+          </p>
           <button onClick={onGenerate} disabled={busy || !memories.length}>
             Find my hidden threads
             <ArrowRight size={15} />

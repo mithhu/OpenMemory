@@ -11,6 +11,7 @@ import {
 } from "@/lib/memory";
 import {
   capture,
+  configuration,
   mapMemoryGraph,
   requestStructured,
   synthesize,
@@ -47,6 +48,7 @@ const makeResponse = (value: unknown) =>
 beforeEach(() => {
   localStorage.clear();
   vi.stubEnv("OPEN_AI_KEY", "test-key-not-real");
+  vi.stubEnv("OPENAI_MODEL", "");
 });
 afterEach(() => {
   vi.unstubAllGlobals();
@@ -195,11 +197,20 @@ describe("Grounded Astra responses", () => {
     await capture({ memories: [memory], text: "A clear morning", today: "2026-10-06" });
     const options = fetchMock.mock.calls[0]?.[1] as RequestInit;
     const payload = JSON.parse(options.body as string);
-    expect(payload.model).toBe("gpt-6-astra");
+    expect(payload.model).toBe("gpt-6-luna");
     expect(payload.store).toBe(false);
     expect(payload.text.format.strict).toBe(true);
     expect(payload.input).toContain("The river walk");
     expect(options.headers).toMatchObject({ Authorization: "Bearer test-key-not-real" });
+  });
+  it("uses the configured server cloud model without falling back to Astra", async () => {
+    vi.stubEnv("OPENAI_MODEL", "gpt-5.6-luna");
+    const fetchMock = vi.fn().mockResolvedValue(makeResponse(result));
+    vi.stubGlobal("fetch", fetchMock);
+    await capture({ memories: [], text: "A clear morning", today: "2026-10-06" });
+    expect(configuration().model).toBe("gpt-5.6-luna");
+    expect(JSON.parse(fetchMock.mock.calls[0]![1].body).model).toBe("gpt-5.6-luna");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
   it("requires forced updates to respect the selected memory", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(makeResponse(result)));

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { mapMemories } from "@/lib/astra";
+import { mapWithProvider, defaultAISettings, type AISettings } from "@/lib/ai-client";
 import {
   fingerprint,
   loadGraph,
@@ -10,23 +10,31 @@ import {
 } from "@/lib/memory";
 
 // Map updates are separate from reflective briefings. One request at a time;
-// changes during a request discard its stale result and schedule a fresh pass.
+// Changes cancel stale requests; capture and review take priority over mapping.
 export function useMemoryGraph(
   memories: Memory[],
-  options: { loaded: boolean; enabled: boolean; paused: boolean },
+  options: { loaded: boolean; enabled: boolean; paused: boolean; settings?: AISettings },
 ) {
   const [graph, setGraph] = useState<SavedGraph | null>(null);
   const [ready, setReady] = useState(false);
   const [mapping, setMapping] = useState(false);
-  const [failure, setFailure] = useState<{ fingerprint: string; message: string } | null>(null);
+  const [failure, setFailure] = useState<{
+    fingerprint: string;
+    engine: string;
+    message: string;
+  } | null>(null);
   const [retryVersion, setRetryVersion] = useState(0);
-  const inFlight = useRef(false);
+  const inFlight = useRef<AbortController | null>(null);
   const mounted = useRef(false);
   const currentMemories = useRef(memories);
   currentMemories.current = memories;
+  const settings = options.settings ?? defaultAISettings;
+  const engine = settings.provider === "astra" ? "astra" : `ollama:${settings.model}`;
+  const currentEngine = useRef(engine);
+  currentEngine.current = engine;
   const currentFingerprint = fingerprint(memories);
-  const failedFingerprint = failure?.fingerprint;
-  const graphFingerprint = graph?.fingerprint;
+  const failedFingerprint = failure?.engine === engine ? failure.fingerprint : undefined;
+  const graphFingerprint = (graph?.engine ?? "astra") === engine ? graph?.fingerprint : undefined;
 
   useEffect(() => {
     mounted.current = true;
@@ -36,6 +44,14 @@ export function useMemoryGraph(
       mounted.current = false;
     };
   }, []);
+
+  useEffect(() => {
+    return () => {
+      inFlight.current?.abort();
+      inFlight.current = null;
+      if (mounted.current) setMapping(false);
+    };
+  }, [options.loaded, options.enabled, options.paused, currentFingerprint, engine]);
 
   useEffect(() => {
     if (
@@ -51,20 +67,33 @@ export function useMemoryGraph(
       return;
     const snapshot = memories;
     const snapshotFingerprint = currentFingerprint;
+    const snapshotEngine = engine;
     const timer = window.setTimeout(() => {
       if (inFlight.current || !mounted.current) return;
-      inFlight.current = true;
+      const controller = new AbortController();
+      inFlight.current = controller;
       setMapping(true);
       setFailure(null);
       void (async () => {
         try {
-          const result = await mapMemories({ data: { memories: snapshot, today: today() } });
-          if (!mounted.current || fingerprint(currentMemories.current) !== snapshotFingerprint)
+          const result = await mapWithProvider(
+            { memories: snapshot, today: today() },
+            settings,
+            controller.signal,
+          );
+          if (
+            controller.signal.aborted ||
+            !mounted.current ||
+            fingerprint(currentMemories.current) !== snapshotFingerprint ||
+            currentEngine.current !== snapshotEngine
+          )
             return;
           const next: SavedGraph = {
             connections: result.connections,
             fingerprint: snapshotFingerprint,
             mappedAt: new Date().toISOString(),
+            engine: snapshotEngine,
+            provider: settings.provider,
           };
           setGraph(next);
           try {
@@ -73,9 +102,15 @@ export function useMemoryGraph(
             /* The current map remains usable if storage is full. */
           }
         } catch (error) {
-          if (mounted.current && fingerprint(currentMemories.current) === snapshotFingerprint) {
+          if (
+            !controller.signal.aborted &&
+            mounted.current &&
+            fingerprint(currentMemories.current) === snapshotFingerprint &&
+            currentEngine.current === snapshotEngine
+          ) {
             setFailure({
               fingerprint: snapshotFingerprint,
+              engine: snapshotEngine,
               message:
                 error instanceof Error
                   ? error.message
@@ -83,8 +118,10 @@ export function useMemoryGraph(
             });
           }
         } finally {
-          inFlight.current = false;
-          if (mounted.current) setMapping(false);
+          if (inFlight.current === controller) {
+            inFlight.current = null;
+            if (mounted.current) setMapping(false);
+          }
         }
       })();
     }, 900);
@@ -100,6 +137,8 @@ export function useMemoryGraph(
     failedFingerprint,
     mapping,
     retryVersion,
+    engine,
+    settings,
   ]);
 
   return {

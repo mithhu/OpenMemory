@@ -30,6 +30,7 @@ interface Props {
   highlightedIds: string[];
   onSelect: (id: string) => void;
   busy: boolean;
+  engineName?: string;
 }
 export function MemoryMap({
   memories,
@@ -38,6 +39,7 @@ export function MemoryMap({
   highlightedIds,
   onSelect,
   busy,
+  engineName = "Astra",
 }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [page, setPage] = useState(0);
@@ -151,7 +153,7 @@ export function MemoryMap({
       })}
       {busy && (
         <div className="map-processing">
-          <span className="processing-dot" /> Astra is updating your connections
+          <span className="processing-dot" /> {engineName} is updating your connections
         </div>
       )}
       {pageCount > 1 && (

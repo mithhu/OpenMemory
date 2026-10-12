@@ -33,3 +33,23 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Local fine-tuning weights and Python bytecode; reports/data stay reviewable.
+artifacts/fine-tuning/
+__pycache__/
+*.pyc
+
+# Machine-local MLX runtime/model; never publish bundled weights or environment.
+.local-runtime/
+
+# Full private experiment archive is versioned separately, not shipped with the app.
+.research-workspace/
+docs/*
+!docs/LOCAL_FIRST.md
+!docs/VOICE_CAPTURE.md
+!docs/PORTFOLIO.md
+!docs/FINE_TUNING_CASE_STUDY.md
+scripts/*
+!scripts/app-mlx/
+*.npz
+*.safetensors

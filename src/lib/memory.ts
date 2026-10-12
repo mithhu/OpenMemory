@@ -1,7 +1,11 @@
 import { z } from "zod";
+import { activitySchema } from "./activity";
+import { privateStorageActive } from "./vault";
 
 export const CATEGORIES = [
   "MOVIE",
+  "BOOK",
+  "MUSIC",
   "LESSON",
   "NOTE",
   "WISHLIST",
@@ -12,6 +16,8 @@ export const CATEGORIES = [
 export type Category = (typeof CATEGORIES)[number];
 export const categoryMeta: Record<Category, { label: string; color: string }> = {
   MOVIE: { label: "Culture", color: "#b79bfa" },
+  BOOK: { label: "Books", color: "#96c9b2" },
+  MUSIC: { label: "Music", color: "#dba3cb" },
   LESSON: { label: "Learning", color: "#71c9d2" },
   NOTE: { label: "Life", color: "#d5b98a" },
   WISHLIST: { label: "Wishlist", color: "#ef9cc1" },
@@ -43,6 +49,7 @@ export const memorySchema = z.object({
   relatedMemoryIds: z.array(z.string().max(100)).max(10).optional(),
   completionFor: z.string().max(200).optional(),
   completionStatus: z.enum(["completed", "reopened"]).optional(),
+  activity: activitySchema.optional(),
   createdAt: z.string(),
   updatedAt: z.string(),
 });
@@ -60,6 +67,8 @@ export const graphResultSchema = z.object({ connections: z.array(connectionSchem
 const savedGraphSchema = graphResultSchema.extend({
   fingerprint: z.string(),
   mappedAt: z.string(),
+  engine: z.string().optional(),
+  provider: z.enum(["astra", "ollama"]).optional(),
 });
 export type SavedGraph = z.infer<typeof savedGraphSchema>;
 export const insightSchema = z.object({
@@ -89,6 +98,7 @@ export interface SavedSynthesis {
   fingerprint: string;
   generatedAt: string;
   mode: "live" | "example";
+  provider?: "astra" | "ollama";
 }
 export const captureResultSchema = z.object({
   action: z.enum(["create", "update", "clarify"]),
@@ -131,10 +141,12 @@ export function fingerprint(memories: Memory[]) {
       m.relatedMemoryIds,
       m.completionFor,
       m.completionStatus,
+      m.activity,
     ]),
   );
 }
 export function loadGraph(): SavedGraph | null {
+  if (privateStorageActive()) return null;
   try {
     const raw = localStorage.getItem(GRAPH_KEY);
     return raw ? savedGraphSchema.parse(JSON.parse(raw)) : null;
@@ -143,6 +155,7 @@ export function loadGraph(): SavedGraph | null {
   }
 }
 export function saveGraph(graph: SavedGraph) {
+  if (privateStorageActive()) return;
   localStorage.setItem(GRAPH_KEY, JSON.stringify(graph));
 }
 export function loadMemories(): Memory[] {
@@ -166,9 +179,11 @@ export function saveMemories(memories: Memory[]) {
   localStorage.setItem(MEM_KEY, JSON.stringify(memories));
 }
 export function saveSynthesis(value: SavedSynthesis) {
+  if (privateStorageActive()) return;
   localStorage.setItem(SYNTHESIS_KEY, JSON.stringify(value));
 }
 export function loadSynthesis(): SavedSynthesis | null {
+  if (privateStorageActive()) return null;
   try {
     const raw = localStorage.getItem(SYNTHESIS_KEY);
     if (!raw) return null;

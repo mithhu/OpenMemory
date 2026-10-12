@@ -1,0 +1,524 @@
+[
+  {
+    "id": "new-title-amount",
+    "note": "I read 16 pages of the novel Copper Orchard after dinner.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 16,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 66
+  },
+  {
+    "id": "casual-amount",
+    "note": "another 6 pages of Copper Orchard before bed",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 6,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 56
+  },
+  {
+    "id": "casual-bookmark",
+    "note": "got to page 76 in Copper Orchard",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 76,
+        "mode": "absolute"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 76
+  },
+  {
+    "id": "quoted-punctuation",
+    "note": "Read 5 pages of \"The Glass Road: Volume II\".",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "The Glass Road: Volume II",
+        "intent": "progress",
+        "progress": 5,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "The Glass Road: Volume II",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 55
+  },
+  {
+    "id": "catalog-typo",
+    "note": "red 9 pges of Copper Orchrard today",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 9,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "typo": {
+      "source": "Copper Orchrard",
+      "intended": "Copper Orchard"
+    }
+  },
+  {
+    "id": "reaction-no-reading",
+    "note": "Copper Orchard is a good novel. Didn't read today though.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "reaction",
+        "progress": null
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 50
+  },
+  {
+    "id": "repeated-new-wording",
+    "note": "Read 4 pages of Copper Orchard in the morning; another 6 pages of Copper Orchard tonight.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 4,
+        "mode": "increment"
+      },
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 6,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 60
+  },
+  {
+    "id": "duplicate-same-kind",
+    "note": "I read 6 pages of Copper Orchard.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 6,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      },
+      {
+        "id": "fictional-second-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "ambiguous": true
+  },
+  {
+    "id": "same-title-other-kind",
+    "note": "Read 5 pages of the book Copper Orchard.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Copper Orchard",
+        "intent": "progress",
+        "progress": 5,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      },
+      {
+        "id": "fictional-film",
+        "title": "Copper Orchard",
+        "category": "MOVIE",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "movie",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 55
+  },
+  {
+    "id": "unknown-preserved",
+    "note": "Want to read the novel \"Veyra’s Clock\".",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "title": "Veyra’s Clock",
+        "intent": "wishlist",
+        "progress": null
+      }
+    ]
+  },
+  {
+    "id": "ordinary-place",
+    "note": "Went to Copper Orchard cafe with Maya for lunch.",
+    "expected": [
+      {
+        "category": "NOTE",
+        "kind": null
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Copper Orchard",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ]
+  },
+  {
+    "id": "ordinary-verb",
+    "note": "watched the birds from my kitchen window",
+    "expected": [
+      {
+        "category": "NOTE",
+        "kind": null
+      }
+    ]
+  }
+]

@@ -11,6 +11,8 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import designCss from "../design.css?url";
+import themeCss from "../theme.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "../components/ui/sonner";
 
@@ -79,21 +81,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#141217" },
+      { name: "theme-color", content: "#f8fafc" },
       { title: "OpenMemory" },
       {
         name: "description",
-        content: "Connect the dots in your life. A personal memory companion powered by Astra.",
+        content: "Connect the dots in your life. A local-first personal memory companion.",
       },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
+      { rel: "stylesheet", href: designCss },
+      { rel: "stylesheet", href: themeCss },
+      { rel: "stylesheet", href: "/fonts/fonts.css" },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
@@ -124,7 +123,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <Toaster position="top-center" theme="dark" />
+      <Toaster position="top-center" theme="light" />
     </QueryClientProvider>
   );
 }

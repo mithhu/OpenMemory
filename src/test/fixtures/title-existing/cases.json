@@ -1,0 +1,269 @@
+[
+  {
+    "id": "existing-increment",
+    "note": "I read 12 pages of Luminous Paths today.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 12,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 62
+  },
+  {
+    "id": "existing-more",
+    "note": "Read 12 more pages of Luminous Paths.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 12,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 62
+  },
+  {
+    "id": "existing-bookmark",
+    "note": "I'm on page 62 of Luminous Paths now.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 62,
+        "mode": "absolute"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 62
+  },
+  {
+    "id": "existing-typo",
+    "note": "I read 12 pages of Luminus Paths today.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 12,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "typo": {
+      "source": "Luminus Paths",
+      "intended": "Luminous Paths"
+    }
+  },
+  {
+    "id": "existing-reaction",
+    "note": "I like Luminous Paths, but didn't read any pages today.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "reaction",
+        "progress": null
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 50
+  },
+  {
+    "id": "existing-sequential",
+    "note": "Read 10 pages of Luminous Paths; then read 20 more pages of Luminous Paths.",
+    "expected": [
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 10,
+        "mode": "increment"
+      },
+      {
+        "category": "BOOK",
+        "kind": "book",
+        "intent": "progress",
+        "progress": 20,
+        "mode": "increment"
+      }
+    ],
+    "memories": [
+      {
+        "id": "fictional-existing-book",
+        "title": "Luminous Paths",
+        "category": "BOOK",
+        "date": "2026-10-09",
+        "summary": "Started the fictional book Luminous Paths.",
+        "tags": [],
+        "followUpQuestion": "",
+        "suggestedAnswers": [],
+        "answerLabel": "Reflection",
+        "answers": [],
+        "transcripts": [
+          "Started Luminous Paths."
+        ],
+        "createdAt": "2026-10-09T09:00:00Z",
+        "updatedAt": "2026-10-09T09:00:00Z",
+        "activity": {
+          "kind": "book",
+          "status": "in-progress",
+          "progress": 50,
+          "total": 200,
+          "completedLessons": [],
+          "sentiment": null,
+          "creator": null,
+          "history": []
+        }
+      }
+    ],
+    "expectedSavedProgress": 80
+  }
+]

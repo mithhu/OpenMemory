@@ -1,0 +1,153 @@
+{
+  "scope": "Recorded model output for authored fictional app regression tests; not training data or an accuracy benchmark.",
+  "rows": [
+    {
+      "id": "new-title-amount",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:28:11.288805Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 16 pages after dinner.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"dinner\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 16,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":36057714833,\"load_duration\":3056483833,\"prompt_eval_count\":2017,\"prompt_eval_duration\":14897108458,\"eval_count\":188,\"eval_duration\":18064828125}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:28:19.962684Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":8645465084,\"load_duration\":28666125,\"prompt_eval_count\":469,\"prompt_eval_duration\":2760363917,\"eval_count\":50,\"eval_duration\":5827115667}"
+        }
+      ]
+    },
+    {
+      "id": "casual-amount",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:28:48.826062Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read another 6 pages before bed.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"bedtime\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 6,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":28815060459,\"load_duration\":67183959,\"prompt_eval_count\":2013,\"prompt_eval_duration\":12423859750,\"eval_count\":183,\"eval_duration\":16283719833}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:28:57.245678Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":8397044375,\"load_duration\":25847000,\"prompt_eval_count\":465,\"prompt_eval_duration\":2967100708,\"eval_count\":50,\"eval_duration\":5375755000}"
+        }
+      ]
+    },
+    {
+      "id": "casual-bookmark",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:29:15.74505Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Got to page 76 in Copper Orchard\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"progress\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 76,\\n        \\\"progressMode\\\": \\\"absolute\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":18441771000,\"load_duration\":71455750,\"prompt_eval_count\":2013,\"prompt_eval_duration\":652007208,\"eval_count\":189,\"eval_duration\":17666217625}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:29:21.410122Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":5646112459,\"load_duration\":33440167,\"prompt_eval_count\":465,\"prompt_eval_duration\":541185625,\"eval_count\":50,\"eval_duration\":5045383209}"
+        }
+      ]
+    },
+    {
+      "id": "quoted-punctuation",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:29:45.454813Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"\\\\\\\"The Glass Road: Volume II\\\\\\\"\\\",\\n      \\\"summary\\\": \\\"Read 5 pages\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"progress\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 5,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":24025417917,\"load_duration\":35776458,\"prompt_eval_count\":2020,\"prompt_eval_duration\":693956917,\"eval_count\":186,\"eval_duration\":23264429458}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:29:53.92949Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"The Glass Road: Volume II\\\",\\n      \\\"suggestedTitle\\\": \\\"The Glass Road: Volume II\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":8453949958,\"load_duration\":54170000,\"prompt_eval_count\":477,\"prompt_eval_duration\":670292542,\"eval_count\":56,\"eval_duration\":7700521667}"
+        }
+      ]
+    },
+    {
+      "id": "catalog-typo",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:30:29.506183Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 9 pages today.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"fictional-existing-book\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 9,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":35554223958,\"load_duration\":63548666,\"prompt_eval_count\":2015,\"prompt_eval_duration\":783876083,\"eval_count\":183,\"eval_duration\":34674273875}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:30:45.714211Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchrard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":16152513542,\"load_duration\":495290667,\"prompt_eval_count\":467,\"prompt_eval_duration\":1876104417,\"eval_count\":52,\"eval_duration\":13691902500}"
+        }
+      ]
+    },
+    {
+      "id": "reaction-no-reading",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:31:29.981101Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Expressed that Copper Orchard is a good novel, but did not read it today.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"opinion\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"reaction\\\",\\n        \\\"progress\\\": null,\\n        \\\"progressMode\\\": \\\"absolute\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": \\\"loved\\\",\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":44216357958,\"load_duration\":90444500,\"prompt_eval_count\":2017,\"prompt_eval_duration\":1292394875,\"eval_count\":197,\"eval_duration\":42750926541}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:31:43.405043Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":13399219084,\"load_duration\":74846542,\"prompt_eval_count\":469,\"prompt_eval_duration\":975750458,\"eval_count\":50,\"eval_duration\":12277983125}"
+        }
+      ]
+    },
+    {
+      "id": "repeated-new-wording",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:33:02.263412Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 4 pages in the morning.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"morning\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 4,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    },\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 6 pages tonight.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"evening\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 6,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":78824692833,\"load_duration\":92818833,\"prompt_eval_count\":2023,\"prompt_eval_duration\":1235338625,\"eval_count\":360,\"eval_duration\":77331588833}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:33:17.980383Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    },\\n    {\\n      \\\"entryIndex\\\": 1,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":15688449417,\"load_duration\":76292958,\"prompt_eval_count\":490,\"prompt_eval_duration\":1118365542,\"eval_count\":88,\"eval_duration\":14439663834}"
+        }
+      ]
+    },
+    {
+      "id": "duplicate-same-kind",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:33:52.57267Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 6 pages.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [\\n        \\\"fictional-existing-book\\\",\\n        \\\"fictional-second-book\\\"\\n      ],\\n      \\\"clarificationQuestion\\\": \\\"Which Copper Orchard did you read?\\\",\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"fictional\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 6,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":34563121291,\"load_duration\":77999708,\"prompt_eval_count\":2033,\"prompt_eval_duration\":1118601750,\"eval_count\":205,\"eval_duration\":33302547500}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:34:02.16575Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":9557819125,\"load_duration\":37619208,\"prompt_eval_count\":474,\"prompt_eval_duration\":776648125,\"eval_count\":50,\"eval_duration\":8709367458}"
+        }
+      ]
+    },
+    {
+      "id": "same-title-other-kind",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:34:30.880724Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Copper Orchard\\\",\\n      \\\"summary\\\": \\\"Read 5 pages of the book Copper Orchard.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": \\\"fictional-existing-book\\\",\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"book\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"progress\\\",\\n        \\\"progress\\\": 5,\\n        \\\"progressMode\\\": \\\"increment\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":28681296750,\"load_duration\":45066000,\"prompt_eval_count\":2035,\"prompt_eval_duration\":935884833,\"eval_count\":188,\"eval_duration\":27656588291}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:34:41.024799Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Copper Orchard\\\",\\n      \\\"suggestedTitle\\\": \\\"Copper Orchard\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":10122991459,\"load_duration\":76587000,\"prompt_eval_count\":475,\"prompt_eval_duration\":820945500,\"eval_count\":50,\"eval_duration\":9162957458}"
+        }
+      ]
+    },
+    {
+      "id": "unknown-preserved",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:35:12.233Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Veyra's Clock\\\",\\n      \\\"summary\\\": \\\"Want to read the novel Veyra's Clock.\\\",\\n      \\\"category\\\": \\\"BOOK\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"reading\\\",\\n        \\\"wishlist\\\"\\n      ],\\n      \\\"activity\\\": {\\n        \\\"kind\\\": \\\"book\\\",\\n        \\\"intent\\\": \\\"wishlist\\\",\\n        \\\"progress\\\": null,\\n        \\\"progressMode\\\": \\\"absolute\\\",\\n        \\\"total\\\": null,\\n        \\\"lessonNumbers\\\": [],\\n        \\\"sentiment\\\": null,\\n        \\\"creator\\\": null\\n      }\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":30718496250,\"load_duration\":97535958,\"prompt_eval_count\":1995,\"prompt_eval_duration\":1036714375,\"eval_count\":186,\"eval_duration\":29513877958}"
+        },
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:35:22.588496Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"titles\\\": [\\n    {\\n      \\\"entryIndex\\\": 0,\\n      \\\"sourceTitle\\\": \\\"Veyra's Clock\\\",\\n      \\\"suggestedTitle\\\": \\\"Veyra's Clock\\\"\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":10305234292,\"load_duration\":71815542,\"prompt_eval_count\":460,\"prompt_eval_duration\":1401514500,\"eval_count\":54,\"eval_duration\":8796815708}"
+        }
+      ]
+    },
+    {
+      "id": "ordinary-place",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:35:46.101233Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Lunch at Copper Orchard cafe\\\",\\n      \\\"summary\\\": \\\"Went to Copper Orchard cafe with Maya for lunch.\\\",\\n      \\\"category\\\": \\\"NOTE\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"lunch\\\",\\n        \\\"Maya\\\",\\n        \\\"cafe\\\"\\n      ],\\n      \\\"activity\\\": null\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":23470121042,\"load_duration\":47677125,\"prompt_eval_count\":2014,\"prompt_eval_duration\":1029485416,\"eval_count\":132,\"eval_duration\":22353039375}"
+        }
+      ]
+    },
+    {
+      "id": "ordinary-verb",
+      "calls": [
+        {
+          "endpoint": "http://127.0.0.1:11434/api/chat",
+          "rawResponse": "{\"model\":\"qwen3.5:9b-nvfp4\",\"created_at\":\"2026-10-10T00:36:09.900209Z\",\"message\":{\"role\":\"assistant\",\"content\":\"{\\n  \\\"entries\\\": [\\n    {\\n      \\\"title\\\": \\\"Watched the birds\\\",\\n      \\\"summary\\\": \\\"Watched the birds from my kitchen window.\\\",\\n      \\\"category\\\": \\\"NOTE\\\",\\n      \\\"date\\\": \\\"2026-10-09\\\",\\n      \\\"matchedMemoryId\\\": null,\\n      \\\"candidateMemoryIds\\\": [],\\n      \\\"clarificationQuestion\\\": null,\\n      \\\"tags\\\": [\\n        \\\"nature\\\",\\n        \\\"birds\\\",\\n        \\\"window\\\"\\n      ],\\n      \\\"activity\\\": null\\n    }\\n  ]\\n}\"},\"done\":true,\"done_reason\":\"stop\",\"total_duration\":23756582667,\"load_duration\":67088959,\"prompt_eval_count\":1991,\"prompt_eval_duration\":516807750,\"eval_count\":125,\"eval_duration\":23137651792}"
+        }
+      ]
+    }
+  ]
+}
