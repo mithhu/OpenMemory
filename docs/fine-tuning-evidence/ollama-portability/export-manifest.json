@@ -1,0 +1,183 @@
+{
+  "source_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "source_config_sha256": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f",
+  "output_sha256": "89437591147050922da23fe863825eac67ef50a97419433bc77ff7a42e3814f5",
+  "llama_cpp_commit": "1b70350c92563449576bcbbf552994b1d1ed847d",
+  "architecture": "qwen35",
+  "rank": 8,
+  "mlx_scale": 20,
+  "gguf_alpha": 160,
+  "dtype": "F32",
+  "tensors": [
+    {
+      "source": "language_model.model.layers.31.self_attn.q_proj.lora_a",
+      "target": "blk.31.attn_q.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.q_proj.lora_b",
+      "target": "blk.31.attn_q.weight.lora_b",
+      "source_shape": [
+        8,
+        8192
+      ],
+      "output_shape": [
+        8192,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.k_proj.lora_a",
+      "target": "blk.31.attn_k.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.k_proj.lora_b",
+      "target": "blk.31.attn_k.weight.lora_b",
+      "source_shape": [
+        8,
+        1024
+      ],
+      "output_shape": [
+        1024,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.v_proj.lora_a",
+      "target": "blk.31.attn_v.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.v_proj.lora_b",
+      "target": "blk.31.attn_v.weight.lora_b",
+      "source_shape": [
+        8,
+        1024
+      ],
+      "output_shape": [
+        1024,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.o_proj.lora_a",
+      "target": "blk.31.attn_output.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.self_attn.o_proj.lora_b",
+      "target": "blk.31.attn_output.weight.lora_b",
+      "source_shape": [
+        8,
+        4096
+      ],
+      "output_shape": [
+        4096,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.gate_proj.lora_a",
+      "target": "blk.31.ffn_gate.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.gate_proj.lora_b",
+      "target": "blk.31.ffn_gate.weight.lora_b",
+      "source_shape": [
+        8,
+        12288
+      ],
+      "output_shape": [
+        12288,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.up_proj.lora_a",
+      "target": "blk.31.ffn_up.weight.lora_a",
+      "source_shape": [
+        4096,
+        8
+      ],
+      "output_shape": [
+        8,
+        4096
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.up_proj.lora_b",
+      "target": "blk.31.ffn_up.weight.lora_b",
+      "source_shape": [
+        8,
+        12288
+      ],
+      "output_shape": [
+        12288,
+        8
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.down_proj.lora_a",
+      "target": "blk.31.ffn_down.weight.lora_a",
+      "source_shape": [
+        12288,
+        8
+      ],
+      "output_shape": [
+        8,
+        12288
+      ]
+    },
+    {
+      "source": "language_model.model.layers.31.mlp.down_proj.lora_b",
+      "target": "blk.31.ffn_down.weight.lora_b",
+      "source_shape": [
+        8,
+        4096
+      ],
+      "output_shape": [
+        4096,
+        8
+      ]
+    }
+  ],
+  "cpu_checks": "Exact tensor transpose roundtrip + all 7 low-rank updates mathematically equivalent on random inputs",
+  "base_note": "MLX affine4bit base differs from installed Ollama GGUF Q4_K_M base; predictions must be evaluated, not assumed equivalent"
+}

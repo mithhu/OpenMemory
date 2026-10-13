@@ -49,7 +49,11 @@ docs/*
 !docs/VOICE_CAPTURE.md
 !docs/PORTFOLIO.md
 !docs/FINE_TUNING_CASE_STUDY.md
+!docs/fine-tuning-evidence/
 scripts/*
 !scripts/app-mlx/
 *.npz
 *.safetensors
+
+# Separately released model artifacts; never bundle them with the product.
+*.gguf

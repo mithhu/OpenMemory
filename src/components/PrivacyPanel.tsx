@@ -122,8 +122,8 @@ export function PrivacyPanel({
             <strong>Local Ollama</strong>
             <span>
               {hosted
-                ? "Advanced: requires Ollama installed on your computer and permission for this website."
-                : "Requests go directly to this computer. No cloud fallback."}
+                ? "Our trained classifier runs first, then your selected model extracts details. Requires the imported classifier, local Ollama and browser permission."
+                : "Our trained classifier runs first; your selected model extracts details on this computer. No cloud fallback."}
             </span>
           </button>
           <button
@@ -257,7 +257,7 @@ export function PrivacyPanel({
           </button>
         )}
         <label className="privacy-label">
-          Downloaded local model
+          Downloaded local model for extraction
           <input
             value={model === "astra" ? "" : model}
             placeholder="Your model name from ollama list"
@@ -336,8 +336,11 @@ export function PrivacyPanel({
         <details className="local-setup">
           <summary>Local model setup</summary>
           <p>
-            Use a downloaded model with structured JSON support. Disable Ollama cloud features and
-            allow only this site’s origin. For the Ollama macOS app, run these commands in Terminal:
+            Local Ollama requires the imported openmemory-classifier:reviewed730 model for
+            classification, plus a downloaded general model for extraction. The classifier is
+            installed on this Mac; a fresh installation needs the separate trained adapter. Disable
+            Ollama cloud features and allow only this site’s origin. For the Ollama macOS app, run
+            these commands in Terminal:
           </p>
           <pre>
             {`launchctl setenv OLLAMA_NO_CLOUD '1'\nlaunchctl setenv OLLAMA_ORIGINS '${siteOrigin}'`}

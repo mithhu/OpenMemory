@@ -92,7 +92,14 @@ describe("Local classification transport matches evaluated settings", () => {
     ]);
     const options = fetch.mock.calls[1]![1] as RequestInit;
     const body = JSON.parse(options.body as string);
-    expect(body.options).toEqual({ temperature: 0, num_ctx: 2048, num_predict: 80 });
+    expect(body.options).toEqual({
+      temperature: 0,
+      num_ctx: 2048,
+      num_predict: 80,
+      repeat_penalty: 1,
+      presence_penalty: 0,
+    });
+    expect(body.keep_alive).toBe(0);
     expect(body.think).toBe(false);
     expect(body.stream).toBe(false);
     expect(body.format).toEqual(classificationJson);

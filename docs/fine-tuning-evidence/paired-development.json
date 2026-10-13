@@ -1,0 +1,3529 @@
+[
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3675-1",
+    "source_sha256": "de7fb7bbcc81f12ebb791dd130c5f703ee8ce70c46402535efbdbfef78cf995c",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3901-0",
+    "source_sha256": "e8845c43f821245f1b33270c8fba437bd214e9564b5570a89da62ed8e353f70c",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-945-1",
+    "source_sha256": "f397e0ab1f74107280adedac8cf77e7e8b23be59c104725ae88162fd3a81fbc0",
+    "expected_category": "LESSON",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-10891-1",
+    "source_sha256": "f135093872360fa4d76d959222ee58e5ef68858b40bcb9969215b8a2216212d0",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-11995-0",
+    "source_sha256": "901e1085d1b803ae646cff244c386dd223b83cb38093f2ac09a26ddbb8644bd7",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-5841-0",
+    "source_sha256": "39cd5daf458e1037ebb47bc0d271f2304f064a2675459451ff097c1c15ec4042",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-7201-0",
+    "source_sha256": "98788b36dbf261f8ff8346938e6b516c6532288018a7dd00d2844eb23c6da237",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-1941-1",
+    "source_sha256": "1685fe1a04ccf90794e818af15813685dbd965b779ba259bad1d28d64f97676d",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "1074e53d9594478843c887341e014de6cc05ccda52c464ed7a89f217dbb93a9f"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-9219-0",
+    "source_sha256": "cdb0368ee85565686452947c72b9dbb275a546bf12340145e47db4ff74618135",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-13073-1",
+    "source_sha256": "69915a175ee413d4ce008f1b1fc403d57a49257243d042fe7ae132fbd00709d0",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-11942-1",
+    "source_sha256": "44822d4165695842ca0244131a6823f19b1d9c3c4a9219a3be3497e20079a0ea",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-8509-1",
+    "source_sha256": "8f325b7b46569386eaa300a72e189fa7a2ff072d2e979b50e2d0060f17eecfc2",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-12224-0",
+    "source_sha256": "e4247dcb1d4e76d9995aa565e21d4beb12ef45c890d5d3a59ee70f1975ad19b9",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-2289-1",
+    "source_sha256": "042747ffb6e960dfc71128590aafea7645d08206876b3d2d825793e57eb77223",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-10080-1",
+    "source_sha256": "786afb3d3766b521415e59243acce44b03b4b9c40d84c8f455b48fb70089986b",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6866-1",
+    "source_sha256": "bb6eb9c2f8e770f1408a293923ca0d0753ac29d858c1509c36962ef953f317d6",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-16461-1",
+    "source_sha256": "764efc1749be078d54be6bd934d0a3e0285d690c055ba50119d29112c6b85063",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-14211-0",
+    "source_sha256": "c6f3b5100ff157595a121686472afb7eda18bc8ddc393f77eeb9141de462705d",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-5326-0",
+    "source_sha256": "6fa85158da4254acabeb233c0f6608ec4cbb42447cef77659b675c7fceba8bc4",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-1064-0",
+    "source_sha256": "cae7bb9c14c403e96a4ca340b2689221f02f78710428dcf3c08ab73cc3665151",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-9239-1",
+    "source_sha256": "99a5b1efe58770941fbe61584051ee16f593358f6f49a060462237479bb3a5f8",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-8623-1",
+    "source_sha256": "690d63d96759df0fc75278bdd4b60e95361ce93f4a6bfeacae7e8587c314a078",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6224-0",
+    "source_sha256": "9917b4eadace0ffefd64d3178b04288ee11515bbd6cd47d372b3ac719846cbfa",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-1454-1",
+    "source_sha256": "02e8ea86826eb924f22f09b0166be0cad636686641fa672320bd97f1d6fba595",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-15960-1",
+    "source_sha256": "5091d00d68a1203c83ee3992201076d855c6fb7acbf0c4aefb810f5ac3f83a1a",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-5889-1",
+    "source_sha256": "3c6a34733f6b5149624edbcf41cc99b0640c60c89ccae92f9dcf5ef2af4b20af",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-12871-1",
+    "source_sha256": "36d8719aa0e9cbbc410110aeb8fd74f63ae869ada708bbd2cdb5ab3c27d1ea6e",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-15752-1",
+    "source_sha256": "6c4e640442ab0b39ddfd41b769c7adc4f9170929e44de4e871d44c8aca5bc683",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3622-1",
+    "source_sha256": "2bc4f66a7bc9e26844b9cc5466cd7887ff6a1c30e2677d61f8388b2ba6281f6a",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-10403-1",
+    "source_sha256": "ea4cc91bc4d0c00f2d9c32a1c9072cc7177f6616c42f8ecc4df90d7436e7ac33",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-8107-0",
+    "source_sha256": "47ed33cee9fa78daf88a15896ea0c4e8e9b778958b862034ffe0330c72503b3f",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6678-0",
+    "source_sha256": "e4fd865b4274a3593515e9205dd5d9972b04a9391b649f05bbb159149c84ed18",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-11827-1",
+    "source_sha256": "beed6f094e09a89fd0323d02c9eab61d9b949164fed5a81779e33dc749faa6fd",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-14895-1",
+    "source_sha256": "ba721489f1dfb5aaf1152ba9f792d0a58531d53f246bfb84d9753255b59465ad",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-578-0",
+    "source_sha256": "0124e0a5dcec9f7e0ceadddb50c90ac43db860770567691477493df82177e266",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3352-1",
+    "source_sha256": "0ad6c4d364cea1a79f675b9bde6e870b0c745c8e5e132c0cd92671abcb394de7",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6949-0",
+    "source_sha256": "330934a0704f890ef36fd56b791a5eb6dfe3c67d1ee7ff90bf9c8331eabde928",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-29-1",
+    "source_sha256": "3ade86ab3833fc6738dfef1839fa0937af5bb842b97aa7054c1085712e299095",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-2756-0",
+    "source_sha256": "4ffabcfb3d61f96c3c73fdf517e5dfae0ae769ff207b9bbe6637e5c31377f0ff",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3774-0",
+    "source_sha256": "d9595037db7dc80e4b30bb72952418ee5cba87547273762452e2350e7505fe04",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-440-0",
+    "source_sha256": "48d14f13eb20920179bcb5f566833582d114115662e6dd84af29b59e52849ff3",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6022-0",
+    "source_sha256": "6b2f15ba582ee65be47d531613a0e0023d4cf0c22fa09e227bb29ccc331cfc32",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-6761-0",
+    "source_sha256": "23a8bb7f63011186311411ef0e18c05c490b38f4eb1df94a96156a151d9baea2",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3321-1",
+    "source_sha256": "d31a3883506d0c8213dc585d62a93177dcc2daa50763ff0cdd87de02f5880738",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-16140-0",
+    "source_sha256": "9efdcc7eec9e59f77a1135c0087fa9791b5de757ee027b8d9db7b05747336b93",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-14390-0",
+    "source_sha256": "3449b9aa28b907faf348928ba1cff10888f30b31efad77c2943788791b79c80e",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-9665-1",
+    "source_sha256": "5c08e028ee5432d498aa11ee26239f6765ec01bd8c62ea640e6268829b4758fa",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-7985-1",
+    "source_sha256": "7573dbadfbd06e71fe4530b6ac45546c2e13b3444d4b49bf7ee7e81c8cb879be",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-16356-1",
+    "source_sha256": "edee38f0c29f81e3dda392226844f431744b07fa0ac4db737ff8285c4863a781",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-3830-1",
+    "source_sha256": "2876f8ebd1062545f0907470fa2b84154dd669904e198237c69a810f85285fb9",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-16090-1",
+    "source_sha256": "5a8c17d672d822053ec2ee8c3c9e17a34977520c8c37e8cefb15a5dfee27f50a",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-10490-1",
+    "source_sha256": "f8c14f77d3263d741b4f732a343d2d06e1dfda4fc52a0b60595143a45cf2e81f",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-12996-0",
+    "source_sha256": "9af317a88663076d3fd350439e269504bf37529339bd571d47355881d5f70161",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-12739-0",
+    "source_sha256": "76b1bd69dd6a0f98c6deec54303ad181f67839b54775a24ed0dc4707a2563fa0",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-7752-1",
+    "source_sha256": "437e10168b982e8013ce243e65e42b092cb3dbd343d2b09d95a1c6afc5750501",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-13795-0",
+    "source_sha256": "dc44d56d18f2c21268a9bb6f3498824f201cfbb0aa572d01e5fbfb96d565cdde",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-2906-1",
+    "source_sha256": "b2a824df0c9904ff9cd8ddc3786ba6c71f72f02cc403ad15babc293e70b3ca28",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-15325-1",
+    "source_sha256": "edbb754f32815e93c3efaafd65fa48f05776e4cb8c965fa2c76d94d50f05d88c",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-14109-1",
+    "source_sha256": "9bb835d2c446c7add8aae3ff7ef2d5577ffd9f753e7e2f4efb10f40469c1a361",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "public",
+    "case_id": "convai2-valid-5483-1",
+    "source_sha256": "44b78f3ad72431da89cd9e1d8cb50567b1ccc75ca41aa039a8796c55bdb7dcfe",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "saved-film",
+    "source_sha256": "d615f97a35e8ce849f6f56194ba588fb87718951161e19301d4edccb8779d693",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "new-film",
+    "source_sha256": "d4db29dd091f232134428a8454386b66ec9a6293a243a05abf09e2d87bb07789",
+    "expected_category": "MOVIE",
+    "expected_intent": "complete",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "07806beaae00f5217ad5e264cef797148b4a34ab95b02026299246ffffd0a41b",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "known",
+    "case_id": "new-book",
+    "source_sha256": "35e5ed4fc919bb8b2c18a8e0a7cd4f5b82b4af825ae59b2660a514e5e6eda792",
+    "expected_category": "BOOK",
+    "expected_intent": "start",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "start"
+    },
+    "base_raw_sha256": "05ff24d4b48da49005e66c81298059352a3de7a9a9d01b00cb28aee2f36a86cd",
+    "adapter_raw_sha256": "cdc19ac2f1271a32b8487ff766e6cb4bb3770607401c20deebc4744be1727bbd"
+  },
+  {
+    "cohort": "known",
+    "case_id": "book-pages",
+    "source_sha256": "27ac184ee607b1b147d1c66a600615c293fac74ae72233223830598c688f895a",
+    "expected_category": "BOOK",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "c6d0386ca5e76564a3f0e79748c3e6e36fd1f2505c556f66167a847741e4c128"
+  },
+  {
+    "cohort": "known",
+    "case_id": "song",
+    "source_sha256": "84494f652dd1844498cca35c3f5af38cdc7177f354f55d900c4a742c4e401724",
+    "expected_category": "MUSIC",
+    "expected_intent": "listen",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "7517f089df3fa90e158f15b7c7056ea63c87288762da7e6c2f999a4019c972ad"
+  },
+  {
+    "cohort": "known",
+    "case_id": "rare-title",
+    "source_sha256": "1963f565a29ee46c592ed6078a2bfa8e18000ced1b5235a7b019ffdb097aad02",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "name",
+    "source_sha256": "fd1fbcdb01373bb2ed431962b2ad5b6034de939a1d30f647eabf4e6c694bcebb",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "known",
+    "case_id": "outing",
+    "source_sha256": "a809945d7f7fc59892b53666d28478bd3caffb3e684b804a97727142698becfb",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "negation",
+    "source_sha256": "15aff69f8478778a417bbab2872e8ab1af629c62642472abc818863d81a96b27",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "correct-title",
+    "source_sha256": "2061bc0573013b682ec347b0dc9804bd9ecd9a10f2c1e42c599a83c26adb95b5",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "no-title",
+    "source_sha256": "3e26890d9037068a0457907dbd066a38b71eccd95a961b1a2b6ea546d976ee3b",
+    "expected_category": "MOVIE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "known",
+    "case_id": "figurative",
+    "source_sha256": "2eae963193c8d4156245e1fd50150c3e93736dc7c52ff3864189fbf2b3bd5327",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-0",
+    "source_sha256": "cd1a92004ca726a59709e440c63f789e5ed74aa0f619597687da2811d7c53115",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-1",
+    "source_sha256": "845aa98956921028549473228c47bd480645ae1b5e37da3374ae25e9d35f4ea8",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "07806beaae00f5217ad5e264cef797148b4a34ab95b02026299246ffffd0a41b",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-2",
+    "source_sha256": "88c0dcbda173b0ba6307093d85d69c56ce84566eed5fb97a566929e1d107ced4",
+    "expected_category": "MOVIE",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "1aefbdf3ee7b27e8d390fbdf9c5d74ae097da9c8824835e6bd6bf6e34bc8aef5",
+    "adapter_raw_sha256": "d6a382895941891f6fdb1912597c529cbadf6e3844063df48112e79225a0cab9"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-3",
+    "source_sha256": "d8953a3c9c660b42ac136925dab8a5cbd117af2bc126be424a435938fa8d6a26",
+    "expected_category": "BOOK",
+    "expected_intent": "start",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "05ff24d4b48da49005e66c81298059352a3de7a9a9d01b00cb28aee2f36a86cd",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-4",
+    "source_sha256": "d08b1bc385b3be13d099a9948074381eb1702b6738396c0ac379250243bfc136",
+    "expected_category": "BOOK",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "c6d0386ca5e76564a3f0e79748c3e6e36fd1f2505c556f66167a847741e4c128"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-5",
+    "source_sha256": "c8f8e1b2ac9162e2b895c7f9eeb01b65b27b9f67a95d0cbb562d5a54190d0422",
+    "expected_category": "BOOK",
+    "expected_intent": "complete",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "complete"
+    },
+    "base_raw_sha256": "9bafbe36106b7d8af1d95591c82e01c349c80b426671997125ab3565d93b3bca",
+    "adapter_raw_sha256": "594bc65e4e9b10a19c9cf5ecec838510a73b6e57c79edb5481f33edb7f29ee25"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-6",
+    "source_sha256": "0df0e0bc64cfbaadf8ef62338b5c84c3092ff2b89f6f29559c3db00a8b881fbb",
+    "expected_category": "MUSIC",
+    "expected_intent": "listen",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f5e7b466f0c39dc765e81e727d78cde3a803f90f46b1976d29ec996c3a77290c",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-7",
+    "source_sha256": "26415f80efa4db0e511a85108a4042b77d867b9eb36c35b0f6155f4057effbe0",
+    "expected_category": "MUSIC",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "ad2518b76fa1a23d676c9e89474b7f2a125e930e25100c03eee7a93dc69a5844"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-8",
+    "source_sha256": "717a8314c1447fddfef5656f6d17bfe251c60df4ccc6a9376ca1ee07f0a73d3d",
+    "expected_category": "LESSON",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "56b37fcbed218b4058f9c25176964bc21c869020a7688f1eed1b43c8a4ebd596",
+    "adapter_raw_sha256": "d154dd98f264c378d04ebfc7125d65fe410f19f44c96eefb24293861ded62121"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-9",
+    "source_sha256": "f9ec71603c5fcf4d8875b465e71895e32a4cc83d5d238a0979057bdb3dfd212d",
+    "expected_category": "LESSON",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "849ab5811f7d177a704fa8498805fececb92852bb37b1f9f1fd7615dfe28f4b5",
+    "adapter_raw_sha256": "dfc1549edef7c9944196e44ae7bef08eea98bc2dc4265fc1f8c3ecbfb04bde2c"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-10",
+    "source_sha256": "e0b2f1e3e66ffb0b8ee3881e6dc127fe9d848fe111840a4cb0f56aebc1109b7b",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-11",
+    "source_sha256": "789d012efc16b0f7b392501de1d9fd7fd1445ee94a43c57d5a8fc4533e5bfdcc",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-12",
+    "source_sha256": "86f2dbfdd7fd1a99ee503a6628b0bbe438ccf291c9e67130e45cd14b76f5a183",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-13",
+    "source_sha256": "a1dd6ae7e14a74dbd21dd73ff02946b2c007fe0e3a490c872e3bc192a0307a27",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-14",
+    "source_sha256": "7425f360d2d045b8ad2e30d6d67019b9a9cc1209cb80f3c0e7056d539f1095a9",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-15",
+    "source_sha256": "ef490c81ca4ccb31cd9bc1a491fdd3bcc5908e72a775ae84213d23a9698b4dde",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-16",
+    "source_sha256": "cdd18b76dcdadc26d786b1e196030cdab143e1df0e859813d92417cbb87aeb40",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "ceacc864f9544d80d8dd84387b91432b336b1514b3ce662a87674e5ae2fa195a",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-17",
+    "source_sha256": "00c12749048c17bc8520b6dc923c68cb20c93a0374a9e95a26a13875e7234f76",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-18",
+    "source_sha256": "fe68990fadad26482b6ec9acca0276e0ebf860cd06412d0158905de7cd6ad4f5",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "base_raw_sha256": "d51497daf2afd687f6a5b1c9978abedfe19e4498377c6d6d27676e4ed6198eac",
+    "adapter_raw_sha256": "46f4f5f38bd1f48d5628d7499573fbd0a3cd7709faf26c69148d8508269e4039"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-19",
+    "source_sha256": "d40c129acd2ad66d411e49ed252939fb880fc79925c114f9e513d75e676f7f48",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-20",
+    "source_sha256": "1d69514c679f52bcbf0012c901806ef7ef8ce2a91750fbd7c16ead78d123f3c0",
+    "expected_category": "NOTE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8",
+    "adapter_raw_sha256": "1074e53d9594478843c887341e014de6cc05ccda52c464ed7a89f217dbb93a9f"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-21",
+    "source_sha256": "ec19f56ece61f5646c20bb5447f82d4cc48ee0d13d4b6c2120ced213e8a1035b",
+    "expected_category": "MUSIC",
+    "expected_intent": "reaction",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-22",
+    "source_sha256": "1e3e23707029c4bef3ceb7d4850d46f20b0ce1d7fc15a59e5e6fa3d65e09eb42",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "known",
+    "case_id": "fresh-23",
+    "source_sha256": "684a000a4a97adce914e4161633732bab15d600d30542ede5919bf3f2494caa5",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "2a1a70f2af83c40abb07f070edbb3db08e964a946dbb3bb3492bdb0ae7c70ca5",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-001",
+    "source_sha256": "c12c0edadbf7fc78bc640c00fc26acb2263c05df6f10fe0e90d684769ddf3212",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "start"
+    },
+    "adapter_prediction": null,
+    "base_raw_sha256": "3d1e70178627f01bd3071927dece7c955c20edef811c337d1dc12b3758ddac7b",
+    "adapter_raw_sha256": "4a839374ce698d3caeb18acb84a6c1ec9e9de8dbbc77e8f5e33ad019954b279e"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-002",
+    "source_sha256": "116cbf44f0e315d59f2b89e03ad0331d2c20040460715f46a09e213ba522713f",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-003",
+    "source_sha256": "29a6e203863fceec3099a2462af0d69bbb7bbb94fbc6246dfefb19bbf56b85f2",
+    "expected_category": "MOVIE",
+    "expected_intent": "start",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "1aefbdf3ee7b27e8d390fbdf9c5d74ae097da9c8824835e6bd6bf6e34bc8aef5",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-004",
+    "source_sha256": "303ee37eb498b1f90d1200a19e9cdd660874b1c808e53965ddcc258b14436dc5",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-005",
+    "source_sha256": "2ccdbed70908af55ec22402b9eb9fdf08da5090a0d9259c8e74ac626ee3190ec",
+    "expected_category": "MUSIC",
+    "expected_intent": "reaction",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-006",
+    "source_sha256": "141b8e0e91d741663034c9ac55b781f01696abbb932a61694821e7728bb6d4bd",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-007",
+    "source_sha256": "4b92162405502daae81e269f2ef02c424418cf0a9bb47441cf2784921fe13a87",
+    "expected_category": "MUSIC",
+    "expected_intent": "listen",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "7517f089df3fa90e158f15b7c7056ea63c87288762da7e6c2f999a4019c972ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-008",
+    "source_sha256": "3a4a485b3df4f8e5c8b24d48590c7dc5bd587edabd4fe586d72331557540271d",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "2a1a70f2af83c40abb07f070edbb3db08e964a946dbb3bb3492bdb0ae7c70ca5",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-009",
+    "source_sha256": "52fd6ef835887a199afa3090daa583de81da351d303a0670a7f9a61714080df0",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "base_raw_sha256": "d51497daf2afd687f6a5b1c9978abedfe19e4498377c6d6d27676e4ed6198eac",
+    "adapter_raw_sha256": "46f4f5f38bd1f48d5628d7499573fbd0a3cd7709faf26c69148d8508269e4039"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-010",
+    "source_sha256": "793906733d7a3c86250518039ada3c7f3138506c986231f59cc898bcc94ac968",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "ceacc864f9544d80d8dd84387b91432b336b1514b3ce662a87674e5ae2fa195a",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-011",
+    "source_sha256": "e9bb6141184168400c0fd540f9f09c3e2fe8b633c03e6fe8c826f95b824b2643",
+    "expected_category": "LESSON",
+    "expected_intent": "start",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "start"
+    },
+    "base_raw_sha256": "fc246443d7666b0a9ed50c2c0769ac5d4b577b0ea1fb752ac28649a3fa515466",
+    "adapter_raw_sha256": "ad78c34eaeeb628227f4c18e494bec93cf45d14b07beed10ca87052f7ba84c71"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-012",
+    "source_sha256": "2a9aafd8bb1152bac47db7cdd26140b9610016515528d94ba59fb367889fe1b7",
+    "expected_category": "BOOK",
+    "expected_intent": "complete",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "complete"
+    },
+    "base_raw_sha256": "9bafbe36106b7d8af1d95591c82e01c349c80b426671997125ab3565d93b3bca",
+    "adapter_raw_sha256": "594bc65e4e9b10a19c9cf5ecec838510a73b6e57c79edb5481f33edb7f29ee25"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-013",
+    "source_sha256": "90ecb063ce03b4a9b6df753662acd464b97b51223f05409fc7e4f5fa170bd5b5",
+    "expected_category": "BOOK",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "c6d0386ca5e76564a3f0e79748c3e6e36fd1f2505c556f66167a847741e4c128"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-014",
+    "source_sha256": "3fdf63fdf8cca8050ae197dab963cb3e4eddb59161b994b94f880084d5e4f619",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "32f28f16f90d1155648533d41c521747e7f6027b84bfe49c5756956953c709d3",
+    "adapter_raw_sha256": "78ca1cc5de4753a4ac85a00c61f2ff8de8e6a22c6415527a8514f2f1b70b19cb"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-015",
+    "source_sha256": "2d9b5f66babb8741864a8514712568907554008915aa83a32057c383ac6cc27f",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-016",
+    "source_sha256": "e0c57cd85b7ea33ba2613ea62ecf5e59029af91919357b7533afb94ffde1b190",
+    "expected_category": "MUSIC",
+    "expected_intent": "listen",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "7517f089df3fa90e158f15b7c7056ea63c87288762da7e6c2f999a4019c972ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-017",
+    "source_sha256": "04e6c25f147b13489de71ae80baae58f01fbdd54f98c7a558271aa06743e38ec",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-018",
+    "source_sha256": "89ab348c0e867c4d5a8c49eeba640f8001f81b167f020d5628770fa3ee62511e",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "2a1a70f2af83c40abb07f070edbb3db08e964a946dbb3bb3492bdb0ae7c70ca5",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-019",
+    "source_sha256": "dedd5eaf2c732aa597e3db572bbaf3883181997b5c05a6b36c4be11c49f9d458",
+    "expected_category": "LESSON",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "56b37fcbed218b4058f9c25176964bc21c869020a7688f1eed1b43c8a4ebd596",
+    "adapter_raw_sha256": "d154dd98f264c378d04ebfc7125d65fe410f19f44c96eefb24293861ded62121"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-020",
+    "source_sha256": "88735327d0466afb92b1d96ce93b2ed50e175a8be84cdd1c1301c83182316b4d",
+    "expected_category": "MOVIE",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "1aefbdf3ee7b27e8d390fbdf9c5d74ae097da9c8824835e6bd6bf6e34bc8aef5",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-021",
+    "source_sha256": "972de56047314d3f09e7b511d839c2f5ab5e53736e8d931def9e3e7e8fe10819",
+    "expected_category": "NOTE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "fa21056547fc2e6ff0fffafa738c4c7ed9252800b37a68b6d47cb329efd1693c",
+    "adapter_raw_sha256": "1074e53d9594478843c887341e014de6cc05ccda52c464ed7a89f217dbb93a9f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-022",
+    "source_sha256": "add17f472dd3826535ef3e453c9e8d12bb801cdba09e8e5aa1bb6ef723a8ca7d",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-023",
+    "source_sha256": "e9fa3ef587ad5b02afeec466da4e5cebdd7f8891368f9f8fae4c66a0d9f1bd91",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-024",
+    "source_sha256": "fa3f620c1180e083f9a52379f65672ff950eab26bc9d4233e9d7a97d15b0e7fc",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "3d8ffe8570866950e6b684bdd4d13d2154d1ec9f613add315fccb8e0c30055c6",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-025",
+    "source_sha256": "994e8f34c952926e926b108521a83c7cdf1b4c133243639d57ddc579783d2e95",
+    "expected_category": "NOTE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "d7a915734d26b04c9224697da49572084151b9f8217a7af684f15d897f5f80b0",
+    "adapter_raw_sha256": "1074e53d9594478843c887341e014de6cc05ccda52c464ed7a89f217dbb93a9f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-026",
+    "source_sha256": "d5938e46c62855b2867efb15a33a6a8c960d7f691b81a59dd08ee93f65cfb892",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-027",
+    "source_sha256": "4a991ae6edada7826c6054ad064d42888b258e1a6aa09db9b6de4129b11c76c0",
+    "expected_category": "LESSON",
+    "expected_intent": "complete",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "complete"
+    },
+    "base_raw_sha256": "69549381d30486ddda558bd646c936ad818cf0661e134eee706bd2d9f1c5394e",
+    "adapter_raw_sha256": "b637b6c4f0851b8df44d5d0b8fc06e4ab425fe0602060adeb7da2306b39c46d4"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-028",
+    "source_sha256": "97394d5488200ab815e736b3a1f291b5ea864304e3ad2be274936ead9cb50193",
+    "expected_category": "LESSON",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "849ab5811f7d177a704fa8498805fececb92852bb37b1f9f1fd7615dfe28f4b5",
+    "adapter_raw_sha256": "9b6e7cae364fdb102821eea7306993e31679045053e3960ffee90b4dde641bf1"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-029",
+    "source_sha256": "5bc3bfcaf594fa60f382e3a0b6a3bccea1ef2be9b3496d33e7968a653b74d215",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "c6d0386ca5e76564a3f0e79748c3e6e36fd1f2505c556f66167a847741e4c128"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-030",
+    "source_sha256": "3071fc5dce87a878a6a908daa84420864abd8dbabeaa265a0700598e2bb4c470",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "ceacc864f9544d80d8dd84387b91432b336b1514b3ce662a87674e5ae2fa195a",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-031",
+    "source_sha256": "80114cc8be15fb779b730feff86afa7f8b83091e6a2e9a6984cb153ad9199eb0",
+    "expected_category": "BOOK",
+    "expected_intent": "reaction",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-032",
+    "source_sha256": "4b2e5fcc6c55f2a46e2e07d22c08c61eaad3cd57fafce4ca7419a64b975a8f88",
+    "expected_category": "MOVIE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "07806beaae00f5217ad5e264cef797148b4a34ab95b02026299246ffffd0a41b",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-033",
+    "source_sha256": "f75454fe0cd3b692d37b07572cdefcd4401192a979af3f9a141978c46bcb269b",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "d51497daf2afd687f6a5b1c9978abedfe19e4498377c6d6d27676e4ed6198eac",
+    "adapter_raw_sha256": "21508918e9feacc66eb09f4f48b61cec39e95e3cd2b5a32249ed4beb66853e19"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-034",
+    "source_sha256": "4de26271680601906c165c1091d80031efa39d1b1cc27096bd4e08a68dd3d14e",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-035",
+    "source_sha256": "807022ec4f4fc9f0241d08f5a53f8828b5aa923acb1847da948997f4e09f67f2",
+    "expected_category": "LESSON",
+    "expected_intent": "progress",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "progress"
+    },
+    "base_raw_sha256": "56b37fcbed218b4058f9c25176964bc21c869020a7688f1eed1b43c8a4ebd596",
+    "adapter_raw_sha256": "d154dd98f264c378d04ebfc7125d65fe410f19f44c96eefb24293861ded62121"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-036",
+    "source_sha256": "99be2fbf008e4b8a45b88714dacdb26eb16f1d0ce97c6777d5d69a390a799f9c",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "base_raw_sha256": "8a975425bc0233efcb3bcc2a5a051b01809dbea846576d183c475c40c3d8e6e2",
+    "adapter_raw_sha256": "46f4f5f38bd1f48d5628d7499573fbd0a3cd7709faf26c69148d8508269e4039"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-037",
+    "source_sha256": "58ce50a86b2e723c49e553c5f84fb7a30eb9e307f47a8be49b132d1e8903fdd2",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "ceacc864f9544d80d8dd84387b91432b336b1514b3ce662a87674e5ae2fa195a",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-038",
+    "source_sha256": "cc8da064a26eb54a355657a96d99c917dcb4f66889ec83399deb67f47e33b10e",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-039",
+    "source_sha256": "4d77b1182a23f254a27837d468699fd126362234e48fd33e74fc2ea0764f44f4",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "2a1a70f2af83c40abb07f070edbb3db08e964a946dbb3bb3492bdb0ae7c70ca5",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-040",
+    "source_sha256": "75bea21c80b39dec2c683d56b34b20b9e7322bdb45b394ad98f72abf9a75ed93",
+    "expected_category": "MUSIC",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "ad2518b76fa1a23d676c9e89474b7f2a125e930e25100c03eee7a93dc69a5844"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-041",
+    "source_sha256": "c5c3669f08572ed2540d0ddb14c383fffb1ff9ed86f3eb8c9ab5ef67b35b8d88",
+    "expected_category": "MOVIE",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-042",
+    "source_sha256": "b4eb65bbcdf0dd291b06650591e5902d921f96ba3a39748b86924b2aad890d87",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-043",
+    "source_sha256": "d60bbcac52d10c91f683300bbde911bfbc01105c166ac1329a403451cdef84a4",
+    "expected_category": "MOVIE",
+    "expected_intent": "complete",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "complete"
+    },
+    "base_raw_sha256": "07806beaae00f5217ad5e264cef797148b4a34ab95b02026299246ffffd0a41b",
+    "adapter_raw_sha256": "83ec7bf40208fde0a27b45fe5239fda66bea1e1e9a8c48326eb974e97ebeef61"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-044",
+    "source_sha256": "48dc0ad3a1a63e6d250d22e55d6b6d0f49cfbd5ca2cd61f5cc0b19d682a0259f",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "complete"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "9bafbe36106b7d8af1d95591c82e01c349c80b426671997125ab3565d93b3bca",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-045",
+    "source_sha256": "561b13a57aa58795fd57fbb652c73d3e76408caf45064fe27770fde865b5d417",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-046",
+    "source_sha256": "6e295f8cec0768795c28255707858f46b89e12b74c667d42fd847cb68976067e",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "2a1a70f2af83c40abb07f070edbb3db08e964a946dbb3bb3492bdb0ae7c70ca5",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-047",
+    "source_sha256": "6302b64fa5dd8d2b3b73d80b326a85fa2459781c9e26529a24074aff72306d37",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-048",
+    "source_sha256": "54fffa6cd50bbe8a261984efda0f0f226eb74b1aa12956b760a630036cd290c3",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "base_raw_sha256": "8a975425bc0233efcb3bcc2a5a051b01809dbea846576d183c475c40c3d8e6e2",
+    "adapter_raw_sha256": "46f4f5f38bd1f48d5628d7499573fbd0a3cd7709faf26c69148d8508269e4039"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-049",
+    "source_sha256": "5571e2bd465059a73b92cec8eb9f6ecdd8cc06fd58c4f30f279b00532987d389",
+    "expected_category": "WISHLIST",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "WISHLIST",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "53897e18b826fa3d77efef79eea7aba15eeec3dff70c7bfa37405a2f20bed5da",
+    "adapter_raw_sha256": "01657bccc12c511a1f89b72e921f8f8313704feb8e81749a0a7dce4b9810158f"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-050",
+    "source_sha256": "ea77b7ff767d3ba4a50b42146a3f855ece4b1a7c8f18501ba2cc448cdf298fc3",
+    "expected_category": "BOOK",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "6f1606dccb890f59b4f63b13196ee94d70cc1709f28bf9bb6d51cd0d73d029c6",
+    "adapter_raw_sha256": "b1d26f28b0a1d78ad76783b0d5d48bf024908cf03d7d0ecbf38e30d3545c53f8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-051",
+    "source_sha256": "1667ea70028595fc4e4fe04f56e0f03e2692d5143041c97d56d09d9d029d1ac5",
+    "expected_category": "MOVIE",
+    "expected_intent": "reaction",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "53e681bf8db070c562d8b9cb570876d377d030de70d5b782e600eb314ebadf79",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-052",
+    "source_sha256": "7ae20e68f837db651d60c6cbde75f035a932015b960e0f57593d755f8a91491e",
+    "expected_category": "LESSON",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "LESSON",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "fc246443d7666b0a9ed50c2c0769ac5d4b577b0ea1fb752ac28649a3fa515466",
+    "adapter_raw_sha256": "dfc1549edef7c9944196e44ae7bef08eea98bc2dc4265fc1f8c3ecbfb04bde2c"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-053",
+    "source_sha256": "b734a72666651b4353857d26443cfa3c79785e1a49c858caecf1e22f4feeae2e",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-054",
+    "source_sha256": "6a66903a6f05858719150b37848366c25cbedc8aa35970dde113a8db25df6f52",
+    "expected_category": "GOAL",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "GOAL",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "GOAL",
+      "intent": "none"
+    },
+    "base_raw_sha256": "ceacc864f9544d80d8dd84387b91432b336b1514b3ce662a87674e5ae2fa195a",
+    "adapter_raw_sha256": "c9f4c78a9fdd941502ff84d8b117bceef9f0a5dc693422eb2c41bcd74a084340"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-055",
+    "source_sha256": "102eb626cb351135481ea80948b5e6b2d0479d10942e0ff061232b4c41b3e5b7",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "ca30d3d1a470f12a587fb5fca709d1b91a11f69ebb2f92ec1d51725bd22862a2"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-056",
+    "source_sha256": "8458085459f7d76e247dbcc7f75b87ca8e7a05ee41335a8f1325d0fe650fad24",
+    "expected_category": "MIXED",
+    "expected_intent": "mixed",
+    "base_prediction": null,
+    "adapter_prediction": {
+      "category": "MIXED",
+      "intent": "mixed"
+    },
+    "base_raw_sha256": "42f8830491fdae75dd2d3cc82755311a05d15dd75763b938fb41993b5025cb8b",
+    "adapter_raw_sha256": "29360a26b139b69da6a8125a3115a0b8b2e34b4b132030fe3cbb537bcf42ff24"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-057",
+    "source_sha256": "55b634b7e9c9181501bb98d0cfafe665e94c3f865b0d33227882a342d83eabb7",
+    "expected_category": "BOOK",
+    "expected_intent": "start",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "progress"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "start"
+    },
+    "base_raw_sha256": "144f35db9c2be629427010916755e4a94f1dfb154ca811187284a4a2ba60f736",
+    "adapter_raw_sha256": "cdc19ac2f1271a32b8487ff766e6cb4bb3770607401c20deebc4744be1727bbd"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-058",
+    "source_sha256": "2a9de788115000d222dfd1030f532b4a78705f67fd51fcedf27bc0e2d4237fc4",
+    "expected_category": "PERSON",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-059",
+    "source_sha256": "9dd61b72594692f4d5308076a36ad3158d6c77f113462690e65dcc3a0d636a07",
+    "expected_category": "IDEA",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "IDEA",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "IDEA",
+      "intent": "none"
+    },
+    "base_raw_sha256": "d51497daf2afd687f6a5b1c9978abedfe19e4498377c6d6d27676e4ed6198eac",
+    "adapter_raw_sha256": "46f4f5f38bd1f48d5628d7499573fbd0a3cd7709faf26c69148d8508269e4039"
+  },
+  {
+    "cohort": "synthetic",
+    "case_id": "synthetic-retention-dev-v2-060",
+    "source_sha256": "06771a6d05e80a35f30b10a1a236a68471621fee8189d093d00cff339568419e",
+    "expected_category": "NOTE",
+    "expected_intent": "none",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-79",
+    "source_sha256": "ea66926a12c798af180f3bed776c190d1c66be5846d83791da6554624e8557b0",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-67",
+    "source_sha256": "27db64ebdf613fd0d64d4cde010085da60d29a7458c8b6703f371054a392acb7",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-57",
+    "source_sha256": "36eeca6ff95dc484f5b153942896f9908e84f1a8ef75328f1ee49e4e692965b6",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "ad2518b76fa1a23d676c9e89474b7f2a125e930e25100c03eee7a93dc69a5844"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-62",
+    "source_sha256": "a7eefa476f16eeb3b3a4b441e3a04b0f389b4cfe8328f1da2a8f3217ded994ed",
+    "expected_category": "MUSIC",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-12",
+    "source_sha256": "da29e829de613819d15a0818805ff8ba187b2ac57f4fce11e13d5c31a48ac181",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-96",
+    "source_sha256": "55d13a02ff6a710ebe8cd3bb54261a87bdccf0199b36aa8ca75753e9b2e45d5f",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-45",
+    "source_sha256": "bf1c4221b6fadfc853bc2795da352db368742916c6908d431d5be58b17498b36",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-68",
+    "source_sha256": "b173991eae9bc72f023658c62bbd8fc65720f8088b7f86cab17b3a0b9121a5f0",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-72",
+    "source_sha256": "bf58ab64c5eb1912fd298e4e88bd64d33447fc19107b7e726195964c90212700",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "PERSON",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "base_raw_sha256": "0fe86957b23f27d9dc1aeea3f0de14311d5f77668934715be0fcb23c279ab028",
+    "adapter_raw_sha256": "3209fce3d380cdaa8203f1ed2a0da6cf3b5fbe965b4c9309c1c8bec081972fa8"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-52",
+    "source_sha256": "2a1f8eca937968b843dd801cf611433a84e67eb9271d5cae14142a0e705bea4b",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-3",
+    "source_sha256": "029754c9379f0506089471793eaed24e550f4136db7ad2b60c61a7ab99e406d3",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f5e7b466f0c39dc765e81e727d78cde3a803f90f46b1976d29ec996c3a77290c",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-69",
+    "source_sha256": "01de21e90e396a76e52e5ced23129975034c8ee44d1a2cc6a936dc70d0b27407",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f5e7b466f0c39dc765e81e727d78cde3a803f90f46b1976d29ec996c3a77290c",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-32",
+    "source_sha256": "f5fc834fa34cce2683bec31e36de0fb5e5169debe69f4f3a7aaa2856841c913d",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f5e7b466f0c39dc765e81e727d78cde3a803f90f46b1976d29ec996c3a77290c",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-73",
+    "source_sha256": "a551570da907b132180fadb2c56fbc1ee2b75fa20eb2f9e00bec266dbf18b4f0",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-11",
+    "source_sha256": "039047c2a735cda63f824543f26c76cf80af565f8165bacda3074a2eff259bfb",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-94",
+    "source_sha256": "e6e12f963e436f2c0319e801e53647e189179f3e12d767e89a51ce0f3cbad968",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-49",
+    "source_sha256": "2652413fd7edec3e0d409e7b855995dd55cc2a97d6dcf636c6cc7a8cb5562cfa",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "listen"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "8756f753ccf4f68dc1ea5d7f6368c6aa29946580c079fd53b1a28c9cdb311c3f",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_PlayMusic.json-15",
+    "source_sha256": "8b280e1664be06ef2c512552ac816f8922fe8ff360240c9bdc4a0f3d5d27375d",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "621f4e601838328b2cd04e702b7fc17554705d371002c229b5107708ad91a491",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-28",
+    "source_sha256": "fea43e691e29d285dda85d30672aa05fc6bcbb959d7f04135a20b08a18a663e6",
+    "expected_category": "BOOK",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-31",
+    "source_sha256": "da073de2b6310b006532fadc54a70aa89ee62cf80d0ec6f352166bf8307d2cae",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-91",
+    "source_sha256": "7047d5fea7240745f86a01827f819259a0b72ca683502c016c67630f2604fef1",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f3cc9e99e1578b775774816ee56e89f4a15bcd0323b872829e30f31193dd5a83",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-62",
+    "source_sha256": "8ec9a5164172e72023a803ec23c729c9893a1e211f37dcd1af4cda14a3e8e7d6",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-12",
+    "source_sha256": "798a6767c5295924bdac131fcdb5251fb55053ef58cc3fd80efb90082c409305",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-33",
+    "source_sha256": "515fdc27e6ffe401360e1c3db7c39ac3437dbb0061db17058425811160862d82",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-42",
+    "source_sha256": "f94c9feefdde3cb27f5f932520c92d47305728fa328f4acf4218ce0fa2a8cff6",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-11",
+    "source_sha256": "f57ea0f5858075c024e564177563b24015f2845caba8ddc79adff13e0535be49",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-37",
+    "source_sha256": "f4c2dba71bb006ec77882134c6f2e65443cab1620611cc441ee77d6f9ed705d4",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-0",
+    "source_sha256": "acdf46f524575daacae5588900d457bd056c837124e9fd9a4567962f7c8d018c",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-46",
+    "source_sha256": "ee59c7d71b429cbdee255424d3f8eb5a3e7c17b48c88df25e29603f7dbeb37d9",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": null,
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "11a49676dffaedcde0bea66054ec4f42a1397670b43ff4ba60a9b14d11c4e576",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-44",
+    "source_sha256": "0b40d4bc09fb736e6fd795e2ebe94db10dcd92c32af27222da99c3ed92a22ce3",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-90",
+    "source_sha256": "8428ad171d4417808cd1b393b564b3e077cb75a1499b407b00c4995e9592816f",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "05ff24d4b48da49005e66c81298059352a3de7a9a9d01b00cb28aee2f36a86cd",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-59",
+    "source_sha256": "7a7bfa760504867a18d079fbd3e1cadca8acb42fc138331061a347abde2d15d2",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-1",
+    "source_sha256": "4cced4e6f1bd13b883b107c2466471131581958f8ad714706051c3f3c4ea3620",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-15",
+    "source_sha256": "1f0ce0b5cbccc79a778eb235dfe16cc7928ad56f00a0fbdc904fb78d888c4b9a",
+    "expected_category": "MUSIC",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "MUSIC",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "MUSIC",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "772ccca6162bd6d6dfb7b171d23fb7281d258a7a7ddfaadfdde11329c88a6c48",
+    "adapter_raw_sha256": "36e733bfe32509270f2c34e487e4563b9704f28e489af6f0b3997470309d3f9a"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-92",
+    "source_sha256": "635ab36c87fdea9e85d497a0f83aa3024b83c65f9f9c20ae8dde63ac82055094",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-21",
+    "source_sha256": "4ddf38ec0f28a0e1c255f1baba36b13ce284338c72653316e8746df4b4e8a9c6",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-64",
+    "source_sha256": "009d046c2e38444a02fd777ef22711de7a60fb5a8347b4aba7644e34b321a45b",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "NOTE",
+      "intent": "none"
+    },
+    "adapter_prediction": {
+      "category": "LESSON",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "f2f53b1f6148618a4348c4c9e9bf2ceae9d945e864ba071a2e6931187caec5bd",
+    "adapter_raw_sha256": "9b6e7cae364fdb102821eea7306993e31679045053e3960ffee90b4dde641bf1"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_RateBook.json-45",
+    "source_sha256": "7711aa2cdf8d18b4e74ebe12335f9fffc0388ea1742d98db07adb253bc63f11e",
+    "expected_category": "BOOK",
+    "expected_intent": "clarify",
+    "base_prediction": {
+      "category": "BOOK",
+      "intent": "reaction"
+    },
+    "adapter_prediction": {
+      "category": "BOOK",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0ac1372936521f415c829be0aa9e72a1efe8f442dfa9e2c4a5502d926ca18d0e",
+    "adapter_raw_sha256": "cf59dff24c0d748e1b7de53e2dd84482c469a4a568d3a943fae58b454d063780"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-25",
+    "source_sha256": "3d50bdfe6ffad88b0f8a0356c505940fd7de20dd5cad28ba70935a6e02fb808d",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-24",
+    "source_sha256": "0c07212ce3144628b981a91f06986d05653cb5c5698877a40a02a2135cb429d7",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-99",
+    "source_sha256": "64ee5b9dbfd31a77fe2111434598ef15f8a5c7c3c408cd78b5b1bdf74ba5c768",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-81",
+    "source_sha256": "f95f37e75824c6af3e354d9af506bfe48323eaeab2b808b64d2fcebc667e1e6a",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "start"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "3d1e70178627f01bd3071927dece7c955c20edef811c337d1dc12b3758ddac7b",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-51",
+    "source_sha256": "efd282622b91eaeec8d02c039ebe4e72e7677031bb99e941e0efcc8ac34b77e1",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "44f13ec91541e49c6cf4e661ab75b821b74810585b46cef20d91046752b84050",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-11",
+    "source_sha256": "8d77ae756441d1831aae6f3404f2f22d822c0d8fd7ce7093eadfa61bddd13ffc",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-8",
+    "source_sha256": "ac5d567a06b560ec74d1491ff4937c7b208ca3a9c5d4c4af9bfe0070d5f09322",
+    "expected_category": "MOVIE",
+    "expected_intent": "wishlist",
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "a1872624dc2f8806059729a6c19823f2e8ac36cec89041fdbbac6fa7481b6098"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-10",
+    "source_sha256": "3a6c1ea29229b488e464aa630dd3dae4a800723802cd6d679cff3fd452a8b9c5",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-43",
+    "source_sha256": "c25d72e34d6fd101451807993d9669c39599226783347529d334c4c927c010f6",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-78",
+    "source_sha256": "b83041aa0a36fd713eb92f2953b8be23f654ccfbeb8aaa28ace58a2262fd64f9",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "44f13ec91541e49c6cf4e661ab75b821b74810585b46cef20d91046752b84050",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-27",
+    "source_sha256": "4095cb3572127f513037db6fe8f018d2529963fedfcbb33860a966bebec2b829",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-72",
+    "source_sha256": "13cb520deed5ab7be295e97b0a696581f00905f1078e5e5b40cabbfb60767ddd",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-95",
+    "source_sha256": "454b43d9f8402882a15d96647a7a75766bf4952463ae26b7f66975b5e50b04bc",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "wishlist"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "0c7948bc80b71f98156dc7a4437f557d6cbc1206d7cfa0cd28f516c1576e410e",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  },
+  {
+    "cohort": "media",
+    "case_id": "snips-validate_SearchScreeningEvent.json-79",
+    "source_sha256": "525a02a710236b3f97fad292746df8d1616527861eeb70c46c45d5e3e54aca50",
+    "expected_category": "MOVIE",
+    "expected_intent": null,
+    "base_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "adapter_prediction": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "base_raw_sha256": "44f13ec91541e49c6cf4e661ab75b821b74810585b46cef20d91046752b84050",
+    "adapter_raw_sha256": "aeeff75321a61a4af571d2d0e677aaf3b130daf5d83e47c3c9a788408a4308ad"
+  }
+]

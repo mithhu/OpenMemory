@@ -1,0 +1,15 @@
+{
+  "ollama_version": "0.32.11",
+  "model": "openmemory-classifier:reviewed730",
+  "digest": "235b080b2654c6784f979b3e61d63f84bf7a0e7261e0788d140ed5abd273928c",
+  "adapter_sha256": "89437591147050922da23fe863825eac67ef50a97419433bc77ff7a42e3814f5",
+  "defaults": {
+    "temperature": 0,
+    "num_ctx": 2048,
+    "num_predict": 80,
+    "repeat_penalty": 1,
+    "presence_penalty": 0
+  },
+  "evaluation_manifest_digest": "7e333886a2366d9360bf072cd2edbbf258b26966fe3de219c62384773dab96ad",
+  "change_from_evaluation": "Stored presence penalty changed from inherited 1.5 to zero; evaluation already explicitly overrode it to zero on every request. Weights and effective generation settings unchanged."
+}

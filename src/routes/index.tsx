@@ -29,6 +29,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useMemoryGraph } from "@/hooks/use-memory-graph";
 import { getAstraStatus } from "@/lib/astra";
 import { captureWithLocalMlx } from "@/lib/local-mlx";
+import { captureWithLocalOllama } from "@/lib/local-ollama";
 import {
   planWithProvider,
   connectWithProvider,
@@ -327,7 +328,9 @@ function OpenMemory() {
       const result =
         settings.provider === "ollama" && settings.captureEngine !== "ollama"
           ? await captureWithLocalMlx(input, controller.signal, hosted)
-          : { plan: await planWithProvider(input, settings, controller.signal) };
+          : settings.provider === "ollama"
+            ? await captureWithLocalOllama(input, settings, controller.signal)
+            : { plan: await planWithProvider(input, settings, controller.signal) };
       if (controller.signal.aborted || captureController.current !== controller) return;
       setPending({ text, ...result });
     } catch (error) {

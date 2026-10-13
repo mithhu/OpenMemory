@@ -153,11 +153,18 @@ export async function requestOllama(
       body: JSON.stringify({
         model,
         stream: false,
+        ...(purpose === "classification" ? { keep_alive: 0 } : {}),
         format: schema,
         think: false,
         options:
           purpose === "classification"
-            ? { temperature: 0, num_ctx: 2048, num_predict: 80 }
+            ? {
+                temperature: 0,
+                num_ctx: 2048,
+                num_predict: 80,
+                repeat_penalty: 1,
+                presence_penalty: 0,
+              }
             : { temperature: 0, num_ctx: 16384, num_predict: 6000 },
         messages: [
           {
@@ -255,7 +262,7 @@ export async function getLocalModels(): Promise<string[]> {
     .object({ models: z.array(z.object({ name: z.string(), size: z.number().optional() })) })
     .parse(await response.json());
   return data.models
-    .filter((m) => !/cloud/i.test(m.name))
+    .filter((m) => !/cloud/i.test(m.name) && m.name !== "openmemory-classifier:reviewed730")
     .sort((a, b) => (b.size ?? 0) - (a.size ?? 0))
     .map((m) => m.name);
 }

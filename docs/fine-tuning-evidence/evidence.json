@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "scope": "Exposed development diagnostics; AI-assisted labels; not independent final-test qualification",
+  "base_model": "mlx-community/Qwen3.5-9B-4bit",
+  "base_revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+  "adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "base_weight_sha256": {
+    "model-00001-of-00002.safetensors": "a68b87558c6ef43f74c2bd63ce7e9092ceddc3101f3def0030774bae5f42aadd",
+    "model-00002-of-00002.safetensors": "b0a770bf8469c7f3f18756a0e0283f1c1174344a83e059a4e483f6af4907352d"
+  },
+  "training": {
+    "examples": 730,
+    "updates": 730,
+    "epochs": 1,
+    "batch_size": 1,
+    "learning_rate": 1e-05,
+    "rank": 8,
+    "scale": 20,
+    "dropout": 0,
+    "max_tokens": 768,
+    "seed": 20261011,
+    "trainable_parameters": 638976,
+    "tensor_count": 14,
+    "runtime_seconds": 1533.01,
+    "peak_mlx_allocation_bytes": 5926206822,
+    "versions": {
+      "python": "3.12.9",
+      "mlx": "0.32.3",
+      "mlx_lm": "0.32.0"
+    }
+  },
+  "comparison": {
+    "cases": 208,
+    "intent_cases": 195,
+    "base_category_correct": 188,
+    "adapter_category_correct": 196,
+    "base_intent_correct": 131,
+    "adapter_intent_correct": 176,
+    "public_intent_base_correct": 59,
+    "public_intent_adapter_correct": 57,
+    "public_intent_cases": 60,
+    "qualification_passed": false
+  },
+  "limitations": [
+    "Development cases exposed during experimentation; labels AI-assisted.",
+    "Strict qualification failed; public intent regressed and reaction intent scored0/4.",
+    "No claim of frontier-model superiority or controlled inference-speed improvement.",
+    "Texts omitted pending redistribution review; this package verifies arithmetic, not semantic labeling.",
+    "Historical recipe contains stale ancestry prose; actual completed training records show730 updates."
+  ],
+  "original_source_sha256": {
+    "docs/evaluations/classification-development-v2/native-public.json": "c805008eeb3c6f13b2d86c2bfa6df3d2fe8c064e00fdae129b416b3a3c3e84df",
+    "docs/evaluations/classification-reviewed730-development-v1/public.json": "004c4da3d8bff5e80fd27562efd13d46ef06123e03126cb95b409aebb3ff0f69",
+    "docs/evaluations/classification-native-decision-order-dev-v1/original-known-base.json": "32a0cf6e7de3b082b7629c552516155ff09cf73d0c774e1a6736fc8b0e43908d",
+    "docs/evaluations/classification-reviewed730-development-v1/known.json": "6184de9cd912a39ca520e41facdc49f9f2abd6d5c3337444aa3031cb2cfb144c",
+    "docs/evaluations/classification-development-v2/native-synthetic.json": "70ec03496775ee2dd30828358ac98ec95f5c504dc54ed3ad4f0f32f5ca83f15d",
+    "docs/evaluations/classification-reviewed730-development-v1/synthetic.json": "200bab8e631799bf2ee09d989efc9b15800d64903610eda5a68e340ff7f77ced",
+    "docs/evaluations/classification-development-v2/native-media.json": "cd5ae0cf5805640f74d75ae2a577d4113d902916971527d0781842aca3e423f2",
+    "docs/evaluations/classification-reviewed730-development-v1/media.json": "3b0f5318eda7041d2fbcdad911f1be7678eedfa9e45beb2cd60ab746670b1dff",
+    "docs/fine-tuning/classification-reviewed9b-extension-v1/training-run-v1/full-run/steps.jsonl": "49514dc60875321a6f6d471d9f382a3aa4cd6699a0924b92be8c4ca2f89e68bb",
+    "docs/fine-tuning/classification-reviewed9b-extension-v1/training-run-v1/full-run/completed.json": "d704c3044636abeb2b3197ac802ff022cb62def937dda96cadf228d36202a78c",
+    "docs/fine-tuning/classification-reviewed9b-extension-v1/training-run-v1/run-recipe-v2.json": "5f8afa31c8bae6ce12cf015110b9bc1a01fc3beff51ec481081bab9da9306812",
+    "docs/fine-tuning/classification-reviewed9b-extension-v1/training-run-v1/supervisor-full-terminal.json": "adacbce97122b40234e92ad2613ee7f221c4312b6aa9881d73d8fdab5df602fb",
+    "docs/fine-tuning/classification-reviewed9b-extension-v1/training-run-v1/independent-full-verification-v1.json": "7766c4868752409203e9e0cd5fa83740491aaecb65c2996cc7d2589b9fe47056"
+  },
+  "export_sha256": {
+    "paired-development.json": "d769724d385348156abd03abd87d347c4c7a2d8f2cba6982543c085feaacbf71",
+    "training-loss.csv": "04bb64e325bac1503b99539e3d94915186f0d55b729d2d6de9ec32e6738d50ef",
+    "adapter_config.json": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f"
+  }
+}

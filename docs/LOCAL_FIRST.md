@@ -4,7 +4,7 @@ The normal local app now starts in **Local MLX**. OpenAI credentials in `.env` d
 
 ## Hosted consumer experience
 
-On a hosted origin, visitors start with manual review and a clear **Enable AI review** choice. Enabling it selects server-side OpenAI; visitors do not need an API key or installation. No capture, mapping, reflection or discovery request runs before that choice. Privacy & AI also allows returning to manual-only review. Native MLX can be explicitly paired with the local companion service on an Apple Silicon Mac; advanced local Ollama also requires a separately installed service and browser/origin permissions.
+On a hosted origin, visitors start with manual review and a clear **Enable AI review** choice. Enabling it selects server-side OpenAI; visitors do not need an API key or installation. No capture, mapping, reflection or discovery request runs before that choice. Privacy & AI also allows returning to manual-only review. Native MLX can be explicitly paired with the local companion service on an Apple Silicon Mac; local Ollama requires the imported trained classifier, a separately installed service and browser/origin permissions.
 
 For an isolated local preview of this hosted flow, run `VITE_APP_MODE=hosted npm run dev -- --host 127.0.0.1 --port 3006 --strictPort`. Leave this setting unset for the usual local MLX app.
 
@@ -14,7 +14,7 @@ New hosted libraries start empty. Example memories are added only through **Expl
 
 ### Connecting the hosted site to Ollama on a Mac
 
-The hosted site talks directly to the visitor's loopback Ollama service. Two permissions are needed: Ollama must allow the exact website origin, and the browser must permit local-network access. Selecting Local Ollama does not grant either permission automatically.
+The hosted site talks directly to the visitor's loopback Ollama service. Capture first uses the pinned `openmemory-classifier:reviewed730` trained classifier, then the selected general local model extracts details. The model picker selects the extractor; it does not replace the trained classifier. Two permissions are needed: Ollama must allow the exact website origin, and the browser must permit local-network access. Selecting Local Ollama does not grant either permission automatically.
 
 For the Ollama macOS app, set the following in Terminal, then quit and reopen Ollama:
 
@@ -41,6 +41,14 @@ The companion holds a capture reservation through classification and extraction.
 
 Vercel serves the website; it never loads the native MLX weights. The browser calls your paired loopback service directly. Browser vaults on the hosted and local origins remain separate.
 
+### Installing the trained Ollama classifier
+
+This Mac already has `openmemory-classifier:reviewed730` installed. Its adapter is the same reviewed730 training output, converted to a 2.6 MB F32 GGUF LoRA adapter. The imported artifact is pinned to digest `235b080b2654c6784f979b3e61d63f84bf7a0e7261e0788d140ed5abd273928c`. Classification failures or a missing/changed artifact stop AI capture; manual review remains available. No unadapted or cloud classifier is silently substituted.
+
+A fresh clone does not include this adapter. The separate model/research release is still pending; current users with no installed local assets should use manual review or explicitly select OpenAI. On the owner's Mac, the exact import recipe remains in `.research-workspace/docs/evaluations/ollama-reviewed730-export-v1/Modelfile`. It references the separate exported GGUF adapter and reuses the installed pinned `qwen3.5:9b` base.
+
+The product retains [CPU-verifiable portability results](fine-tuning-evidence/ollama-portability/README.md), without publishing weights or original dataset text. Native MLX had better intent accuracy on the reused development set; the converted Ollama classifier remains experimental and review-required.
+
 ## Running on this Mac
 
 ```sh
@@ -53,8 +61,8 @@ Keep the downloaded local Ollama service available at 127.0.0.1:11434, with this
 
 | Feature | Default location |
 | --- | --- |
-| Category and intent classification | Fine-tuned reviewed730 Qwen3.5-9B-4bit, native MLX on this Mac |
-| Titles, amounts, identity matching and capture plan | Pinned downloaded local Ollama Qwen3.5:9b after MLX exits |
+| Category and intent classification | Fine-tuned reviewed730: native MLX in MLX mode, pinned GGUF adapter in Ollama mode |
+| Titles, amounts, identity matching and capture plan | Pinned local Qwen3.5:9b in MLX mode; selected general Ollama model in Ollama mode, after classifier completion |
 | Ask, mapping, recommendations | Downloaded local Ollama model |
 | Saves, edits, progress, backups, optional encryption | Browser storage on this origin |
 | Audio transcription | ElevenLabs, only after the user selects Transcribe |
@@ -76,3 +84,18 @@ This change makes the current model the default; it does not claim new qualifica
 - “I want to go to Bangladesh in December's last week.”: WISHLIST / wishlist, 9.510 seconds classification, 17.378 seconds extraction, 27.043 seconds total. Review succeeded without conflicting entry types; no precise travel date was invented.
 
 These are integration checks, not an independent model accuracy benchmark. The deployed pairing controls were verified live after push. The hosted HTTPS-to-loopback check timed out in the Codex in-app browser, while the companion reported ready for the exact hosted origin. Chrome pairing remains a user-side check with local-network permission enabled. Connection checks are bounded to eight seconds and explain this browser restriction.
+
+## Deployed user flow
+
+1. First visit starts in manual review. OpenAI requires explicit **Enable AI review** or selection in Privacy & AI; no installation or visitor API key is required for that cloud route.
+2. Local MLX requires the Mac's native runtime, trained adapter, companion service and Ollama. Pair the current browser tab, then select Local MLX. Local Ollama requires the imported trained classifier and a general extractor model, plus website/local-network permission; it does not require the MLX pairing service.
+3. Type a note, or explicitly transcribe recorded speech through ElevenLabs. The editable transcript uses the selected processing option.
+4. **Review memory** runs trained local classification first in either local mode, then base-model detail extraction. OpenAI uses the server-side cloud capture route. Models never save automatically.
+5. Review category, action, title and other details; resolve any flagged ambiguity; choose **Save**. Memories stay in that browser's vault on the deployed origin.
+6. Missing local services/models or rejected outputs offer retry/manual review, with no automatic cloud fallback.
+
+## Trained Ollama capture validation — 2026-10-13
+
+The production capture route now selects the pinned trained classifier before the separately selected Ollama extractor. The classifier request uses evaluated penalties and `keep_alive: 0`, allowing it to unload before detail extraction. Transport tests cover the exact pinned model identity, source, sequencing, mixed-note advice handling, cancellation and failure without fallback. The trained classifier is excluded from the extractor picker.
+
+455 application tests across 38 files, TypeScript and the production build passed. Both public evidence verifiers passed. An actual isolated hosted-mode browser test selected Local Ollama, reviewed “I want to go to Bangladesh in December's last week.” as WISHLIST / wishlist, and saved it successfully in the fictional test vault. Personal vaults were not edited.

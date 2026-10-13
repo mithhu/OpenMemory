@@ -13,12 +13,17 @@ The project was developed with substantial AI-assistant support. The project own
 - Task: ten categories and nine intents, with strict JSON validation, negation/tense handling, missing-identity clarification and mixed-event coverage.
 - Evaluation decoding: frozen v3 prompt, thinking disabled, greedy generation, at most 80 output tokens. Artifact hashes, source splits and runtime versions were recorded.
 
+A [CPU-verifiable evidence bundle](fine-tuning-evidence/README.md) now includes 730 training-loss records, all 208 paired development predictions, artifact hashes, and an optional tensor audit. It exports no original note text or model weights.
+
 ## Results and what they mean
 
 | Experimental candidate | Category on development set | Intent on labeled development subset |
 | --- | --- | --- |
+| Unadapted same pinned 9B base | 188/208 (90.38%) | 131/195 (67.18%) |
 | Reviewed730 adapter | 196/208 (94.23%) | 176/195 (90.26%) |
 | Later 856-example extension | 195/208 (93.75%) | 169/195 (86.67%) |
+
+Against the same unadapted 9B base, the selected adapter gained **3.85 percentage points in category accuracy and 23.08 points in supported intent accuracy** on these paired development cases. Public-cohort intent regressed from 59/60 to 57/60, and reaction intent remained 0/4.
 
 These are development diagnostics, not independent final-test accuracy, evidence of universal generalization or a measured improvement over every base model. Both candidates failed the strict comparative qualification gates. The later extension was rejected because its intent result regressed. The earlier adapter was integrated as an explicitly experimental, review-required local classifier after the user accepted that practical scope. An invalid output remained in each development run. The final held-out release gate was not completed or claimed.
 
@@ -41,3 +46,9 @@ For interviews, be prepared to explain LoRA versus full fine-tuning, quantizatio
 ## App packaging validation
 
 The product export passed 400 application tests, TypeScript and a production build without the research archive, local model files or credentials. This used the installed JavaScript dependencies in a clean staged-file export; it is not a fresh native-model qualification. Required regression fixtures contain authored fictional notes and recorded local responses.
+
+## Ollama portability
+
+The actual reviewed730 matrices were exported to a small GGUF LoRA adapter and imported into Ollama. The [portability evidence](fine-tuning-evidence/ollama-portability/README.md) includes all 208 paired labels/predictions and a CPU verifier. Ollama category accuracy increased from 90.38% to 94.71%, and supported intent from 67.18% to 85.64%, on the reused development set. Native MLX still scored 90.26% intent. These are portability/development diagnostics; the quantized bases differ and final-test qualification is not claimed.
+
+Both local capture options now classify with the trained artifact before a separate base model extracts details. MLX uses the native adapter; Ollama uses the pinned converted classifier. Missing or changed classifiers stop AI capture with manual review available, rather than silently processing with a base classifier or cloud provider. Model weights remain outside this product repository.

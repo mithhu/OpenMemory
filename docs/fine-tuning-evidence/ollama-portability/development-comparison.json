@@ -1,0 +1,55 @@
+{
+  "scope": "Paired existing development208 portability comparison, not independent final benchmark",
+  "prompt_sha256": "162220ad66a65f17f301a682e579b6674dc9ce1658b05212c748c6b687acda63",
+  "source_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "gguf_adapter_sha256": "89437591147050922da23fe863825eac67ef50a97419433bc77ff7a42e3814f5",
+  "sampling": {
+    "temperature": 0,
+    "num_ctx": 2048,
+    "num_predict": 80,
+    "repeat_penalty": 1,
+    "presence_penalty": 0,
+    "thinking": false,
+    "grammar": false
+  },
+  "models": {
+    "converted-adapter": {
+      "category_correct": 197,
+      "category_total": 208,
+      "intent_correct": 167,
+      "intent_total": 195,
+      "valid_outputs": 207,
+      "native_exact_agreement": 185,
+      "native_valid_total": 207,
+      "total_seconds": 537.047
+    },
+    "ollama-base": {
+      "category_correct": 188,
+      "category_total": 208,
+      "intent_correct": 131,
+      "intent_total": 195,
+      "valid_outputs": 204,
+      "native_exact_agreement": 117,
+      "native_valid_total": 207,
+      "total_seconds": 497.566
+    }
+  },
+  "ollama_version": "0.32.11",
+  "pair_integrity_checks": "All 208 source IDs/hashes/labels align; valid raw predictions contain no duplicate JSON fields",
+  "row_file_sha256": {
+    "converted-adapter-208.jsonl": "f37473dbadbe80969f6841b57203a7737083348421690b404b6a54520442503d",
+    "ollama-base-208.jsonl": "33fbeb2a32ba6d98eac3d95ac8904ad41bef84dad1cf87b9e8f8be196dfbf608"
+  },
+  "evaluator_sha256": "a4dcf7fa3c2fcdf57eaa23b3cd7aa2f1ffdce1a6945ebcace31e066586fba4bf",
+  "base_to_adapter_transitions": {
+    "category": {
+      "corrected": 13,
+      "regressed": 4
+    },
+    "intent": {
+      "corrected": 47,
+      "regressed": 11
+    }
+  },
+  "exported_paired_rows_sha256": "07830059924042eab7752830fd9322cb7c8f0cb7d60bf8fbb5597b505c5b0270"
+}

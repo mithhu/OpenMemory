@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { type ComponentType } from "react";
 import { type CapturePlan } from "../lib/capture-plan";
 
-const api = vi.hoisted(() => ({ plan: vi.fn(), save: vi.fn(), error: vi.fn() }));
+const api = vi.hoisted(() => ({ plan: vi.fn(), ollama: vi.fn(), save: vi.fn(), error: vi.fn() }));
 vi.mock("../lib/ai-client", async (original) => ({
   ...(await original<typeof import("../lib/ai-client")>()),
   planWithProvider: api.plan,
@@ -12,6 +12,10 @@ vi.mock("../lib/local-mlx", () => ({
   captureWithLocalMlx: async (input: unknown, signal: AbortSignal) => ({
     plan: await api.plan(input, { provider: "ollama", model: "qwen3.5:9b" }, signal),
   }),
+}));
+vi.mock("../lib/local-ollama", async (original) => ({
+  ...(await original<typeof import("../lib/local-ollama")>()),
+  captureWithLocalOllama: api.ollama,
 }));
 vi.mock("../lib/astra", async (original) => ({
   ...(await original<typeof import("../lib/astra")>()),
@@ -77,6 +81,22 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("Cancelling capture preserves the user's work", () => {
+  it("routes the Ollama engine through trained classification with the selected extractor", async () => {
+    const settings = { provider: "ollama", model: "chosen-local-model", captureEngine: "ollama" };
+    localStorage.setItem("openmemory.ai.v2", JSON.stringify(settings));
+    const request = deferred();
+    api.plan.mockReturnValueOnce(request.promise);
+    api.ollama.mockImplementation(async (input, selected, signal) => ({
+      plan: await api.plan(input, selected, signal),
+    }));
+    await start();
+    expect(api.ollama).toHaveBeenCalledOnce();
+    expect(api.ollama.mock.calls[0]![1]).toEqual(settings);
+    expect(api.ollama.mock.calls[0]![2]).toBeInstanceOf(AbortSignal);
+    expect(api.ollama.mock.calls[0]![0].text).toBe("A fictional walk with a friend");
+    await act(async () => request.resolve(plan("Current result")));
+    expect(screen.getByLabelText("Entry 1 title")).toHaveValue("Current result");
+  });
   it.each([
     {
       error: new Error("The title suggestion did not match this entry."),
