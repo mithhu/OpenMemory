@@ -9,6 +9,11 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { getLocalModels, type AISettings } from "@/lib/ai-client";
+import {
+  getMlxCompanionStatus,
+  pairMlxCompanion,
+  clearMlxCompanionPairing,
+} from "@/lib/mlx-companion";
 
 export function PrivacyPanel({
   open,
@@ -38,6 +43,9 @@ export function PrivacyPanel({
   const [password, setPassword] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const [working, setWorking] = useState(false);
+  const [companionReady, setCompanionReady] = useState(false);
+  const [pairingCode, setPairingCode] = useState("");
+  const [companionFeedback, setCompanionFeedback] = useState("");
   const [connectionFeedback, setConnectionFeedback] = useState<{
     kind: "checking" | "success" | "error";
     text: string;
@@ -67,21 +75,37 @@ export function PrivacyPanel({
         </DialogHeader>
         <div className="provider-options">
           <button
-            disabled={busy || working || hosted}
+            disabled={busy || working || (hosted && !companionReady)}
             className={
               settings.provider === "ollama" && settings.captureEngine !== "ollama"
                 ? "selected"
                 : ""
             }
-            onClick={() =>
-              onSettings({ provider: "ollama", model: "qwen3.5:9b", captureEngine: "mlx" })
-            }
+            onClick={async () => {
+              if (hosted) {
+                setWorking(true);
+                try {
+                  const status = await getMlxCompanionStatus();
+                  if (!status.ready || !status.paired)
+                    throw new Error("Pair the ready local MLX service before selecting it.");
+                } catch (error) {
+                  setCompanionReady(false);
+                  setCompanionFeedback(
+                    error instanceof Error ? error.message : "Could not verify local MLX.",
+                  );
+                  return;
+                } finally {
+                  setWorking(false);
+                }
+              }
+              onSettings({ provider: "ollama", model: "qwen3.5:9b", captureEngine: "mlx" });
+            }}
           >
             <HardDrive size={19} />
             <strong>{hosted ? "Local MLX · Mac app" : "Local MLX · Default"}</strong>
             <span>
               {hosted
-                ? "Run OpenMemory locally on your Mac to use the fine-tuned model. This website cannot run native MLX."
+                ? "Fine-tuned MLX on your Mac through the paired local service. Local Ollama handles extraction. No cloud fallback."
                 : "Fine-tuned classification on your Mac, with local Ollama extraction. No cloud fallback."}
             </span>
           </button>
@@ -115,18 +139,117 @@ export function PrivacyPanel({
           </button>
         </div>
         {hosted && (
-          <p>
-            Native MLX needs the OpenMemory server running on this Mac. If you have started it, open{" "}
-            <a
-              className="text-button"
-              href="http://127.0.0.1:3001/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OpenMemory locally
-            </a>{" "}
-            and select Local MLX there. Opening this link does not install or start the app.
-          </p>
+          <section className="mlx-companion-setup" aria-label="Connect local MLX">
+            <h3>Connect your Mac’s MLX model</h3>
+            <p>
+              Start the local service from your OpenMemory folder with{" "}
+              <code>npm run mlx:serve</code>. It requires the installed MLX model, trained adapter
+              and local Ollama.
+            </p>
+            <p>
+              Open{" "}
+              <a href="http://127.0.0.1:8765/" target="_blank" rel="noopener noreferrer">
+                the local pairing page
+              </a>
+              , reveal its code, then paste it here. This pairs only this website for one hour.
+              Allow browser local network access if prompted.
+            </p>
+            <label className="privacy-label">
+              Local MLX pairing code
+              <input
+                type="password"
+                autoComplete="off"
+                value={pairingCode}
+                onChange={(event) => setPairingCode(event.target.value)}
+                disabled={busy || working}
+              />
+            </label>
+            <div className="privacy-model-actions">
+              <button
+                className="text-button"
+                disabled={busy || working || !pairingCode.trim()}
+                onClick={async () => {
+                  setWorking(true);
+                  setCompanionReady(false);
+                  setCompanionFeedback("Pairing with the model on this Mac…");
+                  try {
+                    await pairMlxCompanion(pairingCode.trim());
+                    setPairingCode("");
+                    const status = await getMlxCompanionStatus();
+                    if (!status.ready || !status.paired)
+                      throw new Error("The local MLX service is not paired and ready.");
+                    setCompanionReady(true);
+                    setCompanionFeedback(
+                      "Verified trained adapter. Local MLX is ready; select its card above.",
+                    );
+                  } catch (error) {
+                    setCompanionFeedback(
+                      error instanceof Error ? error.message : "Could not pair local MLX.",
+                    );
+                  } finally {
+                    setWorking(false);
+                  }
+                }}
+              >
+                Pair local MLX
+              </button>
+              <button
+                className="text-button"
+                disabled={busy || working}
+                onClick={async () => {
+                  setWorking(true);
+                  setCompanionReady(false);
+                  setCompanionFeedback("Checking the local MLX service…");
+                  try {
+                    const status = await getMlxCompanionStatus();
+                    setCompanionReady(status.ready && status.paired);
+                    setCompanionFeedback(
+                      status.ready && status.paired
+                        ? "Verified trained adapter. Local MLX is ready."
+                        : status.ready
+                          ? "Local service found. Pair with its code before enabling MLX."
+                          : "Local MLX assets are unavailable. Restore the pinned runtime and restart the service.",
+                    );
+                  } catch (error) {
+                    setCompanionFeedback(
+                      error instanceof Error ? error.message : "Could not reach local MLX.",
+                    );
+                  } finally {
+                    setWorking(false);
+                  }
+                }}
+              >
+                Check local MLX
+              </button>
+              <button
+                className="text-button"
+                disabled={busy || working}
+                onClick={() => {
+                  clearMlxCompanionPairing();
+                  setCompanionReady(false);
+                  setPairingCode("");
+                  setCompanionFeedback("Local MLX disconnected.");
+                  if (settings.provider === "ollama" && settings.captureEngine !== "ollama")
+                    onDisableAI?.();
+                }}
+              >
+                Disconnect MLX
+              </button>
+            </div>
+            {companionFeedback && <p role="status">{companionFeedback}</p>}
+            <p>
+              You can also use the separately running{" "}
+              <a
+                className="text-button"
+                href="http://127.0.0.1:3001/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                OpenMemory locally
+              </a>{" "}
+              app. Opening either link does not install or start a local service.
+            </p>
+          </section>
         )}
         {hosted && onDisableAI && (
           <button className="text-button" disabled={busy || working} onClick={onDisableAI}>

@@ -326,7 +326,7 @@ function OpenMemory() {
       const input = { text, today: today(), memories: memoryRef.current };
       const result =
         settings.provider === "ollama" && settings.captureEngine !== "ollama"
-          ? await captureWithLocalMlx(input, controller.signal)
+          ? await captureWithLocalMlx(input, controller.signal, hosted)
           : { plan: await planWithProvider(input, settings, controller.signal) };
       if (controller.signal.aborted || captureController.current !== controller) return;
       setPending({ text, ...result });

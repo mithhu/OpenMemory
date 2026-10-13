@@ -4,7 +4,7 @@ The normal local app now starts in **Local MLX**. OpenAI credentials in `.env` d
 
 ## Hosted consumer experience
 
-On a hosted origin, visitors start with manual review and a clear **Enable AI review** choice. Enabling it selects server-side OpenAI; visitors do not need an API key or installation. No capture, mapping, reflection or discovery request runs before that choice. Privacy & AI also allows returning to manual-only review. Native MLX is unavailable on the hosted site; advanced local Ollama requires a separately installed service and browser/origin permissions.
+On a hosted origin, visitors start with manual review and a clear **Enable AI review** choice. Enabling it selects server-side OpenAI; visitors do not need an API key or installation. No capture, mapping, reflection or discovery request runs before that choice. Privacy & AI also allows returning to manual-only review. Native MLX can be explicitly paired with the local companion service on an Apple Silicon Mac; advanced local Ollama also requires a separately installed service and browser/origin permissions.
 
 For an isolated local preview of this hosted flow, run `VITE_APP_MODE=hosted npm run dev -- --host 127.0.0.1 --port 3006 --strictPort`. Leave this setting unset for the usual local MLX app.
 
@@ -25,7 +25,21 @@ launchctl setenv OLLAMA_NO_CLOUD "1"
 
 Preserve any other explicitly allowed origins in the comma-separated value. These `launchctl` environment settings apply to the current login session; apply them again after logging out or restarting macOS. Keep Ollama bound to loopback; do not use wildcard origins or expose it on the network. In Chrome, allow this site's Local network access permission if prompted, then retry **Find my local models**. In-app browsers may restrict these connections; use Chrome or the locally running app if needed.
 
-The hosted native MLX card links to the separately running local app, where the trained adapter is available. It does not run the adapter inside Vercel or install/start a Mac application automatically.
+### Pairing the hosted site with the fine-tuned MLX adapter
+
+On this Mac, where the pinned model and adapter are already installed:
+
+1. Keep Ollama running with the exact hosted origin allowed as above.
+2. From the OpenMemory folder, run `npm run mlx:serve`. It binds only to `127.0.0.1:8765` and checks the pinned assets before accepting requests.
+3. Open `http://127.0.0.1:8765/` and click **Reveal a new pairing code**. The code expires after five minutes and is single-use.
+4. On the deployed site, open **Privacy & AI**, paste the code, and select **Pair local MLX**. Allow Chrome's local-network access prompt if shown.
+5. Select the now-enabled **Local MLX** card. Classification runs in native MLX on your Mac; extraction then runs in local Ollama. Nothing falls back to cloud.
+
+The token stays in this tab's session storage and expires after one hour. A service restart requires pairing again. **Check local MLX** verifies an existing pairing; **Disconnect MLX** removes it from this browser. The site does not automatically probe localhost, download weights, install Python, or start a native service. Other computers need the pinned runtime/base model/adapter assets, which are excluded from this product repository. In-app browsers may block local connections even when Chrome works.
+
+The companion holds a capture reservation through classification and extraction. If a tab disappears or loses the connection before releasing its reservation, restart the service and pair again. This favors preventing overlapping GPU jobs over automatically retrying an uncertain request.
+
+Vercel serves the website; it never loads the native MLX weights. The browser calls your paired loopback service directly. Browser vaults on the hosted and local origins remain separate.
 
 ## Running on this Mac
 
@@ -33,7 +47,7 @@ The hosted native MLX card links to the separately running local app, where the 
 npm run dev -- --host 127.0.0.1 --port 3001 --strictPort
 ```
 
-Keep the downloaded local Ollama service available at 127.0.0.1:11434, with this app origin allowed and cloud models disabled. The MLX Python environment and exact base weights have been copied to `.local-runtime/venv` and `.local-runtime/model` on this Mac; this folder is ignored by Git. They no longer depend on `/tmp` surviving. The reviewed730 adapter remains in the ignored `artifacts/fine-tuning/classification-reviewed9b-v1` folder. A clone on another computer does not include these assets: install a compatible native runtime/model/adapter there, or explicitly choose an installed Local Ollama model. Missing local assets produce an error with manual review available, never a cloud fallback. Native MLX requires the app server running locally on an Apple silicon Mac; a remote hosted server cannot run MLX on the browser user's Mac.
+Keep the downloaded local Ollama service available at 127.0.0.1:11434, with this app origin allowed and cloud models disabled. The MLX Python environment and exact base weights have been copied to `.local-runtime/venv` and `.local-runtime/model` on this Mac; this folder is ignored by Git. They no longer depend on `/tmp` surviving. The reviewed730 adapter remains in the ignored `artifacts/fine-tuning/classification-reviewed9b-v1` folder. A clone on another computer does not include these assets: install a compatible native runtime/model/adapter there, or explicitly choose an installed Local Ollama model. Missing local assets produce an error with manual review available, never a cloud fallback. Native MLX requires either the local app server or the paired companion service running on an Apple Silicon Mac; a remote hosted server cannot run MLX on the browser user's Mac.
 
 ## What runs where
 

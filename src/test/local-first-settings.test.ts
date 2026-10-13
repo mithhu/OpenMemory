@@ -6,7 +6,10 @@ import {
   hasHostedAIConsent,
 } from "../lib/ai-client";
 import { isHostedApp } from "../lib/app-environment";
-beforeEach(() => localStorage.clear());
+beforeEach(() => {
+  localStorage.clear();
+  sessionStorage.clear();
+});
 it("offers cloud on a hosted page without treating the default as consent", () => {
   expect(loadAISettings(true)).toEqual({ provider: "astra", model: "astra" });
   expect(hasHostedAIConsent()).toBe(false);
@@ -62,4 +65,24 @@ it("does not persist a remote model as local", () => {
     saveAISettings({ provider: "ollama", model: "cloud-model", captureEngine: "ollama" }),
   ).toThrow();
   expect(loadAISettings()).toEqual(defaultAISettings);
+});
+
+it("restores hosted MLX only with an unexpired session pairing and explicit local choice", () => {
+  sessionStorage.setItem(
+    "openmemory.mlx.companion.v1",
+    JSON.stringify({
+      token: "fictional-session-token",
+      expiresAt: Math.floor(Date.now() / 1000) + 3600,
+    }),
+  );
+  expect(hasHostedAIConsent()).toBe(false);
+  saveAISettings(defaultAISettings);
+  expect(loadAISettings(true)).toEqual(defaultAISettings);
+  expect(hasHostedAIConsent()).toBe(true);
+  sessionStorage.setItem(
+    "openmemory.mlx.companion.v1",
+    JSON.stringify({ token: "fictional-session-token", expiresAt: 1 }),
+  );
+  expect(loadAISettings(true).provider).toBe("astra");
+  expect(hasHostedAIConsent()).toBe(false);
 });

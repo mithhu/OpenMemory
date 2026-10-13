@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { isHostedApp } from "./app-environment";
+import { hasMlxCompanionPairing } from "./mlx-companion";
 import { planCapture, connectMemories, mapMemories, discoverLibrary } from "./astra";
 import { buildTaste, discoveryInstructions, discoveryJson, validateDiscovery } from "./discovery";
 import { captureInstructions, capturePlanJson, captureCatalog, validatePlan } from "./capture-plan";
@@ -42,7 +43,7 @@ export function hasHostedAIConsent(): boolean {
     const settings = aiSettingsSchema.parse(stored);
     return settings.provider === "astra"
       ? stored.cloudOptIn === true
-      : settings.captureEngine === "ollama";
+      : settings.captureEngine === "ollama" || hasMlxCompanionPairing();
   } catch {
     return false;
   }
@@ -53,7 +54,12 @@ export function loadAISettings(hosted = isHostedApp()): AISettings {
     const stored = JSON.parse(localStorage.getItem("openmemory.ai.v2") || "null");
     if (!stored || (stored.provider === "astra" && stored.cloudOptIn !== true)) return fallback;
     const settings = aiSettingsSchema.parse(stored);
-    if (hosted && settings.provider === "ollama" && settings.captureEngine !== "ollama")
+    if (
+      hosted &&
+      settings.provider === "ollama" &&
+      settings.captureEngine !== "ollama" &&
+      !hasMlxCompanionPairing()
+    )
       return fallback;
     return settings;
   } catch {

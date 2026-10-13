@@ -1,7 +1,12 @@
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-const api = vi.hoisted(() => ({ models: vi.fn() }));
+const api = vi.hoisted(() => ({ models: vi.fn(), status: vi.fn(), pair: vi.fn(), clear: vi.fn() }));
 vi.mock("../lib/ai-client", () => ({ getLocalModels: api.models }));
+vi.mock("../lib/mlx-companion", () => ({
+  getMlxCompanionStatus: api.status,
+  pairMlxCompanion: api.pair,
+  clearMlxCompanionPairing: api.clear,
+}));
 vi.mock("sonner", () => ({ toast: { success: vi.fn(), error: vi.fn() } }));
 import { PrivacyPanel } from "../components/PrivacyPanel";
 beforeEach(() => vi.clearAllMocks());
@@ -72,4 +77,34 @@ it("keeps native MLX selectable in the locally running app", () => {
     model: "qwen3.5:9b",
     captureEngine: "mlx",
   });
+});
+
+it("enables hosted MLX only after explicit pairing and revalidates selection", async () => {
+  api.pair.mockResolvedValue(undefined);
+  api.status.mockResolvedValue({ ready: true, paired: true });
+  const onSettings = start();
+  const card = screen.getByRole("button", { name: /Local MLX · Mac app/ });
+  expect(card).toBeDisabled();
+  expect(api.status).not.toHaveBeenCalled();
+  fireEvent.change(screen.getByLabelText("Local MLX pairing code"), {
+    target: { value: "fictional-code" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Pair local MLX" }));
+  expect(await screen.findByRole("status")).toHaveTextContent("Verified trained adapter");
+  expect(card).toBeEnabled();
+  expect(onSettings).not.toHaveBeenCalled();
+  api.status.mockResolvedValueOnce({ ready: true, paired: false });
+  fireEvent.click(card);
+  expect(
+    await screen.findByText("Pair the ready local MLX service before selecting it."),
+  ).toBeVisible();
+  expect(card).toBeDisabled();
+  expect(onSettings).not.toHaveBeenCalled();
+});
+it("keeps hosted MLX disabled when model assets cannot be verified", async () => {
+  api.status.mockResolvedValue({ ready: false, paired: true });
+  start();
+  fireEvent.click(screen.getByRole("button", { name: "Check local MLX" }));
+  expect(await screen.findByRole("status")).toHaveTextContent("assets are unavailable");
+  expect(screen.getByRole("button", { name: /Local MLX · Mac app/ })).toBeDisabled();
 });
