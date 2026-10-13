@@ -37,7 +37,7 @@ On this Mac, where the pinned model and adapter are already installed:
 
 The token stays in this tab's session storage and expires after one hour. A service restart requires pairing again. **Check local MLX** verifies an existing pairing; **Disconnect MLX** removes it from this browser. The site does not automatically probe localhost, download weights, install Python, or start a native service. Other computers need the pinned runtime/base model/adapter assets, which are excluded from this product repository. In-app browsers may block local connections even when Chrome works.
 
-The companion holds a capture reservation through classification and extraction. If a tab disappears or loses the connection before releasing its reservation, restart the service and pair again. This favors preventing overlapping GPU jobs over automatically retrying an uncertain request.
+The companion holds a capture reservation through classification and extraction. This coordinates OpenMemory workers; unrelated Ollama tabs or CLI commands do not obey this lock, so avoid starting other GPU jobs during a review. If a tab disappears or loses the connection before releasing its reservation, restart the service and pair again. This favors preventing overlapping GPU jobs over automatically retrying an uncertain request.
 
 Vercel serves the website; it never loads the native MLX weights. The browser calls your paired loopback service directly. Browser vaults on the hosted and local origins remain separate.
 
@@ -66,3 +66,13 @@ Typed capture never falls back to cloud. Stopping classification prevents extrac
 Fonts are bundled under `public/fonts` with their OFL licenses, removing automatic Google font requests. Ordinary local mode does not write per-note classifier logs into the repository. The retained `OPENMEMORY_MLX_TEST=1` diagnostic flag enables metadata-only runtime logging in `.local-runtime/classification-runtime.jsonl`.
 
 This change makes the current model the default; it does not claim new qualification accuracy or retrain it. Existing reaction-intent and extractor title/quantity weaknesses, and multi-stage inference latency, remain. Review suggestions before saving.
+
+## Companion validation — 2026-10-13
+
+- App suite: 442 tests across 37 files; TypeScript and production build passed.
+- Companion: 19 CPU-only HTTP tests, including denied origins, expired/single-use pairing, wrong adapter metadata, duplicate capture IDs, cancellation and retained reservations.
+- Actual browser integration used an isolated hosted-mode preview at `127.0.0.1:3006`, a separately running companion, and the real pinned MLX adapter plus Ollama extractor. No cloud provider was selected.
+- “I want to watch Dune this weekend.”: MOVIE / wishlist, 10.801 seconds classification, 24.368 seconds extraction, 35.408 seconds total. Review and Save succeeded; reload retained the item and paired MLX preference.
+- “I want to go to Bangladesh in December's last week.”: WISHLIST / wishlist, 9.510 seconds classification, 17.378 seconds extraction, 27.043 seconds total. Review succeeded without conflicting entry types; no precise travel date was invented.
+
+These are integration checks, not an independent model accuracy benchmark. The hosted HTTPS-to-loopback connection also depends on the browser's local-network permission; the in-app browser may block it.
