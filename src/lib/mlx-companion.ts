@@ -60,7 +60,13 @@ async function request(
   signal?.addEventListener("abort", abort, { once: true });
   const timer = setTimeout(
     () => controller.abort(new DOMException("Local MLX timed out", "TimeoutError")),
-    path === "/classify" ? 150_000 : path === "/release" ? 10_000 : 30_000,
+    path === "/classify"
+      ? 150_000
+      : path === "/status"
+        ? 8_000
+        : path === "/release"
+          ? 10_000
+          : 30_000,
   );
   try {
     const response = await fetch(`${mlxCompanionOrigin}${path}`, {
@@ -87,7 +93,9 @@ async function request(
     if (signal?.aborted) throw signal.reason ?? new DOMException("Cancelled", "AbortError");
     if (controller.signal.aborted)
       throw new Error(
-        "Local MLX took too long. Your note was not saved; try again or review manually. No cloud fallback was used.",
+        path === "/classify"
+          ? "Local MLX took too long. Your note was not saved; try again or review manually. No cloud fallback was used."
+          : "Couldn't connect to local MLX in time. Check the service on your Mac and allow this site's local network access in Chrome. In-app browsers may block this connection.",
       );
     if (error instanceof TypeError)
       throw new Error(

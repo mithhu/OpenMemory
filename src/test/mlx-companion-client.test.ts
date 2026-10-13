@@ -225,3 +225,18 @@ describe("MLX companion boundary", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 });
+
+it("bounds connection checks and explains browser permission failures without claiming inference ran", async () => {
+  vi.useFakeTimers();
+  fetchMock.mockImplementation(
+    (_url, init: RequestInit) =>
+      new Promise((_resolve, reject) => {
+        init.signal?.addEventListener("abort", () => reject(init.signal?.reason), { once: true });
+      }),
+  );
+  const check = expect(getMlxCompanionStatus()).rejects.toThrow("local network access in Chrome");
+  await vi.advanceTimersByTimeAsync(8000);
+  await check;
+  expect(fetchMock).toHaveBeenCalledTimes(1);
+  expect(fetchMock.mock.calls[0]![0]).toMatch(/\/status$/);
+});

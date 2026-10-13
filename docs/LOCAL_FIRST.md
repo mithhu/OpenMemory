@@ -69,10 +69,10 @@ This change makes the current model the default; it does not claim new qualifica
 
 ## Companion validation — 2026-10-13
 
-- App suite: 442 tests across 37 files; TypeScript and production build passed.
+- App suite: 443 tests across 37 files; TypeScript and production build passed.
 - Companion: 19 CPU-only HTTP tests, including denied origins, expired/single-use pairing, wrong adapter metadata, duplicate capture IDs, cancellation and retained reservations.
 - Actual browser integration used an isolated hosted-mode preview at `127.0.0.1:3006`, a separately running companion, and the real pinned MLX adapter plus Ollama extractor. No cloud provider was selected.
 - “I want to watch Dune this weekend.”: MOVIE / wishlist, 10.801 seconds classification, 24.368 seconds extraction, 35.408 seconds total. Review and Save succeeded; reload retained the item and paired MLX preference.
 - “I want to go to Bangladesh in December's last week.”: WISHLIST / wishlist, 9.510 seconds classification, 17.378 seconds extraction, 27.043 seconds total. Review succeeded without conflicting entry types; no precise travel date was invented.
 
-These are integration checks, not an independent model accuracy benchmark. The hosted HTTPS-to-loopback connection also depends on the browser's local-network permission; the in-app browser may block it.
+These are integration checks, not an independent model accuracy benchmark. The deployed pairing controls were verified live after push. The hosted HTTPS-to-loopback check timed out in the Codex in-app browser, while the companion reported ready for the exact hosted origin. Chrome pairing remains a user-side check with local-network permission enabled. Connection checks are bounded to eight seconds and explain this browser restriction.
