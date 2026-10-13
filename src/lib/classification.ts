@@ -124,10 +124,14 @@ export function assessClassification(
       });
     // clarify has no ActivityCommand equivalent; it never becomes a guessed
     // intent or substitutes a title/catalog match.
+    // Non-media wishes encode their future intent in the WISHLIST category;
+    // they deliberately have no media ActivityCommand.
+    const extractedIntent =
+      entry.activity?.intent ?? (entry.category === "WISHLIST" ? "wishlist" : undefined);
     if (
       advice.intent !== "clarify" &&
       advice.intent !== "none" &&
-      entry.activity?.intent !== advice.intent
+      extractedIntent !== advice.intent
     )
       conflicts.push({
         kind: "intent",

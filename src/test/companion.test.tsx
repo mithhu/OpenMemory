@@ -470,7 +470,7 @@ describe("Local AI has no silent cloud fallback", () => {
             : operation === "ask"
               ? connectWithProvider({ ...data, question: "What next?" }, settings)
               : discoverWithProvider(memories, settings, []);
-      await expect(request).rejects.toThrow("Nothing was sent to Astra");
+      await expect(request).rejects.toThrow("no cloud fallback was used");
       expect(fetch.mock.calls[0]![0]).toBe("http://127.0.0.1:11434/api/show");
       for (const fn of Object.values(cloud)) expect(fn).not.toHaveBeenCalled();
     },

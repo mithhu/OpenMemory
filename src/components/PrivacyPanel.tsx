@@ -38,6 +38,12 @@ export function PrivacyPanel({
   const [password, setPassword] = useState("");
   const [confirmation, setConfirmation] = useState("");
   const [working, setWorking] = useState(false);
+  const [connectionFeedback, setConnectionFeedback] = useState<{
+    kind: "checking" | "success" | "error";
+    text: string;
+  } | null>(null);
+  const siteOrigin =
+    typeof window !== "undefined" ? window.location.origin : "http://127.0.0.1:3001";
   return (
     <Dialog
       open={open}
@@ -108,6 +114,20 @@ export function PrivacyPanel({
             </span>
           </button>
         </div>
+        {hosted && (
+          <p>
+            Native MLX needs the OpenMemory server running on this Mac. If you have started it, open{" "}
+            <a
+              className="text-button"
+              href="http://127.0.0.1:3001/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              OpenMemory locally
+            </a>{" "}
+            and select Local MLX there. Opening this link does not install or start the app.
+          </p>
+        )}
         {hosted && onDisableAI && (
           <button className="text-button" disabled={busy || working} onClick={onDisableAI}>
             Use manual review only
@@ -134,23 +154,41 @@ export function PrivacyPanel({
             disabled={working || busy}
             onClick={async () => {
               setWorking(true);
+              setConnectionFeedback({
+                kind: "checking",
+                text: "Connecting to Ollama on this computer… Allow browser local network access if prompted.",
+              });
               try {
                 const names = await getLocalModels();
                 setModels(names);
-                if (names[0]) setModel(names[0]);
+                if (names[0] && !names.includes(model)) setModel(names[0]);
+                setConnectionFeedback({
+                  kind: "success",
+                  text: names.length
+                    ? `Connected to Ollama. ${names.length} downloaded local models found. Choose a model, then select Local Ollama or Use this model.`
+                    : "Connected to Ollama, but no local models are downloaded yet.",
+                });
                 toast.success(
                   names.length
                     ? `${names.length} local models found.`
                     : "No local models downloaded yet.",
                 );
               } catch {
-                toast.error("Start Ollama and allow this site's origin, then try again.");
+                const message =
+                  "Your browser couldn't connect to Ollama on this computer. Check that Ollama is running, allow this site's origin and browser local network access, then retry. In an in-app browser, try opening this site in Chrome or running OpenMemory locally.";
+                setConnectionFeedback({ kind: "error", text: message });
+                toast.error("Couldn't connect to Ollama. See the connection guidance below.");
               } finally {
                 setWorking(false);
               }
             }}
           >
-            <RefreshCw size={14} /> Find my local models
+            {connectionFeedback?.kind === "checking" ? (
+              <Loader2 size={14} className="spin" />
+            ) : (
+              <RefreshCw size={14} />
+            )}
+            {connectionFeedback?.kind === "checking" ? "Checking Ollama…" : "Find my local models"}
           </button>
           {settings.provider === "ollama" && settings.captureEngine === "ollama" && (
             <button
@@ -162,6 +200,11 @@ export function PrivacyPanel({
             </button>
           )}
         </div>
+        {connectionFeedback && (
+          <p role={connectionFeedback.kind === "error" ? "alert" : "status"}>
+            {connectionFeedback.text}
+          </p>
+        )}
         <p>
           Speech transcription uses ElevenLabs only when you choose Transcribe. Audio is sent to
           ElevenLabs; the resulting text uses your selected AI provider. Online title lookup is
@@ -171,16 +214,26 @@ export function PrivacyPanel({
           <summary>Local model setup</summary>
           <p>
             Use a downloaded model with structured JSON support. Disable Ollama cloud features and
-            allow only this site’s origin before starting Ollama.
+            allow only this site’s origin. For the Ollama macOS app, run these commands in Terminal:
           </p>
           <pre>
-            OLLAMA_NO_CLOUD=1 OLLAMA_ORIGINS=
-            {typeof window !== "undefined" ? window.location.origin : "http://localhost:3000"}{" "}
-            ollama serve
+            {`launchctl setenv OLLAMA_NO_CLOUD '1'\nlaunchctl setenv OLLAMA_ORIGINS '${siteOrigin}'`}
           </pre>
+          <p>Quit Ollama from its menu bar menu, then reopen Ollama to apply these settings.</p>
           <p>
-            Ollama listens at 127.0.0.1:11434. Your browser connects directly; browser permissions
-            may be needed on a hosted HTTPS site.
+            These settings apply to this login session. Apply them again after restarting your Mac.
+          </p>
+          <p>
+            Keep Ollama listening at 127.0.0.1:11434. These commands allow this website without
+            exposing Ollama to your network. Do not use a wildcard origin. If you already allow
+            other sites, add this origin to your existing comma-separated list instead of replacing
+            it.
+          </p>
+          <p>
+            Your browser connects directly to Ollama. Allow local network access for this site if
+            prompted. If you previously blocked it, change that permission in your browser’s site
+            settings and retry. In-app browsers may block local connections; try Chrome or the local
+            app.
           </p>
         </details>
         <div className="vault-settings">

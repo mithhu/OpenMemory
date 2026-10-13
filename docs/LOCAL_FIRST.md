@@ -12,6 +12,21 @@ Memories remain in this browser's vault, with optional encryption and export. AI
 
 New hosted libraries start empty. Example memories are added only through **Explore the demo**; existing saved libraries are preserved.
 
+### Connecting the hosted site to Ollama on a Mac
+
+The hosted site talks directly to the visitor's loopback Ollama service. Two permissions are needed: Ollama must allow the exact website origin, and the browser must permit local-network access. Selecting Local Ollama does not grant either permission automatically.
+
+For the Ollama macOS app, set the following in Terminal, then quit and reopen Ollama:
+
+```sh
+launchctl setenv OLLAMA_ORIGINS "https://open-memory-ai.vercel.app"
+launchctl setenv OLLAMA_NO_CLOUD "1"
+```
+
+Preserve any other explicitly allowed origins in the comma-separated value. These `launchctl` environment settings apply to the current login session; apply them again after logging out or restarting macOS. Keep Ollama bound to loopback; do not use wildcard origins or expose it on the network. In Chrome, allow this site's Local network access permission if prompted, then retry **Find my local models**. In-app browsers may restrict these connections; use Chrome or the locally running app if needed.
+
+The hosted native MLX card links to the separately running local app, where the trained adapter is available. It does not run the adapter inside Vercel or install/start a Mac application automatically.
+
 ## Running on this Mac
 
 ```sh

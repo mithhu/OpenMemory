@@ -38,6 +38,23 @@ const localEntry = (note: string, media = false) => ({
 });
 
 describe("Source sequencing and atomic capture planning", () => {
+  it("reports an origin rejection separately from a missing model without sending the note", async () => {
+    const fetch = vi.fn().mockResolvedValue(new Response("", { status: 403 }));
+    vi.stubGlobal("fetch", fetch);
+    await expect(
+      requestOllama("Fictional trial", { note: "fictional" }, {}, "qwen3.5:9b"),
+    ).rejects.toThrow("Ollama rejected this site's origin");
+    expect(fetch).toHaveBeenCalledOnce();
+    expect(fetch.mock.calls[0]![1].body).not.toContain("fictional");
+  });
+  it("explains browser permissions on a network failure without a cloud fallback", async () => {
+    const fetch = vi.fn().mockRejectedValue(new TypeError("Failed to fetch"));
+    vi.stubGlobal("fetch", fetch);
+    await expect(requestOllama("Fictional trial", {}, {}, "qwen3.5:9b")).rejects.toThrow(
+      "allow local network access",
+    );
+    expect(fetch).toHaveBeenCalledOnce();
+  });
   it.each(['```json\n{"value":1}\n```', '```\n{"value":1}\n```'])(
     "accepts a whole JSON fence without changing its data: %s",
     async (content) => {

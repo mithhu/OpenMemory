@@ -136,20 +136,39 @@ const commandJson = object({
   sentiment: { type: ["string", "null"], enum: ["loved", "neutral", "disliked", null] },
   creator: nullable,
 });
+const entryJsonFields = {
+  title: string,
+  summary: string,
+  date: string,
+  matchedMemoryId: nullable,
+  candidateMemoryIds: array(string),
+  clarificationQuestion: nullable,
+  tags: array(string),
+};
+// Constrain category/activity together during generation. A trip or other
+// ordinary wishlist cannot acquire a fabricated movie/book/course activity.
 export const capturePlanJson = object({
-  entries: array(
-    object({
-      title: string,
-      summary: string,
-      category: { type: "string", enum: [...CATEGORIES] },
-      date: string,
-      matchedMemoryId: nullable,
-      candidateMemoryIds: array(string),
-      clarificationQuestion: nullable,
-      tags: array(string),
-      activity: { anyOf: [commandJson, { type: "null" }] },
-    }),
-  ),
+  entries: array({
+    anyOf: [
+      object({
+        ...entryJsonFields,
+        category: { type: "string", enum: ["NOTE", "PERSON", "IDEA", "GOAL", "WISHLIST"] },
+        activity: { type: "null" },
+      }),
+      ...Object.entries(activityCategories).map(([kind, category]) =>
+        object({
+          ...entryJsonFields,
+          category: { type: "string", enum: [category] },
+          activity: {
+            anyOf: [
+              object({ ...commandJson.properties, kind: { type: "string", enum: [kind] } }),
+              { type: "null" },
+            ],
+          },
+        }),
+      ),
+    ],
+  }),
 });
 export const captureInstructions = (date: string) => `${grounding}
 Interpret ordinary typing mistakes by meaning, preserving quantities, negation and intent. Keep original media/course title spellings in this extraction; a separate title interpretation step will propose corrections.
@@ -157,7 +176,7 @@ Today is ${date}. Extract 1 to 8 distinct events or intentions from the note. Ne
 IMPORTANT: Extract events ONLY from note. catalog is a read-only lookup table of existing subjects, NOT events to extract. Do not copy its previous progress, titles phrased as events, ratings or history into the new event. A note saying 20 more pages means progress 20 increment, regardless of the existing page. Partial reading is progress, never complete unless the note explicitly says finished.
 Classify semantically, not by a verb alone. A named film watched or planned belongs to movie; a named book to book; a song/listen to music; a course/lecture to course. "Watched the sunset", "read the room", "finished my report" are everyday NOTE entries, not media. "Watch a movie" without a title needs a clarification question asking which film and whether watched or planned. Never silently put a clear media or course request in the diary.
 Categories: MOVIE for films, BOOK for books, MUSIC for music, LESSON for courses, NOTE for everyday life, PERSON for a fact about a person, IDEA for a creation idea, GOAL for goals, WISHLIST for other future experiences. For tracked media/course wishlist entries use their media category AND activity.intent wishlist.
-activity is null for ordinary life memories, people, ideas and goals. For media/courses include kind, intent, progress, progressMode, total, lessonNumbers, sentiment and creator.
+activity is null for NOTE, PERSON, IDEA, GOAL and WISHLIST entries. An expressed wish for a non-media experience, such as a trip, visiting a place or trying a restaurant, is WISHLIST with activity null, not a media activity and not a past NOTE. Preserve the desired timing in the summary; do not invent a specific date when only a week or month is given. Do not ask whether an explicit future desire is a future plan. For media/courses include kind, intent, progress, progressMode, total, lessonNumbers, sentiment and creator. Their category must match kind: MOVIE/movie, BOOK/book, MUSIC/music, LESSON/course. Future media desires keep their media category with activity.intent wishlist; WISHLIST is reserved for non-media desires.
 Intent: wishlist for future desire (not completion); start for starting; progress for partial work; complete for explicitly finished film/book/course; listen for a song played; reaction for an opinion about a named work without a new viewing, reading or play event. "Love the song Northern Lights but haven't played it today" is reaction, not listen. A positive description, recommendation or "sounds good" without an explicit desire is reaction, not wishlist. "Haven't started" alone does not imply wanting to start. Choose wishlist only for an expressed future intention or desire; never infer a plan from praise or a negated past action. Reactions have progress null and lessonNumbers [] and do not establish completion or a wishlist. General preferences like "music helps me relax" are NOTE, not a named-work activity. "Watched Dune" or "read Glass Orchard" alone does not prove whole-work completion. When neither partial progress nor explicit whole-work completion is clear, retain the media category and original title, ask whether it was partial or finished, and leave activity null until the user reviews the action. Never infer completion from a past watching or reading verb alone. "Watched lecture 2" means course progress, not a movie. Never invent total pages, duration, lesson count, creator or progress. Use null only for fields whose schema permits null. When activity is an object, kind, intent and progressMode must be valid enum values; lessonNumbers must always be an array, using [] when no lesson numbers were stated, including for movies, books and music. If the action is unresolved, retain the media category and original title, return the entire activity as null and ask a clarification question. Never return an activity object with intent null.
 "Read 30 pages" is progress 30 and progressMode increment. "I'm on page 120" is progress 120 absolute. "Watched 40 minutes" is increment 40; "up to minute 40" is absolute 40. "Did lessons 2-4" gives lessonNumbers [2,3,4], progress null. Do not do arithmetic; the app applies it. A song listen defaults progress null so the app adds one play. Parse explicit ratings: 7-10/10 loved, 5-6 neutral, 1-4 disliked, or direct loved/disliked/okay language. Sentiment null unless stated.
 For every media/course entry, title is ONLY the name of the work/course as written in the note, never an event headline. Keep action, quantity, page position, date, companion and reaction in summary/activity, not title. Do not prefix a work title with "Read", "Reading", "Watched" or a page count. For an unfamiliar explicitly named work, preserve its full original title just as for a familiar work, including internal punctuation and apostrophe characters. Never rewrite a curly apostrophe as a straight apostrophe. An explicit unfamiliar title does not need a "which title" clarification. Do not copy a catalog's event-style title. For everyday non-media entries a descriptive headline is appropriate.

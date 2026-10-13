@@ -29,6 +29,8 @@ export const aiSettingsSchema = z.object({
   captureEngine: z.enum(["mlx", "ollama"]).optional(),
 });
 export type AISettings = z.infer<typeof aiSettingsSchema>;
+// Leave time to answer a browser local-network permission prompt on first use.
+const localConnectionTimeoutMs = 30000;
 export const defaultAISettings: AISettings = {
   provider: "ollama",
   model: "qwen3.5:9b",
@@ -97,11 +99,12 @@ export async function requestOllama(
       credentials: "omit",
       referrerPolicy: "no-referrer",
       signal: signal
-        ? AbortSignal.any([signal, AbortSignal.timeout(5000)])
-        : AbortSignal.timeout(5000),
+        ? AbortSignal.any([signal, AbortSignal.timeout(localConnectionTimeoutMs)])
+        : AbortSignal.timeout(localConnectionTimeoutMs),
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ model }),
     });
+    if (metadataResponse.status === 403) throw new Error("LOCAL_ORIGIN_BLOCKED");
     if (!metadataResponse.ok) throw new Error("LOCAL_MODEL_MISSING");
     const metadata = await metadataResponse.json();
     localFormat = metadata.details?.format;
@@ -168,7 +171,11 @@ export async function requestOllama(
       throw new Error(
         awaitingReply
           ? "The local model took longer than two minutes. Your note has not been saved. Review it manually, or try a smaller downloaded model. Nothing was sent to Astra."
-          : "Ollama's local model check took too long. Check that Ollama is running and try again, or review manually. Nothing was sent to Astra.",
+          : "Ollama's local model check took too long. Allow local network access for this site in your browser and check Ollama's allowed origins. If using an in-app browser, try Chrome or the locally running app. Your note has not been saved; no cloud fallback was used.",
+      );
+    if (error instanceof Error && error.message === "LOCAL_ORIGIN_BLOCKED")
+      throw new Error(
+        "Ollama rejected this site's origin. Add this exact site address to OLLAMA_ORIGINS and restart Ollama. No cloud fallback was used.",
       );
     if (error instanceof Error && error.message === "REMOTE_MODEL_BLOCKED")
       throw new Error(
@@ -183,7 +190,7 @@ export async function requestOllama(
         "The local model doesn't match the evaluated version. Review manually until the verified model is available. Your note wasn't sent for classification.",
       );
     throw new Error(
-      "Couldn't reach local Ollama. Start Ollama and allow this site's origin. Nothing was sent to Astra.",
+      "Your browser couldn't connect to Ollama on this computer. Start Ollama, allow this exact site's origin, and allow local network access in your browser. If using an in-app browser, try Chrome or the locally running app. Your note has not been saved; no cloud fallback was used.",
     );
   }
   if (!response.ok)
@@ -235,7 +242,7 @@ export async function getLocalModels(): Promise<string[]> {
     redirect: "error",
     credentials: "omit",
     referrerPolicy: "no-referrer",
-    signal: AbortSignal.timeout(5000),
+    signal: AbortSignal.timeout(localConnectionTimeoutMs),
   });
   if (!response.ok) throw new Error("Couldn't read local models.");
   const data = z
