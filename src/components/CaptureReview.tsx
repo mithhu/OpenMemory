@@ -19,6 +19,8 @@ import {
   type CaptureEntry,
 } from "@/lib/capture-plan";
 import { TitleCatalog } from "./TitleCatalog";
+import { ReminderFields } from "./ReminderFields";
+import { localReminder } from "@/lib/reminders";
 import type { CatalogTitle } from "@/lib/title-catalog";
 import {
   assessClassification,
@@ -346,7 +348,19 @@ export function CaptureReview({
           if (needsMatchingReview)
             throw new Error("Choose an existing item or New memory for each unresolved match.");
           const form = new FormData(event.currentTarget);
-          const next = entries.map((entry, index) => {
+          const next = entries.map((original, index) => {
+            const timing = String(form.get(`planned-timing-${index}`) || "").trim();
+            const entry = {
+              ...original,
+              ...(timing || original.plannedTiming !== undefined
+                ? { plannedTiming: timing || null }
+                : {}),
+              ...(form.get(`reminder-enabled-${index}`)
+                ? { reminder: localReminder(String(form.get(`reminder-time-${index}`) || "")) }
+                : original.reminder !== undefined
+                  ? { reminder: null }
+                  : {}),
+            };
             if (entry.activity?.kind !== "course") return entry;
             const input = String(form.get(`lessons-${index}`) || "").trim();
             const numbers = new Set<number>();
@@ -667,6 +681,7 @@ export function CaptureReview({
                 )}
               </div>
             )}
+            <ReminderFields index={index} timing={entry.plannedTiming} reminder={entry.reminder} />
             {entry.clarificationQuestion && (
               <div
                 id={`capture-question-${index}`}

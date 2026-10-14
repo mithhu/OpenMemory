@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { reminderSchema } from "./reminders";
 import { CATEGORIES, memorySchema, today, type Memory } from "./memory";
 import {
   activityCommandSchema,
@@ -20,6 +21,8 @@ export const captureEntrySchema = z.object({
   clarificationQuestion: z.string().max(1000).nullable(),
   tags: z.array(z.string().max(60)).max(5),
   activity: activityCommandSchema.nullable(),
+  plannedTiming: z.string().max(500).nullable().optional(),
+  reminder: reminderSchema.nullable().optional(),
   titleSuggestion: titleSuggestionSchema.nullable().optional(),
   titleReviewRequired: z.boolean().optional(),
   intentReviewRequired: z.boolean().optional(),
@@ -143,6 +146,7 @@ const entryJsonFields = {
   matchedMemoryId: nullable,
   candidateMemoryIds: array(string),
   clarificationQuestion: nullable,
+  plannedTiming: nullable,
   tags: array(string),
 };
 // Constrain category/activity together during generation. A trip or other
@@ -172,6 +176,7 @@ export const capturePlanJson = object({
 });
 export const captureInstructions = (date: string) => `${grounding}
 Capture decisions, in priority order:
+plannedTiming is the original future timing phrase (for example "this weekend", "in November", "last week of December") or null if no future timing was expressed. Preserve ambiguity, including missing year or exact day. Never invent a reminder or departure date.
 Media and course title MUST contain only the original work name, never an action headline. For example, "want to watch the film Quiet Valley with a friend" has title "Quiet Valley", not "Watch Quiet Valley" or "Watch the film Quiet Valley". The descriptive-headline rule applies only to non-media notes. Separate a release-year qualifier and an explicit author from the work name; preserve them in summary/creator.
 1. Separate the date of this recorded event from desired future timing and a work's release year. For a wish or future intention, date MUST be ${date}; retain its schedule in summary. A week, month or season never establishes an exact day. For an actual past event, use its explicitly stated exact date or resolve yesterday; otherwise use ${date}. Do not schedule a memory on an invented day.
 2. Preserve every explicit quantity in activity. Playing or replaying a named song is intent listen, never intent progress. Its progress FIELD contains the play count with progressMode increment: "played twice" means 2, "played three times" means 3. Only an unquantified single listen uses progress null for the app's one-play default. Never discard a stated count because a default exists. total is the explicitly stated full-work size, not the number of plays; it MUST be null when not stated. A single listen never implies total 1.
@@ -213,6 +218,16 @@ export function validatePlan(
   const result = capturePlanSchema.parse(raw);
   const ids = new Set(memories.map((m) => m.id));
   for (const entry of result.entries) {
+    if (resolveExact) {
+      // Generation may describe timing, but scheduling is a review-only decision.
+      delete entry.reminder;
+      if (
+        sourceNote &&
+        entry.plannedTiming &&
+        !sourceNote.toLocaleLowerCase().includes(entry.plannedTiming.toLocaleLowerCase())
+      )
+        entry.plannedTiming = null;
+    }
     if (entry.matchedMemoryId && !ids.has(entry.matchedMemoryId))
       throw new Error("The model matched a missing memory. Please try again.");
     entry.candidateMemoryIds = [...new Set(entry.candidateMemoryIds)].filter((id) => ids.has(id));
@@ -490,6 +505,8 @@ export function applyCapturePlan(
       title: existing?.activity ? existing.title : entry.title,
       category: entry.category,
       date: entry.date,
+      plannedTiming: entry.plannedTiming ?? existing?.plannedTiming ?? null,
+      reminder: entry.reminder === undefined ? (existing?.reminder ?? null) : entry.reminder,
       summary: existing && !activity ? `${existing.summary}\n${entry.summary}` : entry.summary,
       tags: [...new Set([...(existing?.tags ?? []), ...entry.tags])].slice(0, 8),
       followUpQuestion: "",

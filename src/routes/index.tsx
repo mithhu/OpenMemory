@@ -1,3 +1,4 @@
+import { RemindersPanel } from "@/components/RemindersPanel";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import {
@@ -1085,6 +1086,41 @@ function OpenMemory() {
                     document
                       .querySelector<HTMLTextAreaElement>(".capture-composer textarea")
                       ?.focus();
+                  }}
+                />
+              )}
+              {view === "today" && (
+                <RemindersPanel
+                  memories={memories}
+                  disabled={busy || saving || !loaded || Boolean(storageError)}
+                  onOpen={setSelectedId}
+                  onUpdate={async (id, action) => {
+                    const updated = await persist(
+                      memoryRef.current.map((memory) => {
+                        if (memory.id !== id || !memory.reminder) return memory;
+                        return {
+                          ...memory,
+                          updatedAt: new Date().toISOString(),
+                          reminder: {
+                            ...memory.reminder,
+                            ...(action === "snooze"
+                              ? {
+                                  at: new Date(Date.now() + 3600000).toISOString(),
+                                  status: "scheduled" as const,
+                                }
+                              : { status: action }),
+                          },
+                        };
+                      }),
+                    );
+                    if (updated)
+                      toast.success(
+                        action === "snooze"
+                          ? "Reminder snoozed for one hour."
+                          : action === "done"
+                            ? "Reminder marked done. Your memory is still saved."
+                            : "Reminder dismissed. Your memory is still saved.",
+                      );
                   }}
                 />
               )}

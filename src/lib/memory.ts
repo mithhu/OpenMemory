@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { activitySchema } from "./activity";
 import { privateStorageActive } from "./vault";
+import { reminderSchema } from "./reminders";
 
 export const CATEGORIES = [
   "MOVIE",
@@ -45,6 +46,8 @@ export const memorySchema = z.object({
   transcripts: z.array(z.string().max(16000)).max(100),
   why: z.string().max(8000).nullable().optional(),
   targetDate: z.string().max(30).nullable().optional(),
+  plannedTiming: z.string().max(500).nullable().optional(),
+  reminder: reminderSchema.nullable().optional(),
   tags: z.array(z.string().max(60)).max(8).optional(),
   relatedMemoryIds: z.array(z.string().max(100)).max(10).optional(),
   completionFor: z.string().max(200).optional(),

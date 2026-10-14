@@ -3654,3 +3654,67 @@
 .review-questions-summary .text-button {
   color: #704818;
 }
+
+.reminder-fields,
+.reminders-panel {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #f7faff;
+}
+.reminder-fields h3 {
+  margin: 0 0 16px;
+}
+.reminder-fields label:not(.classification-confirm) {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.reminder-fields input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+}
+.reminder-fields p,
+.reminders-panel p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.reminder-item {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+.reminder-item.due {
+  border-left: 3px solid #d99b22;
+  padding-left: 16px;
+}
+.reminder-badge {
+  display: block;
+  color: #2658bc;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.reminder-item.due .reminder-badge {
+  color: #926014;
+}
+.reminder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.reminder-fields .classification-confirm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  cursor: pointer;
+}
+.reminder-fields input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: #2658bc;
+}
