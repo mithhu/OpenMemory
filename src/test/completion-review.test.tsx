@@ -294,5 +294,7 @@ it("adding and removing an entry cannot revive a prior completion acknowledgment
   fireEvent.click(screen.getAllByRole("button", { name: "Remove entry" })[1]!);
   expect(checkbox()).not.toBeChecked();
   expect(screen.getByRole("button", { name: /Save 1 entry/ })).toBeDisabled();
-  expect(screen.getByRole("status")).toHaveTextContent("Confirm completion for 1 entry to save.");
+  expect(screen.getByText(/Confirm completion for/)).toHaveTextContent(
+    "Confirm completion for 1 entry to save.",
+  );
 });

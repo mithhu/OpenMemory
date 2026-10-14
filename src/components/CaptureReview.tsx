@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check, Loader2, PencilLine, Plus, X } from "lucide-react";
 import { toast } from "sonner";
 import { CATEGORIES, categoryMeta, today, type Memory, type Category } from "@/lib/memory";
@@ -104,6 +104,17 @@ export function CaptureReview({
   onCancel: () => void;
   classification?: ClassificationMetadata;
 }) {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const moveTo = (target: HTMLElement | null) => {
+    if (!target) return;
+    target.focus({ preventScroll: true });
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView?.({ behavior: reducedMotion ? "instant" : "smooth", block: "start" });
+  };
+  useEffect(() => {
+    moveTo(headingRef.current);
+  }, []);
   // The editor owns its initial proposal. A parent replacement must remount it;
   // matching new advice cannot legitimize entries left over from an old source.
   const [initialProposal] = useState(() => JSON.stringify([text, plan]));
@@ -270,8 +281,41 @@ export function CaptureReview({
   const needsMatchingReview = entries.some(
     (entry) => !entry.matchedMemoryId && entry.candidateMemoryIds.length > 0,
   );
+  const decisions: { label: string; target: string }[] = [];
+  if (needsClassificationReview)
+    decisions.push({
+      label: "Check the suggested type and action",
+      target: "classification-review",
+    });
+  if (hasUnknownProgress && !progressAcknowledged)
+    decisions.push({
+      label: "Confirm progress without a known amount",
+      target: "progress-confirmation",
+    });
+  entries.forEach((entry, index) => {
+    const prefix = `Entry ${index + 1}: `;
+    if (entry.titleSuggestion?.decision === "pending" || entry.titleReviewRequired)
+      decisions.push({ label: `${prefix}check the title`, target: `capture-title-check-${index}` });
+    if (entry.intentReviewRequired)
+      decisions.push({ label: `${prefix}choose what happened`, target: `capture-intent-${index}` });
+    if (!entry.matchedMemoryId && entry.candidateMemoryIds.length)
+      decisions.push({ label: `${prefix}choose where to save`, target: `capture-match-${index}` });
+    if (
+      entry.activity?.intent === "complete" &&
+      completionAcknowledgments[index] !== completionReviewKey
+    )
+      decisions.push({
+        label: `${prefix}confirm whole-work completion`,
+        target: `capture-completion-${index}`,
+      });
+    if (!entry.title.trim())
+      decisions.push({ label: `${prefix}add a title`, target: `capture-title-${index}` });
+    if (!entry.summary.trim())
+      decisions.push({ label: `${prefix}add details`, target: `capture-details-${index}` });
+  });
   return (
     <form
+      ref={formRef}
       className="capture-review"
       aria-label="Review memories before saving"
       onChangeCapture={(event) => {
@@ -360,7 +404,9 @@ export function CaptureReview({
           <span className="eyebrow">
             <PencilLine size={14} /> REVIEW & KEEP
           </span>
-          <h2>Here’s what I understood.</h2>
+          <h2 ref={headingRef} tabIndex={-1}>
+            Here’s what I understood.
+          </h2>
           <p>A quick check before these become part of your story.</p>
         </div>
         <button
@@ -373,8 +419,73 @@ export function CaptureReview({
           <X size={18} />
         </button>
       </div>
+      <div className={`review-readiness ${decisions.length ? "needs-input" : "ready"}`}>
+        <p role="status" aria-label="Review status" aria-live="polite" aria-atomic="true">
+          <strong>{decisions.length ? "Needs your input" : "Review ready"}</strong>{" "}
+          {decisions.length
+            ? `— ${decisions.length} ${decisions.length === 1 ? "decision" : "decisions"} before saving.`
+            : `— ${entries.length} ${entries.length === 1 ? "entry" : "entries"} to check.`}
+        </p>
+        {decisions.length ? (
+          <ul aria-label="Decisions before saving">
+            {decisions.map((decision) => (
+              <li key={decision.target}>
+                <button
+                  type="button"
+                  className="text-button"
+                  onClick={() =>
+                    moveTo(
+                      formRef.current?.querySelector<HTMLElement>(`[id="${decision.target}"]`) ??
+                        null,
+                    )
+                  }
+                >
+                  {decision.label}
+                  <span aria-hidden="true"> →</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Check the details below, then choose Save. Nothing is saved yet.</p>
+        )}
+      </div>
+      {entries.some((entry) => entry.clarificationQuestion) && (
+        <section className="review-questions-summary" aria-label="Questions to check">
+          <strong>Questions to check</strong>
+          <p>Use the entry fields to clarify these details, or go back to add context.</p>
+          <ul>
+            {entries.map(
+              (entry, index) =>
+                entry.clarificationQuestion && (
+                  <li key={entry.reviewKey}>
+                    <button
+                      type="button"
+                      className="text-button"
+                      onClick={() =>
+                        moveTo(
+                          formRef.current?.querySelector<HTMLElement>(
+                            `[id="capture-question-${index}"]`,
+                          ) ?? null,
+                        )
+                      }
+                    >
+                      Entry {index + 1}: {entry.clarificationQuestion}
+                      <span aria-hidden="true"> →</span>
+                    </button>
+                  </li>
+                ),
+            )}
+          </ul>
+        </section>
+      )}
       {classification && (
-        <section className="review-entry classification-review" aria-label="Classification review">
+        <section
+          id="classification-review"
+          tabIndex={-1}
+          className="review-entry classification-review"
+          aria-label="Classification review"
+        >
           <span className="eyebrow">A SECOND CHECK</span>
           {classificationError ? (
             <p role="alert">{classificationError}</p>
@@ -432,6 +543,7 @@ export function CaptureReview({
       {hasUnknownProgress && (
         <label className="classification-confirm">
           <input
+            id="progress-confirmation"
             type="checkbox"
             data-review-ack="true"
             disabled={saving}
@@ -470,6 +582,7 @@ export function CaptureReview({
                 )}
               </select>
               <input
+                id={`capture-title-${index}`}
                 aria-label={`Entry ${index + 1} title`}
                 value={entry.title}
                 maxLength={300}
@@ -487,7 +600,11 @@ export function CaptureReview({
               />
             </div>
             {entry.titleReviewRequired && !entry.titleSuggestion && (
-              <div className="review-title-suggestion">
+              <div
+                id={`capture-title-check-${index}`}
+                tabIndex={-1}
+                className="review-title-suggestion"
+              >
                 <p>
                   <strong>Check this title before saving.</strong>
                 </p>
@@ -508,6 +625,8 @@ export function CaptureReview({
             )}
             {entry.titleSuggestion && (
               <div
+                id={`capture-title-check-${index}`}
+                tabIndex={-1}
                 className="review-title-suggestion"
                 role="group"
                 aria-label={`Entry ${index + 1} title suggestion`}
@@ -549,10 +668,31 @@ export function CaptureReview({
               </div>
             )}
             {entry.clarificationQuestion && (
-              <p className="review-question">
-                <span>A little clarification</span>
-                {entry.clarificationQuestion}
-              </p>
+              <div
+                id={`capture-question-${index}`}
+                tabIndex={-1}
+                className="review-question review-clarification"
+                role="group"
+                aria-label={`Entry ${index + 1} question`}
+              >
+                <span>
+                  {entry.intentReviewRequired ||
+                  entry.titleReviewRequired ||
+                  entry.candidateMemoryIds.length
+                    ? "A question before saving"
+                    : "Check this detail"}
+                </span>
+                <p>{entry.clarificationQuestion}</p>
+                <p className="review-question-guidance">
+                  {entry.intentReviewRequired
+                    ? "Choose what happened in ‘This was’ below."
+                    : entry.candidateMemoryIds.length && !entry.matchedMemoryId
+                      ? "Choose the right saved item, or New memory, in ‘Save to’ below."
+                      : entry.titleReviewRequired
+                        ? "Edit or confirm the title above."
+                        : "Edit the title or details below if needed. To add more context, choose Back to my words."}
+                </p>
+              </div>
             )}
             {(entry.activity?.kind === "book" || entry.activity?.kind === "movie") && (
               <TitleCatalog
@@ -562,6 +702,7 @@ export function CaptureReview({
               />
             )}
             <textarea
+              id={`capture-details-${index}`}
               aria-label={`Entry ${index + 1} details`}
               value={entry.summary}
               required
@@ -582,6 +723,7 @@ export function CaptureReview({
               <label>
                 Save to
                 <select
+                  id={`capture-match-${index}`}
                   value={
                     entry.matchedMemoryId ||
                     (entry.candidateMemoryIds.length ? "__unresolved__" : "")
@@ -624,6 +766,7 @@ export function CaptureReview({
                   <label>
                     This was
                     <select
+                      id={`capture-intent-${index}`}
                       value={entry.intentReviewRequired ? "" : entry.activity.intent}
                       required
                       onChange={(e) =>
@@ -653,6 +796,7 @@ export function CaptureReview({
                           type="checkbox"
                           data-review-ack="true"
                           disabled={saving}
+                          id={`capture-completion-${index}`}
                           aria-label={`Entry ${index + 1}: I finished ${entry.title} in full`}
                           aria-describedby={`completion-help-${index}`}
                           checked={completionAcknowledgments[index] === completionReviewKey}
@@ -829,6 +973,11 @@ export function CaptureReview({
         <p role="status">
           Confirm completion for {unconfirmedCompletionCount}{" "}
           {unconfirmedCompletionCount === 1 ? "entry" : "entries"} to save.
+        </p>
+      )}
+      {decisions.length > 0 && (
+        <p className="review-save-help">
+          Save is waiting for your choices. Use the checklist above to find what needs attention.
         </p>
       )}
       <div className="review-actions">

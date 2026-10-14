@@ -132,6 +132,11 @@ function OpenMemory() {
   const [view, setView] = useState<View>("today");
   const [draft, setDraft] = useState("");
   const [captureError, setCaptureError] = useState("");
+  const [captureReceipt, setCaptureReceipt] = useState<{ count: number; ids: string[] } | null>(
+    null,
+  );
+  const captureStatusRef = useRef<HTMLElement>(null);
+  const savedStatusRef = useRef<HTMLHeadingElement>(null);
   const [question, setQuestion] = useState("");
   const [askedQuestion, setAskedQuestion] = useState("");
   const [synthesis, setSynthesis] = useState<SavedSynthesis | null>(null);
@@ -253,6 +258,20 @@ function OpenMemory() {
     return () => window.clearInterval(timer);
   }, [busy]);
   useEffect(() => {
+    if (task !== "capture") return;
+    const region = captureStatusRef.current;
+    region?.focus({ preventScroll: true });
+    region?.scrollIntoView?.({ block: "nearest", behavior: "auto" });
+  }, [task]);
+  useEffect(() => {
+    if (!captureReceipt) return;
+    savedStatusRef.current?.focus({ preventScroll: true });
+    savedStatusRef.current?.scrollIntoView?.({ block: "nearest", behavior: "auto" });
+  }, [captureReceipt]);
+  useEffect(() => {
+    if (draft.trim()) setCaptureReceipt(null);
+  }, [draft]);
+  useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setSelectedId(null);
@@ -322,6 +341,7 @@ function OpenMemory() {
     const controller = new AbortController();
     captureController.current = controller;
     setCaptureError("");
+    setCaptureReceipt(null);
     setTask("capture");
     try {
       const input = { text, today: today(), memories: memoryRef.current };
@@ -367,6 +387,7 @@ function OpenMemory() {
       return;
     if (task === "capture") stopCapture();
     setCaptureError("");
+    setCaptureReceipt(null);
     setPending({
       text: draft,
       plan: {
@@ -396,16 +417,15 @@ function OpenMemory() {
     if (!pending) return false;
     try {
       assertClassificationReview(plan, pending.text, pending.classification, classificationReview);
-      const next = applyCapturePlan(
-        memoryRef.current,
-        plan,
-        pending.text,
-        progressReview,
-        completionReview,
-      );
+      const previous = memoryRef.current;
+      const next = applyCapturePlan(previous, plan, pending.text, progressReview, completionReview);
+      const changedIds = next
+        .filter((memory) => !previous.includes(memory))
+        .map((memory) => memory.id);
       if (!(await persist(next))) return false;
       setDraft("");
       setPending(null);
+      setCaptureReceipt({ count: plan.entries.length, ids: changedIds });
       toast.success(
         `${plan.entries.length} ${plan.entries.length === 1 ? "entry" : "entries"} remembered, just as you confirmed.`,
       );
@@ -1127,15 +1147,23 @@ function OpenMemory() {
                   <span>
                     {task === "capture"
                       ? "Understanding…"
-                      : consentRequired || (settings.provider === "astra" && configured === false)
-                        ? "Review manually"
-                        : "Review memory"}
+                      : pending
+                        ? "Review ready"
+                        : consentRequired || (settings.provider === "astra" && configured === false)
+                          ? "Review manually"
+                          : "Review memory"}
                   </span>
                   <ArrowUpRight size={15} />
                 </button>
               </form>
               <div className="composer-caption">
-                <span>{busy ? statusText : "Nothing is saved until you review and confirm."}</span>
+                <span>
+                  {busy
+                    ? statusText
+                    : pending
+                      ? "Your review is ready below. Check it before saving."
+                      : "Nothing is saved until you review and confirm."}
+                </span>
                 {task === "capture" && (
                   <button type="button" className="text-button" onClick={stopCapture}>
                     Stop waiting
@@ -1158,6 +1186,57 @@ function OpenMemory() {
                   </button>
                 )}
               </div>
+              {task === "capture" && (
+                <section
+                  className="capture-feedback processing"
+                  ref={captureStatusRef}
+                  tabIndex={-1}
+                  aria-label="Preparing your review"
+                >
+                  <Loader2 size={22} className="spin" aria-hidden="true" />
+                  <div>
+                    <h2>Preparing your review</h2>
+                    <p role="status">
+                      AI is sorting your note and preparing suggestions. Nothing has been saved.
+                    </p>
+                    <p className="capture-feedback-detail" aria-hidden="true">
+                      {elapsed}s elapsed · Local models can take a minute.
+                    </p>
+                    {elapsed >= 20 && (
+                      <p>
+                        Still working. You can stop waiting or review your words manually above.
+                      </p>
+                    )}
+                  </div>
+                </section>
+              )}
+              {captureReceipt && !pending && task !== "capture" && (
+                <section className="capture-feedback saved" aria-label="Saved memory confirmation">
+                  <Check size={22} aria-hidden="true" />
+                  <div>
+                    <h2 ref={savedStatusRef} tabIndex={-1}>
+                      {captureReceipt.count === 1
+                        ? "Your memory is saved"
+                        : `${captureReceipt.count} entries are saved`}
+                    </h2>
+                    <p role="status">Saved on this device, just as you confirmed.</p>
+                    <button
+                      type="button"
+                      className="text-button"
+                      onClick={() => {
+                        if (captureReceipt.ids.length === 1) setSelectedId(captureReceipt.ids[0]!);
+                        else {
+                          setView("journal");
+                          setHighlightedIds(captureReceipt.ids);
+                        }
+                      }}
+                    >
+                      {captureReceipt.ids.length === 1 ? "Open saved memory" : "See saved entries"}
+                      <ArrowRight size={15} />
+                    </button>
+                  </div>
+                </section>
+              )}
               {captureError && (
                 <p className="review-question" role="alert">
                   <span>Couldn't prepare your review</span>
@@ -1665,7 +1744,7 @@ function OpenMemory() {
           }}
         />
       )}
-      {busy && !voiceActive && view !== "ask" && (
+      {busy && task !== "capture" && !voiceActive && view !== "ask" && (
         <div className="activity-toast" role="status" aria-live="polite">
           <span className="processing-dot" />
           <span>{statusText}</span>

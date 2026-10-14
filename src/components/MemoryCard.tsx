@@ -51,6 +51,19 @@ export function MemoryCard({
           ))}
         </div>
       )}
+      {compact && m.followUpQuestion && (
+        <div className="followup-preview">
+          <span>
+            <MessageCircle size={14} /> Optional follow-up
+          </span>
+          <p>{m.followUpQuestion}</p>
+          {onExplore && (
+            <button className="text-button" disabled={disabled} onClick={onExplore}>
+              Answer question <ArrowUpRight size={13} />
+            </button>
+          )}
+        </div>
+      )}
       {!compact && (
         <>
           {m.why && (
@@ -75,7 +88,7 @@ export function MemoryCard({
             <div className="followup">
               <div className="followup-heading">
                 <MessageCircle size={14} />
-                <span>ONE LITTLE QUESTION</span>
+                <span>OPTIONAL FOLLOW-UP</span>
               </div>
               <p>{m.followUpQuestion}</p>
               {!!m.suggestedAnswers.length && (
@@ -111,7 +124,7 @@ export function MemoryCard({
                   disabled={!answer.trim() || disabled}
                   aria-label="Save answer"
                 >
-                  <ArrowUpRight size={18} />
+                  Save answer <ArrowUpRight size={18} />
                 </button>
               </form>
             </div>

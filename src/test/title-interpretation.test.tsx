@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { CaptureReview } from "../components/CaptureReview";
 import { applyCapturePlan, validatePlan, type CaptureEntry } from "../lib/capture-plan";
 import { planWithProvider } from "../lib/ai-client";
@@ -171,7 +171,11 @@ describe("Language-model title suggestions require source evidence and user choi
       />,
     );
     expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeDisabled();
-    expect(screen.getByText(/AI title check couldn't verify/)).toBeInTheDocument();
+    expect(
+      within(screen.getByRole("group", { name: "Entry 1 question" })).getByText(
+        /AI title check couldn't verify/,
+      ),
+    ).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Confirm “Sapiens”" }));
     fireEvent.click(screen.getByRole("button", { name: "Save 1 entry" }));
     await waitFor(() => expect(save).toHaveBeenCalledOnce());

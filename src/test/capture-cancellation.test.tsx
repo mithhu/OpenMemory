@@ -81,6 +81,33 @@ beforeEach(() => {
 afterEach(cleanup);
 
 describe("Cancelling capture preserves the user's work", () => {
+  it("makes processing, review completion and successful saving distinct without auto-saving", async () => {
+    const request = deferred();
+    api.plan.mockReturnValueOnce(request.promise);
+    await start();
+    expect(screen.getByRole("region", { name: "Preparing your review" })).toHaveFocus();
+    expect(
+      screen.getByText(
+        "AI is sorting your note and preparing suggestions. Nothing has been saved.",
+      ),
+    ).toBeInTheDocument();
+    expect(api.save).not.toHaveBeenCalled();
+    await act(async () => request.resolve(plan("A clear result")));
+    expect(screen.queryByRole("region", { name: "Preparing your review" })).toBeNull();
+    expect(screen.getByRole("heading", { name: "Here’s what I understood." })).toHaveFocus();
+    expect(screen.getByRole("button", { name: "Review ready" })).toBeDisabled();
+    expect(api.save).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole("button", { name: "Save 1 entry" }));
+    await waitFor(() =>
+      expect(screen.getByRole("heading", { name: "Your memory is saved" })).toHaveFocus(),
+    );
+    expect(api.save).toHaveBeenCalledOnce();
+    expect(screen.getByRole("button", { name: "Open saved memory" })).toBeEnabled();
+    fireEvent.change(screen.getByLabelText("A new memory"), {
+      target: { value: "Another unsaved note" },
+    });
+    expect(screen.queryByRole("region", { name: "Saved memory confirmation" })).toBeNull();
+  });
   it("routes the Ollama engine through trained classification with the selected extractor", async () => {
     const settings = { provider: "ollama", model: "chosen-local-model", captureEngine: "ollama" };
     localStorage.setItem("openmemory.ai.v2", JSON.stringify(settings));
