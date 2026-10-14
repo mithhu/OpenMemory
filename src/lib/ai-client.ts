@@ -88,12 +88,24 @@ export async function requestOllama(
   model: string,
   signal?: AbortSignal,
   purpose: "general" | "classification" = "general",
-  expectedModelDigest?: string,
+  expectedModelDigest?: string | readonly string[],
 ): Promise<unknown> {
   signal?.throwIfAborted();
   if (!model.trim() || /cloud|https?:|\/\//i.test(model))
     throw new Error("Choose a downloaded local model in Privacy & AI.");
-  if (expectedModelDigest !== undefined && !/^[a-f0-9]{64}$/.test(expectedModelDigest))
+  const expectedModelDigests =
+    expectedModelDigest === undefined
+      ? undefined
+      : typeof expectedModelDigest === "string"
+        ? [expectedModelDigest]
+        : expectedModelDigest;
+  if (
+    expectedModelDigests !== undefined &&
+    (!expectedModelDigests.length ||
+      expectedModelDigests.some(
+        (digest) => typeof digest !== "string" || !/^[a-f0-9]{64}$/.test(digest),
+      ))
+  )
     throw new Error("Invalid evaluated local model digest.");
   let response: Response;
   let awaitingReply = false;
@@ -136,7 +148,7 @@ export async function requestOllama(
         .object({ models: z.array(z.object({ name: z.string(), digest: z.string() })) })
         .parse(await tagsResponse.json());
       const matches = tags.models.filter((candidate) => candidate.name === model);
-      if (matches.length !== 1 || matches[0]!.digest !== expectedModelDigest)
+      if (matches.length !== 1 || !expectedModelDigests!.includes(matches[0]!.digest))
         throw new Error("LOCAL_MODEL_CHANGED");
       signal?.throwIfAborted();
     }
@@ -233,7 +245,7 @@ export async function classifyWithLocalModel(
   text: string,
   model: string,
   signal?: AbortSignal,
-  expectedModelDigest?: string,
+  expectedModelDigest?: string | readonly string[],
 ) {
   signal?.throwIfAborted();
   if (!text.trim() || new Blob([JSON.stringify({ note: text })]).size > 1000)

@@ -90,3 +90,5 @@ npm run build
 Tests cover classification correction, review boundaries, mixed atomic updates, progress arithmetic, lesson deduplication, Recall conversion, privacy-limited discovery, local failures and cloud aliases, encryption/backup recovery, stale tab writes, outdated graph responses, provider switches, grounded source references, and action completion.
 
 The [fine-tuning case study](docs/FINE_TUNING_CASE_STUDY.md) documents the current experimental MLX adapter, development results, rejected extension and app failure cases. Complete experiment scripts, data and learning logs are preserved in a separate local research archive rather than bundled with the product. The [portfolio publication plan](docs/PORTFOLIO.md) describes a future curated research repository and Hugging Face release. Local base/adapter weights in `.local-runtime/` and `artifacts/fine-tuning/` are excluded from Git.
+
+For the separate trained classifier package, see the [consumer setup guide](docs/LOCAL_MODEL_SETUP.md) and [speech-to-memory demo](docs/LOCAL_MODEL_DEMO.md). Model weights are kept outside this application repository; public distribution is pending.

@@ -81,6 +81,61 @@ describe("Local classification transport matches evaluated settings", () => {
     ).rejects.toThrow("digest");
     expect(fetch).not.toHaveBeenCalled();
   });
+  it.each([evaluatedDigest, "b".repeat(64)])(
+    "accepts each exact digest in an evaluated profile list: %s",
+    async (digest) => {
+      const fetch = vi
+        .fn()
+        .mockResolvedValueOnce(response({ details: { format: "gguf" } }))
+        .mockResolvedValueOnce(response({ models: [{ name: "fictional-model", digest }] }))
+        .mockResolvedValueOnce(
+          response({ message: { content: '{"category":"BOOK","intent":"wishlist"}' } }),
+        );
+      vi.stubGlobal("fetch", fetch);
+      const metadata = await classifyWithLocalModel(source, "fictional-model", undefined, [
+        evaluatedDigest,
+        "b".repeat(64),
+      ]);
+      expect(metadata.source).toBe(source);
+      expect(fetch).toHaveBeenCalledTimes(3);
+    },
+  );
+  it.each([[], [evaluatedDigest, "wrong"]].map((digests) => ({ digests })))(
+    "rejects empty or partially invalid digest lists before any network call: %j",
+    async ({ digests }) => {
+      const fetch = localFixture();
+      await expect(
+        classifyWithLocalModel(source, "fictional-model", undefined, digests),
+      ).rejects.toThrow("digest");
+      expect(fetch).not.toHaveBeenCalled();
+    },
+  );
+  it.each(
+    [
+      [{ name: "fictional-model", digest: "c".repeat(64) }],
+      [{ name: "other-model", digest: evaluatedDigest }],
+      [
+        { name: "fictional-model", digest: evaluatedDigest },
+        { name: "fictional-model", digest: "b".repeat(64) },
+      ],
+    ].map((models) => ({ models })),
+  )(
+    "digest lists still reject unknown, renamed or ambiguous model identity: %j",
+    async ({ models }) => {
+      const fetch = vi
+        .fn()
+        .mockResolvedValueOnce(response({ details: { format: "gguf" } }))
+        .mockResolvedValueOnce(response({ models }));
+      vi.stubGlobal("fetch", fetch);
+      await expect(
+        classifyWithLocalModel(source, "fictional-model", undefined, [
+          evaluatedDigest,
+          "b".repeat(64),
+        ]),
+      ).rejects.toThrow("evaluated version");
+      expect(fetch).toHaveBeenCalledTimes(2);
+    },
+  );
   it("preserves exact source and sends only the frozen small-label prompt to verified loopback", async () => {
     const fetch = localFixture();
     const metadata = await classifyWithLocalModel(source, "fictional-downloaded-model");

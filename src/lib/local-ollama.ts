@@ -3,6 +3,12 @@ import { splitCaptureNote } from "./source-chunks";
 
 export const classifierName = "openmemory-classifier:reviewed730";
 export const classifierDigest = "235b080b2654c6784f979b3e61d63f84bf7a0e7261e0788d140ed5abd273928c";
+// Both profiles contain the same immutable evaluated GGUF and adapter weights.
+// The portable install has reproducible packaging metadata; retain the legacy install.
+export const classifierDigests: readonly string[] = [
+  classifierDigest,
+  "36bbc6957db688195c977022e113c7fb96be6dcbbf3a2a92cf73a3f46fff77e8",
+];
 
 export async function captureWithLocalOllama(
   data: Parameters<typeof planWithProvider>[0],
@@ -22,7 +28,7 @@ export async function captureWithLocalOllama(
     data.text,
     classifierName,
     signal,
-    classifierDigest,
+    classifierDigests,
   );
   signal?.throwIfAborted();
   const plan = await planWithProvider(

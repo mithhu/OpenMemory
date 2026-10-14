@@ -1,7 +1,14 @@
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-const api = vi.hoisted(() => ({ models: vi.fn(), status: vi.fn(), pair: vi.fn(), clear: vi.fn() }));
+const api = vi.hoisted(() => ({
+  models: vi.fn(),
+  status: vi.fn(),
+  pair: vi.fn(),
+  clear: vi.fn(),
+  setup: vi.fn(),
+}));
 vi.mock("../lib/ai-client", () => ({ getLocalModels: api.models }));
+vi.mock("../lib/local-ollama-readiness", () => ({ checkLocalOllamaSetup: api.setup }));
 vi.mock("../lib/mlx-companion", () => ({
   getMlxCompanionStatus: api.status,
   pairMlxCompanion: api.pair,
@@ -48,7 +55,8 @@ it("shows discovery persistently and preserves the selected installed model unti
   api.models.mockResolvedValue(["gemma4:12b-mlx", "qwen3.5:9b"]);
   const onSettings = start();
   fireEvent.click(screen.getByRole("button", { name: "Find my local models" }));
-  expect(await screen.findByRole("status")).toHaveTextContent("Connected to Ollama");
+  await screen.findByText(/Connected to Ollama/);
+  expect(screen.getByRole("status")).toHaveTextContent("Connected to Ollama");
   expect(onSettings).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole("button", { name: "Use this model" }));
   expect(onSettings).toHaveBeenCalledWith({
@@ -77,6 +85,51 @@ it("keeps native MLX selectable in the locally running app", () => {
     model: "qwen3.5:9b",
     captureEngine: "mlx",
   });
+});
+
+it("checks setup only on demand and requires explicit provider selection after readiness", async () => {
+  const verified = { state: "ready", message: "Verified local model." };
+  api.setup.mockResolvedValue({
+    ready: true,
+    models: ["qwen3.5:9b"],
+    connection: { state: "ready", message: "Browser connected to local Ollama." },
+    classifier: verified,
+    extractor: verified,
+  });
+  const onSettings = start();
+  expect(api.setup).not.toHaveBeenCalled();
+  expect(api.models).not.toHaveBeenCalled();
+  fireEvent.click(screen.getByRole("button", { name: "Check local setup" }));
+  await screen.findByText(/Local Ollama is ready/);
+  expect(screen.getByRole("status")).toHaveTextContent("Local Ollama is ready");
+  expect(api.setup).toHaveBeenCalledWith("qwen3.5:9b");
+  expect(onSettings).not.toHaveBeenCalled();
+  fireEvent.change(screen.getByLabelText("Downloaded local model for extraction"), {
+    target: { value: "missing-model:latest" },
+  });
+  expect(screen.queryByText(/Local Ollama is ready/)).not.toBeInTheDocument();
+  expect(api.setup).toHaveBeenCalledOnce();
+});
+
+it("shows missing classifier guidance separately from a verified extractor", async () => {
+  api.setup.mockResolvedValue({
+    ready: false,
+    models: ["qwen3.5:9b"],
+    connection: { state: "ready", message: "Browser connected to local Ollama." },
+    classifier: {
+      state: "missing",
+      message: "Install the trained classifier package using its setup guide.",
+    },
+    extractor: { state: "ready", message: "Installed local model verified." },
+  });
+  const onSettings = start();
+  fireEvent.click(screen.getByRole("button", { name: "Check local setup" }));
+  await screen.findByText("Local setup needs attention.");
+  const status = screen.getByRole("status");
+  expect(status).toHaveTextContent("Local setup needs attention");
+  expect(status).toHaveTextContent("Install the trained classifier package");
+  expect(status).toHaveTextContent("Extraction model: Installed local model verified");
+  expect(onSettings).not.toHaveBeenCalled();
 });
 
 it("enables hosted MLX only after explicit pairing and revalidates selection", async () => {

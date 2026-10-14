@@ -9,6 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { getLocalModels, type AISettings } from "@/lib/ai-client";
+import { checkLocalOllamaSetup, type LocalOllamaReadiness } from "@/lib/local-ollama-readiness";
+import { classifierName } from "@/lib/local-ollama";
 import {
   getMlxCompanionStatus,
   pairMlxCompanion,
@@ -46,6 +48,8 @@ export function PrivacyPanel({
   const [companionReady, setCompanionReady] = useState(false);
   const [pairingCode, setPairingCode] = useState("");
   const [companionFeedback, setCompanionFeedback] = useState("");
+  const [localSetup, setLocalSetup] = useState<LocalOllamaReadiness | null>(null);
+  const [checkingSetup, setCheckingSetup] = useState(false);
   const [connectionFeedback, setConnectionFeedback] = useState<{
     kind: "checking" | "success" | "error";
     text: string;
@@ -110,7 +114,7 @@ export function PrivacyPanel({
             </span>
           </button>
           <button
-            disabled={busy || working || !model.trim()}
+            disabled={busy || working || !model.trim() || model.trim() === classifierName}
             className={
               settings.provider === "ollama" && settings.captureEngine === "ollama"
                 ? "selected"
@@ -261,7 +265,10 @@ export function PrivacyPanel({
           <input
             value={model === "astra" ? "" : model}
             placeholder="Your model name from ollama list"
-            onChange={(e) => setModel(e.target.value)}
+            onChange={(e) => {
+              setModel(e.target.value);
+              setLocalSetup(null);
+            }}
             list="local-models"
             disabled={busy || working}
           />
@@ -283,8 +290,7 @@ export function PrivacyPanel({
               });
               try {
                 const names = await getLocalModels();
-                setModels(names);
-                if (names[0] && !names.includes(model)) setModel(names[0]);
+                setModels(names.filter((name) => name !== classifierName));
                 setConnectionFeedback({
                   kind: "success",
                   text: names.length
@@ -316,7 +322,7 @@ export function PrivacyPanel({
           {settings.provider === "ollama" && settings.captureEngine === "ollama" && (
             <button
               className="text-button"
-              disabled={!model.trim() || busy || working}
+              disabled={!model.trim() || model.trim() === classifierName || busy || working}
               onClick={() => onSettings({ provider: "ollama", model, captureEngine: "ollama" })}
             >
               Use this model
@@ -328,6 +334,72 @@ export function PrivacyPanel({
             {connectionFeedback.text}
           </p>
         )}
+        <section className="local-ollama-readiness" aria-label="Local Ollama setup">
+          <h3>Check Local Ollama setup</h3>
+          <p>
+            Check browser access, the exact trained classifier, and your chosen local extraction
+            model. This reads model names and metadata only; no personal notes are sent. Checking
+            does not select an AI provider or install anything.
+          </p>
+          <p>
+            First time on this computer? Follow the{" "}
+            <a
+              href="https://github.com/mithhu/OpenMemory/blob/main/docs/LOCAL_MODEL_SETUP.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              local model setup guide
+            </a>
+            . Obtain the trained classifier package from the project maintainer; a public model
+            download is not available yet.
+          </p>
+          <button
+            className="text-button"
+            disabled={busy || working}
+            onClick={async () => {
+              setWorking(true);
+              setCheckingSetup(true);
+              setLocalSetup(null);
+              try {
+                const result = await checkLocalOllamaSetup(model);
+                setLocalSetup(result);
+                setModels(result.models);
+              } finally {
+                setCheckingSetup(false);
+                setWorking(false);
+              }
+            }}
+          >
+            {checkingSetup && <Loader2 size={14} className="spin" />}
+            {checkingSetup ? "Checking local setup…" : "Check local setup"}
+          </button>
+          {checkingSetup && (
+            <p role="status">Checking Ollama… Allow browser local network access if prompted.</p>
+          )}
+          {localSetup && (
+            <div role="status" aria-live="polite">
+              <p>
+                <strong>
+                  {localSetup.ready
+                    ? "Local Ollama is ready. Select Local Ollama above when you want to use it."
+                    : "Local setup needs attention."}
+                </strong>
+              </p>
+              <ul>
+                <li>
+                  <strong>Browser & service:</strong> {localSetup.connection.message}
+                </li>
+                <li>
+                  <strong>Trained classifier:</strong> {localSetup.classifier.message}
+                </li>
+                <li>
+                  <strong>Extraction model:</strong> {localSetup.extractor.message}
+                </li>
+              </ul>
+              <p>Capture verifies these models again before processing each note.</p>
+            </div>
+          )}
+        </section>
         <p>
           Speech transcription uses ElevenLabs only when you choose Transcribe. Audio is sent to
           ElevenLabs; the resulting text uses your selected AI provider. Online title lookup is
@@ -337,10 +409,10 @@ export function PrivacyPanel({
           <summary>Local model setup</summary>
           <p>
             Local Ollama requires the imported openmemory-classifier:reviewed730 model for
-            classification, plus a downloaded general model for extraction. The classifier is
-            installed on this Mac; a fresh installation needs the separate trained adapter. Disable
-            Ollama cloud features and allow only this site’s origin. For the Ollama macOS app, run
-            these commands in Terminal:
+            classification, plus a downloaded general model for extraction. On a fresh computer,
+            install the trained classifier package using its included setup guide, then use Check
+            local setup above to verify it. Disable Ollama cloud features and allow only this site’s
+            origin. For the Ollama macOS app, run these commands in Terminal:
           </p>
           <pre>
             {`launchctl setenv OLLAMA_NO_CLOUD '1'\nlaunchctl setenv OLLAMA_ORIGINS '${siteOrigin}'`}

@@ -1,5 +1,10 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { captureWithLocalOllama, classifierName, classifierDigest } from "../lib/local-ollama";
+import {
+  captureWithLocalOllama,
+  classifierName,
+  classifierDigest,
+  classifierDigests,
+} from "../lib/local-ollama";
 import * as cloud from "../lib/astra";
 
 vi.mock("../lib/astra", () => ({
@@ -69,6 +74,16 @@ afterEach(() => {
 });
 
 describe("Trained Ollama capture pipeline", () => {
+  it.each(classifierDigests)(
+    "accepts only the exact installed evaluated classifier profile: %s",
+    async (digest) => {
+      const fetch = fixture({ digest });
+      const result = await captureWithLocalOllama(data(), settings);
+      expect(result.classification.source).toBe(source);
+      expect(chats(fetch).map((body) => body.model)).toEqual([classifierName, settings.model]);
+      expect(cloud.planCapture).not.toHaveBeenCalled();
+    },
+  );
   it("pins the trained classifier independently of the selected extractor and binds exact source", async () => {
     const fetch = fixture();
     const result = await captureWithLocalOllama(data(), settings);
