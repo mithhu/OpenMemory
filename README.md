@@ -8,6 +8,8 @@ OpenMemory combines Recall's personal library and progress tracking with a memor
 
 ## The experience
 
+New visitors get a short [welcome video](docs/portfolio/WELCOME_VIDEO.md), with click-to-play sound, captions and Skip. **Watch demo** reopens it from the top bar; dismissal is remembered in this browser.
+
 1. **Tell it naturally.** “I did lessons 2–3 of Practical AI, read 30 pages of Sapiens, watched Dune and loved it, and want to watch Arrival.”
 2. **Review before saving.** The companion proposes separate course, book, movie, and wishlist entries. Change their type, title, intent, date, matching item, or progress; remove or add entries. Nothing is written before confirmation. “Watched the sunset” should remain a life note, rather than a film. Ambiguous requests ask for clarification.
 3. **Return to Today.** See the last seven days, recent experiences, intentions, and what to continue. Reading 20 more pages adds to the current position; “on page 120” sets it. Two reviewed events about the same new book in one note stay in one history. Changing an event to a plan clears proposed completed progress, while keeping previously saved progress. The app calculates progress, deduplicates completed lessons, and retains original notes and dated activity history. Unknown totals stay empty.

@@ -1,3 +1,4 @@
+import { demoDismissalKey } from "../components/DemoWelcome";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { type ComponentType } from "react";
@@ -75,6 +76,8 @@ async function start() {
 }
 beforeEach(() => {
   localStorage.clear();
+  // Exercise the app as a returning visitor; welcome behavior has its own coverage.
+  localStorage.setItem(demoDismissalKey, "dismissed");
   vi.clearAllMocks();
   api.save.mockResolvedValue(undefined);
 });

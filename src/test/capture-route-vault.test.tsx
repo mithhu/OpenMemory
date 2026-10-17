@@ -1,3 +1,4 @@
+import { demoDismissalKey } from "../components/DemoWelcome";
 import { webcrypto } from "node:crypto";
 import { TextDecoder, TextEncoder } from "node:util";
 import { IDBFactory } from "fake-indexeddb";
@@ -72,6 +73,8 @@ beforeEach(() => {
   vi.stubGlobal("TextDecoder", TextDecoder);
   vi.stubGlobal("indexedDB", new IDBFactory());
   localStorage.clear();
+  // Exercise the app as a returning visitor; welcome behavior has its own coverage.
+  localStorage.setItem(demoDismissalKey, "dismissed");
   saveAISettings({ provider: "astra", model: "astra" });
   sessionStorage.clear();
   setVaultSession({ key: null, salt: null });

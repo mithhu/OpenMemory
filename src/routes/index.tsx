@@ -1,3 +1,4 @@
+import { DemoWelcome } from "@/components/DemoWelcome";
 import { RemindersPanel } from "@/components/RemindersPanel";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
@@ -967,6 +968,18 @@ function OpenMemory() {
             </span>
           </div>
           <div className="topbar-right">
+            <DemoWelcome
+              ready={
+                loaded &&
+                !locked &&
+                !storageError &&
+                !busy &&
+                !pending &&
+                !privacyOpen &&
+                !selectedId &&
+                !menuOpen
+              }
+            />
             <span className={`astra-status ${configured === false ? "unconfigured" : ""}`}>
               <i />
               {consentRequired

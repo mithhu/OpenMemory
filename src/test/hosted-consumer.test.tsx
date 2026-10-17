@@ -1,3 +1,4 @@
+import { demoDismissalKey } from "../components/DemoWelcome";
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { type ComponentType } from "react";
@@ -55,6 +56,8 @@ import { Route } from "../routes/index";
 const Page = Route.options.component as ComponentType;
 beforeEach(() => {
   localStorage.clear();
+  // Exercise the app as a returning visitor; welcome behavior has its own coverage.
+  localStorage.setItem(demoDismissalKey, "dismissed");
   vi.clearAllMocks();
   api.status.mockResolvedValue({ configured: true });
   api.save.mockResolvedValue(undefined);
