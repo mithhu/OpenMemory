@@ -1,0 +1,218 @@
+[
+  {
+    "id": "tv-v1-holdout-plan-wire",
+    "text": "One day I would like to watch The Wire, everyone keeps telling me to.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-start-bear",
+    "text": "Made a start on the TV show The Bear.",
+    "category": "SERIES",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-season-wire",
+    "text": "Done with season 3 of The Wire; havent watched the rest.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-episode-bear",
+    "text": "Just watched The Bear S2 E5.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-finished-wire",
+    "text": "Seen every episode of every season of The Wire now. Finished the whole show.",
+    "category": "SERIES",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-opinion-bear",
+    "text": "The Bear is my favourite series ever, not a new watch entry.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-typo-wire",
+    "text": "i wanna strat the wire tv show",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-missing-plan",
+    "text": "Recommend me a series to watch; I want to begin one.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-unknown-episode",
+    "text": "Saw one more episode yesterday, cant remember which show.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-unresolved-end",
+    "text": "Finally finished that.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-habit-streaming",
+    "text": "Most nights I relax in front of the TV.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-other-person",
+    "text": "My colleague keeps rewatching The Wire.",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-film-moonlight",
+    "text": "Planning to watch the movie Moonlight this weekend.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-film-finished-moonlight",
+    "text": "I finished watching Moonlight, the entire film.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-ambiguous-office",
+    "text": "I watched The Office. Was that a film or a show? I dont know.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-mixed-new",
+    "text": "Started The Wire after finishing the movie Moonlight.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-count-bear",
+    "text": "Watched three more episodes of The Bear; not finished yet.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-negated-watch",
+    "text": "The Wire sounds great but I am not making any plans to watch it.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-book-normal",
+    "text": "Read ten pages of the book Normal People.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-lesson-new",
+    "text": "Completed lesson five of a drawing course.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-idea-new",
+    "text": "Maybe I could create a series about a neighbourhood bakery.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-trip-new",
+    "text": "Want to visit Baltimore, where The Wire was filmed.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-goal-new",
+    "text": "My goal is to limit TV to an hour a day.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-holdout-season-only",
+    "text": "Finished the latest season of The Bear, not saying the whole series is over.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "timing": "Scoring helper bound after training started, before any evaluation outputs. Count/qualification rule was frozen in recipe before training.",
+  "sha256": {
+    "recipe.json": "a3708151775733db6cf68260e68783a19a987629173b1df1138dcb520875f55b",
+    "summarize.py": "f125b77e3a516ef9afab73f3852424b928164b769186585aa51d15421c70c756",
+    "test_summary.py": "1680f5cd71f400dc3f34a6631adcb6d51dbceb54b7cc4b8fd8892dc03359b309"
+  }
+}

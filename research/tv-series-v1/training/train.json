@@ -1,0 +1,1712 @@
+[
+  {
+    "id": "natural-v1-053",
+    "text": "Haven't opened the novel Knots in the Teapot yet, want to read it soon.",
+    "category": "BOOK",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-066",
+    "text": "I've read three chapters of the book A Shelf of Swallows, with most of it still to go.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-film-arrival",
+    "text": "I want to watch the film Arrival.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "ccpe-review-a30aff087a439a533d99f492",
+    "text": "That was the first Yeah, it was great. That was the first movie that he actually did, had complete control over. Wasn't his first screenplay, but it was",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-plan-breaking",
+    "text": "My friends keep recommending Breaking Bad. I want to start watching it.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-003",
+    "text": "The opening scene of the film A Window for Tarrow is playing now; I've started it.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-060",
+    "text": "I listend to the track Paperwing Afternoon before work.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-123807-0",
+    "text": "i want to take a nursing course .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-019",
+    "text": "I'm in the first session of the course Balcony Herbs from Seed; I started today.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-026",
+    "text": "I've finished watching the whole movie A Ferry for Fireflies with Delvi.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-076",
+    "text": "Played the track Pocket Full of Sundays while washing up.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-5df30804c446e50393441ff1",
+    "text": "fine just finished my movie how ate",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-056",
+    "text": "Read a few more pages of the novel Knots in the Teapot, havent finished it.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-create-series",
+    "text": "I have an idea to write a TV series about a lighthouse.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-095",
+    "text": "Finished the novel Clockwork Apricots and began the novel The Umbrella Museum.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-025",
+    "text": "I watched the entire film The Indigo Postbox, right through the final credits.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-005",
+    "text": "I didn't wait until the weekend: I began watching the film The Copper Kite today.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-009570fa898b1ccecbefe240",
+    "text": "I like the the actors, and I I liked the way that they did the action. And how they made the character come to life in the movie.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-210639-1",
+    "text": "no place exciting but i would love to go to rome one day",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-film-partial",
+    "text": "Watched the first 20 minutes of Arrival.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-002",
+    "text": "I've just begun the movie The Velvet Tram with my cousin Nelvi.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-080",
+    "text": "The track Marbles in Orbit has a lovely chorus.",
+    "category": "MUSIC",
+    "intent": "reaction",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-3fbecb957a40b81c697e4a2f",
+    "text": "hello . although my mom was also a teacher , i prefer to teach yoga in a class .",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-077",
+    "text": "The song Marbles in Orbit came on, and I listened all the way through.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-79d2c5da5ffa9a419ff69d43",
+    "text": "oh , i get that you are not 16 , so how old are you ?",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-011",
+    "text": "I began the novel The Borrowed Orchard last night, finally.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-764",
+    "text": "I want to hear a good song from 2016",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-220634-0",
+    "text": "nice ! i live by myself so i want to just travel and see the work",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-1072",
+    "text": "Play Dj Scratch's eighties music on Iheart.",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-habit-goal",
+    "text": "I want to stop binge watching so I can sleep earlier.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-074",
+    "text": "Havent played the track Marbles in Orbit yet; I want to later.",
+    "category": "MUSIC",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-91b5d337c1a93c22ca5efe03",
+    "text": "I haven't I have not seen that yet. I have I've heard a little bit about it. I roughly know what it's about. I know it's based on a book, but I haven't read the book or seen the movie yet, no.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-1480",
+    "text": "Play me a track by Steve Souza",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-248266-0",
+    "text": "i would love to visit puerto rico !",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-040",
+    "text": "I finished the whole novel Snowfall on Elmwharf this mornign.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-finish-breaking",
+    "text": "I finally finished the entire Breaking Bad series.",
+    "category": "SERIES",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-085",
+    "text": "I haven't begun the course Making Felt Meadow Animals; I'd love to take it soon.",
+    "category": "LESSON",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-7e1c8b6c6fca18df60a2ae3b",
+    "text": "just basic classes right now . i get too caught up with hanging out with friends",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-108788-0",
+    "text": "my dad was a journalist ! he passed when i was 2 but he was good .",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-065",
+    "text": "I started the film Peaches for the Moon after dinner.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-106327-1",
+    "text": "yes my husband is a priest",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-9256f3055694cf1666daa232",
+    "text": "are you into books ? my fave is 1984",
+    "category": "BOOK",
+    "intent": "reaction",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-05b3be77c04f73c8f951f771",
+    "text": "Why? I love the book. Most of the movies that I like I've read the book first.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-083",
+    "text": "I'd like to take the course Hand Sewing for Travellers, haven't begun.",
+    "category": "LESSON",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-013",
+    "text": "I didn't just buy the novel The Glass Beekeeper; I started reading it this evening.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-006",
+    "text": "I'm ten minutes into the movie Bluebells on the Roof after starting it this morning.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-058",
+    "text": "Finised the novel Letters from Bracken Quay, right to the last page.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-09e97c561ef8212fd7ee7ae1",
+    "text": "that was tough movie saw it on dvd . i also garden",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-078",
+    "text": "I completed the first exercise in the course Weaving Willow Trays; the rest is waiting.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-72732-1",
+    "text": "i sing in my spare time . i hope to be the best singer there's !",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-068",
+    "text": "I'm a quater of the way through the book The Meadow Ticket.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-060",
+    "text": "I don't like the ending of the novel A Window for Beetles.",
+    "category": "BOOK",
+    "intent": "reaction",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-d9650b031476ebcb5f7db787",
+    "text": "i don't have any do you work",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-b1993ac8a4d2cc2104d36d3f",
+    "text": "I felt that the story wasn't developed that well. It was just too heavy of action which resulted in the movie not appealing to me the first time I watched it.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-055",
+    "text": "I heard the song Wickerboat Waltz playing on my speaker just now.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-6880defcb7f6ddfa040444b0",
+    "text": "does that wife get mad ?",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-1094",
+    "text": "rate this book three points out of 6",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-043",
+    "text": "I completed all modules of the course Small Courtyard Composting, including the last task.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-064",
+    "text": "Just pressed play on the film The Glass Tram with Veyla.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-010",
+    "text": "I've opened the book A Pocketful of Tidelines and begun reading it.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-038",
+    "text": "I reached the final page of the book The Clockmaker's Meadow and have read it all.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-3d97909fcf4c013c81f020bf",
+    "text": "that sounds like it could make a good book ! i am into literature .",
+    "category": "IDEA",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-e21a45a8ea5a22c00fbfe350",
+    "text": "I didn't like it because it didn't have It didn't have a plot to it. It was just random people It just didn't have an interesting plot that I When I watched it at a movie theater, it just had stupid things going on like",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f24bafa1b67214a13cbeede3",
+    "text": "great i just finished my first college class",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-58046-1",
+    "text": "i've a dog . my love for animals knows no bounds",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-085",
+    "text": "Did another lesson in the course Hand Sewing for Travellers, still two left.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-visit-location",
+    "text": "I want to visit the city where Breaking Bad was filmed.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-season-start",
+    "text": "Started season three of Severance today.",
+    "category": "SERIES",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-unresolved",
+    "text": "Finished it last night.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "public-review-e8bed93f75c1703a1fd4694a",
+    "text": "i like mystery books . i'm a big fan of the da vinci code series .",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-book-dune",
+    "text": "Started reading the novel Dune.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-045",
+    "text": "I didn't skip the final unit; I've completed the entire course Carving Softwood Birds.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-plan-dark",
+    "text": "Havent seen Dark yet but wanna watch the show soon.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-episode-severance",
+    "text": "Watched season 1 episode 4 of Severance.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-054",
+    "text": "Just strted reading the novel Letters from Bracken Quay.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-typo-breaking",
+    "text": "wanna watch breking bad, the tv series",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-080",
+    "text": "I've finshed two of the eight lessons in the course Embroidering Garden Maps.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-022",
+    "text": "I've just started taking the course Gentle Loom Weaving.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-050",
+    "text": "Idea: a lamp that turns warmer as bedtime gets closer.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-739",
+    "text": "Play some seventies songs from Luke Haines off of youtube",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-068",
+    "text": "We watched the whole film Peaches for the Moon, credits and all.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-084",
+    "text": "I'd like to start the book A Village of Tin Bells tomorow.",
+    "category": "BOOK",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-episode-unknown",
+    "text": "I watched another episode last night.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "public-review-f8c1f07044a3d1bcb7f49899",
+    "text": "me too . i find joy in any little thing . especially music .",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-026",
+    "text": "I'm going to keep my phone out of reach at bedtime every night.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-103751-0",
+    "text": "i'm doing very well , just watching my favorite movie good burger",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-45d2cc78581b788164386686",
+    "text": "I like action movies, and it's basically an action movie, so it has that sort of aspect of being exciting and kind of edge of your seat and you know, keeping you going from start to finish, so that's good. And then I do like the cast that they have in Jurassic World. I think they sort of I think they nailed it for sort of that sort of summer block",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-73a46b76da0405707484a937",
+    "text": "i did a ballet of twilight once ! its a great book .",
+    "category": "BOOK",
+    "intent": "reaction",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-opinion-dark",
+    "text": "Dark is a brilliant TV show, just sharing my opinion.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-018",
+    "text": "I've begun studying the course Drawing the Tiny Harbor with Vellin.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-016",
+    "text": "I've started the book A Map of Small Doorways befroe bed.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-728",
+    "text": "I wish to give this textbook a zero out of 6 points",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-1e053f19c79fa9ba4cdc4b4f",
+    "text": "nice ! my niece does that too",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-023",
+    "text": "I began the course Photographing Evening Pebbles over breakfast.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-177575-0",
+    "text": "lol oh my favorite book is called john dies at the end",
+    "category": "BOOK",
+    "intent": "reaction",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-dcc0d15107f9dbff40a752a1",
+    "text": "she did like it alot ! are you reading any books right now ?",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-4f782a8e1385d7f14f111cc7",
+    "text": "oh no ! this cannot end well !",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-138968-1",
+    "text": "gosh , that is living the dream . i want to open a bakery .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-d6cf1623a329eb470cf157f1",
+    "text": "Because it was really funny. I liked the characters and I liked the brothers then how they had fun and the adventures they went on and stuff like that.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-057",
+    "text": "About halfway through the novel A Window for Beetles now.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-044",
+    "text": "Maybe design a mug that keeps the teabag string out of the drink.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-34bdc37169cbdd95a29fada8",
+    "text": "I didn't like the ending to Guardians of the Galaxy.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-519",
+    "text": "Play easy listening",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-048",
+    "text": "I finished all the lesons in the course Painting Ceramic Buttons; there's nothing left.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-293d424d94d6751dd03c782c",
+    "text": "do not see why not . i would read them animal books .",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-person-preference",
+    "text": "My sister loves the series Dark.",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "convai2-train-135330-1",
+    "text": "i don't love sweet home alabama song though hehe ! do you watch tv ?",
+    "category": "MUSIC",
+    "intent": "reaction",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-051",
+    "text": "I want a book to read on the train.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-091",
+    "text": "I played the song Meadowglass Beat today, and I want to take the course Carving Tiny Doorstops.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-1117",
+    "text": "I want to hear Nokko's songs from the twenties",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-035",
+    "text": "I read the novel The Saltwater Cabinet from first page to last; it's all finished.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-40f6f2a5e0d698c662c94bc6",
+    "text": "that is kool",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-22386-0",
+    "text": "i visited new york once , they have really good seafood there .",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-041",
+    "text": "I completed every lesson and the final exercise in the course Handbinding Little Notebooks; the whole course is done.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-4a8692bc2799bdf2b834c404",
+    "text": "hey there ! well , i just started classes in college and work part time at the campus library",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-077",
+    "text": "I've studied the first three units of the course Tending a Tiny Pond, with four more to go.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-tv-habit",
+    "text": "I usually watch television after dinner.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-067",
+    "text": "The film The Glass Tram is paused halfway; no, not finished yet.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-film-reaction",
+    "text": "Arrival is a beautiful film.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-073",
+    "text": "I'd like to hear the song Shoes for a Satellite tonight.",
+    "category": "MUSIC",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f59927404ad77dd92b937461",
+    "text": "almost , but i wish time would go faster !",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-024",
+    "text": "I started studying the course Simple Songs for Wooden Flutes this afternon.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-1157-1",
+    "text": "i love tattoos i want to get more only have 2",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-264628-1",
+    "text": "no not adopted . i would like to be married .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-033",
+    "text": "I read the last page of the novel The Lavender Key today and have finished the whole book.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-347068e29e5e7e8fe3a5e610",
+    "text": "nice ! i still live at home too , just started online classes at a community college .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-e2b40b299b43d32ca184dd2e",
+    "text": "that's really sad . is she on medicaid ?",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-031",
+    "text": "I finished watching every minute of the film The Sparrow Clock with my brother Orven.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-season-breaking",
+    "text": "Finished season two of Breaking Bad. Still more seasons to go.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-047",
+    "text": "Thinking up a comic about a postman on a floating island.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-039",
+    "text": "I've finished every chapter of the novel The Silver Teacup Garden.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-count-severance",
+    "text": "Watched two more episodes of Severance today.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-course-lecture",
+    "text": "Finished lecture 2 of my statistics course.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "public-review-d5197b97ea6e438dbc54f305",
+    "text": "umm i don't think our parents would approve",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-070",
+    "text": "The film The Glass Tram was dull, in my opinion.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-replay-show",
+    "text": "Rewatched season one of Dark, not the entire series.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-plan-show",
+    "text": "I want to watch a TV series this weekend.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "public-review-5a0d6adbca5b8b7b386994d4",
+    "text": "i graduated 4 years ago . work keeps me from practicing but i've started archery classes .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-075",
+    "text": "I've completed one module of the course Sewing Linen Pouches, not the full course.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-start-breaking",
+    "text": "Started the first season of Breaking Bad tonight.",
+    "category": "SERIES",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-056",
+    "text": "I played the track Raindrops in the Attic after lucnh.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-46959-0",
+    "text": "haha i love my friends . i think my mom is my favorite person though !",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-028",
+    "text": "I finshed the whole movie The Last Plum Cart tonight.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-088",
+    "text": "Done with every lesson in the course Paper Marbling Basics now.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-042",
+    "text": "I've finished the entire course Painting Foggy Fields with Meruli.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-983eda03f35c6ef5b1b30261",
+    "text": "my bro used is lazy now . he used to play in the nfl but retired",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-7cf4787fc9299468ba8aa735",
+    "text": "what are you cooking ? i wish i could eat better . i eat way too much candy",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-017",
+    "text": "I started taking the course Clay Bowls for Rainy Days this morning.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-086",
+    "text": "I want to start taking the course Sketching Lantern Boats next month.",
+    "category": "LESSON",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-fbc9aacb2f6bcb54bb9afbe5",
+    "text": "yeah , maybe . they're not giving her a chance .",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-tv-weather",
+    "text": "Watched the weather forecast this morning.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "natural-v1-048",
+    "text": "A little website for swapping spare plant pots might be useful to build.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-eff400d67bfef2da932b66da",
+    "text": "i would love to travel and visit somewhere very cold",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-245346-0",
+    "text": "i want to be a doctor one day .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-ambiguous-fargo",
+    "text": "I want to watch Fargo. Not sure if I mean the film or the show.",
+    "category": "NOTE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "ccpe-review-8e89eb4d248020551d402770",
+    "text": "I Oh, yeah yeah, I did. Is that I watched that for a film and music class in my college. All right, perfect perfect. That movie I remember I remember the boat, right? They had a boat?",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-066",
+    "text": "Still watcing the film Bicycles on Jupiter, about twenty minutes in.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-negated-dark",
+    "text": "I have not started Dark. Not planning to, either.",
+    "category": "SERIES",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-088",
+    "text": "I want to listen to the track A Teacup of Thunder tomorow.",
+    "category": "MUSIC",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-087",
+    "text": "I'd like to play the song Fernlight Echo later; I haven't heard it yet.",
+    "category": "MUSIC",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-81e411b2710275dbdd9ae44d",
+    "text": "what a teen movie what like adults think of what teens are doing. It was very simple and just it's just not that funny it's not something used for a teen movie. I usually love it and I re watch it a million times. I've never re watched Superbad and I have no plans to.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-mixed-film-show",
+    "text": "Finished Arrival in full and started Breaking Bad.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-001",
+    "text": "I started watching the film Lanterns at Brindle Pier after dinner.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-063",
+    "text": "I haven't started the film Bicycles on Jupiter, want to watch it this weekend.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-31ccc8d515820624582dc9b9",
+    "text": "i'm fine ; just finished an agatha christie novel . how are you ?",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-77ffb82d93ffe7ee7159adcb",
+    "text": "haha ok make something that you think we would like !",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-correction-show",
+    "text": "I meant the Breaking Bad series, not a movie. I want to watch it.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-049",
+    "text": "I played the song Lantern Drift by the fictional band Mosswheel on my walk.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-045",
+    "text": "I have an idea for a zine full of drawings of local doorways.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-665d99779e964863363a01e5",
+    "text": "fabulous ! i took lessons in college for my art degree , but i didn't finish .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-079",
+    "text": "I'm only a quarter of the way through the course Making Paper Weather Vanes.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-071",
+    "text": "I'm still reading the novel A Coat for the Lighthouse, about halfway now.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-082",
+    "text": "I haven't watched the movie Picnic at Cloudwell yet, but I want to.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-035",
+    "text": "Want to get a small telescope for the balcony.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-e8eb01934ae37459c93df649",
+    "text": "i might the chinese guy i get my raw sushi from may need some housework done",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-3f784f1b6107c2b0f06cfd55",
+    "text": "how is that weird ? i am a hair stylist , and i have a salon !",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-8a2ac2e8302a3661af9a5224",
+    "text": "It's one of the worst movies was a movie called Cheerleader Ninjas. It was like the worst movie and just was kind of a worthless movie and not very well-acted.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-081",
+    "text": "I'd like to start watching the film The Amber Bicycle next weekend.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-141418-1",
+    "text": "pretty good . just watching a movie called baby driver",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-009",
+    "text": "I started reading the novel The Apricot Compass on the bus.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-dd1b193f29d10ac636e9cf63",
+    "text": "I do not like horror movies.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-02514092827788b21569afa0",
+    "text": "i can see that . do you like music ?",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-079",
+    "text": "I really dislike the song Shoes for a Satellite, didn't replay it today.",
+    "category": "MUSIC",
+    "intent": "reaction",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-film-finished",
+    "text": "Finished the whole movie Arrival tonight.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "tv-v1-development-opinion-breaking",
+    "text": "Breaking Bad is the best series I have ever watched.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  },
+  {
+    "id": "action-supplement-027",
+    "text": "I got to the end of the film The Rooftop Tailor; I've now watched it all.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-083",
+    "text": "I want to read the novel The Juniper Suitcase when I have time.",
+    "category": "BOOK",
+    "intent": "wishlist",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-072",
+    "text": "I've read the first two chaptrs of the book The Cedar Envelope so far.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-e57dd00002454c37a58fc13f",
+    "text": "Yes, I love the movie Forrest Gump.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "tv-v1-development-missing-show",
+    "text": "Want to start a show, havent picked which one.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project-authored contribution",
+    "label_provenance": "AI-authored provisional policy label; reasons projected to category/intent for this bounded experiment"
+  }
+]

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "ccpe-review-425b62d06ec3a53bcd7d8138",
+    "text": "I've never known much about Scientology before the movie. And I watched it, and it was just interesting to see all the crazy practices they preach. And the people who left the church talking about it and how much of an evil organization it is. I just felt a lot smarter and more educated about the topic after seeing it.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f500d3d1d13d7de84664ec66",
+    "text": "yeah i have been working towards running track",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-773",
+    "text": "rate the previous novel a 1 out of 6",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-21680-0",
+    "text": "i work at a boring desk .",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-084",
+    "text": "I've begun studying the course Paper Marbling Basics today.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-ba58b761e352b37fd95368d7",
+    "text": "It was something that I watched and it's not that I didn't enjoy it, but I wouldn't pick it out as a movie to watch in my free time.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-bf4f7a5e38709d6e50952b2c",
+    "text": "and into this day. It was one of the most baffling movies I've ever watched from what it was supposed to be and what it ended up being. It was terrible.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-b56a608d63c5875d524b685b",
+    "text": "It's about a guy, Bobby Boucher. He gets fired from his his his position that he had as a waterboy for a team, and he he finds another one finds another team that that hires him, and then when they're about to fire him, he tackles he tackles a football player, and then he then then the coach makes him like a starting player for the team, and",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-4a26698d5f014f503f80324d",
+    "text": "i have been looking for a good date ever since i got a divorce . you sound great",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-029",
+    "text": "My plan is to cook at home four nights a week.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-32d68db56170360d6f01a322",
+    "text": "yes exactly , that was a great movie",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-8576695f4c6a8bab39a0eb78",
+    "text": "no but my daughters do",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-1203",
+    "text": "give 5 stars to this book",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-cdb37ae6a6cb2b112f09d833",
+    "text": "that is cool . i started taking beauty classes . definitely not related lol !",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-1005",
+    "text": "Play me Sun Ra songs from the fifties",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-3c07a85bea505376ec11f4c1",
+    "text": "I really like the acting, and I like the the style of the movie, and I really liked you know the whole I just really enjoyed the movie. It's very well acted.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-368",
+    "text": "Rate the current book 3 out of 6",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-294a22b4be076187f68dd611",
+    "text": "i love that show . i read a lot too . where i am rereading my fave lotr book .",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-232940-1",
+    "text": "do they smell like ferrets ? i love ferrets . i want one",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-8c49000d37eb58f97c773031",
+    "text": "he needs a bath ! i am just reading a mystery novel right now though .",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-9ada7b5fa5c4d8e64347f4cf",
+    "text": "it is cool , cloudy , windy here",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-245199-0",
+    "text": "yes nature is beautiful i love the trees .",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-112531-0",
+    "text": "my wife is picking up . our 3 girls from school",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-90346-1",
+    "text": "i am great , about to go outside",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-141838-0",
+    "text": "agreed . although , my mother sings . she was a school music teacher too .",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-196523-1",
+    "text": "just my mom . my dad has passed and i miss him a lot .",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-107948-1",
+    "text": "that's an amazing experience , i am taking guitar lessons",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-073",
+    "text": "I finished lesson two in the course Building Little Bird Shelters; six lessons remain.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-819",
+    "text": "Play the sound track by Ferry Corsten",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-a8047834fe79e041d9fb6774",
+    "text": "so true",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-2a2f26da9cd84d765189e252",
+    "text": "i love classical music how about you",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-126773-0",
+    "text": "oh , that is cool . i want to go to italy one day .",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-5f94bddc1210c4ffa36f5e17",
+    "text": "i just started taking classes for beauty . i feel i can help people that way .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-b8baa659206df4f7b45f70fe",
+    "text": "i do , i love the internet . i read e books .",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-08709abc2d4c282dc41cfd85",
+    "text": "That is my favorite movie because it has a lot of action in it, a lot of funny bad guys, and a lot of blooded war.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-034",
+    "text": "I'd love a weekend in Dunlowe.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_PlayMusic_full.json-1389",
+    "text": "Play a track by Yui on Vimeo",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-5a770fcdae1a3ee93d209b4f",
+    "text": "well , i just wish i could feel pretty again .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f66e0e679579cc2c5ffbad82",
+    "text": "i am ok nice to meet you i was just reading a book",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-5650-1",
+    "text": "i try to grow my own lobsters which are yummy",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "action-supplement-029",
+    "text": "I didn't stop halfway this time: I watched the film River of Paper Hats from beginning to end.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "authored_fictional_action_supplement_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-6e1beebde59cfcc958fd673a",
+    "text": "works start to finish. It's a great movie.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-164325-0",
+    "text": "i'm ok , i'm pretty vein the way i look at times",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-b8afbe59aef307e5bafc6280",
+    "text": "right on ! when i'm at the bar , my friends talk about books .",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-7bf8bcd02873d7e206852e5f",
+    "text": "i want to be a director after i complete film school .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-207752-1",
+    "text": "that is always a plus . i find that i like to spend time alone",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "natural-v1-010",
+    "text": "I strted that yesterday, still a bit to go.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "authored_fictional_natural_curriculum_v1",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-181649-0",
+    "text": "i very much like the smell of leather i wear it all the time",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-7fab0cd683aeadb32c3619dc",
+    "text": "great . i am chilling out watching a good movie",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-30fa12e560fc0a302c86d89f",
+    "text": "i need to read more books .",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-0fc91bf8d3588e081b9fee39",
+    "text": "thanks , the owner of the restaurant also hates it if i try to get time off",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-bad4c1fbafd6c2e5384888b7",
+    "text": "Okay. Red Sparrow, yeah. I love Jennifer Lawrence, and I think she saved that movie from being a total dud, but again, the script, the writing, and even the directing just is kind of shallow. But Jennifer Lawrence was awesome.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "convai2-train-189593-1",
+    "text": "i would love to go on the beach , and write about my experience there",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "ccpe-review-4d3258c5ec8642bd5f38a97b",
+    "text": "Because just like I like the street fighters franchise I just feel like the movie that I watched like a couple weeks ago it goes with it deals with a crime gang like organized crime gang",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "CCPE-M",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-8c453dff259c15b67ce64c7e",
+    "text": "my profession is a doctor as i've mentioned before",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f9e458dad37968408cccd26e",
+    "text": "we should start a revolutionary workers party",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-926",
+    "text": "Give this novel four out of 6 stars.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-c034abee9fd02b85f5d1be36",
+    "text": "well , i book local shows for venues so i'm able to get them then .",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-f8f5dfb3a7ea8abe061ee7e8",
+    "text": "of course , but just so you know , my mom needs to read me a bedtime story .",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-6f804265ddf2c00bce52c19c",
+    "text": "lol ! he's put up with me since high school , i guess he loves me",
+    "category": "PERSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-8255d64751872e407f23e68a",
+    "text": "i wish i could collect ford mustangs . even though i work 3 jobs , i'm still broke",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-28f138a7627cff9fe9242588",
+    "text": "you are way too urban ! did you know i own 10 alpacas ?",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "snips-train_RateBook_full.json-1646",
+    "text": "Give this book a rating of four out of 6.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "SNIPS",
+    "license": "CC0-1.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  },
+  {
+    "id": "public-review-51204d25db8d39ea52c49490",
+    "text": "i actually started swim lessons . never been a swimmer .",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "ConvAI2",
+    "license": "CC-BY-4.0",
+    "label_provenance": "AI-assisted project category/intent annotations; not upstream human app-policy gold"
+  }
+]

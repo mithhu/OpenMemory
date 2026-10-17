@@ -1,0 +1,40 @@
+{
+  "status": "frozen-before-training",
+  "base": "mlx-community/Qwen3.5-9B-4bit",
+  "parent_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "updates": 190,
+  "epochs": 1,
+  "batch_size": 1,
+  "seed": 20261017,
+  "learning_rate": 1e-05,
+  "max_sequence_tokens": 1536,
+  "response_window": 64,
+  "lora": {
+    "rank": 8,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "layers": 1
+  },
+  "replay_rows": 158,
+  "new_development_rows": 32,
+  "new_holdout_rows": 24,
+  "retention_rows": 64,
+  "retention_caveat": "These 64 rows were in historical parent training, but are excluded from this update. They measure retention only, not independent generalization.",
+  "promotion_rule": "No automatic app promotion. Report candidate vs parent under identical expanded prompt. Candidate must improve new holdout joint accuracy and lose no more than two retention cases to be eligible for further qualification; small AI-authored sample cannot establish broad superiority.",
+  "output_projection": "Two-field compatibility experiment; null action becomes clarify, clarificationReasons are not trained. Existing installed v3 contract remains unchanged.",
+  "files_sha256": {
+    "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+    "contract.json": "9c91cc92c3d479b2afdda536c2c1e8b5ee10b2d9186b14c51042a36db43026cf",
+    "retention.json": "9a2c27c1f1e684d302665e4bdb293f1862fd679da7726aa267e24f2641da589a",
+    "series-holdout.json": "16b2598cc20756e1c09dad9f4b866905f7087bad9658782184782ac497bd4834",
+    "train.json": "b8375934df7f5d8c7717fe9c12ce3422a640036b2a0bf39f81f6a352793af74c",
+    "run.py": "ccb8ff1fda3abf6a77e5829850c5973b3a10a6a076ba6af3ab16318053ff3752",
+    "supervise.py": "7e889ecfac0d970170a606fee42fc1829a20b38f421691cb0679d5b0e28bb66d"
+  },
+  "limits": {
+    "total_seconds": 1200,
+    "training_seconds": 600,
+    "each_evaluation_seconds": 300,
+    "observed_mlx_allocation_bytes": 8000000000
+  }
+}
