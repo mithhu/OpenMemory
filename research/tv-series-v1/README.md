@@ -1,6 +1,6 @@
 # TV series expansion — development only
 
-Status: app support added; **no new adapter trained or promoted**. Published reviewed730/v3 weights and research v0.1.0 are unchanged. They cannot emit SERIES. Extraction has a new category; the review explicitly describes legacy classifier disagreements. This is not evidence of fine-tuning improvement.
+Status: app support added; a separate bounded adapter experiment completed in `training/`. **The candidate failed retention qualification and was not promoted to the app.** Published reviewed730/v3 weights and research v0.1.0 are unchanged. They cannot emit SERIES. Extraction has a new category; the review explicitly describes legacy classifier disagreements. This is not evidence of fine-tuning improvement.
 
 ## Policy
 
@@ -16,7 +16,7 @@ Status: app support added; **no new adapter trained or promoted**. Published rev
 
 32 project-authored, fictional AI-assisted development examples and 24 separately authored holdout examples. The holdout uses different named works and note families. Gold labels are provisional policy labels, **not independent human annotation**. Includes negative controls, person preferences, mixed events, everyday TV habits, typo expressions and non-media intentions.
 
-`freeze.json` pins both files before any new training or scoring. Original examples were authored together in this session; this is development isolation, not a blinded or independently sourced benchmark. Neither set has been scored on the installed classifier. No claim of unseen base pretraining is possible. These 56 examples are a seed corpus, not a sufficient basis for promoting a replacement.
+`freeze.json` pins both files before any new training or scoring. Original examples were authored together in this session; this is development isolation, not a blinded or independently sourced benchmark. At this initial preparation checkpoint, neither set had been scored. The later fixed comparison is recorded separately in `training/`; its results must not be reused as a fresh final test for further tuning. No claim of unseen base pretraining is possible. These 56 examples are a seed corpus, not a sufficient basis for promoting a replacement.
 
 Some cases deliberately use category NOTE with a future intent and clarification for an unresolved film/show type. The proposed expanded policy permits this uncertainty without inventing a subtype. Do not force those cases into the old v3 category/intent assumptions.
 
@@ -40,3 +40,14 @@ Online film-title lookup intentionally remains book/film-only. A TV series canno
 Actual local Qwen extraction initially passed 3/4 TV-specific checks: a series opinion was emitted as a film. After strengthening the general series-vs-film instructions, the same four development cases passed 4/4. Full outputs, including the failure, are in `docs/fine-tuning-evidence/tv-series-development-20261017.json`. This was prompt iteration, not adapter training or final evaluation.
 
 A secondary finding remains: the wishlist trial copied historical recommendation context into `plannedTiming`. These four checks validate TV type/action/season fields, not all extraction fields. The user must review timing; do not advertise the trial as complete extraction accuracy.
+
+## Candidate result — not promoted
+
+One actual continued-MLX-training attempt completed: 190 updates, 158 historical replay rows plus 32 new development fixtures. Parent and candidate were compared under the identical expanded classifier prompt.
+
+| Probe                                                                 | Current adapter | New candidate |
+| --------------------------------------------------------------------- | --------------- | ------------- |
+| New series-focused holdout (24 AI-authored notes, including controls) | 18/24 joint     | 22/24 joint   |
+| Historical retention (64 previously parent-trained notes)             | 39/64 joint     | 24/64 joint   |
+
+Despite improved new-category behavior, the candidate forgot too much clarification behavior and failed the rule fixed before training. The installed app model is unchanged. This is not a successful production replacement or a broad superiority claim. See `training/LEARNING_LOG.md`, `training/results.json`, raw paired outputs and `training/verification.json`. All 14 LoRA arrays and 638,976 trainable values actually changed; recipes and evidence are committed, while candidate weights are separately backed up locally. Neither comparison set can serve as a fresh blind final test for subsequent changes informed by this result.

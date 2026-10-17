@@ -1,0 +1,264 @@
+{
+  "series": {
+    "parent": {
+      "total": 24,
+      "invalid": 1,
+      "categoryCorrect": 22,
+      "intentCorrect": 18,
+      "jointCorrect": 18,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 1,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 1,
+          "total": 1
+        },
+        "IDEA": {
+          "correct": 0,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 0,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 2,
+          "total": 2
+        },
+        "NOTE": {
+          "correct": 3,
+          "total": 3
+        },
+        "PERSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "SERIES": {
+          "correct": 8,
+          "total": 12
+        },
+        "WISHLIST": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "candidate": {
+      "total": 24,
+      "invalid": 0,
+      "categoryCorrect": 24,
+      "intentCorrect": 22,
+      "jointCorrect": 22,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 1,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 1,
+          "total": 1
+        },
+        "IDEA": {
+          "correct": 1,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 1,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 2,
+          "total": 2
+        },
+        "NOTE": {
+          "correct": 2,
+          "total": 3
+        },
+        "PERSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "SERIES": {
+          "correct": 11,
+          "total": 12
+        },
+        "WISHLIST": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "gains": [
+      "tv-v1-holdout-season-wire",
+      "tv-v1-holdout-opinion-bear",
+      "tv-v1-holdout-unknown-episode",
+      "tv-v1-holdout-mixed-new",
+      "tv-v1-holdout-idea-new"
+    ],
+    "losses": [
+      "tv-v1-holdout-unresolved-end"
+    ],
+    "constantMajority": {
+      "category": "SERIES",
+      "intent": "progress",
+      "correct": 5,
+      "total": 24
+    }
+  },
+  "retention": {
+    "parent": {
+      "total": 64,
+      "invalid": 0,
+      "categoryCorrect": 48,
+      "intentCorrect": 47,
+      "jointCorrect": 39,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 5,
+          "total": 7
+        },
+        "GOAL": {
+          "correct": 4,
+          "total": 6
+        },
+        "IDEA": {
+          "correct": 0,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 2,
+          "total": 6
+        },
+        "MIXED": {
+          "correct": 1,
+          "total": 3
+        },
+        "MOVIE": {
+          "correct": 7,
+          "total": 11
+        },
+        "MUSIC": {
+          "correct": 2,
+          "total": 3
+        },
+        "NOTE": {
+          "correct": 12,
+          "total": 16
+        },
+        "PERSON": {
+          "correct": 2,
+          "total": 6
+        },
+        "WISHLIST": {
+          "correct": 4,
+          "total": 5
+        }
+      }
+    },
+    "candidate": {
+      "total": 64,
+      "invalid": 0,
+      "categoryCorrect": 50,
+      "intentCorrect": 32,
+      "jointCorrect": 24,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 0,
+          "total": 7
+        },
+        "GOAL": {
+          "correct": 3,
+          "total": 6
+        },
+        "IDEA": {
+          "correct": 0,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 2,
+          "total": 6
+        },
+        "MIXED": {
+          "correct": 1,
+          "total": 3
+        },
+        "MOVIE": {
+          "correct": 2,
+          "total": 11
+        },
+        "MUSIC": {
+          "correct": 0,
+          "total": 3
+        },
+        "NOTE": {
+          "correct": 9,
+          "total": 16
+        },
+        "PERSON": {
+          "correct": 3,
+          "total": 6
+        },
+        "WISHLIST": {
+          "correct": 4,
+          "total": 5
+        }
+      }
+    },
+    "gains": [
+      "public-review-0fc91bf8d3588e081b9fee39",
+      "ccpe-review-bad4c1fbafd6c2e5384888b7"
+    ],
+    "losses": [
+      "snips-train_RateBook_full.json-773",
+      "ccpe-review-ba58b761e352b37fd95368d7",
+      "ccpe-review-bf4f7a5e38709d6e50952b2c",
+      "public-review-32d68db56170360d6f01a322",
+      "snips-train_RateBook_full.json-1203",
+      "ccpe-review-3c07a85bea505376ec11f4c1",
+      "snips-train_RateBook_full.json-368",
+      "snips-train_PlayMusic_full.json-819",
+      "public-review-a8047834fe79e041d9fb6774",
+      "ccpe-review-08709abc2d4c282dc41cfd85",
+      "snips-train_PlayMusic_full.json-1389",
+      "convai2-train-5650-1",
+      "ccpe-review-6e1beebde59cfcc958fd673a",
+      "natural-v1-010",
+      "public-review-30fa12e560fc0a302c86d89f",
+      "snips-train_RateBook_full.json-926",
+      "snips-train_RateBook_full.json-1646"
+    ],
+    "constantMajority": {
+      "category": "NOTE",
+      "intent": "none",
+      "correct": 12,
+      "total": 64
+    }
+  },
+  "eligibleForFurtherQualification": false,
+  "productionPromoted": false,
+  "candidateAdapterSha256": "700c5d870ed43b7e219fa76759c8336aa12ae7593710b957f697d06e2a98c4b6",
+  "training": {
+    "steps": 190,
+    "seconds": 458.4963264159742,
+    "peakBytes": 6004247020,
+    "adapterSha256": "700c5d870ed43b7e219fa76759c8336aa12ae7593710b957f697d06e2a98c4b6",
+    "parentUnchanged": true
+  },
+  "limitations": [
+    "24 AI-authored provisional holdout labels, not independent human gold.",
+    "64 retention cases were in parent historical training; not independent generalization.",
+    "Both models use the expanded prompt; no comparison to frontier models.",
+    "No app promotion; outcome cannot justify broad claims.",
+    "One predeclared training attempt; do not tune on these test outcomes."
+  ]
+}

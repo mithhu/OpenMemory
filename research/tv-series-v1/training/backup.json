@@ -1,0 +1,8 @@
+{
+  "path": ".model-release/tv-series-experimental-v1-backup.zip",
+  "bytes": 2431022,
+  "sha256": "f95d8db36850ddb7bcbefd838dfa98ba6920e3a2230ed0eee4d5a8cc9e951cc7",
+  "adapterSha256": "700c5d870ed43b7e219fa76759c8336aa12ae7593710b957f697d06e2a98c4b6",
+  "containsBaseWeights": false,
+  "uploaded": false
+}
