@@ -317,6 +317,23 @@
   padding: 9px;
   font-size: 11px;
 }
+.activity-controls .series-position-form {
+  flex-wrap: wrap;
+}
+.series-position-form label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+.series-position-form .series-position-field {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.activity-controls .series-position-form input[type="checkbox"] {
+  width: 16px;
+  padding: 0;
+}
 .primary-button {
   display: inline-flex;
   justify-content: center;

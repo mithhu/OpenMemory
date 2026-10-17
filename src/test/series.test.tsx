@@ -1,10 +1,11 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { applyActivity, progressLabel, type ActivityCommand } from "../lib/activity";
 import { capturePlanSchema, validatePlan, type CaptureEntry } from "../lib/capture-plan";
 import { memorySchema } from "../lib/memory";
 import { assessClassification, associateClassification } from "../lib/classification";
 import { CaptureReview } from "../components/CaptureReview";
+import { LifeDashboard } from "../components/LifeDashboard";
 const command = (change: Partial<ActivityCommand> = {}): ActivityCommand => ({
   kind: "series",
   intent: "progress",
@@ -32,6 +33,64 @@ const entry = (change: Partial<ActivityCommand> = {}): CaptureEntry => ({
 });
 afterEach(cleanup);
 describe("TV series tracking", () => {
+  it("updates dashboard episode positions and season completion without inventing counts or completing the series", async () => {
+    const activity = applyActivity(undefined, command(), "2026-10-17", "episode event");
+    const memory = memorySchema.parse({
+      id: "series-dashboard",
+      title: "Breaking Bad",
+      category: "SERIES",
+      date: "2026-10-17",
+      summary: "Season progress",
+      tags: [],
+      followUpQuestion: "",
+      suggestedAnswers: [],
+      answerLabel: "Reflection",
+      answers: [],
+      transcripts: [],
+      createdAt: "2026-10-17",
+      updatedAt: "2026-10-17",
+      activity,
+    });
+    const onUpdate = vi.fn(async (_id: string, change: ActivityCommand) => {
+      const result = applyActivity(activity, change, "2026-10-18", "dashboard update");
+      expect(result).toMatchObject({
+        season: 3,
+        episode: 4,
+        status: "in-progress",
+        progress: 0,
+        progressKnown: false,
+      });
+      expect(result.completedSeasons).toContain(3);
+      return true;
+    });
+    render(
+      <LifeDashboard
+        memories={[memory]}
+        busy={false}
+        onOpen={vi.fn()}
+        onCapture={vi.fn()}
+        onUpdate={onUpdate}
+      />,
+    );
+    expect(screen.queryByPlaceholderText("Current minute")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Update series" })).toBeDisabled();
+    fireEvent.change(screen.getByLabelText("Breaking Bad season"), { target: { value: "3" } });
+    fireEvent.change(screen.getByLabelText("Breaking Bad episode position"), {
+      target: { value: "4" },
+    });
+    fireEvent.click(screen.getByLabelText("Finished this season only"));
+    fireEvent.click(screen.getByRole("button", { name: "Update series" }));
+    await waitFor(() => expect(onUpdate).toHaveBeenCalledOnce());
+    expect(onUpdate.mock.calls[0]?.[1]).toMatchObject({
+      kind: "series",
+      intent: "progress",
+      progress: null,
+      season: 3,
+      episode: 4,
+      seasonCompleted: true,
+    });
+    expect(screen.getByRole("button", { name: "Mark entire series finished" })).toBeInTheDocument();
+  });
   it("stores an episode position without inventing a watched episode count", () => {
     const result = applyActivity(undefined, command(), "2026-10-17", "episode event");
     expect(result).toMatchObject({

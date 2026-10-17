@@ -374,6 +374,9 @@ function ActivityCard({
   const activity = memory.activity!;
   const Icon = icons[activity.kind];
   const [position, setPosition] = useState("");
+  const [season, setSeason] = useState("");
+  const [episode, setEpisode] = useState("");
+  const [seasonFinished, setSeasonFinished] = useState(false);
   const [total, setTotal] = useState("");
   const [working, setWorking] = useState(false);
   const update = async (changes: Partial<ActivityCommand>, text: string) => {
@@ -396,6 +399,9 @@ function ActivityCard({
       );
       if (saved) {
         setPosition("");
+        setSeason("");
+        setEpisode("");
+        setSeasonFinished(false);
         setTotal("");
       }
     } finally {
@@ -451,13 +457,15 @@ function ActivityCard({
       )}
       {activity.status === "in-progress" && (
         <p className="activity-next">
-          {activity.progressKnown === false
-            ? "Add your current position when you know it."
-            : activity.kind === "course"
-              ? `Up next: lesson ${nextLesson}${nextNamedLesson ? ` · ${nextNamedLesson.title}` : ""}`
-              : activity.kind === "book"
-                ? `Continue from page ${activity.progress + 1}`
-                : `Continue from minute ${activity.progress}`}
+          {activity.kind === "series"
+            ? "Record a season and episode position, or finish a season below."
+            : activity.progressKnown === false
+              ? "Add your current position when you know it."
+              : activity.kind === "course"
+                ? `Up next: lesson ${nextLesson}${nextNamedLesson ? ` · ${nextNamedLesson.title}` : ""}`
+                : activity.kind === "book"
+                  ? `Continue from page ${activity.progress + 1}`
+                  : `Continue from minute ${activity.progress}`}
         </p>
       )}
       {!!memory.tags?.length && (
@@ -503,6 +511,70 @@ function ActivityCard({
                   <Check size={13} />
                   Lesson {nextLesson} done
                 </button>
+              ) : activity.kind === "series" ? (
+                <form
+                  className="series-position-form"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const currentSeason = Number(season || activity.season);
+                    void update(
+                      {
+                        season: currentSeason,
+                        episode: episode ? Number(episode) : null,
+                        seasonCompleted: seasonFinished,
+                      },
+                      `${seasonFinished ? "Finished" : "Recorded"} season ${currentSeason}${episode ? `, episode ${episode}` : ""} of ${memory.title}${seasonFinished ? "; season only, not the whole series" : ""}.`,
+                    );
+                  }}
+                >
+                  <label className="series-position-field">
+                    Season
+                    <input
+                      type="number"
+                      min={1}
+                      max={10000}
+                      step={1}
+                      value={season || activity.season || ""}
+                      required
+                      onChange={(e) => setSeason(e.target.value)}
+                      placeholder="Season"
+                      aria-label={`${memory.title} season`}
+                      disabled={disabled}
+                    />
+                  </label>
+                  <label className="series-position-field">
+                    Episode position
+                    <input
+                      type="number"
+                      min={1}
+                      max={10000}
+                      step={1}
+                      value={episode}
+                      onChange={(e) => setEpisode(e.target.value)}
+                      placeholder="Episode"
+                      aria-label={`${memory.title} episode position`}
+                      disabled={disabled}
+                    />
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={seasonFinished}
+                      onChange={(e) => setSeasonFinished(e.target.checked)}
+                      disabled={disabled}
+                    />{" "}
+                    Finished this season only
+                  </label>
+                  <button
+                    type="submit"
+                    className="primary-button"
+                    disabled={
+                      disabled || !(season || activity.season) || (!episode && !seasonFinished)
+                    }
+                  >
+                    Update series
+                  </button>
+                </form>
               ) : (
                 <form
                   onSubmit={(e) => {
@@ -534,7 +606,7 @@ function ActivityCard({
                 disabled={disabled}
                 onClick={() => void update({ intent: "complete" }, `Finished ${memory.title}.`)}
               >
-                Mark finished
+                {activity.kind === "series" ? "Mark entire series finished" : "Mark finished"}
               </button>
             </>
           )
