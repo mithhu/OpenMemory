@@ -121,7 +121,7 @@ describe("TV series tracking", () => {
   });
   it("validates series extraction and preserves it in local memory export/import", () => {
     const plan = validatePlan({ entries: [entry()] }, [], false);
-    expect(capturePlanSchema.parse(plan).entries[0].category).toBe("SERIES");
+    expect(capturePlanSchema.parse(plan).entries[0]!.category).toBe("SERIES");
     const activity = applyActivity(undefined, command(), "2026-10-17", "note");
     const saved = memorySchema.parse({
       id: "series-test",

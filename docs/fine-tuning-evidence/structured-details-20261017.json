@@ -1,0 +1,252 @@
+{
+  "date": "2026-10-17",
+  "scope": "Local extractor development handoff with supplied legacy classifier fixtures, not a v5 classifier or fine-tuning benchmark",
+  "model": "qwen3.5:9b",
+  "provider": "local Ollama",
+  "trainingPerformed": false,
+  "newClassifierActivated": false,
+  "memoriesSaved": false,
+  "trials": [
+    {
+      "trial": "initial",
+      "plannedCases": 4,
+      "observedCases": 3,
+      "allPlannedAssertionsPassed": false,
+      "outputs": [
+        {
+          "note": "That movie was great.",
+          "plan": {
+            "entries": [
+              {
+                "title": "That movie",
+                "summary": "That movie was great.",
+                "category": "MOVIE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "Which movie are you referring to?",
+                "clarificationReasons": ["missing_identity"],
+                "tags": [],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "movie",
+                  "intent": "reaction",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": "loved",
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": true
+              }
+            ]
+          }
+        },
+        {
+          "note": "I want to watch a film this weekend.",
+          "plan": {
+            "entries": [
+              {
+                "title": "a film",
+                "summary": "want to watch a film this weekend",
+                "category": "MOVIE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "which film do you want to watch?",
+                "clarificationReasons": ["missing_identity"],
+                "tags": ["film", "weekend"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "movie",
+                  "intent": "wishlist",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": "this weekend",
+                "titleReviewRequired": true
+              }
+            ]
+          }
+        },
+        {
+          "note": "I read the novel Piranesi.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Piranesi",
+                "summary": "Read the novel Piranesi.",
+                "category": "BOOK",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "How much progress did you make? Enter an amount or completed course lessons, or choose what happened.",
+                "clarificationReasons": [],
+                "tags": ["reading", "novel"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "book",
+                  "intent": "progress",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "intentReviewRequired": true,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "trial": "after-general-instruction-fix",
+      "plannedCases": 4,
+      "observedCases": 4,
+      "allPlannedAssertionsPassed": true,
+      "outputs": [
+        {
+          "note": "That movie was great.",
+          "plan": {
+            "entries": [
+              {
+                "title": "That movie",
+                "summary": "That movie was great.",
+                "category": "MOVIE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "Which movie are you referring to?",
+                "clarificationReasons": ["missing_identity"],
+                "tags": [],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "movie",
+                  "intent": "reaction",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": "loved",
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": true
+              }
+            ]
+          }
+        },
+        {
+          "note": "I want to watch a film this weekend.",
+          "plan": {
+            "entries": [
+              {
+                "title": "a film",
+                "summary": "want to watch a film this weekend",
+                "category": "MOVIE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "which film do you want to watch?",
+                "clarificationReasons": ["missing_identity"],
+                "tags": ["film", "weekend"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "movie",
+                  "intent": "wishlist",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": "this weekend",
+                "titleReviewRequired": true
+              }
+            ]
+          }
+        },
+        {
+          "note": "I read the novel Piranesi.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Piranesi",
+                "summary": "I read the novel Piranesi.",
+                "category": "BOOK",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": "What happened: planned, started, partial progress, finished, or only an opinion?",
+                "clarificationReasons": ["missing_action"],
+                "tags": ["reading", "novel"],
+                "activity": null,
+                "plannedTiming": null,
+                "titleReviewRequired": false,
+                "intentReviewRequired": true
+              }
+            ]
+          }
+        },
+        {
+          "note": "Reading letters from my grandmother made me smile.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Reading letters from my grandmother",
+                "summary": "Reading letters from my grandmother made me smile.",
+                "category": "NOTE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "clarificationReasons": [],
+                "tags": ["family", "letters", "grandmother"],
+                "activity": null,
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "softwareValidation": {
+    "appTestsPassed": 535,
+    "optInLiveTestsSkippedInDefaultSuite": 2,
+    "pythonTestsPassed": 37,
+    "types": "passed",
+    "lint": "passed",
+    "productionBuild": "passed"
+  },
+  "limitations": [
+    "32 v5 labels are AI-authored development examples, many from already known failures; no independent heldout score.",
+    "First extraction trial failed on ambiguous bare reading; its fourth case did not run because the test stopped.",
+    "The same four development cases were rerun after a general prompt change; not independent final evaluation.",
+    "Classifier advice in these trials was supplied, not generated by the fine-tuned model.",
+    "The production classifier still emits legacy v3; its clarify output remains unknown intent plus legacy_uncertainty.",
+    "Full capture also includes title interpretation and explicit review; live trials exercise extraction/validation without saving."
+  ]
+}

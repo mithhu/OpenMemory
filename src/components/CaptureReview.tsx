@@ -29,6 +29,13 @@ import {
   type ClassificationReviewDecision,
 } from "@/lib/classification";
 
+import {
+  detailQuestions,
+  hasIdentityQuestion,
+  resolveDetails,
+  type DetailReason,
+} from "@/lib/clarification";
+
 const emptyActivity = (kind: ActivityCommand["kind"]): ActivityCommand => ({
   kind,
   intent: "wishlist",
@@ -42,6 +49,7 @@ const emptyActivity = (kind: ActivityCommand["kind"]): ActivityCommand => ({
 
 const classificationTypeLabels = {
   MOVIE: "Film",
+  SERIES: "TV series",
   BOOK: "Book",
   MUSIC: "Music",
   LESSON: "Course",
@@ -127,11 +135,19 @@ export function CaptureReview({
       // Show the right editor and require a decision instead of saving untracked media.
       return {
         ...entry,
+        ...(hasIdentityQuestion(entry.clarificationReasons) ? { titleReviewRequired: true } : {}),
+        ...(entry.clarificationReasons?.includes("missing_action")
+          ? { intentReviewRequired: true }
+          : {}),
         ...(!entry.activity && kind
           ? {
               activity: emptyActivity(kind),
               intentReviewRequired: true,
-              titleReviewRequired: true,
+              titleReviewRequired:
+                entry.titleReviewRequired ??
+                (entry.clarificationReasons
+                  ? hasIdentityQuestion(entry.clarificationReasons)
+                  : true),
             }
           : {}),
         ...(entry.activity?.intent === "wishlist" &&
@@ -200,9 +216,25 @@ export function CaptureReview({
     setCompletionAcknowledgments({});
     setEntries(update);
   };
-  const patch = (index: number, change: Partial<CaptureEntry>) =>
+  const patch = (index: number, change: Partial<CaptureEntry>, resolved: DetailReason[] = []) =>
     mutateEntries((items) =>
-      items.map((entry, i) => (i === index ? { ...entry, ...change } : entry)),
+      items.map((entry, i) => {
+        if (i !== index) return entry;
+        const next = { ...entry, ...change };
+        if (entry.clarificationReasons) {
+          next.clarificationReasons = resolveDetails(entry.clarificationReasons, resolved)!;
+          if (hasIdentityQuestion(next.clarificationReasons)) next.titleReviewRequired = true;
+          if (next.clarificationReasons.includes("missing_action"))
+            next.intentReviewRequired = true;
+          if (next.clarificationReasons.length)
+            next.clarificationQuestion = next.clarificationReasons
+              .map((reason) => detailQuestions[reason])
+              .join(" ");
+          else if (resolved.length)
+            next.clarificationQuestion = change.clarificationQuestion ?? null;
+        }
+        return next;
+      }),
     );
   const changeKind = (index: number, value: string) => {
     const entry = entries[index]!;
@@ -224,30 +256,38 @@ export function CaptureReview({
         intentReviewRequired: true,
       });
     else
-      patch(index, {
-        title: originalTitle,
-        summary: originalSummary,
-        category: value as Category,
-        activity: null,
-        matchedMemoryId: entry.activity ? null : entry.matchedMemoryId,
-        candidateMemoryIds: [],
-        titleSuggestion: null,
-        titleReviewRequired: false,
-        intentReviewRequired: false,
-      });
+      patch(
+        index,
+        {
+          title: originalTitle,
+          summary: originalSummary,
+          category: value as Category,
+          activity: null,
+          matchedMemoryId: entry.activity ? null : entry.matchedMemoryId,
+          candidateMemoryIds: [],
+          titleSuggestion: null,
+          titleReviewRequired: false,
+          intentReviewRequired: false,
+        },
+        ["missing_action"],
+      );
   };
   const activityPatch = (index: number, change: Partial<ActivityCommand>) => {
     const activity = entries[index]?.activity;
     if (activity)
-      patch(index, {
-        activity: { ...activity, ...change },
-        ...(change.intent ||
-        (activity.intent === "progress" &&
-          ((change.progress !== undefined && change.progress !== null) ||
-            (activity.kind === "series" && (change.episode || change.seasonCompleted))))
-          ? { intentReviewRequired: false }
-          : {}),
-      });
+      patch(
+        index,
+        {
+          activity: { ...activity, ...change },
+          ...(change.intent ||
+          (activity.intent === "progress" &&
+            ((change.progress !== undefined && change.progress !== null) ||
+              (activity.kind === "series" && (change.episode || change.seasonCompleted))))
+            ? { intentReviewRequired: false }
+            : {}),
+        },
+        change.intent ? ["missing_action"] : [],
+      );
   };
   const chooseCatalogTitle = (index: number, candidate: CatalogTitle) => {
     const entry = entries[index]!;
@@ -256,15 +296,19 @@ export function CaptureReview({
           (m) => m.activity?.kind === entry.activity!.kind && m.title === candidate.title,
         )
       : [];
-    patch(index, {
-      title: candidate.title,
-      summary: replaceTitleMentions(entry.summary, entry.title, candidate.title),
-      titleSuggestion: null,
-      titleReviewRequired: false,
-      matchedMemoryId: matches.length === 1 ? matches[0]!.id : null,
-      candidateMemoryIds: matches.length > 1 ? matches.map((m) => m.id) : [],
-      clarificationQuestion: matches.length > 1 ? "Which saved item did you mean?" : null,
-    });
+    patch(
+      index,
+      {
+        title: candidate.title,
+        summary: replaceTitleMentions(entry.summary, entry.title, candidate.title),
+        titleSuggestion: null,
+        matchedMemoryId: matches.length === 1 ? matches[0]!.id : null,
+        candidateMemoryIds: matches.length > 1 ? matches.map((m) => m.id) : [],
+        clarificationQuestion: matches.length > 1 ? "Which saved item did you mean?" : null,
+        titleReviewRequired: false,
+      },
+      ["missing_identity", "unresolved_reference"],
+    );
   };
   const chooseTitle = (index: number, decision: "accepted" | "original") => {
     const entry = entries[index]!;
@@ -275,22 +319,36 @@ export function CaptureReview({
       decision === "accepted"
         ? memories.filter((m) => m.activity?.kind === entry.activity?.kind && m.title === title)
         : [];
-    patch(index, {
-      title,
-      titleSuggestion: { ...suggestion, decision },
-      summary:
-        decision === "original"
-          ? replaceTitleMentions(entry.summary, suggestion.suggestedTitle, suggestion.sourceTitle)
-          : replaceTitleMentions(entry.summary, suggestion.sourceTitle, suggestion.suggestedTitle),
-      matchedMemoryId: matches.length === 1 ? matches[0]!.id : null,
-      candidateMemoryIds: matches.length > 1 ? matches.map((m) => m.id) : [],
-      clarificationQuestion: matches.length > 1 ? "Which saved item did you mean?" : null,
-    });
+    patch(
+      index,
+      {
+        title,
+        titleSuggestion: { ...suggestion, decision },
+        summary:
+          decision === "original"
+            ? replaceTitleMentions(entry.summary, suggestion.suggestedTitle, suggestion.sourceTitle)
+            : replaceTitleMentions(
+                entry.summary,
+                suggestion.sourceTitle,
+                suggestion.suggestedTitle,
+              ),
+        matchedMemoryId: matches.length === 1 ? matches[0]!.id : null,
+        candidateMemoryIds: matches.length > 1 ? matches.map((m) => m.id) : [],
+        clarificationQuestion: matches.length > 1 ? "Which saved item did you mean?" : null,
+        titleReviewRequired: false,
+      },
+      decision === "accepted" ? ["missing_identity", "unresolved_reference"] : [],
+    );
   };
   const needsTitleReview = entries.some(
-    (entry) => entry.titleSuggestion?.decision === "pending" || entry.titleReviewRequired,
+    (entry) =>
+      entry.titleSuggestion?.decision === "pending" ||
+      entry.titleReviewRequired ||
+      hasIdentityQuestion(entry.clarificationReasons),
   );
-  const needsIntentReview = entries.some((entry) => entry.intentReviewRequired);
+  const needsIntentReview = entries.some(
+    (entry) => entry.intentReviewRequired || entry.clarificationReasons?.includes("missing_action"),
+  );
   const needsMatchingReview = entries.some(
     (entry) => !entry.matchedMemoryId && entry.candidateMemoryIds.length > 0,
   );
@@ -623,17 +681,39 @@ export function CaptureReview({
                 maxLength={300}
                 required
                 onChange={(e) =>
-                  patch(index, {
-                    title: e.target.value,
-                    titleSuggestion: null,
-                    titleReviewRequired: false,
-                    matchedMemoryId: null,
-                    candidateMemoryIds: [],
-                    clarificationQuestion: null,
-                  })
+                  patch(
+                    index,
+                    {
+                      title: e.target.value,
+                      titleSuggestion: null,
+                      titleReviewRequired: false,
+                      matchedMemoryId: null,
+                      candidateMemoryIds: [],
+                      clarificationQuestion: null,
+                    },
+                    e.target.value.trim() ? ["missing_identity", "unresolved_reference"] : [],
+                  )
                 }
               />
             </div>
+            {Boolean(entry.clarificationReasons?.length) && (
+              <div
+                className="review-question"
+                role="status"
+                aria-label={`Entry ${index + 1} understood action and missing details`}
+              >
+                <p>
+                  <strong>Action:</strong>{" "}
+                  {entry.clarificationReasons?.includes("missing_action") || !entry.activity
+                    ? "Not yet determined"
+                    : `${classificationActionLabels[entry.activity.intent]}${entry.intentReviewRequired ? " — confirm below" : ""}`}
+                </p>
+                <p>
+                  <strong>Still needed:</strong>{" "}
+                  {entry.clarificationReasons!.map((reason) => detailQuestions[reason]).join(" ")}
+                </p>
+              </div>
+            )}
             {entry.titleReviewRequired && !entry.titleSuggestion && (
               <div
                 id={`capture-title-check-${index}`}
@@ -647,15 +727,22 @@ export function CaptureReview({
                   The proposed media title could not be matched to your words. Edit it above or
                   confirm that it is the work you mean.
                 </p>
-                <button
-                  type="button"
-                  className="text-button"
-                  onClick={() =>
-                    patch(index, { titleReviewRequired: false, clarificationQuestion: null })
-                  }
-                >
-                  Confirm “{entry.title}”
-                </button>
+                {hasIdentityQuestion(entry.clarificationReasons) ? (
+                  <p>
+                    Enter the work or subject above, or choose an existing item. Your known action
+                    is kept.
+                  </p>
+                ) : (
+                  <button
+                    type="button"
+                    className="text-button"
+                    onClick={() =>
+                      patch(index, { titleReviewRequired: false, clarificationQuestion: null })
+                    }
+                  >
+                    Confirm “{entry.title}”
+                  </button>
+                )}
               </div>
             )}
             {entry.titleSuggestion && (
@@ -766,18 +853,22 @@ export function CaptureReview({
                   }
                   onChange={(e) => {
                     const selected = memories.find((m) => m.id === e.target.value);
-                    patch(index, {
-                      matchedMemoryId: e.target.value || null,
-                      candidateMemoryIds: [],
-                      ...(selected
-                        ? {
-                            title: selected.title,
-                            titleReviewRequired: false,
-                            titleSuggestion: null,
-                            clarificationQuestion: null,
-                          }
-                        : {}),
-                    });
+                    patch(
+                      index,
+                      {
+                        matchedMemoryId: e.target.value || null,
+                        candidateMemoryIds: [],
+                        ...(selected
+                          ? {
+                              title: selected.title,
+                              titleReviewRequired: false,
+                              titleSuggestion: null,
+                              clarificationQuestion: null,
+                            }
+                          : {}),
+                      },
+                      selected ? ["missing_identity", "unresolved_reference"] : [],
+                    );
                   }}
                 >
                   {!entry.matchedMemoryId && entry.candidateMemoryIds.length > 0 && (

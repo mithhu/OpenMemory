@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { detailQuestions, hasIdentityQuestion } from "./clarification";
 import {
   titleSpansJson,
   titleSpansInstructions,
@@ -161,8 +162,10 @@ export function attachTitleCorrections(
     entry.title = correction.suggestedTitle;
     entry.matchedMemoryId = null;
     entry.candidateMemoryIds = [];
-    entry.clarificationQuestion = null;
-    entry.titleReviewRequired = false;
+    entry.clarificationQuestion = entry.clarificationReasons?.length
+      ? entry.clarificationReasons.map((reason) => detailQuestions[reason]).join(" ")
+      : null;
+    entry.titleReviewRequired = hasIdentityQuestion(entry.clarificationReasons);
   }
   return next;
 }

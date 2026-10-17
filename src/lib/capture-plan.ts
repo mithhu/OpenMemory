@@ -1,4 +1,10 @@
 import { z } from "zod";
+import {
+  DETAIL_REASONS,
+  detailReasonsSchema,
+  detailQuestions,
+  hasIdentityQuestion,
+} from "./clarification";
 import { reminderSchema } from "./reminders";
 import { CATEGORIES, memorySchema, today, type Memory } from "./memory";
 import {
@@ -19,6 +25,7 @@ export const captureEntrySchema = z.object({
   matchedMemoryId: z.string().nullable(),
   candidateMemoryIds: z.array(z.string()).max(10),
   clarificationQuestion: z.string().max(1000).nullable(),
+  clarificationReasons: detailReasonsSchema.optional(),
   tags: z.array(z.string().max(60)).max(5),
   activity: activityCommandSchema.nullable(),
   plannedTiming: z.string().max(500).nullable().optional(),
@@ -149,6 +156,7 @@ const entryJsonFields = {
   matchedMemoryId: nullable,
   candidateMemoryIds: array(string),
   clarificationQuestion: nullable,
+  clarificationReasons: array({ type: "string", enum: [...DETAIL_REASONS] }),
   plannedTiming: nullable,
   tags: array(string),
 };
@@ -184,7 +192,8 @@ Media and course title MUST contain only the original work name, never an action
 1. Separate the date of this recorded event from desired future timing and a work's release year. For a wish or future intention, date MUST be ${date}; copy its future timing phrase into plannedTiming and retain that meaning in summary. A week, month or season never establishes an exact day. For an actual past event, use its explicitly stated exact date or resolve yesterday; otherwise use ${date}. Do not schedule a memory on an invented day.
 2. Preserve every explicit quantity in activity. For book, movie and course progress, an unstated amount MUST stay null and unstated lesson numbers MUST stay []. Never use 1 as a default page, minute or lesson count; a reading session is not one page. Unquantified partial progress uses intent progress with progress null, total null and lessonNumbers []; the review will ask the user to confirm the unknown amount. A bare read/watched verb with unresolved partial-versus-finished action uses activity null as described below. Playing or replaying a named song is intent listen, never intent progress. Its progress FIELD contains the play count with progressMode increment: "played twice" means 2, "played three times" means 3. Only an unquantified single listen uses progress null for the app's one-play default. Never discard a stated count because a default exists. total is the explicitly stated full-work size, not the number of plays; it MUST be null when not stated. A single listen never implies total 1.
 3. A catalog is not conversational evidence for an unnamed pronoun. If note says only "finished it" or "started that" without naming its subject, do not borrow a title, kind or action from catalog. Return a neutral descriptive title, category NOTE, activity null, matchedMemoryId null, actual candidateMemoryIds for reviewer choice, and ask which subject was meant. When neither name nor kind is supplied and catalog is nonempty, include its actual IDs (up to 10) as possible choices without choosing one or treating catalog facts as events. An empty candidate list must not bypass that unresolved identity choice. An explicit completion verb does not resolve the subject.
-4. clarificationQuestion is null when the note already supplies a work and its action. An explicit wish is wishlist; explicit praise or a positive evaluation without consumption is reaction, even if the user has not read/watched/played it today. Never ask whether either is an idea, a plan or a reaction. Ask only about a genuinely missing subject/action or multiple matching catalog items. Classifier advice separates intent (the known action, or null if unknown) from clarificationReasons (missing_identity, missing_action, unresolved_reference, or legacy_uncertainty). Missing identity never erases a known wishlist/start/progress/reaction action. legacy_uncertainty is migrated from the old classifier clarify label; it does not establish which detail is missing. Advice is uncertainty, not proof the user omitted information. Independently resolve the original note. If a named work and resolved action already justify your activity object, do not attach a question asking the user to choose that action again. An unfamiliar named work, its release year, a companion, or not having encountered the work before is not missing information.
+4. Return clarificationReasons as a unique array of missing_identity, missing_action, unresolved_reference, or [] if nothing is missing. These are extraction findings from the original note, not copied from legacy classifier advice. A known action stays in activity even when identity is missing: "that movie was great" -> MOVIE, reaction, [missing_identity]; "want to watch a film" -> MOVIE, wishlist, [missing_identity]; "finished that movie" -> MOVIE, complete, [missing_identity]. Never downgrade a known action to none because its title is missing. "Watched the film Quiet Valley" alone -> MOVIE, activity null, [missing_action]; "finished it" with no identified subject -> NOTE, activity null, [unresolved_reference]. Do not infer whole-work completion from watched/read alone. "Read letters from my grandmother" is NOTE with no missing action. If action is unknown, return activity null; never combine missing_action with a fabricated activity intent. Identity and action questions are independent; ask only what is missing. A catalog lookup is not proof of identity.
+clarificationQuestion is null when the note already supplies a work and its action. An explicit wish is wishlist; explicit praise or a positive evaluation without consumption is reaction, even if the user has not read/watched/played it today. Never ask whether either is an idea, a plan or a reaction. Ask only about a genuinely missing subject/action or multiple matching catalog items. Classifier advice separates intent (the known action, or null if unknown) from clarificationReasons (missing_identity, missing_action, unresolved_reference, or legacy_uncertainty). Missing identity never erases a known wishlist/start/progress/reaction action. legacy_uncertainty is migrated from the old classifier clarify label; it does not establish which detail is missing. Advice is uncertainty, not proof the user omitted information. Independently resolve the original note. If a named work and resolved action already justify your activity object, do not attach a question asking the user to choose that action again. An unfamiliar named work, its release year, a companion, or not having encountered the work before is not missing information.
 5. Extract facts only from note. Do not add remembered genres, relationships, ratings, creators, totals or biographical facts even when you recognize a work. A companion's name does not establish that they are a friend.
 Examples (not events to extract): "Want to visit the coast next spring" -> date ${date}, preserve next spring in summary, do not choose a spring day. "Played the song Evening Rain three times" -> title Evening Rain, listen, progress 3 increment. "I finished it" with two catalog books -> NOTE, activity null, no selected ID, ask which subject. "Want to watch the film Quiet Valley" -> title "Quiet Valley", MOVIE/wishlist, clarificationQuestion null. "Love Quiet Valley but didn't watch today" -> MOVIE/reaction, no progress, clarificationQuestion null.
 Interpret ordinary typing mistakes by meaning, preserving quantities, negation and intent. Keep original media/course title spellings in this extraction; a separate title interpretation step will propose corrections.
@@ -202,7 +211,7 @@ Use the meaningful title, keeping full names and original title spellings. The s
 Liking or disliking an explicitly named work is reaction, even without reading/watching it today; it does not require a question about whether this is a wishlist or a reaction. Prior completion is not required to record an opinion.
 When the note explicitly names a work and exactly one catalog item has that same title and kind, set matchedMemoryId to its supplied ID and candidateMemoryIds to [], including reaction-only notes. Do not leave a uniquely and explicitly identified work as an unresolved candidate. Similar spelling is not an exact match; preserve its original spelling for title review. If two saved items have the same title/kind, ask which one; never pick the first. An unnamed pronoun is not an explicit title.
 matchedMemoryId is an actual ID only for an unambiguous update. If several subjects could match, leave it null, list actual candidateMemoryIds, ask a short clarification question. Never invent IDs. When title or intent is missing ask a short clarificationQuestion; otherwise null. Dates are YYYY-MM-DD, resolve yesterday relative to today, otherwise today. Tags are 2-4 useful lowercase topics supported by the note. No outside facts or web search.
-Final field check before output: explicit TV show/TV series context ALWAYS uses category SERIES and kind series, including opinions with intent reaction and no viewing event; MOVIE/movie is only films. For example "The TV show Harbor Road is wonderful, just my opinion" -> SERIES/series/reaction with no progress. A missing season is not a reason to treat a show as a film. media title is only the work name; wishes use today as date, copy the exact future timing phrase into plannedTiming and preserve its meaning in summary; unstated progress amounts remain null, never a default 1; explicit song plays/replays use intent listen and their count overrides the one-play default; unnamed referents never acquire catalog identities or media actions; do not ask a question whose answer is already explicit in note.`;
+Final field check before output: Bare past "read" or "watched" is NOT evidence of partial progress or whole-work completion. "I read the novel Glass Orchard" MUST have activity null and clarificationReasons ["missing_action"]; its identity is already known. Do not invent progress with a null amount as a substitute for this unknown action. Explicit "read some of", "read for a while", an episode/season position or a stated quantity DOES establish progress even if the amount remains unknown. Unknown amount alone is not missing_action. Known praise or a wish retains reaction/wishlist even when identity is missing. Check the independent reason array against those facts before emitting. explicit TV show/TV series context ALWAYS uses category SERIES and kind series, including opinions with intent reaction and no viewing event; MOVIE/movie is only films. For example "The TV show Harbor Road is wonderful, just my opinion" -> SERIES/series/reaction with no progress. A missing season is not a reason to treat a show as a film. media title is only the work name; wishes use today as date, copy the exact future timing phrase into plannedTiming and preserve its meaning in summary; unstated progress amounts remain null, never a default 1; explicit song plays/replays use intent listen and their count overrides the one-play default; unnamed referents never acquire catalog identities or media actions; do not ask a question whose answer is already explicit in note.`;
 
 export function captureCatalog(memories: Memory[]) {
   return memories.map((m) => ({
@@ -244,7 +253,18 @@ export function validatePlan(
       entry.clarificationQuestion ??=
         "How much progress did you make? Enter an amount or completed course lessons, or choose what happened.";
     }
-    if (resolveExact && sourceNote) entry.titleReviewRequired = false;
+    if (resolveExact && sourceNote) {
+      entry.titleReviewRequired = hasIdentityQuestion(entry.clarificationReasons);
+      if (entry.clarificationReasons?.includes("missing_action")) {
+        if (entry.activity)
+          throw new Error("An unknown action cannot have a fabricated activity command.");
+        entry.intentReviewRequired = true;
+      }
+      if (entry.clarificationReasons?.length)
+        entry.clarificationQuestion ??= entry.clarificationReasons
+          .map((reason) => detailQuestions[reason])
+          .join(" ");
+    }
     if (resolveExact && sourceNote && entry.titleSuggestion) {
       entry.titleSuggestion = validateTitleSuggestion(
         entry.titleSuggestion,
@@ -443,6 +463,8 @@ export function applyCapturePlan(
   const identity = (value: string) =>
     value.normalize("NFKC").trim().toLocaleLowerCase().replace(/\s+/g, " ");
   for (const [index, entry] of plan.entries.entries()) {
+    if (entry.clarificationReasons?.length)
+      throw new Error("Resolve the missing identity, action or reference before saving.");
     const reviewedUnknownProgress = Boolean(progressReview?.acknowledgedEntries.includes(index));
     if (reviewedUnknownProgress) entry.intentReviewRequired = false;
     if (

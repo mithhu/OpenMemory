@@ -1,0 +1,322 @@
+[
+  {
+    "id": "structured-v5-development-000",
+    "note": "That movie was great.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-001",
+    "note": "The film Arrival was great.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-002",
+    "note": "This book is awful.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-003",
+    "note": "The book Piranesi is awful.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-004",
+    "note": "Rate this novel four stars.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-005",
+    "note": "Give Piranesi four stars, the novel.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-006",
+    "note": "I finished that course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-007",
+    "note": "Finished the entire Clay Foundations course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-008",
+    "note": "I want to watch a film.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-009",
+    "note": "Watch a movie.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": ["missing_identity", "missing_action"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-010",
+    "note": "I read the novel Piranesi.",
+    "expected": {
+      "category": "BOOK",
+      "intent": null,
+      "clarificationReasons": ["missing_action"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-011",
+    "note": "I read twenty pages of the novel Piranesi.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-012",
+    "note": "I watched the film Arrival.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": ["missing_action"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-013",
+    "note": "I finished the entire film Arrival.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-014",
+    "note": "Finished it.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": ["unresolved_reference"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-015",
+    "note": "Started that yesterday.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": ["unresolved_reference"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-016",
+    "note": "Reading letters from my grandmother made me smile.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-017",
+    "note": "I watched birds by the river.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-018",
+    "note": "I want to start the TV series Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-019",
+    "note": "Finished season two of Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-020",
+    "note": "Finished every episode of every season of Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-021",
+    "note": "That series was great.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-022",
+    "note": "Want to watch a TV series this weekend.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-023",
+    "note": "Watch a TV series.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": ["missing_identity", "missing_action"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-024",
+    "note": "Played that song three times.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-025",
+    "note": "Play a song by that singer.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": ["missing_identity"]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-026",
+    "note": "I like jazz.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-027",
+    "note": "My friend likes jazz.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-028",
+    "note": "I want to visit Kyoto next spring.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-029",
+    "note": "My goal is to run a half marathon.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-030",
+    "note": "I have an idea to create a TV series.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  },
+  {
+    "id": "structured-v5-development-031",
+    "note": "Finished Arrival in full and started Breaking Bad, the show.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation"
+  }
+]

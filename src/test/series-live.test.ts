@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 import { captureInstructions, capturePlanJson, validatePlan } from "../lib/capture-plan";
 // Explicit opt-in only: talks to localhost, never a cloud fallback or user's vault.
-it.skipIf(process.env.OPENMEMORY_LIVE_SERIES !== "1")(
+it.skipIf(process.env["OPENMEMORY_LIVE_SERIES"] !== "1")(
   "extracts TV series with the installed local Qwen model",
   async () => {
     const cases = [

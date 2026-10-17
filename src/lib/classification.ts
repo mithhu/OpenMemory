@@ -1,10 +1,8 @@
 import { z } from "zod";
+import { CATEGORIES } from "./memory";
 import adviceContract from "../../scripts/app-mlx/classification_advice_v4.json";
 import { capturePlanSchema, type CapturePlan } from "./capture-plan";
-import {
-  CLASSIFICATION_CATEGORIES,
-  legacyClassificationAdviceSchema,
-} from "./classification-contract-v3";
+import { legacyClassificationAdviceSchema } from "./classification-contract-v3";
 export {
   CLASSIFICATION_CATEGORIES,
   classificationInstructions,
@@ -43,9 +41,10 @@ export const clarificationReasonLabels = {
     "The classifier is unsure which detail is missing. Check the original words and the extracted entry.",
 } as const;
 
+export const APP_CLASSIFICATION_CATEGORIES = [...CATEGORIES, "MIXED"] as const;
 export const classificationAdviceSchema = z
   .object({
-    category: z.enum(CLASSIFICATION_CATEGORIES),
+    category: z.enum(APP_CLASSIFICATION_CATEGORIES),
     intent: z.enum(CLASSIFICATION_INTENTS).nullable(),
     clarificationReasons: z.array(z.enum(CLARIFICATION_REASONS)).max(4),
   })

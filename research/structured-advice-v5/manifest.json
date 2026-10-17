@@ -1,0 +1,13 @@
+{
+  "status": "development-only-no-new-training",
+  "dataset": "32 AI-authored revised-contract examples; not heldout data",
+  "legacyAdapterSha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "filesSha256": {
+    "scripts/app-mlx/classification_advice_v5.json": "6c1717b5ff81f1eaa36b6f81387d14b2da1dd8cc26d58e0744f46af26ef3f4f4",
+    "scripts/app-mlx/structured_advice_v5.py": "54fec27c4eca8bffe877550f51f292d39b8dad62657561b92c7089090b39622b",
+    "research/structured-advice-v5/development.json": "09c094410e1208602425e1dfb9de106322d560eac81d1ee3b33ce7d3f10c562a",
+    "src/lib/capture-plan.ts": "0dc17a13fbc2c42b6b67c9ca1ba600d9bac4f2aa51293278cdcf656c27766fab",
+    "scripts/app-mlx/classification_contract.py": "47f23a8c1271206ab520927a3e62dfc406e90e481bdf8507e1ac2b00c1e863df",
+    "scripts/app-mlx/classification_advice_v4.json": "26050611597f408bcdfe8ce64b1918bb7e285fa3af3bbe9d0545403c3082b1b3"
+  }
+}
