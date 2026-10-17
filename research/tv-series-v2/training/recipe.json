@@ -1,0 +1,48 @@
+{
+  "status": "frozen-before-training",
+  "base": "mlx-community/Qwen3.5-9B-4bit",
+  "parent_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "updates": 200,
+  "epochs": 1,
+  "batch_size": 1,
+  "seed": 2026101702,
+  "learning_rate": 2e-06,
+  "max_sequence_tokens": 1536,
+  "response_window": 64,
+  "lora": {
+    "rank": 8,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "layers": 1
+  },
+  "mixture": {
+    "historical_clarify": 80,
+    "historical_other": 48,
+    "previous_tv_development": 56,
+    "new_contrasts": 16
+  },
+  "new_holdout_rows": 32,
+  "retention_rows": 48,
+  "test_provenance": "80 newly AI-authored fictional policy notes. Not independently human-labeled, not public-source or naturalistic. Exact normalized overlap with v1/train and current train checked; semantic/pretraining independence not claimed. V1 test outcomes are development feedback.",
+  "promotion_rule": "No automatic installation. Series-focused holdout joint must strictly improve over parent; new legacy holdout joint must be >= parent minus one; legacy clarify subset joint must not decrease; each previously supported category with >=3 cases must not lose more than one joint-correct case. Same expanded prompt, raw greedy no repair. One attempt; no post-test tuning.",
+  "limits": {
+    "total_seconds": 1200,
+    "training_seconds": 660,
+    "each_evaluation_seconds": 270,
+    "observed_mlx_allocation_bytes": 8000000000
+  },
+  "files_sha256": {
+    "archive.py": "bff3cf62e0680b3bcc66f94fe612b7668a2830b095ff7d3aa359ff6b51727c81",
+    "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+    "contract.json": "6e85daa8c55922aad113079a42b4dd690432360bb5f5ca84ec6fb576108873b6",
+    "retention.json": "722e934ac4ff2d1c5f947bee1aefa913523d26f7cf9c3683092d1f4601690860",
+    "run.py": "853b911ba404e05314fa3956bd7b5338d50d924fae7f88b1c1d60b04fdb3b348",
+    "series-holdout.json": "b873ee6643a92906b5f724aa5e0b8273d635205b26151f6487e5bb2129434b4e",
+    "summarize.py": "2bad2de451918ebfab19c3c2dd6eb678ced9c1310be4cc3ed4c395d224823828",
+    "supervise.py": "e7500e6756ab0f69a92a3f4d260faa0df922fbf369d28fe4627e833430865895",
+    "test_data.py": "10893e8af05369824ba77a18ddd42c9ecf816ba87abc1068516831c353acf7dd",
+    "test_summary.py": "fa0215ae9d38d78c72570e5d7d83b0e104f7547962a0e9523b888e6c680f071e",
+    "train.json": "5f60f764703176cbca74e4c33b5113e14c7c5ebf27bc2864fbf7a572d74c8902",
+    "verify_run.py": "35785061fe1111f1dbec620df0a37905d765d74fa5646c2445227adf7bd1f744"
+  }
+}

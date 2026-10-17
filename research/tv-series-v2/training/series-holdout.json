@@ -1,0 +1,290 @@
+[
+  {
+    "id": "tv-v2-series-holdout-000",
+    "text": "I want to start The Sopranos, the television series, this winter.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-001",
+    "text": "Finally began watching the TV show Fleabag.",
+    "category": "SERIES",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-002",
+    "text": "Just finished season one of The Sopranos, still have the other seasons left.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-003",
+    "text": "Saw season 2 episode 3 of Fleabag tonight.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-004",
+    "text": "Watched two more episodes of Cowboy Bebop, the anime series.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-005",
+    "text": "I completed the entire Chernobyl miniseries, every episode.",
+    "category": "SERIES",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-006",
+    "text": "The TV series Fleabag is hilarious.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-007",
+    "text": "I watched The Sopranos, the TV show.",
+    "category": "SERIES",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-008",
+    "text": "wanna start the sopranos tv seris soon",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-009",
+    "text": "The series Chernobyl was excellent.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-010",
+    "text": "Finished the latest season of Fleabag, not claiming the entire series is finished.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-011",
+    "text": "I would like to watch an anime series but have not picked one.",
+    "category": "SERIES",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-012",
+    "text": "Watched another episode, but have not named the show.",
+    "category": "SERIES",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-013",
+    "text": "That series was great.",
+    "category": "SERIES",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-014",
+    "text": "Finished Cowboy Bebop, all episodes of the TV series.",
+    "category": "SERIES",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-015",
+    "text": "I am not planning to watch Chernobyl; the series just looks interesting.",
+    "category": "SERIES",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-016",
+    "text": "Want to watch the movie The Prestige.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-017",
+    "text": "Finished the entire film Her tonight.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-018",
+    "text": "The movie The Prestige is excellent.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-019",
+    "text": "I watched ten minutes of the film Her.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-020",
+    "text": "I watch TV every evening after dinner.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-021",
+    "text": "My brother loves the TV series Fleabag.",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-022",
+    "text": "I want to visit New Jersey where The Sopranos was filmed.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-023",
+    "text": "My goal is to watch less television so I sleep earlier.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-024",
+    "text": "I have an idea to create an animated TV series about a lighthouse.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-025",
+    "text": "Finished the film Her and started the series The Sopranos.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-026",
+    "text": "I am reading the book Piranesi, twenty pages so far.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-027",
+    "text": "Completed lesson three of my pottery course.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-028",
+    "text": "I played the song Blue Lantern twice.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-029",
+    "text": "Finally finished it.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-030",
+    "text": "I want to watch an adaptation but do not know whether it is a film or a TV series.",
+    "category": "NOTE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-series-holdout-031",
+    "text": "Watched the clouds move across the hills.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  }
+]

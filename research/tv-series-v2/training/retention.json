@@ -1,0 +1,434 @@
+[
+  {
+    "id": "tv-v2-legacy-holdout-000",
+    "text": "That film was fantastic.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-001",
+    "text": "Rate this novel four stars.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-002",
+    "text": "Play a song by that singer.",
+    "category": "MUSIC",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-003",
+    "text": "I finished that course.",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-004",
+    "text": "Finished it this morning.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-005",
+    "text": "I want to watch a film.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-006",
+    "text": "I want to read a book.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-007",
+    "text": "Want to take a course.",
+    "category": "LESSON",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-008",
+    "text": "This book is awful.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-009",
+    "text": "That movie is my favourite.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-010",
+    "text": "I listened to that.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-011",
+    "text": "Started it yesterday, still going.",
+    "category": "NOTE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-012",
+    "text": "I read the novel Piranesi.",
+    "category": "BOOK",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-013",
+    "text": "I watched the film The Prestige.",
+    "category": "MOVIE",
+    "intent": "clarify",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-014",
+    "text": "I finished the whole book Piranesi.",
+    "category": "BOOK",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-015",
+    "text": "The novel Piranesi is beautiful.",
+    "category": "BOOK",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-016",
+    "text": "I want to read the book Piranesi.",
+    "category": "BOOK",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-017",
+    "text": "Started reading the book Piranesi this morning.",
+    "category": "BOOK",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-018",
+    "text": "Read another thirty pages of the book Piranesi.",
+    "category": "BOOK",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-019",
+    "text": "The film Her is touching.",
+    "category": "MOVIE",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-020",
+    "text": "I want to watch the film Her next week.",
+    "category": "MOVIE",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-021",
+    "text": "Started watching the movie The Prestige.",
+    "category": "MOVIE",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-022",
+    "text": "Finished watching the entire movie The Prestige.",
+    "category": "MOVIE",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-023",
+    "text": "Watched twenty minutes of the movie Her.",
+    "category": "MOVIE",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-024",
+    "text": "Played the song Paper Moon three times today.",
+    "category": "MUSIC",
+    "intent": "listen",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-025",
+    "text": "I want to play the song Paper Moon later.",
+    "category": "MUSIC",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-026",
+    "text": "The song Paper Moon sounds beautiful.",
+    "category": "MUSIC",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-027",
+    "text": "Started the course Clay Foundations today.",
+    "category": "LESSON",
+    "intent": "start",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-028",
+    "text": "Completed lesson two of the course Clay Foundations.",
+    "category": "LESSON",
+    "intent": "progress",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-029",
+    "text": "Finished every lesson of the entire Clay Foundations course.",
+    "category": "LESSON",
+    "intent": "complete",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-030",
+    "text": "I want to take the course Clay Foundations.",
+    "category": "LESSON",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-031",
+    "text": "The course Clay Foundations is excellent.",
+    "category": "LESSON",
+    "intent": "reaction",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-032",
+    "text": "I want to visit Kyoto next spring.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-033",
+    "text": "I would like to buy a new bicycle.",
+    "category": "WISHLIST",
+    "intent": "wishlist",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-034",
+    "text": "My goal is to run a half marathon.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-035",
+    "text": "I am trying to build a habit of exercising every morning.",
+    "category": "GOAL",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-036",
+    "text": "Nora is my oldest friend.",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-037",
+    "text": "My cousin prefers quiet restaurants.",
+    "category": "PERSON",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-038",
+    "text": "I have an idea to build an app that maps walking routes.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-039",
+    "text": "Maybe I could create a newsletter about local history.",
+    "category": "IDEA",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-040",
+    "text": "Went to the market this morning.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-041",
+    "text": "I love spending time in the garden.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-042",
+    "text": "Reading letters from my grandmother made me smile.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-043",
+    "text": "I watched the birds near the river.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-044",
+    "text": "Finished my work report after lunch.",
+    "category": "NOTE",
+    "intent": "none",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-045",
+    "text": "Finished the book Piranesi and played the song Paper Moon.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-046",
+    "text": "I want to visit Kyoto and buy a bicycle; these are two separate plans.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  },
+  {
+    "id": "tv-v2-legacy-holdout-047",
+    "text": "I ate lunch with Nora and then started the course Clay Foundations.",
+    "category": "MIXED",
+    "intent": "mixed",
+    "source": "project-authored fictional AI-assisted",
+    "license": "CC-BY-4.0 project contribution",
+    "label_provenance": "AI-authored policy label, not independent human annotation"
+  }
+]
