@@ -140,7 +140,11 @@ describe("Local classification transport matches evaluated settings", () => {
     const fetch = localFixture();
     const metadata = await classifyWithLocalModel(source, "fictional-downloaded-model");
     expect(metadata.source).toBe(source);
-    expect(metadata.advice).toEqual({ category: "BOOK", intent: "wishlist" });
+    expect(metadata.advice).toEqual({
+      category: "BOOK",
+      intent: "wishlist",
+      clarificationReasons: [],
+    });
     expect(fetch.mock.calls.map(([url]) => url)).toEqual([
       "http://127.0.0.1:11434/api/show",
       "http://127.0.0.1:11434/api/chat",

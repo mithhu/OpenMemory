@@ -127,6 +127,26 @@ describe("Optional classification review remains a deliberate decision", () => {
       expect(save).not.toHaveBeenCalled();
     },
   );
+  it("shows the known action separately from the missing detail", () => {
+    setup(
+      associateClassification(text, {
+        category: "BOOK",
+        intent: "progress",
+        clarificationReasons: ["missing_identity"],
+      }),
+    );
+    const region = screen.getByRole("region", { name: "Classification review" });
+    expect(region).toHaveTextContent("Action: Made progress");
+    expect(region).toHaveTextContent("Which work or subject did you mean?");
+    expect(region).toHaveTextContent("The suggested action is known");
+    expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeDisabled();
+  });
+  it("does not display legacy uncertainty as a known action", () => {
+    setup(associateClassification(text, { category: "BOOK", intent: "clarify" }));
+    const region = screen.getByRole("region", { name: "Classification review" });
+    expect(region).toHaveTextContent("Action: Not determined by the classifier");
+    expect(region).toHaveTextContent("The extracted action below is a separate suggestion");
+  });
   it("shows readable type and action names", () => {
     setup(associateClassification(text, { category: "BOOK", intent: "progress" }));
     expect(screen.getByRole("region", { name: "Classification review" })).toHaveTextContent(

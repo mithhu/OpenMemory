@@ -144,7 +144,7 @@ it("composes actual clients with separate identities and forwards exact source a
   expect(JSON.parse(chats(f.extractor)[0].messages[1].content)).toEqual({
     note: source,
     catalog: [],
-    classificationAdvice: { category: "NOTE", intent: "none" },
+    classificationAdvice: { category: "NOTE", intent: "none", clarificationReasons: [] },
   });
   expect(chats(f.extractor)[0].model).toBe(model);
   expect(f.extractor.mock.calls.some(([url]) => String(url).endsWith("tags"))).toBe(true);

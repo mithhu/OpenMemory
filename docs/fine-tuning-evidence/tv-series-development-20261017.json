@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-17",
+  "scope": "Development extraction checks, not adapter evaluation or a final independent test",
+  "model": "qwen3.5:9b",
+  "modelDigestPrefix": "6488c96fa5fa",
+  "provider": "local Ollama only; no cloud and no user vault data",
+  "adapterChanged": false,
+  "trainingRun": false,
+  "trials": [
+    {
+      "trial": "initial",
+      "passedTvChecks": 3,
+      "totalTvChecks": 4,
+      "outputs": [
+        {
+          "note": "I'm planning to watch Breaking Bad because my friends have recommended the series for years.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Breaking Bad",
+                "summary": "Planning to watch the series because friends have recommended it for years.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["tv", "recommendations"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "series",
+                  "intent": "wishlist",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": "because my friends have recommended the series for years",
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "I finished season 2 of Breaking Bad, but have not finished the series.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Breaking Bad",
+                "summary": "Finished season 2 of Breaking Bad, but have not finished the series.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "breaking bad"],
+                "activity": {
+                  "season": 2,
+                  "episode": null,
+                  "seasonCompleted": true,
+                  "kind": "series",
+                  "intent": "progress",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "I watched season 1 episode 4 of Severance today.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Severance",
+                "summary": "Watched season 1 episode 4 today.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "severance"],
+                "activity": {
+                  "season": 1,
+                  "episode": 4,
+                  "seasonCompleted": false,
+                  "kind": "series",
+                  "intent": "progress",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "The TV series Dark is brilliant. I'm only sharing my opinion, not recording any watching today.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Dark",
+                "summary": "The TV series Dark is brilliant.",
+                "category": "MOVIE",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "opinion"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "movie",
+                  "intent": "reaction",
+                  "progress": null,
+                  "progressMode": "absolute",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": "loved",
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "trial": "after-instruction-fix",
+      "passedTvChecks": 4,
+      "totalTvChecks": 4,
+      "outputs": [
+        {
+          "note": "I'm planning to watch Breaking Bad because my friends have recommended the series for years.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Breaking Bad",
+                "summary": "Planning to watch the series because friends have recommended it for years.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["tv", "recommendations"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "series",
+                  "intent": "wishlist",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": "because my friends have recommended the series for years",
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "I finished season 2 of Breaking Bad, but have not finished the series.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Breaking Bad",
+                "summary": "Finished season 2 of Breaking Bad, but have not finished the series.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "breaking bad"],
+                "activity": {
+                  "season": 2,
+                  "episode": null,
+                  "seasonCompleted": true,
+                  "kind": "series",
+                  "intent": "progress",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "I watched season 1 episode 4 of Severance today.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Severance",
+                "summary": "Watched season 1 episode 4",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "severance"],
+                "activity": {
+                  "season": 1,
+                  "episode": 4,
+                  "seasonCompleted": false,
+                  "kind": "series",
+                  "intent": "progress",
+                  "progress": null,
+                  "progressMode": "increment",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": null,
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        },
+        {
+          "note": "The TV series Dark is brilliant. I'm only sharing my opinion, not recording any watching today.",
+          "plan": {
+            "entries": [
+              {
+                "title": "Dark",
+                "summary": "The TV series Dark is brilliant.",
+                "category": "SERIES",
+                "date": "2026-10-17",
+                "matchedMemoryId": null,
+                "candidateMemoryIds": [],
+                "clarificationQuestion": null,
+                "tags": ["television", "opinion"],
+                "activity": {
+                  "season": null,
+                  "episode": null,
+                  "seasonCompleted": false,
+                  "kind": "series",
+                  "intent": "reaction",
+                  "progress": null,
+                  "progressMode": "absolute",
+                  "total": null,
+                  "lessonNumbers": [],
+                  "sentiment": "loved",
+                  "creator": null
+                },
+                "plannedTiming": null,
+                "titleReviewRequired": false
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "automatedTests": {
+    "suitePassed": 522,
+    "optInLiveSkippedInDefaultSuite": 1,
+    "finalTargetedPassed": 63
+  },
+  "build": "passed",
+  "types": "passed",
+  "limitations": [
+    "Four development examples are not a benchmark or a fine-tuning gain.",
+    "First trial confused a TV opinion with a film; general extraction instructions were strengthened before retry.",
+    "Both trials wrongly placed historical recommendation context into plannedTiming on the wishlist example. TV-specific checks do not validate all extracted fields; timing requires review.",
+    "Installed fine-tuned classifier retains frozen v3 labels and cannot emit SERIES.",
+    "Provisional new dataset is AI-authored, not independently human-labeled."
+  ]
+}

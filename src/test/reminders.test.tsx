@@ -52,6 +52,27 @@ describe("Confirmed local reminders", () => {
     expect(plan.entries[0]!.reminder).toBeUndefined();
     expect(plan.entries[0]!.plannedTiming).toBeNull();
   });
+  it("keeps possessive month timing verbatim through validation and saving", () => {
+    const words = "I want to go to Bangladesh in December's last week.";
+    const phrase = "in December's last week";
+    const plan = validatePlan(
+      { entries: [{ ...trip, title: "Go to Bangladesh", plannedTiming: phrase }] },
+      [],
+      true,
+      words,
+    );
+    const saved = applyCapturePlan([], plan, words)[0]!;
+    expect(saved.plannedTiming).toBe(phrase);
+    expect(saved.reminder).toBeNull();
+    expect(saved.transcripts).toContain(words);
+    const paraphrased = validatePlan(
+      { entries: [{ ...trip, plannedTiming: "last week of December" }] },
+      [],
+      true,
+      words,
+    );
+    expect(paraphrased.entries[0]!.plannedTiming).toBeNull();
+  });
   it("round-trips local time and rejects past or invalid calendar times", () => {
     const date = new Date(2030, 10, 1, 18, 0);
     expect(localReminder(localDateTime(date), new Date(2030, 9, 1)).at).toBe(date.toISOString());

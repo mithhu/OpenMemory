@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-16",
+  "scope": "Bounded v4 LoRA candidate, one epoch. Same-assistant-authored holdout; no independent human/external gold or overall app-accuracy claim.",
+  "recipe": {
+    "learning_rate": 1e-05,
+    "epochs": 1,
+    "updates": 198,
+    "parent_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "parent_config_sha256": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f",
+    "train_sha256": "0f897227e35b815b38fc9515b3d5c24d51ade25c18dc60ff84b6d173b8b108d2",
+    "reserved_test_sha256": "80b79410f79f7227cf01abf6ef813648c20b62b7ac2c77afd8f4eae87c8c8924",
+    "contract_sha256": "82a4bd8d2699dd4de1388b96ee1e3cc83e44362f0697fe75777472b119bc4b64",
+    "optimizer": "fresh Adam",
+    "loss": "response-only; every row weight1; reviewed stable replay plus action/clarification contrasts"
+  },
+  "training": {
+    "completed": true,
+    "steps": 198,
+    "seconds": 581.867,
+    "peak_mlx_bytes": 6024017116,
+    "frozen_base_parameter_values_unchanged": true,
+    "parent_adapter_unchanged": true,
+    "promotion_authorized": false,
+    "candidate_sha256": "4d91781a9c0ed21d6ff38488b7183fa14a4afd6952f006bded131eb4e9503e6f"
+  },
+  "evaluation": {
+    "scores": {
+      "installed": {
+        "reserved-test": {
+          "n": 40,
+          "joint_correct": 22,
+          "category_correct": 32,
+          "action_correct": 30,
+          "reasons_correct": 25,
+          "invalid": 6,
+          "false_complete": 1,
+          "false_listen": 0,
+          "median_seconds": 3.248
+        },
+        "retention": {
+          "n": 42,
+          "joint_correct": 24,
+          "category_correct": 30,
+          "action_correct": 29,
+          "reasons_correct": 29,
+          "invalid": 8,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 3.2
+        },
+        "development": {
+          "n": 12,
+          "joint_correct": 8,
+          "category_correct": 11,
+          "action_correct": 9,
+          "reasons_correct": 9,
+          "invalid": 1,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 3.2675
+        }
+      },
+      "candidate": {
+        "reserved-test": {
+          "n": 40,
+          "joint_correct": 26,
+          "category_correct": 37,
+          "action_correct": 32,
+          "reasons_correct": 26,
+          "invalid": 3,
+          "false_complete": 1,
+          "false_listen": 0,
+          "median_seconds": 3.2175000000000002
+        },
+        "retention": {
+          "n": 42,
+          "joint_correct": 32,
+          "category_correct": 37,
+          "action_correct": 34,
+          "reasons_correct": 35,
+          "invalid": 3,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 3.2
+        },
+        "development": {
+          "n": 12,
+          "joint_correct": 9,
+          "category_correct": 11,
+          "action_correct": 10,
+          "reasons_correct": 10,
+          "invalid": 1,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 3.2675
+        }
+      }
+    },
+    "paired": {
+      "reserved-test": {
+        "gains": 7,
+        "losses": 3,
+        "joint_difference": 0.1,
+        "paired_exact_two_sided_p": 0.34375
+      },
+      "retention": {
+        "gains": 10,
+        "losses": 2,
+        "joint_difference": 0.19047619047619047,
+        "paired_exact_two_sided_p": 0.03857421875
+      }
+    },
+    "predeclared_checks": {
+      "reserved_gain_at_least_10points": true,
+      "retention_drop_at_most_5points": true,
+      "no_invalid_candidate_outputs": false,
+      "no_increase_false_complete": true,
+      "no_increase_false_listen": true
+    },
+    "passes_bounded_candidate_gates": false,
+    "independent_human_gold": false,
+    "authored_holdout_now_exposed": true,
+    "model_promoted": false,
+    "seconds": 615.857
+  },
+  "paired_intervals": {
+    "reserved-test": {
+      "paired_bootstrap95": [
+        -0.05,
+        0.25
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Resampling authored examples does not correct shared templates, same-author annotation bias or training-source retention reuse."
+    },
+    "retention": {
+      "paired_bootstrap95": [
+        0.047619047619047616,
+        0.3333333333333333
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Resampling authored examples does not correct shared templates, same-author annotation bias or training-source retention reuse."
+    }
+  },
+  "verification": {
+    "updates_verified": 198,
+    "trainable_tensor_count": 14,
+    "changed_lora_tensor_count": 14,
+    "changed_tensor_names": [
+      "language_model.model.layers.31.mlp.down_proj.lora_a",
+      "language_model.model.layers.31.mlp.down_proj.lora_b",
+      "language_model.model.layers.31.mlp.gate_proj.lora_a",
+      "language_model.model.layers.31.mlp.gate_proj.lora_b",
+      "language_model.model.layers.31.mlp.up_proj.lora_a",
+      "language_model.model.layers.31.mlp.up_proj.lora_b",
+      "language_model.model.layers.31.self_attn.k_proj.lora_a",
+      "language_model.model.layers.31.self_attn.k_proj.lora_b",
+      "language_model.model.layers.31.self_attn.o_proj.lora_a",
+      "language_model.model.layers.31.self_attn.o_proj.lora_b",
+      "language_model.model.layers.31.self_attn.q_proj.lora_a",
+      "language_model.model.layers.31.self_attn.q_proj.lora_b",
+      "language_model.model.layers.31.self_attn.v_proj.lora_a",
+      "language_model.model.layers.31.self_attn.v_proj.lora_b"
+    ],
+    "frozen_base_values_unchanged": true,
+    "installed_adapter_unchanged": true,
+    "candidate_adapter_sha256": "4d91781a9c0ed21d6ff38488b7183fa14a4afd6952f006bded131eb4e9503e6f",
+    "candidate_config_sha256": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f",
+    "original_v3_model_contract_sha256": "47f23a8c1271206ab520927a3e62dfc406e90e481bdf8507e1ac2b00c1e863df",
+    "initial_protocol_and_splits_unchanged": true,
+    "active_training_file": "train-reviewed.json",
+    "evaluation_rows_per_model": 94,
+    "promotion_performed": false,
+    "cloud_inference_used": false,
+    "old_scores_recomputed_or_relabelled": false
+  },
+  "data_coverage": {
+    "train-reviewed": {
+      "n": 198,
+      "categories": {
+        "MOVIE": 38,
+        "GOAL": 6,
+        "BOOK": 37,
+        "MUSIC": 43,
+        "NOTE": 22,
+        "LESSON": 36,
+        "WISHLIST": 12,
+        "PERSON": 2,
+        "MIXED": 1,
+        "IDEA": 1
+      },
+      "intents": {
+        "reaction": 17,
+        "none": 26,
+        "complete": 18,
+        "progress": 15,
+        "wishlist": 71,
+        "start": 21,
+        "None": 23,
+        "listen": 6,
+        "mixed": 1
+      },
+      "reason_sets": {
+        "(none)": 129,
+        "missing_identity": 46,
+        "missing_action,missing_identity": 18,
+        "unresolved_reference": 5
+      }
+    },
+    "reserved-test": {
+      "n": 40,
+      "categories": {
+        "MOVIE": 8,
+        "BOOK": 9,
+        "MUSIC": 6,
+        "NOTE": 4,
+        "WISHLIST": 4,
+        "LESSON": 4,
+        "GOAL": 1,
+        "PERSON": 1,
+        "IDEA": 1,
+        "MIXED": 2
+      },
+      "intents": {
+        "wishlist": 16,
+        "None": 4,
+        "none": 6,
+        "listen": 2,
+        "start": 2,
+        "progress": 2,
+        "complete": 3,
+        "reaction": 3,
+        "mixed": 2
+      },
+      "reason_sets": {
+        "missing_identity": 12,
+        "missing_action,missing_identity": 2,
+        "(none)": 24,
+        "unresolved_reference": 1,
+        "missing_action": 1
+      }
+    },
+    "retention": {
+      "n": 42,
+      "categories": {
+        "BOOK": 9,
+        "GOAL": 2,
+        "IDEA": 2,
+        "LESSON": 7,
+        "MIXED": 2,
+        "MOVIE": 9,
+        "MUSIC": 5,
+        "NOTE": 2,
+        "PERSON": 2,
+        "WISHLIST": 2
+      },
+      "intents": {
+        "complete": 6,
+        "progress": 6,
+        "reaction": 5,
+        "start": 6,
+        "wishlist": 7,
+        "none": 8,
+        "mixed": 2,
+        "listen": 2
+      },
+      "reason_sets": {
+        "(none)": 42
+      }
+    },
+    "prior_text_check": {
+      "reference_unique_texts": 1680,
+      "normalized_exact_reserved_overlap": [],
+      "limitation": "Known local reference inputs only, not a proof of model pretraining independence or semantic/template independence. No labels or membership changed."
+    }
+  },
+  "candidate_promoted": false
+}

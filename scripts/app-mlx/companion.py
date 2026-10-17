@@ -51,6 +51,8 @@ def ready_check():
         (classify.ADAPTER / 'adapters.safetensors', classify.ADAPTER_SHA),
         (classify.ADAPTER / 'adapter_config.json', classify.CONFIG_SHA),
         (classify.ROOT / 'scripts/app-mlx/classification_contract.py', classify.CONTRACT_SHA),
+        (classify.ROOT / 'scripts/app-mlx/joint_decoder.py', classify.JOINT_DECODER_SHA),
+        (classify.ROOT / 'scripts/app-mlx/classification_output.py', classify.OUTPUT_WRAPPER_SHA),
         (classify.ROOT / 'scripts/app-mlx/model-manifest.json',
          'b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235'),
     ]

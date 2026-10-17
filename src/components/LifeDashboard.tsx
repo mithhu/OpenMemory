@@ -12,7 +12,13 @@ import {
 import { type Memory, today, formatDate, categoryMeta } from "@/lib/memory";
 import { activityLabels, activityUnits, progressLabel, type ActivityCommand } from "@/lib/activity";
 
-const icons = { movie: Clapperboard, book: Library, course: BookOpen, music: Music };
+const icons = {
+  series: Clapperboard,
+  movie: Clapperboard,
+  book: Library,
+  course: BookOpen,
+  music: Music,
+};
 export function LifeHero({
   library,
   onCapture,
@@ -312,6 +318,7 @@ export function LifeDashboard({
               ["all", "Everything"],
               ["course", "Learning"],
               ["movie", "Movies"],
+              ["series", "TV series"],
               ["book", "Books"],
               ["music", "Music"],
               ["wishlist", "Wishlist"],
@@ -424,11 +431,11 @@ function ActivityCard({
       {activity.creator && <p className="activity-creator">{activity.creator}</p>}
       <div className="activity-progress-label">
         <span>{progressLabel(activity)}</span>
-        {activity.total && activity.status !== "unrecorded" && (
+        {activity.total && activity.status !== "unrecorded" && activity.progressKnown !== false && (
           <span>{Math.round((activity.progress / activity.total) * 100)}%</span>
         )}
       </div>
-      {activity.total && activity.status !== "unrecorded" && (
+      {activity.total && activity.status !== "unrecorded" && activity.progressKnown !== false && (
         <div
           className="activity-progress"
           role="progressbar"
@@ -444,11 +451,13 @@ function ActivityCard({
       )}
       {activity.status === "in-progress" && (
         <p className="activity-next">
-          {activity.kind === "course"
-            ? `Up next: lesson ${nextLesson}${nextNamedLesson ? ` · ${nextNamedLesson.title}` : ""}`
-            : activity.kind === "book"
-              ? `Continue from page ${activity.progress + 1}`
-              : `Continue from minute ${activity.progress}`}
+          {activity.progressKnown === false
+            ? "Add your current position when you know it."
+            : activity.kind === "course"
+              ? `Up next: lesson ${nextLesson}${nextNamedLesson ? ` · ${nextNamedLesson.title}` : ""}`
+              : activity.kind === "book"
+                ? `Continue from page ${activity.progress + 1}`
+                : `Continue from minute ${activity.progress}`}
         </p>
       )}
       {!!memory.tags?.length && (

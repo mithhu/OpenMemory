@@ -1,0 +1,12 @@
+{
+  "status": "prepared-not-trained-not-evaluated",
+  "labelProvenance": "AI-authored policy fixtures; not independently human-annotated gold",
+  "developmentCount": 32,
+  "holdoutCount": 24,
+  "holdoutPolicy": "Holdout authored and frozen before new training. Never concatenate with training. Any tuning using holdout errors invalidates its final-test status. Not an independent public benchmark.",
+  "files": {
+    "development.json": "c1cead8655d6dce6959f8a17486d5fe75ecf95b53f3251b221cd3ee49296e2f1",
+    "holdout.json": "5f24e3988bcd61b3f9b0d9ee71750a96f08b133b14fe9dfb9039d6eacae580f6",
+    "contract-proposal.json": "5386afa55e0493306e4548d75459e5d8104959cb8cd1092e1b538eca94dccdc5"
+  }
+}

@@ -56,7 +56,8 @@ export function DiscoverPanel({
       </div>
       {!taste.liked.length && (
         <p className="discovery-hint">
-          Give a movie, book, song, or course a “Loved” reaction to start building your taste.
+          Give a movie, TV series, book, song, or course a “Loved” reaction to start building your
+          taste.
         </p>
       )}
       {error && (

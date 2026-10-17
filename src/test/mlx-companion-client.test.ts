@@ -92,6 +92,7 @@ describe("MLX companion boundary", () => {
       .mockResolvedValueOnce(response({ ...result, captureId }));
     expect(await classifyWithMlxCompanion("I want to visit Bangladesh")).toEqual({
       ...result,
+      advice: { ...result.advice, clarificationReasons: [] },
       captureId,
     });
     expect(fetchMock.mock.calls[1]![0]).toBe("http://127.0.0.1:8765/classify");

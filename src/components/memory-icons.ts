@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 export const categoryIcons = {
   MOVIE: Clapperboard,
+  SERIES: Clapperboard,
   BOOK: Library,
   MUSIC: Music,
   LESSON: BookOpen,

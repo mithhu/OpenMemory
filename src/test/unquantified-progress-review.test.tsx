@@ -142,8 +142,11 @@ describe("Deliberate unknown-amount progress review", () => {
       <CaptureReview plan={plan} text={source} memories={[]} onSave={save} onCancel={vi.fn()} />,
     );
     fireEvent.change(screen.getByLabelText("This was"), { target: { value: "progress" } });
+    expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeDisabled();
     fireEvent.click(screen.getByRole("button", { name: "Save 1 entry" }));
     await waitFor(() => expect(save).not.toHaveBeenCalled());
+    fireEvent.click(screen.getByRole("checkbox", { name: /I made partial progress/ }));
+    expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeEnabled();
   });
 
   it("retains both independent acknowledgments when classification disagrees", async () => {

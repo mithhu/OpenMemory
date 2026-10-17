@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-16",
+  "purpose": "Secondary decoder diagnostic on already exposed AI-authored data. No training, relabeling, new independent test or runtime promotion.",
+  "original_unconstrained_scores": {
+    "installed": {
+      "reserved-test": {
+        "n": 40,
+        "joint_correct": 22,
+        "category_correct": 32,
+        "action_correct": 30,
+        "reasons_correct": 25,
+        "invalid": 6,
+        "false_complete": 1,
+        "false_listen": 0,
+        "median_seconds": 3.248
+      },
+      "retention": {
+        "n": 42,
+        "joint_correct": 24,
+        "category_correct": 30,
+        "action_correct": 29,
+        "reasons_correct": 29,
+        "invalid": 8,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2
+      },
+      "development": {
+        "n": 12,
+        "joint_correct": 8,
+        "category_correct": 11,
+        "action_correct": 9,
+        "reasons_correct": 9,
+        "invalid": 1,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2675
+      }
+    },
+    "candidate": {
+      "reserved-test": {
+        "n": 40,
+        "joint_correct": 26,
+        "category_correct": 37,
+        "action_correct": 32,
+        "reasons_correct": 26,
+        "invalid": 3,
+        "false_complete": 1,
+        "false_listen": 0,
+        "median_seconds": 3.2175000000000002
+      },
+      "retention": {
+        "n": 42,
+        "joint_correct": 32,
+        "category_correct": 37,
+        "action_correct": 34,
+        "reasons_correct": 35,
+        "invalid": 3,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2
+      },
+      "development": {
+        "n": 12,
+        "joint_correct": 9,
+        "category_correct": 11,
+        "action_correct": 10,
+        "reasons_correct": 10,
+        "invalid": 1,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2675
+      }
+    }
+  },
+  "structured_scores": {
+    "installed": {
+      "reserved-test": {
+        "n": 40,
+        "joint_correct": 22,
+        "category_correct": 38,
+        "action_correct": 33,
+        "reasons_correct": 25,
+        "invalid": 0,
+        "false_complete": 1,
+        "false_listen": 0,
+        "median_seconds": 3.261
+      },
+      "retention": {
+        "n": 42,
+        "joint_correct": 26,
+        "category_correct": 38,
+        "action_correct": 37,
+        "reasons_correct": 31,
+        "invalid": 0,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.325
+      },
+      "development": {
+        "n": 12,
+        "joint_correct": 8,
+        "category_correct": 12,
+        "action_correct": 9,
+        "reasons_correct": 9,
+        "invalid": 0,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.732
+      }
+    },
+    "candidate": {
+      "reserved-test": {
+        "n": 40,
+        "joint_correct": 27,
+        "category_correct": 40,
+        "action_correct": 34,
+        "reasons_correct": 27,
+        "invalid": 0,
+        "false_complete": 1,
+        "false_listen": 0,
+        "median_seconds": 3.2264999999999997
+      },
+      "retention": {
+        "n": 42,
+        "joint_correct": 33,
+        "category_correct": 40,
+        "action_correct": 36,
+        "reasons_correct": 36,
+        "invalid": 0,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2205000000000004
+      },
+      "development": {
+        "n": 12,
+        "joint_correct": 9,
+        "category_correct": 12,
+        "action_correct": 10,
+        "reasons_correct": 10,
+        "invalid": 0,
+        "false_complete": 0,
+        "false_listen": 0,
+        "median_seconds": 3.2655000000000003
+      }
+    }
+  },
+  "structured_paired_candidate_vs_installed": {
+    "reserved-test": {
+      "gains": 8,
+      "losses": 3,
+      "joint_difference": 0.125,
+      "paired_exact_two_sided_p": 0.2265625
+    },
+    "retention": {
+      "gains": 8,
+      "losses": 1,
+      "joint_difference": 0.16666666666666666,
+      "paired_exact_two_sided_p": 0.0390625
+    }
+  },
+  "paired_intervals": {
+    "reserved-test": {
+      "paired_bootstrap95": [
+        -0.025,
+        0.275
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Exposed authored diagnostics; does not correct label/source bias, repeated test exposure or dependence."
+    },
+    "retention": {
+      "paired_bootstrap95": [
+        0.047619047619047616,
+        0.30952380952380953
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Exposed authored diagnostics; does not correct label/source bias, repeated test exposure or dependence."
+    }
+  },
+  "within_model_decoder_effect": {
+    "installed": {
+      "reserved-test": {
+        "n": 40,
+        "gains": 0,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      },
+      "retention": {
+        "n": 42,
+        "gains": 2,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      },
+      "development": {
+        "n": 12,
+        "gains": 0,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      }
+    },
+    "candidate": {
+      "reserved-test": {
+        "n": 40,
+        "gains": 1,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      },
+      "retention": {
+        "n": 42,
+        "gains": 1,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      },
+      "development": {
+        "n": 12,
+        "gains": 0,
+        "losses": 0,
+        "previously_valid_predictions_changed": 0
+      }
+    }
+  },
+  "remaining_candidate_multilabel_error_flags": {
+    "missing_identity_omitted": 5,
+    "action_mismatch": 14,
+    "unresolved_reference_omitted": 1,
+    "missing_identity_spurious": 11,
+    "missing_action_spurious": 2,
+    "missing_action_omitted": 3,
+    "unresolved_reference_spurious": 5,
+    "unsupported_completion": 1,
+    "category_mismatch": 2
+  },
+  "remaining_candidate_errors": 25,
+  "observed_validity": {
+    "installed_invalid": 0,
+    "candidate_invalid": 0
+  },
+  "original_files_unchanged": true,
+  "model_promoted": false,
+  "labels_are_independent_human_gold": false,
+  "decoder_sha256": "dd27e54026b287cf2aaee15d222b81a489138a1ff71f6a57cc397009bfa7053f",
+  "evaluation_binding": {
+    "qualification_sha256": "c2838ec41b413bd0c0c25b9ffa9ae862e121ef78ac5f4c51e6ad00f3a54a8290",
+    "recipe_sha256": "62f403161e750b58d3f6b95c256660c23d112c65f46c567ef1b5b7c04383ebed",
+    "protocol_sha256": "dc88703d0199c2b992d9f628200efd745cbfaf2d101031e185dcf8d744631d93",
+    "model_sha256": {
+      "installed": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+      "candidate": "4d91781a9c0ed21d6ff38488b7183fa14a4afd6952f006bded131eb4e9503e6f"
+    },
+    "count_per_model": 94,
+    "cohorts": {
+      "reserved-test": 40,
+      "retention": 42,
+      "development": 12
+    },
+    "cached_predictions_used": false,
+    "decoder_sha256": "dd27e54026b287cf2aaee15d222b81a489138a1ff71f6a57cc397009bfa7053f",
+    "test_already_exposed": true,
+    "new_training": false,
+    "structural_output_count": 455,
+    "model_comparison": "Both variants use identical frozen v4 prompt and v4 decoder. Secondary comparison on exposed data; original unconstrained results remain untouched."
+  }
+}

@@ -49,6 +49,8 @@ docs/*
 !docs/VOICE_CAPTURE.md
 !docs/PORTFOLIO.md
 !docs/FINE_TUNING_CASE_STUDY.md
+!docs/FINE_TUNING_ACTION_CLARIFICATION.md
+!docs/CLASSIFICATION_ADVICE.md
 !docs/fine-tuning-evidence/
 scripts/*
 !scripts/app-mlx/

@@ -1,0 +1,343 @@
+{
+  "date": "2026-10-16",
+  "scope": "One experimental 4.1 clarification-calibration continuation. Same-assistant fresh authored holdout, not independent human/external gold. Compare previous experimental v4 candidate, not deployed v3.",
+  "policy_change": "Mixed intent remains mixed, while reasons union branch uncertainties; missing_action may coexist with mixed only. Nonmedia facts/ideas/goals require no media action or canonical title. Old labels/results untouched.",
+  "training": {
+    "completed": true,
+    "steps": 189,
+    "seconds": 894.001,
+    "peak_mlx_bytes": 6347151072,
+    "frozen_base_parameter_values_unchanged": true,
+    "parent_adapter_unchanged": true,
+    "promotion_authorized": false,
+    "candidate_sha256": "383bab2e631f740f058c213364bf092854d8c98b1d1bae5699ecf67030662aed"
+  },
+  "recipe": {
+    "learning_rate": 1e-05,
+    "updates": 189,
+    "epochs": 1,
+    "parent_adapter_sha256": "4d91781a9c0ed21d6ff38488b7183fa14a4afd6952f006bded131eb4e9503e6f",
+    "parent_config_sha256": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f",
+    "train_sha256": "8fbdb4968aea3ac2a0c32f9e61f73261e1d71912febdc971a6f3eae19e1d0d78",
+    "reserved_test_sha256": "1795c77553d773c930cb4a058b2a29c99419da46748f1563799935c2379efd2a",
+    "contract_sha256": "2a0a00e4c9c5a185fb4373297d985d7720b4ca017ad2d03161ccd559c64bf2ac",
+    "optimizer": "fresh Adam",
+    "loss": "response-only; every row weight1; reviewed stable replay plus action/clarification contrasts"
+  },
+  "comparison": {
+    "scores": {
+      "parent": {
+        "reserved-test": {
+          "n": 48,
+          "joint_correct": 29,
+          "category_correct": 47,
+          "action_correct": 43,
+          "reasons_correct": 32,
+          "invalid": 0,
+          "false_complete": 1,
+          "false_listen": 0,
+          "median_seconds": 4.9135
+        },
+        "retention": {
+          "n": 40,
+          "joint_correct": 36,
+          "category_correct": 38,
+          "action_correct": 36,
+          "reasons_correct": 37,
+          "invalid": 0,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 4.916
+        },
+        "development": {
+          "n": 12,
+          "joint_correct": 10,
+          "category_correct": 12,
+          "action_correct": 11,
+          "reasons_correct": 10,
+          "invalid": 0,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 5.096500000000001
+        }
+      },
+      "candidate": {
+        "reserved-test": {
+          "n": 48,
+          "joint_correct": 31,
+          "category_correct": 47,
+          "action_correct": 44,
+          "reasons_correct": 34,
+          "invalid": 0,
+          "false_complete": 1,
+          "false_listen": 0,
+          "median_seconds": 5.054
+        },
+        "retention": {
+          "n": 40,
+          "joint_correct": 38,
+          "category_correct": 38,
+          "action_correct": 38,
+          "reasons_correct": 39,
+          "invalid": 0,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 5.0075
+        },
+        "development": {
+          "n": 12,
+          "joint_correct": 10,
+          "category_correct": 12,
+          "action_correct": 10,
+          "reasons_correct": 10,
+          "invalid": 0,
+          "false_complete": 0,
+          "false_listen": 0,
+          "median_seconds": 5.049
+        }
+      }
+    },
+    "paired": {
+      "reserved-test": {
+        "gains": 4,
+        "losses": 2,
+        "joint_difference": 0.041666666666666664,
+        "paired_exact_two_sided_p": 0.6875
+      },
+      "retention": {
+        "gains": 2,
+        "losses": 0,
+        "joint_difference": 0.05,
+        "paired_exact_two_sided_p": 0.5
+      }
+    },
+    "predeclared_checks": {
+      "fresh_joint_at_least_80percent": false,
+      "fresh_gain_at_least_10points": false,
+      "fresh_paired_exact_p_at_most_005": false,
+      "retention_drop_at_most_5points": true,
+      "no_invalid_outputs": true,
+      "no_false_complete": false,
+      "no_false_actual_play": true
+    },
+    "passes_bounded_candidate_gates": false,
+    "independent_human_gold": false,
+    "authored_holdout_now_exposed": true,
+    "parent_is_previous_v4_candidate": true,
+    "installed_runtime_unchanged": true,
+    "model_promoted": false,
+    "seconds": 1007.44
+  },
+  "paired_intervals": {
+    "reserved-test": {
+      "paired_bootstrap95": [
+        -0.0625,
+        0.14583333333333334
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Does not correct shared semantic patterns, same-author annotation bias, or known-retention training exposure."
+    },
+    "retention": {
+      "paired_bootstrap95": [
+        0.0,
+        0.125
+      ],
+      "seed": 20261016,
+      "resamples": 10000,
+      "limitation": "Does not correct shared semantic patterns, same-author annotation bias, or known-retention training exposure."
+    }
+  },
+  "subsets": {
+    "fresh-mixed": {
+      "n": 10,
+      "parent_joint_correct": 2,
+      "candidate_joint_correct": 3
+    },
+    "fresh-nonmixed": {
+      "n": 38,
+      "parent_joint_correct": 27,
+      "candidate_joint_correct": 28
+    },
+    "fresh-nonmedia": {
+      "n": 13,
+      "parent_joint_correct": 10,
+      "candidate_joint_correct": 11
+    }
+  },
+  "error_flags": {
+    "action_mismatch": 8,
+    "missing_action_omitted": 9,
+    "unsupported_completion": 1,
+    "missing_identity_omitted": 2,
+    "category_mismatch": 3,
+    "missing_identity_spurious": 4,
+    "unresolved_reference_spurious": 2,
+    "missing_action_spurious": 1,
+    "unresolved_reference_omitted": 1
+  },
+  "fresh_error_flags": {
+    "action_mismatch": 4,
+    "missing_action_omitted": 7,
+    "unsupported_completion": 1,
+    "missing_identity_omitted": 2,
+    "category_mismatch": 1,
+    "missing_identity_spurious": 3,
+    "unresolved_reference_spurious": 1,
+    "missing_action_spurious": 1,
+    "unresolved_reference_omitted": 1
+  },
+  "verification": {
+    "updates_verified": 189,
+    "changed_lora_arrays": 14,
+    "total_lora_arrays": 14,
+    "changed_lora_names": [
+      "language_model.model.layers.31.mlp.down_proj.lora_a",
+      "language_model.model.layers.31.mlp.down_proj.lora_b",
+      "language_model.model.layers.31.mlp.gate_proj.lora_a",
+      "language_model.model.layers.31.mlp.gate_proj.lora_b",
+      "language_model.model.layers.31.mlp.up_proj.lora_a",
+      "language_model.model.layers.31.mlp.up_proj.lora_b",
+      "language_model.model.layers.31.self_attn.k_proj.lora_a",
+      "language_model.model.layers.31.self_attn.k_proj.lora_b",
+      "language_model.model.layers.31.self_attn.o_proj.lora_a",
+      "language_model.model.layers.31.self_attn.o_proj.lora_b",
+      "language_model.model.layers.31.self_attn.q_proj.lora_a",
+      "language_model.model.layers.31.self_attn.q_proj.lora_b",
+      "language_model.model.layers.31.self_attn.v_proj.lora_a",
+      "language_model.model.layers.31.self_attn.v_proj.lora_b"
+    ],
+    "parent_adapter_unchanged": true,
+    "installed_v3_adapter_unchanged": true,
+    "installed_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "base_values_unchanged": true,
+    "active_input_hashes_unchanged": true,
+    "new_generations": 200,
+    "new_training_runs": 1,
+    "candidate_promoted": false,
+    "cloud_inference_used": false
+  },
+  "data_coverage": {
+    "train-calibrated": {
+      "n": 189,
+      "category_counts": {
+        "MUSIC": 24,
+        "WISHLIST": 11,
+        "IDEA": 9,
+        "MIXED": 20,
+        "MOVIE": 33,
+        "BOOK": 33,
+        "LESSON": 28,
+        "GOAL": 9,
+        "NOTE": 13,
+        "PERSON": 9
+      },
+      "intent_counts": {
+        "reaction": 15,
+        "listen": 9,
+        "wishlist": 55,
+        "none": 36,
+        "mixed": 20,
+        "progress": 12,
+        "complete": 15,
+        "start": 15,
+        "None": 12
+      },
+      "reason_sets": {
+        "(none)": 141,
+        "missing_identity": 28,
+        "missing_action": 6,
+        "missing_action,missing_identity": 6,
+        "missing_identity,unresolved_reference": 1,
+        "unresolved_reference": 6,
+        "missing_action,missing_identity,unresolved_reference": 1
+      }
+    },
+    "reserved-test-reviewed": {
+      "n": 48,
+      "category_counts": {
+        "MOVIE": 8,
+        "BOOK": 7,
+        "MUSIC": 6,
+        "NOTE": 4,
+        "LESSON": 4,
+        "PERSON": 2,
+        "IDEA": 2,
+        "GOAL": 2,
+        "WISHLIST": 3,
+        "MIXED": 10
+      },
+      "intent_counts": {
+        "wishlist": 14,
+        "start": 3,
+        "reaction": 3,
+        "None": 4,
+        "complete": 2,
+        "listen": 2,
+        "none": 9,
+        "progress": 1,
+        "mixed": 10
+      },
+      "reason_sets": {
+        "missing_identity": 10,
+        "(none)": 28,
+        "missing_action": 4,
+        "missing_action,missing_identity": 2,
+        "unresolved_reference": 2,
+        "missing_identity,unresolved_reference": 1,
+        "missing_action,missing_identity,unresolved_reference": 1
+      }
+    },
+    "retention": {
+      "n": 40,
+      "category_counts": {
+        "BOOK": 9,
+        "GOAL": 2,
+        "IDEA": 2,
+        "LESSON": 7,
+        "MOVIE": 9,
+        "MUSIC": 5,
+        "NOTE": 2,
+        "PERSON": 2,
+        "WISHLIST": 2
+      },
+      "intent_counts": {
+        "complete": 6,
+        "progress": 6,
+        "reaction": 5,
+        "start": 6,
+        "wishlist": 7,
+        "none": 8,
+        "listen": 2
+      },
+      "reason_sets": {
+        "(none)": 40
+      }
+    },
+    "development": {
+      "n": 12,
+      "category_counts": {
+        "MOVIE": 3,
+        "BOOK": 1,
+        "MUSIC": 3,
+        "NOTE": 2,
+        "WISHLIST": 2,
+        "GOAL": 1
+      },
+      "intent_counts": {
+        "wishlist": 6,
+        "None": 3,
+        "none": 2,
+        "listen": 1
+      },
+      "reason_sets": {
+        "missing_identity": 3,
+        "missing_action,missing_identity": 2,
+        "(none)": 6,
+        "unresolved_reference": 1
+      }
+    },
+    "active_exact_split_overlap": 0,
+    "limitations": "Same-assistant labels, shared semantic patterns, fresh authored cases are not independent human/external gold. Known retention and development were already exposed."
+  }
+}

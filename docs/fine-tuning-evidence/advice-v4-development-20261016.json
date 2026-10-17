@@ -1,0 +1,390 @@
+{
+  "date": "2026-10-16",
+  "scope": "App advice compatibility and local development probes, not an independent final evaluation or a new fine-tuning run.",
+  "model": {
+    "base": "Qwen3.5-9B 4-bit MLX",
+    "adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "installed_wire_contract": 3,
+    "app_advice_contract": 4
+  },
+  "qualification": {
+    "decision": "Do not activate the v4 classifier prompt; existing v3 model prompt and weights remain in use.",
+    "exact_development_matches": 8,
+    "authored_development_cases": 12,
+    "limitation": "Many examples appear directly in the prompt. This is a format/policy smoke check, not generalization accuracy. No baseline comparison or accuracy improvement claim.",
+    "cases": [
+      {
+        "note": "I want to watch a movie this weekend.",
+        "expected": {
+          "category": "MOVIE",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "raw": "{\"category\":\"MOVIE\",\"intent\":\"wishlist\",\"clarificationReasons\":[\"missing_identity\"]}",
+        "seconds": 4.009,
+        "promptTokens": 881,
+        "prediction": {
+          "category": "MOVIE",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "Watch a movie.",
+        "expected": {
+          "category": "MOVIE",
+          "intent": null,
+          "clarificationReasons": [
+            "missing_identity",
+            "missing_action"
+          ]
+        },
+        "raw": "{\"category\":\"MOVIE\",\"intent\":\"null\",\"clarificationReasons\":[\"missing_identity\",\"missing_action\"]}",
+        "seconds": 3.429,
+        "promptTokens": 876,
+        "prediction": {
+          "category": "MOVIE",
+          "intent": "null",
+          "clarificationReasons": [
+            "missing_identity",
+            "missing_action"
+          ]
+        },
+        "exact_development_match": false
+      },
+      {
+        "note": "I want to watch the film Quiet Valley.",
+        "expected": {
+          "category": "MOVIE",
+          "intent": "wishlist",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"MOVIE\",\"intent\":\"wishlist\",\"clarificationReasons\":[]}",
+        "seconds": 3.225,
+        "promptTokens": 881,
+        "prediction": {
+          "category": "MOVIE",
+          "intent": "wishlist",
+          "clarificationReasons": []
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "I read a book last night.",
+        "expected": {
+          "category": "BOOK",
+          "intent": null,
+          "clarificationReasons": [
+            "missing_identity",
+            "missing_action"
+          ]
+        },
+        "raw": "{\"category\":\"BOOK\",\"intent\":\"none\",\"clarificationReasons\":[\"missing_identity\"]}",
+        "seconds": 3.254,
+        "promptTokens": 879,
+        "prediction": {
+          "category": "BOOK",
+          "intent": "none",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "exact_development_match": false
+      },
+      {
+        "note": "Can you play some jazz?",
+        "expected": {
+          "category": "MUSIC",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "raw": "{\"category\":\"MUSIC\",\"intent\":\"wishlist\",\"clarificationReasons\":[\"missing_identity\"]}",
+        "seconds": 3.25,
+        "promptTokens": 878,
+        "prediction": {
+          "category": "MUSIC",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "I like jazz.",
+        "expected": {
+          "category": "NOTE",
+          "intent": "none",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"NOTE\",\"intent\":\"none\",\"clarificationReasons\":[]}",
+        "seconds": 3.172,
+        "promptTokens": 876,
+        "prediction": {
+          "category": "NOTE",
+          "intent": "none",
+          "clarificationReasons": []
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "I want help finding music to listen to.",
+        "expected": {
+          "category": "MUSIC",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "raw": "{\"category\":\"MUSIC\",\"intent\":\"wishlist\",\"clarificationReasons\":[\"missing_identity\"]}",
+        "seconds": 3.284,
+        "promptTokens": 881,
+        "prediction": {
+          "category": "MUSIC",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "Finished it.",
+        "expected": {
+          "category": "NOTE",
+          "intent": null,
+          "clarificationReasons": [
+            "unresolved_reference"
+          ]
+        },
+        "raw": "{\"category\":\"NOTE\",\"intent\":\"none\",\"clarificationReasons\":[\"unresolved_reference\"]}",
+        "seconds": 3.309,
+        "promptTokens": 875,
+        "prediction": {
+          "category": "NOTE",
+          "intent": "none",
+          "clarificationReasons": [
+            "unresolved_reference"
+          ]
+        },
+        "exact_development_match": false
+      },
+      {
+        "note": "I want to visit Kyoto next month.",
+        "expected": {
+          "category": "WISHLIST",
+          "intent": "wishlist",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"WISHLIST\",\"intent\":\"wishlist\",\"clarificationReasons\":[]}",
+        "seconds": 3.304,
+        "promptTokens": 880,
+        "prediction": {
+          "category": "WISHLIST",
+          "intent": "wishlist",
+          "clarificationReasons": []
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "Help me book a flight to Lisbon.",
+        "expected": {
+          "category": "WISHLIST",
+          "intent": "wishlist",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"WISHLIST\",\"intent\":\"wishlist\",\"clarificationReasons\":[\"missing_identity\"]}",
+        "seconds": 3.346,
+        "promptTokens": 880,
+        "prediction": {
+          "category": "WISHLIST",
+          "intent": "wishlist",
+          "clarificationReasons": [
+            "missing_identity"
+          ]
+        },
+        "exact_development_match": false
+      },
+      {
+        "note": "I played the song Signal Fern twice.",
+        "expected": {
+          "category": "MUSIC",
+          "intent": "listen",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"MUSIC\",\"intent\":\"listen\",\"clarificationReasons\":[]}",
+        "seconds": 3.194,
+        "promptTokens": 880,
+        "prediction": {
+          "category": "MUSIC",
+          "intent": "listen",
+          "clarificationReasons": []
+        },
+        "exact_development_match": true
+      },
+      {
+        "note": "I want to exercise regularly.",
+        "expected": {
+          "category": "GOAL",
+          "intent": "none",
+          "clarificationReasons": []
+        },
+        "raw": "{\"category\":\"GOAL\",\"intent\":\"none\",\"clarificationReasons\":[]}",
+        "seconds": 3.244,
+        "promptTokens": 878,
+        "prediction": {
+          "category": "GOAL",
+          "intent": "none",
+          "clarificationReasons": []
+        },
+        "exact_development_match": true
+      }
+    ]
+  },
+  "handoff_smoke_tests": {
+    "purpose": "Three authored local handoff smoke checks, not independent accuracy. Classifier advice supplied as fixture; actual extractor inference only. No persistence or cloud inference.",
+    "records": [
+      {
+        "note": "I want to watch a movie this weekend.",
+        "suppliedAdvice": {
+          "contractVersion": 4,
+          "source": "I want to watch a movie this weekend.",
+          "advice": {
+            "category": "MOVIE",
+            "intent": "wishlist",
+            "clarificationReasons": [
+              "missing_identity"
+            ]
+          }
+        },
+        "plan": {
+          "entries": [
+            {
+              "title": "a movie",
+              "summary": "want to watch a movie this weekend",
+              "category": "MOVIE",
+              "date": "2026-10-16",
+              "matchedMemoryId": null,
+              "candidateMemoryIds": [],
+              "clarificationQuestion": "which movie do you want to watch?",
+              "tags": [
+                "movie",
+                "weekend"
+              ],
+              "activity": {
+                "kind": "movie",
+                "intent": "wishlist",
+                "progress": null,
+                "progressMode": "increment",
+                "total": null,
+                "lessonNumbers": [],
+                "sentiment": null,
+                "creator": null
+              },
+              "plannedTiming": "this weekend",
+              "titleReviewRequired": true
+            }
+          ]
+        },
+        "seconds": 30.912
+      },
+      {
+        "note": "I want to watch the film Quiet Valley.",
+        "suppliedAdvice": {
+          "contractVersion": 4,
+          "source": "I want to watch the film Quiet Valley.",
+          "advice": {
+            "category": "MOVIE",
+            "intent": null,
+            "clarificationReasons": [
+              "legacy_uncertainty"
+            ]
+          }
+        },
+        "plan": {
+          "entries": [
+            {
+              "title": "Quiet Valley",
+              "summary": "Want to watch the film Quiet Valley.",
+              "category": "MOVIE",
+              "date": "2026-10-16",
+              "matchedMemoryId": null,
+              "candidateMemoryIds": [],
+              "clarificationQuestion": null,
+              "tags": [
+                "film",
+                "watching"
+              ],
+              "activity": {
+                "kind": "movie",
+                "intent": "wishlist",
+                "progress": null,
+                "progressMode": "increment",
+                "total": null,
+                "lessonNumbers": [],
+                "sentiment": null,
+                "creator": null
+              },
+              "plannedTiming": null,
+              "titleReviewRequired": false
+            }
+          ]
+        },
+        "seconds": 15.594
+      },
+      {
+        "note": "I want to visit Kyoto next month.",
+        "suppliedAdvice": {
+          "contractVersion": 4,
+          "source": "I want to visit Kyoto next month.",
+          "advice": {
+            "category": "WISHLIST",
+            "intent": "wishlist",
+            "clarificationReasons": []
+          }
+        },
+        "plan": {
+          "entries": [
+            {
+              "title": "Visit Kyoto",
+              "summary": "I want to visit Kyoto next month.",
+              "category": "WISHLIST",
+              "date": "2026-10-16",
+              "matchedMemoryId": null,
+              "candidateMemoryIds": [],
+              "clarificationQuestion": null,
+              "tags": [
+                "travel",
+                "kyoto"
+              ],
+              "activity": null,
+              "plannedTiming": "next month",
+              "titleReviewRequired": false
+            }
+          ]
+        },
+        "seconds": 8.849
+      }
+    ]
+  },
+  "verification": {
+    "original_benchmark_inputs_unchanged": true,
+    "installed_model_and_adapter_artifacts_unchanged": true,
+    "v3_model_prompt_and_decoder_unchanged": true,
+    "probe_contract_sha256": "82a4bd8d2699dd4de1388b96ee1e3cc83e44362f0697fe75777472b119bc4b64",
+    "development_cases": 12,
+    "development_exact_matches": 8,
+    "live_extraction_smoke_cases": 3,
+    "training_performed": false,
+    "cloud_inference_used": false,
+    "new_prompt_activated": false,
+    "commit_or_push_performed": false
+  }
+}

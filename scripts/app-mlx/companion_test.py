@@ -209,5 +209,35 @@ class CompanionTests(unittest.TestCase):
             self.assertEqual(process.communicate.call_count, 2)
 
 
+class ReadyHelperTests(unittest.TestCase):
+    def assert_helper_rejected(self, filename):
+        expected = {
+            'adapters.safetensors': companion.classify.ADAPTER_SHA,
+            'adapter_config.json': companion.classify.CONFIG_SHA,
+            'classification_contract.py': companion.classify.CONTRACT_SHA,
+            'joint_decoder.py': companion.classify.JOINT_DECODER_SHA,
+            'classification_output.py': companion.classify.OUTPUT_WRAPPER_SHA,
+        }
+        visited = []
+        def digest(path):
+            visited.append(path.name)
+            return 'changed' if path.name == filename else expected[path.name]
+        with patch.object(companion.platform, 'system', return_value='Darwin'), \
+             patch.object(companion.platform, 'machine', return_value='arm64'), \
+             patch.object(companion.Path, 'is_file', return_value=True), \
+             patch.object(companion.classify, 'sha', side_effect=digest), \
+             patch.object(companion.classify, 'strict') as parse_manifest:
+            with self.assertRaisesRegex(ValueError, 'Pinned local model asset changed'):
+                companion.ready_check()
+            parse_manifest.assert_not_called()
+        self.assertIn(filename, visited)
+
+    def test_changed_decoder_blocks_readiness_before_model_loading(self):
+        self.assert_helper_rejected('joint_decoder.py')
+
+    def test_changed_retry_helper_blocks_readiness_before_model_loading(self):
+        self.assert_helper_rejected('classification_output.py')
+
+
 if __name__ == '__main__':
     unittest.main()

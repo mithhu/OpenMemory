@@ -52,3 +52,44 @@ The product export passed 400 application tests, TypeScript and a production bui
 The actual reviewed730 matrices were exported to a small GGUF LoRA adapter and imported into Ollama. The [portability evidence](fine-tuning-evidence/ollama-portability/README.md) includes all 208 paired labels/predictions and a CPU verifier. Ollama category accuracy increased from 90.38% to 94.71%, and supported intent from 67.18% to 85.64%, on the reused development set. Native MLX still scored 90.26% intent. These are portability/development diagnostics; the quantized bases differ and final-test qualification is not claimed.
 
 Both local capture options now classify with the trained artifact before a separate base model extracts details. MLX uses the native adapter; Ollama uses the pinned converted classifier. Missing or changed classifiers stop AI capture with manual review available, rather than silently processing with a base classifier or cloud provider. Model weights remain outside this product repository.
+
+
+## External-source classification test — 2026-10-15
+
+After passing all 13 known qualification checks with uncached inference, the existing retention candidate was tested once on a previously reserved Taskmaster-2 source pool. All 120 source utterances were verified; labels and exclusions were fixed before any final predictions. The 103 retained cases have AI-assigned app-policy labels, rather than independently human-annotated memory categories.
+
+All three models used the same 4-bit base, frozen prompt, greedy settings and finite decoder. Joint accuracy requires both category and intent to match:
+
+| Model | Joint correct | Accuracy |
+|---|---:|---:|
+| Unadapted Qwen3.5-9B-4bit | 17/103 | 16.5% |
+| Installed reviewed730 adapter | 48/103 | 46.6% |
+| Retention candidate | 62/103 | 60.2% |
+
+The majority-label baseline is 54/103 (52.4%). The candidate gains 13.6 percentage points over the installed adapter: 19 paired gains and five losses, exact paired p = 0.00661, paired bootstrap 95% interval +4.9 to +22.3 points. It meets the predeclared relative success criteria; it is not a claim of production-level accuracy or superiority to frontier models.
+
+The improvement is uneven: WISHLIST joint accuracy rises from 16/54 to 35/54, while MOVIE falls from 17/20 to 14/20 and MUSIC from 14/19 to 12/19. NOTE/genre-interest remains 1/10. App and Ollama weights were retained. Native MLX now has a separately qualified bounded local retry for malformed or contradictory output; this enforces the output contract and does not correct valid semantic mistakes.
+
+The source is prompted service dialogue covering four categories, with repeated task templates and unknown pretraining exposure. The pool is now exposed and must not be reused as an unopened final test. The [curated results and provenance](fine-tuning-evidence/external-source-20261015.json) preserve all three comparisons, hashes, uncertainty and limitations. Full working scripts, annotation ledgers and learning logs remain in the separate research archive. No model weights or fine-tuning dataset are bundled here.
+
+### Action and clarification v4 continuation — 16 October 2026
+
+A bounded 198-update MLX LoRA continuation trained the new advice format, changing all 14 adapter arrays while preserving the base and installed adapter. Under identical v4 prompts, authored holdout joint correctness changed from 22/40 to 26/40 and known training-source retention from 24/42 to 32/42. The candidate still had 7/94 invalid outputs and failed the predeclared validity gate, so it was not promoted. The small same-assistant-authored holdout does not establish independent generalization improvement. See the [experiment and limitations](FINE_TUNING_ACTION_CLARIFICATION.md) and [recorded evidence](fine-tuning-evidence/action-clarification-v4-20261016.json).
+
+## Published research package and frozen source holdout — 17 October 2026
+
+The selected reviewed730 artifact, attributed730-example training data, learning guide, actual training evidence and readable scripts are published separately at [OpenMemory local classifier research](https://github.com/mithhu/openmemory-local-classifier-research). The pretrained base and original evaluation wording are not bundled. The app's installed adapter was not changed.
+
+A reporting-only200-expression source holdout compared the fixed adapter with its exact unadapted base, using identical raw greedy decoding and no output repair:
+
+| Model | Category | Intent | Both labels correct |
+|---|---:|---:|---:|
+| Same pinned base |154/200 (77.0%)|161/200 (80.5%)|134/200 (67.0%)|
+| Reviewed730 |165/200 (82.5%)|174/200 (87.0%)|153/200 (76.5%)|
+| Constant NOTE/none |162/200 (81.0%)|185/200 (92.5%)|162/200 (81.0%)|
+
+The adapter gained9.5percentage points jointly over the base (31paired gains,12losses; paired95% interval+3to+16points; exact McNemar p=.0054), but remained below the majority joint baseline. PERSON and MOVIE category accuracy regressed. Both produced0invalid responses. These results establish a limited measured improvement over this base on these project labels, not general classification solved or frontier superiority.
+
+The test has162NOTE and185none labels; multiple action types have no support. Its wording comes from public human-authored sources, but the app-policy labels are AI-assigned, not independent human gold. Exact/normalized overlap with the selected730 training notes was zero; semantic/author/pretraining independence is not established. The earlier broad qualification gates remain failed. No test-guided training, label changes or candidate replacement followed this run.
+
+The portable trainer reproduced all730 archived tokenization fingerprints and passed a separate two-update native execution check. Those smoke weights are not used or released. A clean48-file export passed CPU verification and six research tests. The [text-free held-out evidence](fine-tuning-evidence/release-holdout-20261017.json) and the research repository retain full score tables and limitations. This is distinct from the511 application tests and recent extraction/UI fixes.

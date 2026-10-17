@@ -7,6 +7,8 @@ ADAPTER = ROOT / 'artifacts/fine-tuning/classification-reviewed9b-v1'
 ADAPTER_SHA = '8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01'
 CONFIG_SHA = 'e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f'
 CONTRACT_SHA = '47f23a8c1271206ab520927a3e62dfc406e90e481bdf8507e1ac2b00c1e863df'
+JOINT_DECODER_SHA = 'cdb635dd1df78e00f37859b45fc08737ce6444b29b8ae82599860f45373b89e2'
+OUTPUT_WRAPPER_SHA = 'cb7692f36790fb88648702c46baa329bde6b7e2d5b34ccc2f425b36129c23239'
 EXTRACTOR = 'qwen3.5:9b'
 EXTRACTOR_SHA = '6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7'
 
@@ -39,12 +41,14 @@ def worker(text):
         raise ValueError('Pinned runtime model manifest changed')
     recipe = json.loads(recipe_path.read_text())
     base = ROOT / '.local-runtime/model'
-    for p, expected in [(ADAPTER/'adapters.safetensors',ADAPTER_SHA), (ADAPTER/'adapter_config.json',CONFIG_SHA), (ROOT/'scripts/app-mlx/classification_contract.py',CONTRACT_SHA)]:
+    for p, expected in [(ADAPTER/'adapters.safetensors',ADAPTER_SHA), (ADAPTER/'adapter_config.json',CONFIG_SHA), (ROOT/'scripts/app-mlx/classification_contract.py',CONTRACT_SHA), (ROOT/'scripts/app-mlx/joint_decoder.py',JOINT_DECODER_SHA), (ROOT/'scripts/app-mlx/classification_output.py',OUTPUT_WRAPPER_SHA)]:
         if sha(p) != expected: raise ValueError('Pinned classifier artifact changed')
     for name,expected in {**recipe['base_weight_sha256'],**recipe['model_metadata_sha256']}.items():
         if sha(base/name) != expected: raise ValueError('Pinned base model changed')
     sys.path.insert(0, str(ROOT/'scripts/app-mlx'))
     from classification_contract import frozen_contract, validate_prediction
+    from classification_output import classify_output
+    from joint_decoder import JointDecoder
     from mlx_lm import load, generate
     from mlx_lm.sample_utils import make_sampler
     import mlx.core as mx
@@ -52,8 +56,11 @@ def worker(text):
     model,tokenizer=load(str(base),adapter_path=str(ADAPTER),trust_remote_code=False)
     tokens=tokenizer.apply_chat_template([{'role':'system','content':frozen_contract()['instructions']},{'role':'user','content':json.dumps({'note':text},ensure_ascii=False)}],tokenize=True,add_generation_prompt=True,enable_thinking=False,return_dict=False)
     if len(tokens)+80>2048: raise ValueError('Note exceeds classifier context; no truncation')
-    raw=generate(model,tokenizer,prompt=tokens,max_tokens=80,sampler=make_sampler(temp=0),verbose=False)
-    return {'advice':validate_prediction(strict(raw)), 'adapterSha256':ADAPTER_SHA, 'seconds':round(time.monotonic()-start,3), 'peakBytes':mx.get_peak_memory()}
+    def generate_raw(constrained):
+        kwargs = {'logits_processors': [JointDecoder(tokenizer, len(tokens))]} if constrained else {}
+        return generate(model,tokenizer,prompt=tokens,max_tokens=80,sampler=make_sampler(temp=0),verbose=False,**kwargs)
+    advice, _ = classify_output(generate_raw, lambda raw: validate_prediction(strict(raw)))
+    return {'advice':advice, 'adapterSha256':ADAPTER_SHA, 'seconds':round(time.monotonic()-start,3), 'peakBytes':mx.get_peak_memory()}
 
 def main():
     data=strict(sys.stdin.read(2001)); text=data['text']

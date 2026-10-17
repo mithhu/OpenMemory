@@ -1,5 +1,9 @@
 import { z } from "zod";
-import { classificationAdviceSchema, classificationContractVersion } from "./classification";
+import { normalizeClassificationAdvice } from "./classification";
+import {
+  legacyClassificationContractVersion,
+  legacyClassificationAdviceSchema,
+} from "./classification-contract-v3";
 
 export const mlxCompanionOrigin = "http://127.0.0.1:8765";
 export const mlxCompanionAdapterSha256 =
@@ -12,7 +16,7 @@ const statusSchema = z.object({
   ready: z.boolean(),
   paired: z.boolean(),
   adapterSha256: z.literal(mlxCompanionAdapterSha256),
-  contractVersion: z.literal(classificationContractVersion),
+  contractVersion: z.literal(legacyClassificationContractVersion),
   reason: z.string().max(2000).optional(),
 });
 const captureIdSchema = z.string().regex(/^[A-Za-z0-9_-]{24,128}$/);
@@ -20,7 +24,7 @@ const captureTokens = new Map<string, string>();
 const resultSchema = z
   .object({
     captureId: captureIdSchema,
-    advice: classificationAdviceSchema,
+    advice: legacyClassificationAdviceSchema.transform(normalizeClassificationAdvice),
     adapterSha256: z.literal(mlxCompanionAdapterSha256),
     seconds: z.number().finite().nonnegative(),
     totalSeconds: z.number().finite().nonnegative(),

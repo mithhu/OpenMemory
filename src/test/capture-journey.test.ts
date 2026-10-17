@@ -40,7 +40,15 @@ const entry = (
   title,
   summary: `Fictional event for ${title}`,
   category: activity
-    ? ({ book: "BOOK", movie: "MOVIE", music: "MUSIC", course: "LESSON" } as const)[activity.kind]
+    ? (
+        {
+          series: "SERIES",
+          book: "BOOK",
+          movie: "MOVIE",
+          music: "MUSIC",
+          course: "LESSON",
+        } as const
+      )[activity.kind]
     : "NOTE",
   date: "2026-10-09",
   matchedMemoryId: null,

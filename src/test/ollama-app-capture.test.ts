@@ -92,7 +92,11 @@ describe("Trained Ollama capture pipeline", () => {
       "235b080b2654c6784f979b3e61d63f84bf7a0e7261e0788d140ed5abd273928c",
     );
     expect(result.classification.source).toBe(source);
-    expect(result.classification.advice).toEqual({ category: "NOTE", intent: "none" });
+    expect(result.classification.advice).toEqual({
+      category: "NOTE",
+      intent: "none",
+      clarificationReasons: [],
+    });
     expect(chats(fetch).map((body) => body.model)).toEqual([classifierName, settings.model]);
     expect(chats(fetch)[0].keep_alive).toBe(0);
     expect(chats(fetch)[0].options).toEqual({

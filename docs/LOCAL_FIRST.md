@@ -73,6 +73,8 @@ Typed capture never falls back to cloud. Stopping classification prevents extrac
 
 Fonts are bundled under `public/fonts` with their OFL licenses, removing automatic Google font requests. Ordinary local mode does not write per-note classifier logs into the repository. The retained `OPENMEMORY_MLX_TEST=1` diagnostic flag enables metadata-only runtime logging in `.local-runtime/classification-runtime.jsonl`.
 
+Native MLX preserves the first classification when it passes the existing JSON and label checks. A malformed result or contradictory `MIXED` category/intent triggers at most one constrained retry with the same local adapter and prompt. Runtime failures do not trigger this retry or a cloud request. The decoder enforces the existing output contract; it cannot establish that a valid interpretation is correct. Clarification, event coverage, extraction checks and explicit review still apply. This changes decoding only; the installed adapter and Ollama classifier weights are unchanged.
+
 This change makes the current model the default; it does not claim new qualification accuracy or retrain it. Existing reaction-intent and extractor title/quantity weaknesses, and multi-stage inference latency, remain. Review suggestions before saving.
 
 ## Companion validation — 2026-10-13
@@ -99,3 +101,5 @@ These are integration checks, not an independent model accuracy benchmark. The d
 The production capture route now selects the pinned trained classifier before the separately selected Ollama extractor. The classifier request uses evaluated penalties and `keep_alive: 0`, allowing it to unload before detail extraction. Transport tests cover the exact pinned model identity, source, sequencing, mixed-note advice handling, cancellation and failure without fallback. The trained classifier is excluded from the extractor picker.
 
 455 application tests across 38 files, TypeScript and the production build passed. Both public evidence verifiers passed. An actual isolated hosted-mode browser test selected Local Ollama, reviewed “I want to go to Bangladesh in December's last week.” as WISHLIST / wishlist, and saved it successfully in the fictional test vault. Personal vaults were not edited.
+
+Classifier advice now separates the known action from clarification needs. The installed adapters retain their evaluated v3 model contract; the app explicitly migrates their output into v4 review advice. See [action and clarification advice](CLASSIFICATION_ADVICE.md) for compatibility behavior, local checks, and the unactivated development prompt.

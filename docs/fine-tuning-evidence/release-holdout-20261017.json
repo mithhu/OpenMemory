@@ -1,0 +1,552 @@
+{
+  "rows": 200,
+  "metrics": {
+    "base": {
+      "category": {
+        "correct": 154,
+        "total": 200
+      },
+      "intent": {
+        "correct": 161,
+        "total": 200
+      },
+      "joint": {
+        "correct": 134,
+        "total": 200
+      },
+      "invalid": 0,
+      "category_macro_accuracy": 0.45715323166303556,
+      "per_category": {
+        "BOOK": {
+          "correct": 0,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 5,
+          "total": 6
+        },
+        "LESSON": {
+          "correct": 0,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 0,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 7,
+          "total": 9
+        },
+        "NOTE": {
+          "correct": 125,
+          "total": 162
+        },
+        "PERSON": {
+          "correct": 16,
+          "total": 17
+        },
+        "WISHLIST": {
+          "correct": 1,
+          "total": 3
+        }
+      },
+      "per_intent": {
+        "clarify": {
+          "correct": 0,
+          "total": 11
+        },
+        "mixed": {
+          "correct": 0,
+          "total": 1
+        },
+        "none": {
+          "correct": 160,
+          "total": 185
+        },
+        "wishlist": {
+          "correct": 1,
+          "total": 3
+        }
+      }
+    },
+    "adapter": {
+      "category": {
+        "correct": 165,
+        "total": 200
+      },
+      "intent": {
+        "correct": 174,
+        "total": 200
+      },
+      "joint": {
+        "correct": 153,
+        "total": 200
+      },
+      "invalid": 0,
+      "category_macro_accuracy": 0.5979030501089324,
+      "per_category": {
+        "BOOK": {
+          "correct": 1,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 5,
+          "total": 6
+        },
+        "LESSON": {
+          "correct": 0,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 0,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 6,
+          "total": 9
+        },
+        "NOTE": {
+          "correct": 138,
+          "total": 162
+        },
+        "PERSON": {
+          "correct": 13,
+          "total": 17
+        },
+        "WISHLIST": {
+          "correct": 2,
+          "total": 3
+        }
+      },
+      "per_intent": {
+        "clarify": {
+          "correct": 8,
+          "total": 11
+        },
+        "mixed": {
+          "correct": 0,
+          "total": 1
+        },
+        "none": {
+          "correct": 165,
+          "total": 185
+        },
+        "wishlist": {
+          "correct": 1,
+          "total": 3
+        }
+      }
+    }
+  },
+  "paired_joint": {
+    "adapter_gains": 31,
+    "adapter_losses": 12,
+    "unchanged": 157,
+    "joint_difference": 0.095,
+    "paired_bootstrap_95_interval": [
+      0.03,
+      0.16
+    ],
+    "exact_two_sided_mcnemar_p": 0.005401572654591291,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20261017
+  },
+  "majority_baselines": {
+    "category": [
+      "NOTE",
+      162
+    ],
+    "intent": [
+      "none",
+      185
+    ],
+    "joint": [
+      [
+        "NOTE",
+        "none"
+      ],
+      162
+    ]
+  },
+  "latency": {
+    "base": {
+      "median_seconds": 2.6034523754788097,
+      "p95_seconds": 2.8177687500137836,
+      "scope": "Request time; initial model load excluded, lazy first-request effects included; uncontrolled base-first order"
+    },
+    "adapter": {
+      "median_seconds": 2.2000539375294466,
+      "p95_seconds": 2.3243947079754435,
+      "scope": "Request time; initial model load excluded, lazy first-request effects included; uncontrolled base-first order"
+    }
+  },
+  "by_source": {
+    "ConvAI2": {
+      "base": {
+        "category": {
+          "correct": 5,
+          "total": 10
+        },
+        "intent": {
+          "correct": 10,
+          "total": 10
+        },
+        "joint": {
+          "correct": 5,
+          "total": 10
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.5,
+        "per_category": {
+          "NOTE": {
+            "correct": 5,
+            "total": 10
+          }
+        },
+        "per_intent": {
+          "none": {
+            "correct": 10,
+            "total": 10
+          }
+        }
+      },
+      "adapter": {
+        "category": {
+          "correct": 7,
+          "total": 10
+        },
+        "intent": {
+          "correct": 10,
+          "total": 10
+        },
+        "joint": {
+          "correct": 7,
+          "total": 10
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.7,
+        "per_category": {
+          "NOTE": {
+            "correct": 7,
+            "total": 10
+          }
+        },
+        "per_intent": {
+          "none": {
+            "correct": 10,
+            "total": 10
+          }
+        }
+      }
+    },
+    "EmpatheticDialogues": {
+      "base": {
+        "category": {
+          "correct": 73,
+          "total": 93
+        },
+        "intent": {
+          "correct": 66,
+          "total": 93
+        },
+        "joint": {
+          "correct": 57,
+          "total": 93
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.5363801452784503,
+        "per_category": {
+          "BOOK": {
+            "correct": 0,
+            "total": 1
+          },
+          "GOAL": {
+            "correct": 5,
+            "total": 6
+          },
+          "LESSON": {
+            "correct": 0,
+            "total": 1
+          },
+          "MOVIE": {
+            "correct": 7,
+            "total": 8
+          },
+          "NOTE": {
+            "correct": 46,
+            "total": 59
+          },
+          "PERSON": {
+            "correct": 14,
+            "total": 15
+          },
+          "WISHLIST": {
+            "correct": 1,
+            "total": 3
+          }
+        },
+        "per_intent": {
+          "clarify": {
+            "correct": 0,
+            "total": 10
+          },
+          "none": {
+            "correct": 65,
+            "total": 80
+          },
+          "wishlist": {
+            "correct": 1,
+            "total": 3
+          }
+        }
+      },
+      "adapter": {
+        "category": {
+          "correct": 75,
+          "total": 93
+        },
+        "intent": {
+          "correct": 79,
+          "total": 93
+        },
+        "joint": {
+          "correct": 69,
+          "total": 93
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.6901129943502824,
+        "per_category": {
+          "BOOK": {
+            "correct": 1,
+            "total": 1
+          },
+          "GOAL": {
+            "correct": 5,
+            "total": 6
+          },
+          "LESSON": {
+            "correct": 0,
+            "total": 1
+          },
+          "MOVIE": {
+            "correct": 6,
+            "total": 8
+          },
+          "NOTE": {
+            "correct": 50,
+            "total": 59
+          },
+          "PERSON": {
+            "correct": 11,
+            "total": 15
+          },
+          "WISHLIST": {
+            "correct": 2,
+            "total": 3
+          }
+        },
+        "per_intent": {
+          "clarify": {
+            "correct": 7,
+            "total": 10
+          },
+          "none": {
+            "correct": 71,
+            "total": 80
+          },
+          "wishlist": {
+            "correct": 1,
+            "total": 3
+          }
+        }
+      }
+    },
+    "GoEmotions": {
+      "base": {
+        "category": {
+          "correct": 31,
+          "total": 38
+        },
+        "intent": {
+          "correct": 31,
+          "total": 38
+        },
+        "joint": {
+          "correct": 28,
+          "total": 38
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.4642857142857143,
+        "per_category": {
+          "MIXED": {
+            "correct": 0,
+            "total": 1
+          },
+          "MOVIE": {
+            "correct": 0,
+            "total": 1
+          },
+          "NOTE": {
+            "correct": 30,
+            "total": 35
+          },
+          "PERSON": {
+            "correct": 1,
+            "total": 1
+          }
+        },
+        "per_intent": {
+          "clarify": {
+            "correct": 0,
+            "total": 1
+          },
+          "mixed": {
+            "correct": 0,
+            "total": 1
+          },
+          "none": {
+            "correct": 31,
+            "total": 36
+          }
+        }
+      },
+      "adapter": {
+        "category": {
+          "correct": 35,
+          "total": 38
+        },
+        "intent": {
+          "correct": 32,
+          "total": 38
+        },
+        "joint": {
+          "correct": 31,
+          "total": 38
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.4928571428571429,
+        "per_category": {
+          "MIXED": {
+            "correct": 0,
+            "total": 1
+          },
+          "MOVIE": {
+            "correct": 0,
+            "total": 1
+          },
+          "NOTE": {
+            "correct": 34,
+            "total": 35
+          },
+          "PERSON": {
+            "correct": 1,
+            "total": 1
+          }
+        },
+        "per_intent": {
+          "clarify": {
+            "correct": 1,
+            "total": 1
+          },
+          "mixed": {
+            "correct": 0,
+            "total": 1
+          },
+          "none": {
+            "correct": 31,
+            "total": 36
+          }
+        }
+      }
+    },
+    "HappyDB": {
+      "base": {
+        "category": {
+          "correct": 45,
+          "total": 59
+        },
+        "intent": {
+          "correct": 54,
+          "total": 59
+        },
+        "joint": {
+          "correct": 44,
+          "total": 59
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.8793103448275862,
+        "per_category": {
+          "NOTE": {
+            "correct": 44,
+            "total": 58
+          },
+          "PERSON": {
+            "correct": 1,
+            "total": 1
+          }
+        },
+        "per_intent": {
+          "none": {
+            "correct": 54,
+            "total": 59
+          }
+        }
+      },
+      "adapter": {
+        "category": {
+          "correct": 48,
+          "total": 59
+        },
+        "intent": {
+          "correct": 53,
+          "total": 59
+        },
+        "joint": {
+          "correct": 46,
+          "total": 59
+        },
+        "invalid": 0,
+        "category_macro_accuracy": 0.9051724137931034,
+        "per_category": {
+          "NOTE": {
+            "correct": 47,
+            "total": 58
+          },
+          "PERSON": {
+            "correct": 1,
+            "total": 1
+          }
+        },
+        "per_intent": {
+          "none": {
+            "correct": 53,
+            "total": 59
+          }
+        }
+      }
+    }
+  },
+  "run_receipts": {
+    "base": {
+      "completed": true,
+      "model": "base",
+      "rows": 200,
+      "load_seconds": 1.9868424169835635,
+      "total_seconds": 522.6520718339598,
+      "peak_bytes": 6059805044,
+      "output_sha256": "32ea8b3167d5342f410089f48722cd5127a251be76890d4cb34e1b5b3a1011ce",
+      "freeze_sha256": "dbcaa1a63181ad2b9d061b53c8522243eb22c113a7d8eb77ae9bf9c63068dbee"
+    },
+    "adapter": {
+      "completed": true,
+      "model": "adapter",
+      "rows": 200,
+      "load_seconds": 2.0099742500460707,
+      "total_seconds": 445.3888115840382,
+      "peak_bytes": 6069602668,
+      "output_sha256": "48a54968db2b98a9ab81db3bc21ec34ea81bc652d3a2dc7fca6bcae2916ee1cf",
+      "freeze_sha256": "dbcaa1a63181ad2b9d061b53c8522243eb22c113a7d8eb77ae9bf9c63068dbee"
+    }
+  },
+  "freeze_sha256": "dbcaa1a63181ad2b9d061b53c8522243eb22c113a7d8eb77ae9bf9c63068dbee"
+}

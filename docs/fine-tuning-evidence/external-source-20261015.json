@@ -1,0 +1,247 @@
+{
+  "experiment": "joint-decoding-20261015",
+  "source": {
+    "repository": "https://github.com/google-research-datasets/Taskmaster",
+    "revision": "d92cb6af3005f1dc09c39e75e7daf4a04905e00b",
+    "license": "CC BY 4.0",
+    "collection": "Taskmaster-2 first nonempty USER utterances from distinct conversations",
+    "reserved_count": 120,
+    "retained_count": 103,
+    "selection_sha256": "4206125d461fedd4fb6d2277c0fc452b2543e5e5a810f847fed5658e6b886053"
+  },
+  "annotation": {
+    "provenance": "AI-assigned app-policy labels fixed before all final predictions; not independent human gold",
+    "ledger_sha256": "bd875cd7eb7c79be7a8c8dacdf592b49427503fe466ccacfed66c5b9603eb0e0",
+    "dispositions": {
+      "accepted": 103,
+      "excluded-unsupported": 5,
+      "excluded-incomplete": 1,
+      "quarantined-named-work": 4,
+      "quarantined-overlap": 7
+    },
+    "label_counts": {
+      "WISHLIST/wishlist": 54,
+      "NOTE/none": 10,
+      "MOVIE/clarify": 20,
+      "MUSIC/clarify": 19
+    }
+  },
+  "control": {
+    "base": "mlx-community/Qwen3.5-9B-4bit",
+    "base_revision": "8b2b98c00a6b4d291155e4890773ca8f769aee53",
+    "installed_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "candidate_adapter_sha256": "83c854de64a84b4d6cec026dc6dcbce83c1c62c9f2a87f17737f03d4710fe7f7",
+    "classification_contract_sha256": "47f23a8c1271206ab520927a3e62dfc406e90e481bdf8507e1ac2b00c1e863df",
+    "decoder_sha256": "cdb635dd1df78e00f37859b45fc08737ce6444b29b8ae82599860f45373b89e2",
+    "uncached": true,
+    "identical_prompt_and_decoder_for_all_models": true,
+    "temperature": 0,
+    "max_tokens": 80,
+    "thinking": false,
+    "cloud_model_inference": false,
+    "labels_changed_after_predictions": false
+  },
+  "scores": {
+    "base": {
+      "count": 103,
+      "category_correct": 56,
+      "intent_correct": 17,
+      "joint_correct": 17,
+      "invalid": 0,
+      "false_complete": 0,
+      "median_seconds": 2.58
+    },
+    "parent": {
+      "count": 103,
+      "category_correct": 59,
+      "intent_correct": 48,
+      "joint_correct": 48,
+      "invalid": 0,
+      "false_complete": 0,
+      "median_seconds": 2.634
+    },
+    "candidate": {
+      "count": 103,
+      "category_correct": 77,
+      "intent_correct": 62,
+      "joint_correct": 62,
+      "invalid": 0,
+      "false_complete": 0,
+      "median_seconds": 2.658
+    }
+  },
+  "majority_joint_count": 54,
+  "paired_candidate_vs": {
+    "base": {
+      "gains": 46,
+      "losses": 1,
+      "joint_difference": 0.4368932038834951,
+      "mcnemar_two_sided_exact_p": 6.821210263296962e-13,
+      "paired_bootstrap95": [
+        0.33980582524271846,
+        0.5339805825242718
+      ],
+      "seed": 20261015,
+      "resamples": 10000
+    },
+    "parent": {
+      "gains": 19,
+      "losses": 5,
+      "joint_difference": 0.13592233009708737,
+      "mcnemar_two_sided_exact_p": 0.006610751152038574,
+      "paired_bootstrap95": [
+        0.04854368932038835,
+        0.22330097087378642
+      ],
+      "seed": 20261015,
+      "resamples": 10000
+    }
+  },
+  "paired_installed_vs_base": {
+    "gains": 33,
+    "losses": 2,
+    "joint_difference": 0.30097087378640774,
+    "mcnemar_two_sided_exact_p": 3.6729034036397934e-08,
+    "paired_bootstrap95": [
+      0.20388349514563106,
+      0.39805825242718446
+    ],
+    "seed": 20261015,
+    "resamples": 10000
+  },
+  "per_category": {
+    "base": {
+      "MOVIE": {
+        "count": 20,
+        "category_correct": 20,
+        "intent_correct": 0,
+        "joint_correct": 0,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.6005000000000003
+      },
+      "MUSIC": {
+        "count": 19,
+        "category_correct": 19,
+        "intent_correct": 0,
+        "joint_correct": 0,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.58
+      },
+      "NOTE": {
+        "count": 10,
+        "category_correct": 2,
+        "intent_correct": 2,
+        "joint_correct": 2,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.5780000000000003
+      },
+      "WISHLIST": {
+        "count": 54,
+        "category_correct": 15,
+        "intent_correct": 15,
+        "joint_correct": 15,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.5735
+      }
+    },
+    "parent": {
+      "MOVIE": {
+        "count": 20,
+        "category_correct": 20,
+        "intent_correct": 17,
+        "joint_correct": 17,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.6545
+      },
+      "MUSIC": {
+        "count": 19,
+        "category_correct": 19,
+        "intent_correct": 14,
+        "joint_correct": 14,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.629
+      },
+      "NOTE": {
+        "count": 10,
+        "category_correct": 3,
+        "intent_correct": 1,
+        "joint_correct": 1,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.6325000000000003
+      },
+      "WISHLIST": {
+        "count": 54,
+        "category_correct": 17,
+        "intent_correct": 16,
+        "joint_correct": 16,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.6205
+      }
+    },
+    "candidate": {
+      "MOVIE": {
+        "count": 20,
+        "category_correct": 20,
+        "intent_correct": 14,
+        "joint_correct": 14,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.64
+      },
+      "MUSIC": {
+        "count": 19,
+        "category_correct": 19,
+        "intent_correct": 12,
+        "joint_correct": 12,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.602
+      },
+      "NOTE": {
+        "count": 10,
+        "category_correct": 3,
+        "intent_correct": 1,
+        "joint_correct": 1,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.6565
+      },
+      "WISHLIST": {
+        "count": 54,
+        "category_correct": 35,
+        "intent_correct": 35,
+        "joint_correct": 35,
+        "invalid": 0,
+        "false_complete": 0,
+        "median_seconds": 2.676
+      }
+    }
+  },
+  "predeclared_success_checks": {
+    "joint_gain_at_least10points": true,
+    "paired_exact_p_at_most005": true,
+    "invalid_not_increased": true,
+    "false_completion_not_increased": true
+  },
+  "candidate_meets_final_success": true,
+  "app_new_adapter_promoted": false,
+  "limitations": [
+    "AI policy annotation is not an independently human-labeled benchmark.",
+    "Service dialogue and four retained categories do not establish all personal-memory tasks or pretraining independence.",
+    "Case-level paired bootstrap can overstate population generalization when task templates are correlated.",
+    "Film and music intent scores regressed in the candidate despite the overall gain.",
+    "The 10 NOTE/genre-interest cases remain weak.",
+    "Validity is enforced by the shared decoder and cannot be credited to fine-tuning alone.",
+    "No frontier-model comparison or controlled speed benchmark.",
+    "Fine-tuning data and weights remain outside the product repository; this is a curated result summary.",
+    "This pool is exposed and must not be reused as an unopened final test."
+  ]
+}

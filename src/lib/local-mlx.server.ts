@@ -3,7 +3,8 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { spawn } from "node:child_process";
 import { getRequest } from "@tanstack/react-start/server";
-import { classificationAdviceSchema } from "./classification";
+import { normalizeClassificationAdvice } from "./classification";
+import { legacyClassificationAdviceSchema } from "./classification-contract-v3";
 import { z } from "zod";
 
 let busy = false;
@@ -67,7 +68,7 @@ export async function runLocalMlx(text: string) {
 }
 const resultSchema = z
   .object({
-    advice: classificationAdviceSchema,
+    advice: legacyClassificationAdviceSchema.transform(normalizeClassificationAdvice),
     adapterSha256: z.literal("8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01"),
     seconds: z.number(),
     totalSeconds: z.number(),

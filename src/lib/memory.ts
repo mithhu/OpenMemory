@@ -5,6 +5,7 @@ import { reminderSchema } from "./reminders";
 
 export const CATEGORIES = [
   "MOVIE",
+  "SERIES",
   "BOOK",
   "MUSIC",
   "LESSON",
@@ -17,6 +18,7 @@ export const CATEGORIES = [
 export type Category = (typeof CATEGORIES)[number];
 export const categoryMeta: Record<Category, { label: string; color: string }> = {
   MOVIE: { label: "Culture", color: "#b79bfa" },
+  SERIES: { label: "TV series", color: "#8aa8ef" },
   BOOK: { label: "Books", color: "#96c9b2" },
   MUSIC: { label: "Music", color: "#dba3cb" },
   LESSON: { label: "Learning", color: "#71c9d2" },

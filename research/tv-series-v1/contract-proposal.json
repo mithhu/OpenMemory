@@ -1,0 +1,34 @@
+{
+  "status": "proposal-not-active-not-trained",
+  "version": "tv-series-candidate-v1",
+  "output": {
+    "category": [
+      "NOTE",
+      "PERSON",
+      "GOAL",
+      "WISHLIST",
+      "IDEA",
+      "MOVIE",
+      "SERIES",
+      "BOOK",
+      "MUSIC",
+      "LESSON",
+      "MIXED"
+    ],
+    "intent": [
+      "none",
+      "wishlist",
+      "start",
+      "progress",
+      "complete",
+      "listen",
+      "reaction",
+      "mixed",
+      null
+    ],
+    "clarificationReasons": ["missing_identity", "missing_action", "unresolved_reference"]
+  },
+  "compatibility": "Not compatible with frozen v3 adapters or their decoder. No runtime imports this proposal. Does not alter classification-contract-v3.ts or classification_advice_v4.json.",
+  "uncertainty": "Known future intent may coexist with an unresolved film/show category. NOTE is an uncertainty carrier only with clarification; it never silently claims a media wish is an ordinary diary event.",
+  "policy": "See README.md; audit labels and complete the full training prompt and constrained decoder before any training run. This file defines an output proposal, not a released training contract."
+}

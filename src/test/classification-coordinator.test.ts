@@ -65,10 +65,25 @@ describe("Explicit classification coordinator", () => {
     expect(JSON.parse(chats(fetch)[1].messages[1].content)).toEqual({
       note: source,
       catalog: [],
-      classificationAdvice: { category: "NOTE", intent: "none" },
+      classificationAdvice: { category: "NOTE", intent: "none", clarificationReasons: [] },
     });
     expect(chats(fetch)[1].messages[0].content).toContain("this advice may be wrong");
     expect(fetch.mock.calls.filter(([url]) => url.endsWith("/tags"))).toHaveLength(2);
+    expect(cloud.planCapture).not.toHaveBeenCalled();
+  });
+  it("forwards migrated uncertainty as data without inventing an action", async () => {
+    const fetch = fixture(() => ({ category: "MOVIE", intent: "clarify" }));
+    const result = await captureWithProvider(data(), settings, undefined, profile);
+    expect(result.classification?.advice).toEqual({
+      category: "MOVIE",
+      intent: null,
+      clarificationReasons: ["legacy_uncertainty"],
+    });
+    expect(JSON.parse(chats(fetch)[1].messages[1].content).classificationAdvice).toEqual(
+      result.classification?.advice,
+    );
+    expect(chats(fetch)[1].messages[0].content).toContain("Missing identity never erases a known");
+    expect(result.plan).toMatchObject(plan);
     expect(cloud.planCapture).not.toHaveBeenCalled();
   });
   it("awaits classification before queuing extraction", async () => {
@@ -107,7 +122,11 @@ describe("Explicit classification coordinator", () => {
   it("retains mixed advice separately without forcing entry types or inventing missing events", async () => {
     const fetch = fixture(() => ({ category: "MIXED", intent: "mixed" }));
     const result = await captureWithProvider(data(), settings, undefined, profile);
-    expect(result.classification?.advice).toEqual({ category: "MIXED", intent: "mixed" });
+    expect(result.classification?.advice).toEqual({
+      category: "MIXED",
+      intent: "mixed",
+      clarificationReasons: [],
+    });
     expect(result.plan).toMatchObject(plan);
     expect(result.plan.entries).toHaveLength(1);
     expect(chats(fetch)[1].messages[0].content).toContain("Preserve all independent mixed events");

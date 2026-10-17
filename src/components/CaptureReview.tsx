@@ -60,7 +60,6 @@ const classificationActionLabels = {
   complete: "Finished",
   listen: "Listened",
   reaction: "An opinion",
-  clarify: "Needs clarification",
   mixed: "More than one event",
 };
 
@@ -136,7 +135,11 @@ export function CaptureReview({
             }
           : {}),
         ...(entry.activity?.intent === "wishlist" &&
-        (entry.activity.progress !== null || entry.activity.lessonNumbers.length)
+        (entry.activity.progress !== null ||
+          entry.activity.lessonNumbers.length ||
+          entry.activity.season ||
+          entry.activity.episode ||
+          entry.activity.seasonCompleted)
           ? { intentReviewRequired: true }
           : {}),
         ...(entry.activity && needsProgressEvidence(entry.activity)
@@ -161,9 +164,17 @@ export function CaptureReview({
   const completionsAcknowledged = unconfirmedCompletionCount === 0;
   const progressReviewKey = JSON.stringify([text, entries]);
   const progressAcknowledged = progressAcknowledgment === progressReviewKey;
-  const hasUnknownProgress = entries.some(
-    (entry) => entry.activity && needsProgressEvidence(entry.activity),
-  );
+  const [lessonDrafts, setLessonDrafts] = useState<Record<string, string>>({});
+  const hasUnknownProgress = entries.some((entry) => {
+    const activity = entry.activity;
+    if (!activity) return false;
+    const lessons = lessonDrafts[entry.reviewKey];
+    // A nonempty edited course range is validated on submit. It must not be
+    // blocked as "unknown" merely because the original model left lessons empty.
+    if (activity.kind === "course" && lessons !== undefined)
+      return needsProgressEvidence({ ...activity, lessonNumbers: [] }) && !lessons.trim();
+    return needsProgressEvidence(activity);
+  });
   const [classificationAcknowledgment, setClassificationAcknowledgment] = useState<string | null>(
     null,
   );
@@ -232,8 +243,8 @@ export function CaptureReview({
         activity: { ...activity, ...change },
         ...(change.intent ||
         (activity.intent === "progress" &&
-          change.progress !== undefined &&
-          change.progress !== null)
+          ((change.progress !== undefined && change.progress !== null) ||
+            (activity.kind === "series" && (change.episode || change.seasonCompleted))))
           ? { intentReviewRequired: false }
           : {}),
       });
@@ -508,8 +519,18 @@ export function CaptureReview({
               <p>
                 Suggested type:{" "}
                 <strong>{classificationTypeLabels[classification.advice.category]}</strong> ·
-                Action: {classificationActionLabels[classification.advice.intent]}
+                Action:{" "}
+                {classification.advice.intent === null
+                  ? "Not determined by the classifier"
+                  : classificationActionLabels[classification.advice.intent]}
               </p>
+              {classification.advice.clarificationReasons.length > 0 && (
+                <p>
+                  {classification.advice.intent === null
+                    ? "The extracted action below is a separate suggestion. Check it against your original words."
+                    : "The suggested action is known. Missing details are listed separately below."}
+                </p>
+              )}
               {classificationConflicts.length > 0 ? (
                 <>
                   <ul>
@@ -531,7 +552,7 @@ export function CaptureReview({
                     />
                     {classification.advice.category === "MIXED"
                       ? "I reviewed every event in my original words and confirmed the entries I want to keep."
-                      : classification.advice.intent === "clarify"
+                      : classification.advice.clarificationReasons.length > 0
                         ? "I clarified the missing details and checked the type and action in these entries."
                         : "I checked the suggested type and action and confirm my choices below."}
                   </label>
@@ -587,13 +608,13 @@ export function CaptureReview({
                     {activityLabels[kind]}
                   </option>
                 ))}
-                {CATEGORIES.filter((c) => !["MOVIE", "BOOK", "MUSIC", "LESSON"].includes(c)).map(
-                  (cat) => (
-                    <option key={cat} value={cat}>
-                      {categoryMeta[cat].label}
-                    </option>
-                  ),
-                )}
+                {CATEGORIES.filter(
+                  (c) => !["MOVIE", "SERIES", "BOOK", "MUSIC", "LESSON"].includes(c),
+                ).map((cat) => (
+                  <option key={cat} value={cat}>
+                    {categoryMeta[cat].label}
+                  </option>
+                ))}
               </select>
               <input
                 id={`capture-title-${index}`}
@@ -788,7 +809,13 @@ export function CaptureReview({
                         activityPatch(index, {
                           intent: e.target.value as ActivityCommand["intent"],
                           ...(e.target.value === "reaction" || e.target.value === "wishlist"
-                            ? { progress: null, lessonNumbers: [] }
+                            ? {
+                                progress: null,
+                                lessonNumbers: [],
+                                season: null,
+                                episode: null,
+                                seasonCompleted: false,
+                              }
                             : {}),
                         })
                       }
@@ -824,11 +851,13 @@ export function CaptureReview({
                         />
                         {entry.activity.kind === "movie"
                           ? "I watched the whole film"
-                          : entry.activity.kind === "book"
-                            ? "I finished the whole book"
-                            : entry.activity.kind === "course"
-                              ? "I finished the entire course"
-                              : "I finished the whole work"}{" "}
+                          : entry.activity.kind === "series"
+                            ? "I finished the entire series, not just a season"
+                            : entry.activity.kind === "book"
+                              ? "I finished the whole book"
+                              : entry.activity.kind === "course"
+                                ? "I finished the entire course"
+                                : "I finished the whole work"}{" "}
                         “{entry.title}”.
                       </label>
                       <p id={`completion-help-${index}`}>
@@ -860,25 +889,83 @@ export function CaptureReview({
             {entry.activity && entry.activity.intent !== "reaction" && (
               <details
                 className="review-more"
-                open={entry.activity.lessonNumbers.length > 0 || entry.activity.progress !== null}
+                open={
+                  entry.activity.kind === "series" ||
+                  entry.activity.lessonNumbers.length > 0 ||
+                  entry.activity.progress !== null
+                }
               >
                 <summary>
                   {entry.activity.intent === "wishlist" ? "Item details" : "Progress details"}{" "}
                   <span>Keep only what you know</span>
                 </summary>
                 <div className="review-fields">
+                  {entry.activity.kind === "series" && entry.activity.intent !== "wishlist" && (
+                    <>
+                      <label>
+                        Season
+                        <input
+                          type="number"
+                          min={1}
+                          max={10000}
+                          value={entry.activity.season ?? ""}
+                          onChange={(e) =>
+                            activityPatch(index, {
+                              season: e.target.value ? Number(e.target.value) : null,
+                              episode: null,
+                              seasonCompleted: false,
+                            })
+                          }
+                        />
+                      </label>
+                      <label>
+                        Episode position in this season
+                        <input
+                          type="number"
+                          min={1}
+                          max={10000}
+                          value={entry.activity.episode ?? ""}
+                          onChange={(e) =>
+                            activityPatch(index, {
+                              episode: e.target.value ? Number(e.target.value) : null,
+                            })
+                          }
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={entry.activity.seasonCompleted ?? false}
+                          onChange={(e) =>
+                            activityPatch(index, { seasonCompleted: e.target.checked })
+                          }
+                        />
+                        Finished this season only
+                      </label>
+                      <p>
+                        Episode position does not add watched episodes. Finishing a season does not
+                        finish the series.
+                      </p>
+                    </>
+                  )}
                   {entry.activity.intent !== "wishlist" &&
                     (entry.activity.kind === "course" ? (
                       <label>
                         Lessons completed
                         <input
                           name={`lessons-${index}`}
-                          defaultValue={entry.activity.lessonNumbers.join(", ")}
+                          value={
+                            lessonDrafts[entry.reviewKey] ?? entry.activity.lessonNumbers.join(", ")
+                          }
                           placeholder="e.g. 2-4"
                           key={`lessons-${entry.reviewKey}-${entry.activity.kind}`}
                           // Entering lesson evidence is itself a deliberate
                           // progress decision. Parsing/validation happens on submit.
-                          onChange={() => {
+                          onChange={(event) => {
+                            setLessonDrafts((drafts) => ({
+                              ...drafts,
+                              [entry.reviewKey]: event.target.value,
+                            }));
                             if (entry.activity?.intent === "progress")
                               patch(index, { intentReviewRequired: false });
                           }}
@@ -1005,6 +1092,7 @@ export function CaptureReview({
             needsTitleReview ||
             needsIntentReview ||
             needsMatchingReview ||
+            (hasUnknownProgress && !progressAcknowledged) ||
             needsClassificationReview
           }
         >
