@@ -1,0 +1,9 @@
+{
+  "repository": "https://huggingface.co/mithhu333/openmemory-qwen3.5-9b-mlx-classifier-v1",
+  "revision": "1e57e27b6eccd97c7f568ffc59f902e34a9746a1",
+  "visibility": "public",
+  "anonymous_download_files_verified": 16,
+  "adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "uploaded_via": "user-authorized signed-in browser",
+  "date": "2026-10-17"
+}
