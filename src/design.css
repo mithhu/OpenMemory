@@ -390,7 +390,7 @@ select:focus-visible {
 }
 @media (max-width: 970px) {
   .main-shell {
-    margin-left: 0;
+    margin-left: 270px;
   }
   .sidebar {
     width: 270px;
@@ -400,6 +400,14 @@ select:focus-visible {
   }
   .topbar {
     padding: 0 30px;
+  }
+}
+@media (max-width: 767px) {
+  .main-shell {
+    margin-left: 0;
+  }
+  .mobile-nav-backdrop {
+    left: 270px;
   }
 }
 @media (max-width: 600px) {
