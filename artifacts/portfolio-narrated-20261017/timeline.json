@@ -1,0 +1,66 @@
+[
+  {
+    "id": "intro",
+    "title": "Your memories shouldn\u2019t need a form.",
+    "text": "Your memories shouldn\u2019t need a form. OpenMemory turns a simple thought into something you can return to.",
+    "start": 0.0,
+    "end": 5.828,
+    "stop": 6.525
+  },
+  {
+    "id": "capture",
+    "title": "One thought. A useful memory.",
+    "text": "Start with: I want to read Sapiens. That\u2019s a book you plan to read, not a book you\u2019ve finished. Both the subject and the action matter.",
+    "start": 6.525,
+    "end": 14.71,
+    "stop": 15.151
+  },
+  {
+    "id": "local",
+    "title": "Fine-tuned locally. Reviewed by you.",
+    "text": "On this Mac, a custom, fine-tuned model classifies the note using Apple\u2019s M L X framework. A separate local model extracts the title and prepares the review.",
+    "start": 15.151,
+    "end": 25.437,
+    "stop": 26.25
+  },
+  {
+    "id": "wait",
+    "title": "Real inference. Shortened wait.",
+    "text": "These are actual app captures. Processing waits are shortened here; this is not a speed benchmark.",
+    "start": 26.25,
+    "end": 32.438,
+    "stop": 32.879
+  },
+  {
+    "id": "review",
+    "title": "Check it before you keep it.",
+    "text": "The review shows Sapiens, Book, and something I want to do. You can check the original words and edit the details. Nothing is saved until you confirm.",
+    "start": 32.879,
+    "end": 41.691,
+    "stop": 42.295
+  },
+  {
+    "id": "saved",
+    "title": "Saved, only after confirmation.",
+    "text": "Choose Save, and the book appears on your wishlist. In this run, the item also survived a reload. Your memories stay in this browser\u2019s vault.",
+    "start": 42.295,
+    "end": 50.886,
+    "stop": 51.49
+  },
+  {
+    "id": "research",
+    "title": "A real experiment. Honest results.",
+    "text": "The adapter was trained on seven hundred and thirty examples. On a two hundred note test, it improved over its base from sixty-seven to seventy-six point five percent joint accuracy, but stayed below the eighty-one percent majority baseline. It remains experimental.",
+    "start": 51.49,
+    "end": 67.454,
+    "stop": 68.266
+  },
+  {
+    "id": "outro",
+    "title": "Build locally. Measure honestly.",
+    "text": "The application, research code, and model weights are available to inspect. OpenMemory combines local fine-tuning with a simple principle: A I suggests. You decide what becomes a memory.",
+    "start": 68.266,
+    "end": 80.619,
+    "stop": 82.1
+  }
+]

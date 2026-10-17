@@ -1,4 +1,8 @@
-# Two-minute native MLX walkthrough
+# Native MLX portfolio demos
+
+**Recommended:** [Watch the 82-second narrated version](../../artifacts/portfolio-narrated-20261017/openmemory-narrated-demo.mp4). It adds ElevenLabs synthetic narration, speech-timed captions, moving close-ups, transitions and a results graphic. See [narrated demo notes](NARRATED_DEMO.md).
+
+## Earlier silent walkthrough
 
 [Watch/download the two-minute MP4](../../artifacts/portfolio-demo-20261017/openmemory-mlx-portfolio-demo.mp4) · [Caption file](../../artifacts/portfolio-demo-20261017/captions.srt) · [Runtime provenance](demo-provenance.json) · [Case study](CASE_STUDY.md)
 

@@ -1,0 +1,10 @@
+{
+  "provider": "ElevenLabs",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "model_id": "eleven_multilingual_v2",
+  "synthetic_narration": true,
+  "voice_cloning": false,
+  "script_characters": 1251,
+  "sent_data": "public fictional portfolio narration only",
+  "api_documentation": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert-with-timestamps"
+}

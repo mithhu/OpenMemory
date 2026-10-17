@@ -1,0 +1,15 @@
+Your memories shouldn’t need a form. OpenMemory turns a simple thought into something you can return to.
+
+Start with: I want to read Sapiens. That’s a book you plan to read, not a book you’ve finished. Both the subject and the action matter.
+
+On this Mac, a custom, fine-tuned model classifies the note using Apple’s M L X framework. A separate local model extracts the title and prepares the review.
+
+These are actual app captures. Processing waits are shortened here; this is not a speed benchmark.
+
+The review shows Sapiens, Book, and something I want to do. You can check the original words and edit the details. Nothing is saved until you confirm.
+
+Choose Save, and the book appears on your wishlist. In this run, the item also survived a reload. Your memories stay in this browser’s vault.
+
+The adapter was trained on seven hundred and thirty examples. On a two hundred note test, it improved over its base from sixty-seven to seventy-six point five percent joint accuracy, but stayed below the eighty-one percent majority baseline. It remains experimental.
+
+The application, research code, and model weights are available to inspect. OpenMemory combines local fine-tuning with a simple principle: A I suggests. You decide what becomes a memory.

@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:01,846
+Your memories shouldn’t need a form.
+
+2
+00:00:02,287 --> 00:00:04,957
+OpenMemory turns a simple thought into something you can
+
+3
+00:00:05,004 --> 00:00:08,951
+return to.  Start with: I want to read Sapiens.
+
+4
+00:00:09,276 --> 00:00:11,366
+That’s a book you plan to read, not a
+
+5
+00:00:11,413 --> 00:00:12,388
+book you’ve finished.
+
+6
+00:00:12,632 --> 00:00:14,710
+Both the subject and the action matter.
+
+7
+00:00:15,151 --> 00:00:18,460
+On this Mac, a custom, fine-tuned model classifies the
+
+8
+00:00:18,518 --> 00:00:21,188
+note using Apple’s M L X framework.
+
+9
+00:00:21,629 --> 00:00:24,648
+A separate local model extracts the title and prepares
+
+10
+00:00:24,694 --> 00:00:28,038
+the review.  These are actual app captures.
+
+11
+00:00:28,479 --> 00:00:31,300
+Processing waits are shortened here; this is not a
+
+12
+00:00:31,358 --> 00:00:35,201
+speed benchmark.  The review shows Sapiens, Book, and something
+
+13
+00:00:35,248 --> 00:00:36,083
+I want to do.
+
+14
+00:00:36,525 --> 00:00:38,498
+You can check the original words and edit the
+
+15
+00:00:38,545 --> 00:00:41,691
+details. Nothing is saved until you confirm.
+
+16
+00:00:42,295 --> 00:00:45,093
+Choose Save, and the book appears on your wishlist.
+
+17
+00:00:45,604 --> 00:00:48,413
+In this run, the item also survived a reload.
+
+18
+00:00:48,796 --> 00:00:50,886
+Your memories stay in this browser’s vault.
+
+19
+00:00:51,490 --> 00:00:53,824
+The adapter was trained on seven hundred and thirty
+
+20
+00:00:53,893 --> 00:00:57,423
+examples. On a two hundred note test, it improved
+
+21
+00:00:57,469 --> 00:01:00,615
+over its base from sixty-seven to seventy-six point five
+
+22
+00:01:00,650 --> 00:01:04,307
+percent joint accuracy, but stayed below the eighty-one percent
+
+23
+00:01:04,389 --> 00:01:07,454
+majority baseline. It remains experimental.
+
+24
+00:01:08,266 --> 00:01:11,819
+The application, research code, and model weights are available
+
+25
+00:01:11,854 --> 00:01:16,173
+to inspect. OpenMemory combines local fine-tuning with a simple
+
+26
+00:01:16,208 --> 00:01:18,483
+principle: A I suggests.
+
+27
+00:01:18,634 --> 00:01:20,619
+You decide what becomes a memory.

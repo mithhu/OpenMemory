@@ -39,7 +39,7 @@ The hosted app offers manual capture and explicitly selected OpenAI. A Mac user 
 - Hugging Face contains the actual adapter, pinned base manifest, exact prompt, runner, evaluation, license and attribution.
 - The research repository contains ordered training examples, the actual training trace, paired predictions, verification scripts and a learning guide.
 - The app repository contains product boundaries, tests and architecture documentation. Consumer memories and API keys are excluded.
-- The [two-minute demo](DEMO.md) uses actual UI captures and a real local classification. It is an edited walkthrough, not a latency benchmark or another accuracy test.
+- The [narrated demo](NARRATED_DEMO.md) uses actual UI captures and a real local classification. It is an edited walkthrough, not a latency benchmark or another accuracy test.
 
 The release was downloaded anonymously and all 16 file hashes were checked against the prepared bundle. The original 730 archived tokenizations and a separate two-update training smoke were verified; a fresh bit-identical 730-update reproduction has not been established.
 
