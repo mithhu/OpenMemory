@@ -1,5 +1,7 @@
 # OpenMemory
 
+[Live app](https://open-memory-ai.vercel.app/) · [Research and training evidence](https://github.com/mithhu/openmemory-local-classifier-research) · [Published MLX adapter](https://huggingface.co/mithhu333/openmemory-qwen3.5-9b-mlx-classifier-v1) · [Portfolio case study](docs/portfolio/CASE_STUDY.md) · [Interview learning guide](docs/portfolio/INTERVIEW_GUIDE.md)
+
 **Remember what happened. Pick up where you left off. Understand what connects it.**
 
 OpenMemory combines Recall's personal library and progress tracking with a memory constellation and evidence-linked reflection. OpenMemory is the application base; the separate `my-memory` project remains intact. Personal records are written to a browser database, never to `seed.js` or another source file.
@@ -18,7 +20,7 @@ Capture uses semantic model reasoning, strict output schemas, source validation,
 
 **Local-first by default:** fine-tuned MLX classifies captures on your Mac, and local Ollama extracts details and handles other reasoning. OpenAI requires explicit selection in Privacy & AI; a server key alone does not enable it. ElevenLabs remains optional for speech transcription. See [local-first setup and architecture](docs/LOCAL_FIRST.md).
 
-The custom adapter and native environment are not included in this repository. On another computer, select **Local Ollama** in Privacy & AI and choose a downloaded model, or use manual review. A future versioned model release will be linked separately.
+The custom adapter and native environment are not included in this repository. On another computer, install the separately required trained classifier and extractor before selecting **Local Ollama**, or use manual review. The [experimental native MLX adapter](https://huggingface.co/mithhu333/openmemory-qwen3.5-9b-mlx-classifier-v1) is published separately with a pinned base and local runner. It does not install the complete app runtime or provide the Ollama GGUF package.
 
 ```sh
 npm install
@@ -89,6 +91,6 @@ npm run build
 
 Tests cover classification correction, review boundaries, mixed atomic updates, progress arithmetic, lesson deduplication, Recall conversion, privacy-limited discovery, local failures and cloud aliases, encryption/backup recovery, stale tab writes, outdated graph responses, provider switches, grounded source references, and action completion.
 
-The [fine-tuning case study](docs/FINE_TUNING_CASE_STUDY.md) documents the current experimental MLX adapter, development results, rejected extension and app failure cases. Complete experiment scripts, data and learning logs are preserved in a separate local research archive rather than bundled with the product. The [portfolio publication plan](docs/PORTFOLIO.md) describes a future curated research repository and Hugging Face release. Local base/adapter weights in `.local-runtime/` and `artifacts/fine-tuning/` are excluded from Git.
+The [fine-tuning case study](docs/FINE_TUNING_CASE_STUDY.md) documents the current experimental MLX adapter, development results, rejected extension and app failure cases. Complete experiment scripts, data and learning logs are preserved in a separate local research archive rather than bundled with the product. The [portfolio guide](docs/PORTFOLIO.md) connects the published research repository, Hugging Face adapter, demo and interview material. Local base/adapter weights in `.local-runtime/` and `artifacts/fine-tuning/` are excluded from Git.
 
-For the separate trained classifier package, see the [consumer setup guide](docs/LOCAL_MODEL_SETUP.md) and [speech-to-memory demo](docs/LOCAL_MODEL_DEMO.md). Model weights are kept outside this application repository; public distribution is pending.
+For the separate trained classifier package, see the [consumer setup guide](docs/LOCAL_MODEL_SETUP.md) and [speech-to-memory demo](docs/LOCAL_MODEL_DEMO.md). Model weights are kept outside this application repository; the native MLX research adapter is now public on Hugging Face. The app-specific Ollama installation package remains separate.

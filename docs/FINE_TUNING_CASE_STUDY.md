@@ -1,5 +1,7 @@
 # Fine-tuning a local memory classifier with MLX
 
+For the concise current story, see the [portfolio case study](portfolio/CASE_STUDY.md). This page retains chronological experiments; dated results describe different cohorts/contracts and must not be combined. [Published MLX adapter](https://huggingface.co/mithhu333/openmemory-qwen3.5-9b-mlx-classifier-v1).
+
 OpenMemory needs to distinguish a film wishlist from a diary entry, partial book progress from completion, and an ordinary experience from a media action. This project explored adapting a local model for that specific category/intent task, then tested the adapter inside a reviewed capture flow.
 
 The project was developed with substantial AI-assistant support. The project owner directed the requirements and experiments; coding, dataset construction/review, training orchestration and analysis were AI-assisted. The native fine-tuning runs actually executed on the owner's Mac. This is hands-on project experience with an existing pretrained model, not training a foundation model from scratch or a claim of independent expert authorship.
@@ -25,7 +27,7 @@ A [CPU-verifiable evidence bundle](fine-tuning-evidence/README.md) now includes 
 
 Against the same unadapted 9B base, the selected adapter gained **3.85 percentage points in category accuracy and 23.08 points in supported intent accuracy** on these paired development cases. Public-cohort intent regressed from 59/60 to 57/60, and reaction intent remained 0/4.
 
-These are development diagnostics, not independent final-test accuracy, evidence of universal generalization or a measured improvement over every base model. Both candidates failed the strict comparative qualification gates. The later extension was rejected because its intent result regressed. The earlier adapter was integrated as an explicitly experimental, review-required local classifier after the user accepted that practical scope. An invalid output remained in each development run. The final held-out release gate was not completed or claimed.
+These are development diagnostics, not independent final-test accuracy, evidence of universal generalization or a measured improvement over every base model. Both candidates failed the strict comparative qualification gates. The later extension was rejected because its intent result regressed. The earlier adapter was integrated as an explicitly experimental, review-required local classifier after the user accepted that practical scope. An invalid output remained in each development run. At that stage, a final held-out release gate had not been completed. The later reporting-only 200-expression comparison appears below and in the current portfolio case study; it does not overturn these failed development qualification gates.
 
 App trials identified useful behavior and concrete failures: movie wishlists, ordinary sunset descriptions, book progress, mixed events and unresolved 'finished it' references generally classified sensibly. A negated film opinion was incorrectly labeled clarify instead of reaction. The separate local extractor sometimes produced a bad book title or omitted 'twice' as a numeric play count. Classification alone cannot validate extracted identities or quantities. These authored smoke examples are not another representative accuracy benchmark.
 

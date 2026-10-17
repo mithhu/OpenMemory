@@ -1,0 +1,29 @@
+1
+00:00:00,000 --> 00:00:20,000
+01 / Choose where AI runs
+Native MLX classifies on this Mac. A separate local Ollama model extracts details. Cloud processing requires an explicit choice.
+
+2
+00:00:20,000 --> 00:00:40,000
+02 / Write naturally
+A fictional note: “I want to read Sapiens.” The challenge is to identify both the subject and the action, without recording a completed activity.
+
+3
+00:00:40,000 --> 00:01:00,000
+03 / Run the fine-tuned adapter
+This run used reviewed730: BOOK / wishlist. The runtime adapter hash matches the public release. Processing waits are omitted; this is not a latency benchmark.
+
+4
+00:01:00,000 --> 00:01:20,000
+04 / Review the interpretation
+The actual app proposes Book, Sapiens, Something I want to do. Classification and extraction remain fallible. The user reviews the details before Save.
+
+5
+00:01:20,000 --> 00:01:40,000
+05 / Confirm before writing
+Only explicit Save writes the reviewed record to this browser’s vault. The app shows a durable save confirmation. No cloud AI was selected for this typed flow.
+
+6
+00:01:40,000 --> 00:02:00,000
+06 / Return to your library
+Sapiens appears as a Book / Wishlist item and survived reload. Experimental model: 67.0% to 76.5% joint on 200 notes, below the 81.0% majority baseline. Links and evidence accompany this demo.

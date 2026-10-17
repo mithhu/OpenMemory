@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-17",
+  "origin": "http://127.0.0.1:3107",
+  "note": "I want to read Sapiens.",
+  "classifier_runtime": {
+    "advice": {
+      "category": "BOOK",
+      "intent": "wishlist"
+    },
+    "adapterSha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "seconds": 6.732,
+    "peakBytes": 6014568456,
+    "totalSeconds": 11.747,
+    "sourceSha256": "62727fb15f72b5c0e573895bee2be49614a1d9bfe19836243112bb97786e02c5",
+    "at": 1792242204.200524
+  },
+  "review_observed": {
+    "kind": "book",
+    "title": "Sapiens",
+    "intent": "wishlist",
+    "explicit_save": true
+  },
+  "cloud_provider_selected": false,
+  "capture_style": "actual UI screenshots edited into a captioned walkthrough; processing waits omitted",
+  "benchmark": false,
+  "persistence_after_reload_verified": true,
+  "extractor_observation": "Planned timing repeated the whole note; no specific date/reminder invented. Not fixed during demo.",
+  "artifact_sha256": {
+    "00-provider.png": "fd91618dd3ca0676ca9b1ac55cd0bb742e7a3d510d5ba6015803dc38b2441831",
+    "01-capture.png": "cb6f8806f33f7a8d7d3086b0982fa40ccdf142f1e28456974c0c4918c214b336",
+    "02-processing.png": "3064357e1a718ff4c4fe4d61186550607380b91226f75531e9668be680a722fd",
+    "03-review.png": "5e7a1f308d5a22df6d3b8f96b73991417634fe8709577c6336c734a4279cf2cd",
+    "04-saved.png": "332fc209dd3d8ed5a876452375b8ee9e26da28cb74577a52fedf49e71645f33d",
+    "05-library.png": "08a893412dec256176385e9a4f53cf949d926c4e902b41709f30453ba88db074",
+    "captions.srt": "b84dabbc65b3cf32b35c64aa21e78a7b2f9e002ff8013bbee563b81ee92d1834",
+    "openmemory-mlx-portfolio-demo.mp4": "f28b65ec29e109616ce4db96a0bd55bd739428f8a7ee4ccc00a2d98d068ae024",
+    "scene-0.png": "2b5f25ede29b9ec3d5c1dfe58c5a85ecfa02040791e48dfc887796cf2841b457",
+    "scene-1.png": "e72226cc845ce944b4dd85fa71b3b916b58d20089bcdb68ef10935625df876e9",
+    "scene-2.png": "e010a7f9de7ce5f5863ce0163de7bf274048e4c986d6844e2f27bb4702013851",
+    "scene-3.png": "b1594d0a758fc1b34c27ab94e59123aaf68e9a4f17f3e2bfba0584d86e74ad9e",
+    "scene-4.png": "677445f8ec91690ea5628a62afa5189adca572d79c447b150e854f9eb7f4d53b",
+    "scene-5.png": "8abeaed6047754576a7e21ba2ef1298c56bc1d12790a6071587e674b5417e3c6"
+  }
+}

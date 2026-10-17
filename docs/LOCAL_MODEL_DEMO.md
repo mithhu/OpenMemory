@@ -1,4 +1,6 @@
-# OpenMemory local AI demo
+Current native MLX portfolio walkthrough: [demo and provenance](portfolio/DEMO.md). The October 14 walkthrough below used the converted Ollama classifier and ElevenLabs, a different path from the native MLX release.
+
+# OpenMemory local AI demo — historical voice walkthrough
 
 The demo uses a synthesized fictional voice sample, not a recording of the project owner's voice. UI frames are captured from the actual application and edited into a short walkthrough; this is not a real-time latency benchmark.
 
@@ -13,7 +15,7 @@ The demo uses a synthesized fictional voice sample, not a recording of the proje
 
 The demo contains only fictional test data in an isolated local preview. No personal vault, credentials or API-key screens are included. Normal users can record their own voice; the demo uses file upload to avoid collecting microphone audio from anyone nearby.
 
-Model installation is a separate, one-time step. The package is prepared locally; no public Hugging Face download is claimed. The setup guide is [LOCAL_MODEL_SETUP.md](LOCAL_MODEL_SETUP.md).
+Model installation is a separate, one-time step. The package is prepared locally; the native MLX adapter was subsequently published on [Hugging Face](https://huggingface.co/mithhu333/openmemory-qwen3.5-9b-mlx-classifier-v1). This does not publish the separate Ollama package. The setup guide is [LOCAL_MODEL_SETUP.md](LOCAL_MODEL_SETUP.md).
 
 ## Recorded validation (14 October 2026)
 
