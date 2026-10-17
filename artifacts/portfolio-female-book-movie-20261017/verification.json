@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-17",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000"
+      }
+    ],
+    "format": {
+      "duration": "91.250000",
+      "size": "4230560"
+    }
+  },
+  "full_decode_passed": true,
+  "visual_check": "Ten encoded frames inspected, including movie capture, uncertainty, confirmation and combined library.",
+  "voice": {
+    "provider": "ElevenLabs",
+    "voice_id": "cgSgspJ2msm6clMCkdW9",
+    "model_id": "eleven_v3",
+    "voice_name": "Jessica",
+    "delivery": "soft, playful and confident female marketing narration, directed using v3 audio tags",
+    "synthetic_narration": true,
+    "voice_cloning": false,
+    "script_characters": 1195,
+    "sent_data": "public fictional portfolio narration only",
+    "api_documentation": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert-with-timestamps"
+  },
+  "audio_integrated_lufs": -16.38,
+  "audio_true_peak_dbtp": -1.46,
+  "alignment_matches_clean_script": true,
+  "speech_check": "Book/movie story, uncertainty and measured numbers recovered; no direction tags spoken.",
+  "both_items_survived_reload": true,
+  "model_changed": false,
+  "published": false,
+  "sha256": {
+    "preview-6.png": "3023cd31be42c8a5ae79f32db8800bbea8fd86d07fb53e40950f6caaeed69e53",
+    "preview-7.png": "f472ab49c8ac6e49cb28dfe9861afbb5ce2d4ed4e654a7be2ebb469158ceedf8",
+    "preview-5.png": "43497e06be78c0c27f7daafd8696cd21cb3f790b5d9f8019f636a209fd3edb02",
+    "movie-review.png": "8d31ee62322f68d7a3085f4ec9a4acb1a6c147584f531a54b72cd30aae641543",
+    "preview-4.png": "3b5a1c7650c0cb15bc52a31c9be2b98a4f1b9f4b31fdb2693f65a11e617339de",
+    "preview-0.png": "51eebd48b173711c194fb206a9b2b801bd510c4897630afac0ef673c6ae9374f",
+    "preview-1.png": "6dfb8014d2a894262f824f49d9808c09fdda1da0ac98516c7d897bf5adc9c655",
+    "preview-3.png": "11a2bf397879e85ca2010faabfe5e5ed8a1b6c0e42840aa44ac9fc2d0a80c6b6",
+    "preview-2.png": "4f66963cff1806259cefa299e849af6ab8357bbe99d4649200ce6a2bc2750a18",
+    "captions.srt": "b41726a48020a959eb31a2857d4fb088d795069113daa2eee9fec97c6cc7ca48",
+    "narration.mp3": "4116c7e839fb2d828c2f67c48523f17275d1ceeeaa6bbe62d62edd6663f3a1f2",
+    "female-voice-preview.mp3": "25c613d6f35bcbd97161d8c41fb82c197bf5ce507651f664ccbed033f84106d4",
+    "movie-confirm.png": "e47c872df923a8b85606868ce1d26369a3c4d0492ca52bd2167f35a09bd6fc9e",
+    "book-movie-library.png": "00c1d5f1dfae073c492c9a3f852fbef88b268ade6384182b9f89fb13ae84deae",
+    "openmemory-female-book-movie-demo.mp4": "4be534a52124c9b04727132a35bddc8e07ffedfa147aca8e7b0d677d67ca76a1",
+    "movie-capture.png": "1daf60a427151e8e36e641dd97dc9f629c7cf0e6504e2e9ff1097992032d9a2e"
+  }
+}

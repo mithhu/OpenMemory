@@ -1,6 +1,6 @@
 # Native MLX portfolio demos
 
-**Recommended:** [Watch the 82-second narrated version](../../artifacts/portfolio-narrated-20261017/openmemory-narrated-demo.mp4). It adds ElevenLabs synthetic narration, speech-timed captions, moving close-ups, transitions and a results graphic. See [narrated demo notes](NARRATED_DEMO.md).
+**Recommended:** [Watch the female-narrated book-and-movie version](../../artifacts/portfolio-female-book-movie-20261017/openmemory-female-book-movie-demo.mp4). It adds ElevenLabs synthetic narration, speech-timed captions, moving close-ups, transitions and a results graphic. See [book-and-movie demo notes](BOOK_MOVIE_DEMO.md).
 
 ## Earlier silent walkthrough
 

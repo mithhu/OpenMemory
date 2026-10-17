@@ -1,6 +1,6 @@
 # OpenMemory portfolio
 
-Start with the [concise case study](portfolio/CASE_STUDY.md), then the [82-second narrated demo](portfolio/NARRATED_DEMO.md). Use the [interview learning guide](portfolio/INTERVIEW_GUIDE.md) to prepare a technically accurate explanation.
+Start with the [concise case study](portfolio/CASE_STUDY.md), then the [book-and-movie narrated demo](portfolio/BOOK_MOVIE_DEMO.md). Use the [interview learning guide](portfolio/INTERVIEW_GUIDE.md) to prepare a technically accurate explanation.
 
 | Artifact | What it demonstrates |
 | --- | --- |

@@ -1,0 +1,31 @@
+{
+  "note": "I watched Arrival and loved it.",
+  "origin": "http://127.0.0.1:3107",
+  "classifier_runtime": {
+    "advice": {
+      "category": "MOVIE",
+      "intent": "clarify"
+    },
+    "adapterSha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+    "seconds": 5.89,
+    "peakBytes": 6021973996,
+    "totalSeconds": 10.919,
+    "sourceSha256": "a1fa5b704e01ecd3baa9659e925527c98a6ee12c69dfb7fb05d9ff0c64ac5c85",
+    "at": 1792243353.266064
+  },
+  "extractor_suggestion": {
+    "kind": "movie",
+    "title": "Arrival",
+    "intent": "complete",
+    "reaction": "loved"
+  },
+  "manual_confirmation": [
+    "Reviewed uncertain type/action advice",
+    "Explicitly confirmed finished the whole film"
+  ],
+  "saved": true,
+  "book_and_movie_retained_after_reload": true,
+  "cloud_provider_selected": false,
+  "new_training": false,
+  "benchmark": false
+}

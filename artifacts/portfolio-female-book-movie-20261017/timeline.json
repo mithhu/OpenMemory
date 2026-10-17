@@ -1,0 +1,74 @@
+[
+  {
+    "id": "intro",
+    "title": "Your memories shouldn\u2019t need a form.",
+    "text": "Your memories shouldn\u2019t need a form. OpenMemory turns a simple thought into something you can return to.",
+    "delivery": "[softly][playful]",
+    "start": 0.144,
+    "end": 6.48,
+    "stop": 7.773
+  },
+  {
+    "id": "book",
+    "title": "A book you want to read.",
+    "text": "First, a book. I want to read Sapiens. That\u2019s an intention, not a finished book. The subject and the action both matter.",
+    "delivery": "[warmly]",
+    "start": 7.773,
+    "end": 16.64,
+    "stop": 17.733
+  },
+  {
+    "id": "local",
+    "title": "Fine-tuned locally.",
+    "text": "On this Mac, a fine-tuned model classifies the note using M L X. A separate local model extracts the details. These are actual app captures, with processing waits shortened.",
+    "delivery": "[confident]",
+    "start": 17.733,
+    "end": 29.68,
+    "stop": 30.705
+  },
+  {
+    "id": "review",
+    "title": "Review before you keep it.",
+    "text": "The review shows Book, Sapiens, and something I want to do. Check it, edit it, and confirm. Nothing is saved before you say so.",
+    "delivery": "[playful]",
+    "start": 30.705,
+    "end": 40.0,
+    "stop": 41.235
+  },
+  {
+    "id": "movie",
+    "title": "And a movie you loved.",
+    "text": "Now a movie. I watched Arrival and loved it. The model recognizes a movie, but leaves the action uncertain. Review lets you choose what happened before saving.",
+    "delivery": "[excited]",
+    "start": 41.235,
+    "end": 52.44,
+    "stop": 53.665
+  },
+  {
+    "id": "saved",
+    "title": "Your story, together.",
+    "text": "The book stays on your wishlist. The movie becomes a watched film you loved, after confirmation. Both are saved in this browser, and survive a reload.",
+    "delivery": "[warmly]",
+    "start": 53.665,
+    "end": 63.28,
+    "stop": 64.465
+  },
+  {
+    "id": "research",
+    "title": "A real experiment. Honest results.",
+    "text": "The adapter trained on seven hundred and thirty examples. In a two hundred note test, joint accuracy rose from sixty-seven to seventy-six point five percent, still below the eighty-one percent majority baseline. It remains experimental.",
+    "delivery": "[confident]",
+    "start": 64.465,
+    "end": 79.28,
+    "stop": 80.781
+  },
+  {
+    "id": "outro",
+    "title": "AI suggests. You decide.",
+    "text": "Explore the app, research code, and published model. OpenMemory. A I suggests. You decide what becomes a memory.",
+    "delivery": "[softly][confident]",
+    "start": 80.781,
+    "end": 89.846,
+    "stop": 91.24000000000001
+  }
+]

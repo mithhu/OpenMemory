@@ -1,4 +1,6 @@
-# OpenMemory — narrated portfolio demo
+# OpenMemory — original neutral-narrator demo
+
+**New recommended version:** [book and movie demo with expressive female narration](BOOK_MOVIE_DEMO.md). This earlier edition is retained for comparison.
 
 [Watch/download the narrated MP4](../../artifacts/portfolio-narrated-20261017/openmemory-narrated-demo.mp4) · [Captions](../../artifacts/portfolio-narrated-20261017/captions.srt) · [Narration script](../../artifacts/portfolio-narrated-20261017/narration.txt) · [Case study](CASE_STUDY.md)
 

@@ -1,0 +1,12 @@
+{
+  "provider": "ElevenLabs",
+  "voice_id": "cgSgspJ2msm6clMCkdW9",
+  "model_id": "eleven_v3",
+  "voice_name": "Jessica",
+  "delivery": "soft, playful and confident female marketing narration, directed using v3 audio tags",
+  "synthetic_narration": true,
+  "voice_cloning": false,
+  "script_characters": 1195,
+  "sent_data": "public fictional portfolio narration only",
+  "api_documentation": "https://elevenlabs.io/docs/api-reference/text-to-speech/convert-with-timestamps"
+}
