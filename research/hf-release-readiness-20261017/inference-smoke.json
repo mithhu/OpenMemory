@@ -1,0 +1,8 @@
+{
+  "prediction": {
+    "category": "BOOK",
+    "intent": "wishlist"
+  },
+  "raw": "{\"category\":\"BOOK\",\"intent\":\"wishlist\"}",
+  "review_required": true
+}

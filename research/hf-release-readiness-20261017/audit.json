@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-17",
+  "decision": "ready only as experimental legacy-v3 research artifact; hold TV/v5 and consumer-qualified claims",
+  "adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "bundle_directory": ".model-release/hf-readiness-reviewed730-20261017-final",
+  "archive": ".model-release/hf-reviewed730-readiness-20261017.zip",
+  "archive_sha256": "990b928193cbdc4f7a618fbafa5aa70b26bfe5532132caa49f7378fc5389f8ac",
+  "archive_files": [
+    "DATA_SOURCES.md",
+    "FINAL_EVALUATION.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md",
+    "RELEASE_SCOPE.md",
+    "adapter_config.json",
+    "adapters.safetensors",
+    "base-manifest.json",
+    "checksums.json",
+    "contract.py",
+    "core.py",
+    "download_base.py",
+    "requirements-mlx.txt",
+    "run_adapter.py",
+    "training-recipe.json"
+  ],
+  "archive_file_count": 16,
+  "huggingface_uploaded": false,
+  "huggingface_login_configured": false,
+  "new_training": false,
+  "app_model_replaced": false,
+  "frozen_200_joint": {
+    "base": 134,
+    "adapter": 153,
+    "constant_note_none": 162,
+    "total": 200
+  },
+  "smoke_is_independent_evaluation": false
+}

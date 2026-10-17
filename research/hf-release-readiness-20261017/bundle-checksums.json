@@ -1,0 +1,17 @@
+{
+  "DATA_SOURCES.md": "ffb7af5fc710c31c3a658025c64a15b5cccdc123daf4b466dde9a54847415339",
+  "FINAL_EVALUATION.md": "718e6b64f7f16aee0725575977c3f1dec3323740ff5e4052ffb4d085304a5d6c",
+  "LICENSE": "7382b1cf711e7a7c7af9816e0e07b49b91e7149b7c6d347225f98800fcb1f1c2",
+  "NOTICE": "2f0ab96f5b63b1109c852673d26a392d9557d64b097b68f90b2383fa2003a2d7",
+  "README.md": "ee13a76f590d4fc9b8df2a14c5b4483ea8f20e20fcedf4dc4a5a8fca555e0d88",
+  "RELEASE_SCOPE.md": "9b6d91735ec15db3866f878a1d0c8a02b8a99c8985fa3cfc97df4c4f0aba8f7d",
+  "adapter_config.json": "e820b01eaff1458b34045db045d706409c672a40f7e304f9defdc35adde8da3f",
+  "adapters.safetensors": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+  "contract.py": "47f23a8c1271206ab520927a3e62dfc406e90e481bdf8507e1ac2b00c1e863df",
+  "core.py": "4e5924680cdfd5d01fa5bdfad1d13ededb78e07796607adef082eb8d6d13dc09",
+  "download_base.py": "03f151646b54393ad4daf9ee0c77cf6a42d689f2f8b2cae974a0d10cdba96204",
+  "requirements-mlx.txt": "ad759e9fa437604d51f120b9b57b545ff4d2317792c1dd83839547f56214f367",
+  "run_adapter.py": "99933af28939cf39b79e5d321adf0757fbae7d3c102eb232e1b540b88301b2d3",
+  "training-recipe.json": "643dc0c05b1fe0114f9f8995d7ad9477ecd092a3c9020e73a67a2878b46769b6"
+}
