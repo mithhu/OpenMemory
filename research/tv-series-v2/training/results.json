@@ -1,0 +1,270 @@
+{
+  "series": {
+    "parent": {
+      "total": 32,
+      "invalid": 0,
+      "categoryCorrect": 32,
+      "intentCorrect": 27,
+      "jointCorrect": 27,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 1,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 1,
+          "total": 1
+        },
+        "IDEA": {
+          "correct": 0,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 1,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 3,
+          "total": 4
+        },
+        "MUSIC": {
+          "correct": 1,
+          "total": 1
+        },
+        "NOTE": {
+          "correct": 3,
+          "total": 4
+        },
+        "PERSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "SERIES": {
+          "correct": 14,
+          "total": 16
+        },
+        "WISHLIST": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "candidate": {
+      "total": 32,
+      "invalid": 0,
+      "categoryCorrect": 32,
+      "intentCorrect": 27,
+      "jointCorrect": 27,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 1,
+          "total": 1
+        },
+        "GOAL": {
+          "correct": 1,
+          "total": 1
+        },
+        "IDEA": {
+          "correct": 0,
+          "total": 1
+        },
+        "LESSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "MIXED": {
+          "correct": 1,
+          "total": 1
+        },
+        "MOVIE": {
+          "correct": 4,
+          "total": 4
+        },
+        "MUSIC": {
+          "correct": 1,
+          "total": 1
+        },
+        "NOTE": {
+          "correct": 3,
+          "total": 4
+        },
+        "PERSON": {
+          "correct": 1,
+          "total": 1
+        },
+        "SERIES": {
+          "correct": 13,
+          "total": 16
+        },
+        "WISHLIST": {
+          "correct": 1,
+          "total": 1
+        }
+      }
+    },
+    "gains": [
+      "tv-v2-series-holdout-018"
+    ],
+    "losses": [
+      "tv-v2-series-holdout-013"
+    ],
+    "constantMajority": {
+      "category": "SERIES",
+      "intent": "progress",
+      "correct": 5,
+      "total": 32
+    }
+  },
+  "retention": {
+    "parent": {
+      "total": 48,
+      "invalid": 1,
+      "categoryCorrect": 47,
+      "intentCorrect": 38,
+      "jointCorrect": 38,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 8,
+          "total": 9
+        },
+        "GOAL": {
+          "correct": 2,
+          "total": 2
+        },
+        "IDEA": {
+          "correct": 1,
+          "total": 2
+        },
+        "LESSON": {
+          "correct": 5,
+          "total": 7
+        },
+        "MIXED": {
+          "correct": 2,
+          "total": 3
+        },
+        "MOVIE": {
+          "correct": 7,
+          "total": 9
+        },
+        "MUSIC": {
+          "correct": 3,
+          "total": 4
+        },
+        "NOTE": {
+          "correct": 6,
+          "total": 8
+        },
+        "PERSON": {
+          "correct": 2,
+          "total": 2
+        },
+        "WISHLIST": {
+          "correct": 2,
+          "total": 2
+        }
+      }
+    },
+    "candidate": {
+      "total": 48,
+      "invalid": 1,
+      "categoryCorrect": 47,
+      "intentCorrect": 36,
+      "jointCorrect": 36,
+      "perCategoryJoint": {
+        "BOOK": {
+          "correct": 6,
+          "total": 9
+        },
+        "GOAL": {
+          "correct": 2,
+          "total": 2
+        },
+        "IDEA": {
+          "correct": 1,
+          "total": 2
+        },
+        "LESSON": {
+          "correct": 4,
+          "total": 7
+        },
+        "MIXED": {
+          "correct": 2,
+          "total": 3
+        },
+        "MOVIE": {
+          "correct": 7,
+          "total": 9
+        },
+        "MUSIC": {
+          "correct": 3,
+          "total": 4
+        },
+        "NOTE": {
+          "correct": 7,
+          "total": 8
+        },
+        "PERSON": {
+          "correct": 2,
+          "total": 2
+        },
+        "WISHLIST": {
+          "correct": 2,
+          "total": 2
+        }
+      }
+    },
+    "gains": [
+      "tv-v2-legacy-holdout-010",
+      "tv-v2-legacy-holdout-011",
+      "tv-v2-legacy-holdout-015",
+      "tv-v2-legacy-holdout-019"
+    ],
+    "losses": [
+      "tv-v2-legacy-holdout-001",
+      "tv-v2-legacy-holdout-003",
+      "tv-v2-legacy-holdout-008",
+      "tv-v2-legacy-holdout-009",
+      "tv-v2-legacy-holdout-012",
+      "tv-v2-legacy-holdout-042"
+    ],
+    "constantMajority": {
+      "category": "NOTE",
+      "intent": "none",
+      "correct": 5,
+      "total": 48
+    }
+  },
+  "legacyClarify": {
+    "total": 14,
+    "parentCorrect": 10,
+    "candidateCorrect": 7
+  },
+  "gates": {
+    "seriesImproves": false,
+    "legacyOverallRetained": false,
+    "clarifyRetained": false,
+    "oldCategoriesRetained": false
+  },
+  "eligibleForFurtherQualification": false,
+  "productionPromoted": false,
+  "candidateAdapterSha256": "36dd147259a3e2f22ed1d4e90fbc8dfc8d80909c2f35d5ca2ae6b548e228cdf1",
+  "training": {
+    "steps": 200,
+    "seconds": 563.0531184999854,
+    "peakBytes": 6031259180,
+    "adapterSha256": "36dd147259a3e2f22ed1d4e90fbc8dfc8d80909c2f35d5ca2ae6b548e228cdf1",
+    "parentUnchanged": true
+  },
+  "limitations": [
+    "32 AI-authored provisional series-focused holdout labels, not independent human gold.",
+    "48 new AI-authored legacy-policy probes, not independently human-labeled.",
+    "Both models use the expanded prompt; no comparison to frontier models.",
+    "No app promotion; outcome cannot justify broad claims.",
+    "One predeclared training attempt; do not tune on these test outcomes."
+  ]
+}

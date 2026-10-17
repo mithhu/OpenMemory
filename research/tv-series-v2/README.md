@@ -34,3 +34,17 @@ From the app checkout with the pinned local base and qualified parent available:
 4. Read the full results and learning log before considering qualification.
 
 The original prepared data and recipe are immutable. Results are added separately after the one attempt.
+
+## Completed outcome: rejected
+
+One 200-update native MLX run completed. Total train-and-compare time: 1057.76 seconds. Tensor comparison confirms all 638,976 values in 14 LoRA arrays changed; the installed parent hash is unchanged.
+
+| Fresh AI-authored probe            | Parent joint | Candidate joint |
+| ---------------------------------- | ------------ | --------------- |
+| Series-focused, 32 notes           | 27/32        | 27/32           |
+| Legacy policy, 48 notes            | 38/48        | 36/48           |
+| Clarify subset of legacy, 14 notes | 10/14        | 7/14            |
+
+All four gates failed. **No promotion, installation, public release or Hugging Face upload.** Parent and candidate both recognized series-focused categories 32/32; this trial does not show a need for additional TV category fine-tuning beyond the prompt. Paired joint results and all invalid responses are preserved. These small authored samples are not a consumer accuracy benchmark and should not be compared directly to v1's different test set.
+
+See `training/LEARNING_LOG.md`, `training/results.json`, complete raw paired outputs and tensor/hash verification. Candidate weights are separately backed up locally; `training/backup.json` records the archive checksum. No additional attempt was run after seeing these outcomes.
