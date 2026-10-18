@@ -715,41 +715,42 @@ export function CaptureReview({
                 </p>
               </div>
             )}
-            {entry.titleReviewRequired && !entry.titleSuggestion && (
-              <div
-                id={`capture-title-check-${index}`}
-                tabIndex={-1}
-                className="review-title-suggestion"
-              >
-                <p>
-                  <strong>Check this title before saving.</strong>
-                </p>
-                <p>
-                  The proposed media title could not be matched to your words. Edit it above or
-                  confirm that it is the work you mean.
-                </p>
-                {hasIdentityQuestion(entry.clarificationReasons) &&
-                !hasOriginalTitleSpan(text, entry.title) ? (
+            {(entry.titleReviewRequired || hasIdentityQuestion(entry.clarificationReasons)) &&
+              !entry.titleSuggestion && (
+                <div
+                  id={`capture-title-check-${index}`}
+                  tabIndex={-1}
+                  className="review-title-suggestion"
+                >
                   <p>
-                    Enter the work or subject above, or choose an existing item. Your known action
-                    is kept.
+                    <strong>Check this title before saving.</strong>
                   </p>
-                ) : (
-                  <button
-                    type="button"
-                    className="text-button"
-                    onClick={() =>
-                      patch(index, { titleReviewRequired: false, clarificationQuestion: null }, [
-                        "missing_identity",
-                        "unresolved_reference",
-                      ])
-                    }
-                  >
-                    Confirm “{entry.title}”
-                  </button>
-                )}
-              </div>
-            )}
+                  <p>
+                    The proposed media title could not be matched to your words. Edit it above or
+                    confirm that it is the work you mean.
+                  </p>
+                  {hasIdentityQuestion(entry.clarificationReasons) &&
+                  !hasOriginalTitleSpan(text, entry.title) ? (
+                    <p>
+                      Enter the work or subject above, or choose an existing item. Your known action
+                      is kept.
+                    </p>
+                  ) : (
+                    <button
+                      type="button"
+                      className="text-button"
+                      onClick={() =>
+                        patch(index, { titleReviewRequired: false, clarificationQuestion: null }, [
+                          "missing_identity",
+                          "unresolved_reference",
+                        ])
+                      }
+                    >
+                      Confirm “{entry.title}”
+                    </button>
+                  )}
+                </div>
+              )}
             {entry.titleSuggestion && (
               <div
                 id={`capture-title-check-${index}`}

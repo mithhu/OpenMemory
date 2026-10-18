@@ -52,11 +52,26 @@ it.skipIf(process.env["OPENMEMORY_LIVE_SERIES"] !== "1")(
           stream: false,
           think: false,
           keep_alive: "5m",
-          options: { temperature: 0, num_predict: 1600 },
+          options: { temperature: 0, num_ctx: 16384, num_predict: 6000 },
           format: capturePlanJson,
           messages: [
             { role: "system", content: captureInstructions("2026-10-17") },
-            { role: "user", content: JSON.stringify({ note: c.note, catalog: [] }) },
+            {
+              role: "user",
+              content: JSON.stringify({
+                note: c.note,
+                catalog: [],
+                ...(c.note.includes("six episodes")
+                  ? {
+                      classificationAdvice: {
+                        category: "MOVIE",
+                        intent: "progress",
+                        clarificationReasons: [],
+                      },
+                    }
+                  : {}),
+              }),
+            },
           ],
         }),
       });
@@ -74,8 +89,10 @@ it.skipIf(process.env["OPENMEMORY_LIVE_SERIES"] !== "1")(
           episode: c.episode,
           seasonCompleted: c.seasonCompleted,
           progress: "progress" in c ? c.progress : null,
+          total: null,
         },
       });
+      if ("progress" in c) expect(plan.entries[0]!.activity?.progressMode).toBe("increment");
     }
   },
   470000,
