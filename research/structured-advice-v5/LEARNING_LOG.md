@@ -20,3 +20,7 @@ Executed the bounded v5 experiment once. Candidate improved the new authored qua
 ## Focused repair follow-up
 
 Completed experiment-02 once, with 196 training rows and fresh authored/public diagnostics. Authored gains did not generalize reliably to public wording; rejected without deployment. Read [experiment-02/REPORT.md](experiment-02/REPORT.md) and its source/label audit. No further small repair run started.
+
+## Human-language coverage audit
+
+Audited the latest mixture and all 24 retained public queries, separating lexical coverage, policy issues, label defects and model errors. Found one label I authored that omitted missing_identity for an unnamed course; preserved frozen data and recorded a prospective correction. The surviving course-completion failure also has a close existing training example, so more near-duplicate synthetic patches are not justified. See [language-coverage-audit-01/REPORT.md](language-coverage-audit-01/REPORT.md). No training/inference, historical score change, app change or deployment.

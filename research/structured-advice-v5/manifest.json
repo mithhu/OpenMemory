@@ -16,5 +16,7 @@
   "originalFilesSha256Scope": "Original development-preparation snapshot, preserved historically; not current working-tree pins. Experiment pins are in experiment-01/recipe.json.",
   "latestExperiment": "experiment-02/REPORT.md",
   "latestCandidateSha256": "a352d4fd5800d986d600b0567196dce41ef67b12d9569330b311e911408bb383",
-  "latestQualification": "40/48 authored; 6/16 scored public wording vs previous 8/16; failed public regression, partial-course completion and contract-validity gates; no promotion"
+  "latestQualification": "40/48 authored; 6/16 scored public wording vs previous 8/16; failed public regression, partial-course completion and contract-validity gates; no promotion",
+  "latestAudit": "language-coverage-audit-01/REPORT.md",
+  "auditDecision": "Pause further training pending policy/label review and broader source-backed language coverage; historical gold preserved."
 }

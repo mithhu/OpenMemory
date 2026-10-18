@@ -39,3 +39,8 @@ Before more training: audit labels and reason consistency under this contract, e
 535 app tests and 37 Python tests passed; typecheck, changed-file lint and production build passed. The default suite skips two opt-in live tests. A separate actual local Qwen development handoff checked four notes with supplied legacy classifier fixtures. Initial trial preserved reaction/wishlist but wrongly guessed progress for bare reading. After strengthening general extraction instructions, all four checks passed, including ordinary letter reading with no false clarification.
 
 This is prompt/schema/review development, not fine-tuned model accuracy. No new adapter was trained, no v5 classifier was activated, no memory was saved and no cloud AI was used in these probes. Full raw evidence, including the failure, is in `docs/fine-tuning-evidence/structured-details-20261017.json`. The live probe stops at extraction/validation; it is not a measured end-to-end classifier-plus-title-interpretation journey.
+
+
+## Human-language coverage audit
+
+[Post-result audit](language-coverage-audit-01/REPORT.md): the current v5 mixture has only two rating examples and one restaurant request; six public restaurant failures retain correct category/action but add unnecessary questions. A confirmed repair-label error and written-policy/validator gaps are recorded without editing historical gold. No third training run started.

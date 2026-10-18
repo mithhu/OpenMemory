@@ -1,0 +1,58 @@
+[
+  {
+    "name": "media_none",
+    "concern": "Instructions reserve none for ordinary NOTE/PERSON/GOAL/IDEA facts; validator accepts a media none action.",
+    "value": {
+      "category": "LESSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "validatorAccepted": true,
+    "validatorError": null,
+    "isModelPrediction": false,
+    "isNewEvaluationGold": false
+  },
+  {
+    "name": "book_listen",
+    "concern": "Instructions reserve listen for music playback; validator accepts BOOK/listen.",
+    "value": {
+      "category": "BOOK",
+      "intent": "listen",
+      "clarificationReasons": []
+    },
+    "validatorAccepted": true,
+    "validatorError": null,
+    "isModelPrediction": false,
+    "isNewEvaluationGold": false
+  },
+  {
+    "name": "mixed_missing_action",
+    "concern": "A mixed note can contain a known event plus an unknown action, but top-level MIXED/mixed cannot carry missing_action because that reason requires intent null.",
+    "value": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "validatorAccepted": false,
+    "validatorError": "An unknown action cannot also be known",
+    "isModelPrediction": false,
+    "isNewEvaluationGold": false
+  },
+  {
+    "name": "unresolved_reference_none",
+    "concern": "The policy examples use null for context-free unresolved it/that; the validator accepts none with unresolved_reference.",
+    "value": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "validatorAccepted": true,
+    "validatorError": null,
+    "isModelPrediction": false,
+    "isNewEvaluationGold": false
+  }
+]

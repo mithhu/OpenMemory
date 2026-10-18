@@ -1,0 +1,45 @@
+{
+  "status": "prospective-corrections-only-historical-files-unchanged",
+  "scope": "Focused manual label review of public notes, course labels and v5 examples; not an independent or exhaustive certification of all 196 labels.",
+  "defects": [
+    {
+      "id": "v5-r2-repair-023",
+      "note": "Done with lecture four in that course.",
+      "frozenExpected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": []
+      },
+      "recommendedNextVersionExpected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "reason": "that course has no named identity in this context-free note; frozen sibling labels require missing_identity. Same-author error found after the experiment.",
+      "historicalLabelEdited": false,
+      "causalClaim": "Cannot attribute the public regression or completion error to this single label."
+    }
+  ],
+  "coveredButStillFailed": [
+    {
+      "trainingId": "v5-r2-repair-020",
+      "trainingNote": "Lesson eight done in my Geology Fundamentals course.",
+      "trainingExpected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": []
+      },
+      "evaluationId": "v5-r2-qualification-014",
+      "evaluationNote": "Lesson twelve is done in my Soil Ecology course.",
+      "evaluationExpected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": []
+      },
+      "observedIntent": "complete",
+      "interpretation": "Close wording was already in training. More near-duplicate synthetic examples alone are not a demonstrated fix."
+    }
+  ]
+}

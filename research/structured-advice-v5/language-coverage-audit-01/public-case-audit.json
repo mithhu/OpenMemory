@@ -1,0 +1,521 @@
+[
+  {
+    "id": "snips:PlayMusic:train-full:893",
+    "note": "play Wolves by Larry Gatlin",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "medium-not-explicit",
+    "auditJudgment": "Original named play request; music is plausible from world knowledge, but text lacks an explicit medium. Existing abstention is defensible and should get independent review; do not use hidden source track slots.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:180",
+    "note": "Play a movement from 1974.",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "generic-music-request",
+    "auditJudgment": "Movement is a musical interpretation of play in this context. Frozen MUSIC/wishlist is plausible, but whether a generic request needs a blocking identity question is a product-policy issue.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:46",
+    "note": "Can you play a top 5 song by Manos Hadjidakis",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "selection-not-missing-meaning",
+    "auditJudgment": "A top-five song by an artist is an intelligible request despite no specific track. Frozen missing_identity is consistent with v5 media rules; clarify whether that question should block saving a generic wish.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:93",
+    "note": "Play something by Brian Chase.",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "context-dependence",
+    "auditJudgment": "Something by a named person is not sufficient for a context-free medium label. Retain unscored status; human contextual annotation is needed.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1401",
+    "note": "Play March Of The Soviet Tankmen from Gloria Gaither",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "medium-not-explicit",
+    "auditJudgment": "A named play request is plausibly music, but artist/title context is not guaranteed from this text alone. Unscored is conservative; do not silently promote it after seeing outputs.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1098",
+    "note": "Play Jono El Grande from the thirties",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "context-dependence",
+    "auditJudgment": "Performer/era style query without explicit song/music. Hidden source artist slots must not establish gold. Keep unscored.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:150",
+    "note": "Play Tomorrow",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "title-or-time-ambiguity",
+    "auditJudgment": "Tomorrow could be a work title or a time expression. This is a genuine context-free ambiguity, not a model error scored against the hidden source intent.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1484",
+    "note": "Use Spotify to play music",
+    "sourceIntent": "PlayMusic",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "generic-music-request",
+    "auditJudgment": "Explicit platform and music make the request clear. Frozen missing_identity follows v5, but no track identity is necessary to express this generic musical wish.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:619",
+    "note": "give two points out of 6 to this novel",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "rating-framing",
+    "auditJudgment": "Explicit novel plus numeric rating; known opinion, unnamed work. Frozen BOOK/reaction/missing_identity is well supported. Candidate output violates intent/reason consistency.",
+    "candidateParsed": {
+      "category": "BOOK",
+      "intent": "mixed",
+      "clarificationReasons": [
+        "missing_action",
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": false,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:183",
+    "note": "Rate this essay with three of 6.",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "taxonomy-gap",
+    "auditJudgment": "Essay is an ordinary reading work but outside the literal book/novel taxonomy. Keep unscored; decide scope prospectively rather than forcing BOOK from source intent.",
+    "candidateParsed": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1297",
+    "note": "Rate this chronicle one of 6 points",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "taxonomy-gap",
+    "auditJudgment": "Chronicle may name a work type or a record; medium and project taxonomy are not fully specified. Keep unscored pending prospective scope decision.",
+    "candidateParsed": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1609",
+    "note": "rate the current book series 4 out of 6",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "noun-phrase-scope",
+    "auditJudgment": "Book modifies series: this is a collection of books, not necessarily television. Frozen BOOK/reaction/missing_identity is supported. Candidate SERIES is a model error, not a reason to relabel.",
+    "candidateParsed": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1787",
+    "note": "give 2 out of 6 to Smoke in the Forest",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "ambiguous-unscored-before-inference",
+    "frozenGold": null,
+    "auditFamily": "medium-not-explicit",
+    "auditJudgment": "A rating on a named work without its medium. Do not infer BOOK only because the source split is RateBook. Keep unscored.",
+    "candidateParsed": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:315",
+    "note": "Rate the current book a zero.",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "rating-framing",
+    "auditJudgment": "Explicit book and evaluative zero imply a reaction. Title missing. Frozen gold is supported; ordinal/points/rating variation is sparsely covered in v5 training.",
+    "candidateParsed": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:574",
+    "note": "This current book deserves 1 points",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "auditFamily": "rating-framing",
+    "auditJudgment": "Awkward human-written grammar still clearly expresses a book opinion. Candidate none/no reasons loses the meaning; not a rationale to reject the source query.",
+    "candidateParsed": {
+      "category": "BOOK",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1342",
+    "note": "I'd give the Mandaean Book of John 4 points",
+    "sourceIntent": "RateBook",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "auditFamily": "rating-framing",
+    "auditJudgment": "Named Book of John and four points express an opinion. Frozen BOOK/reaction is plausible; independent review of religious-book taxonomy would be prudent, not post-hoc score editing.",
+    "candidateParsed": {
+      "category": "BOOK",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:572",
+    "note": "Can I get some russian cuisine at a restaurant with shari and I?",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "nonmedia-identity-leak",
+    "auditJudgment": "Desired cuisine/restaurant request is a nonmedia plan. No proper restaurant name is necessary under frozen policy. Candidate category/action are right; identity reason is wrong.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:979",
+    "note": "book a spot for 3 in MT",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "generic-booking-context",
+    "auditJudgment": "A spot for a party in a location is a nonmedia booking wish. The precise activity is ambiguous, but WISHLIST does not need a restaurant inferred from source. No media identity rule applies.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:811",
+    "note": "Book a table for a party of 7 next year in ID.",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "nonmedia-identity-leak",
+    "auditJudgment": "Explicit table booking with group/time/location. Known future plan. Candidate missing_action contradicts its known wishlist action; missing_identity is also inappropriate under policy.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "candidateContractValid": false,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1591",
+    "note": "Book a restaurant with pool facility at East Gillespie",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "nonmedia-request",
+    "auditJudgment": "Explicit restaurant search/booking with facility/location constraints. Frozen WISHLIST is supported and the candidate is correct; do not add a title requirement.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:397",
+    "note": "book me a table at a bistro that serves maple syrup for a party of 10",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "nonmedia-identity-leak",
+    "auditJudgment": "Bistro request with cuisine/group constraints is understood without a venue name. Candidate over-clarifies identity despite correct category/action.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1794",
+    "note": "Please find me a table at a place that serves glace, has room for six and a pub atmosphere",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "slot-heavy-language",
+    "auditJudgment": "Awkward but human-written request carries party size and pub/food preferences. Candidate category/action are right; extra identity question is the measured error.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:159",
+    "note": "I need a party of two reservation faraway from Atlantic Av-Barclays Ctr at a spa for fast food",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "slot-heavy-language",
+    "auditJudgment": "Unusual spa/fast-food wording still expresses a nonmedia reservation wish. Candidate missing_action contradicts known wishlist. Strange content is not automatically an invalid note.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "candidateContractValid": false,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1627",
+    "note": "Book a table for one at the Bear Hotel in Peru",
+    "sourceIntent": "BookRestaurant",
+    "originalScoringStatus": "scored",
+    "frozenGold": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "auditFamily": "nonmedia-request",
+    "auditJudgment": "Named venue, party and location make the nonmedia wish clear. Frozen WISHLIST and candidate response are consistent.",
+    "candidateParsed": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "candidateContractValid": true,
+    "changesHistoricalGold": false,
+    "independentHumanReview": false
+  }
+]

@@ -1,0 +1,771 @@
+{
+  "status": "post-result-descriptive-audit-no-training-no-relabeling",
+  "inputHashes": {
+    "research/structured-advice-v5/experiment-01/train.json": "05b453fbf05c947bdd787847563cf1fe6234ef23d3f6c9c0c813c9110f5b5d70",
+    "research/structured-advice-v5/experiment-02/train.json": "6a69be7c101ebf8f5b951fe5ce22813c6b1e8100aaad636b78c9b64a2ef82d1d",
+    "research/structured-advice-v5/experiment-02/qualification.json": "cbf12080fb7f64d0095be0a87fbee1f45f6589ffc4e631099f72a0c8dc79ea96",
+    "research/structured-advice-v5/experiment-02/public-qualification.json": "07adbd89225ad9bdea33f01eee33b4ef3d94ccf080be301aa202f225112c93d1",
+    "research/structured-advice-v5/experiment-02/public-nominations.json": "cc9aa9706f9509c0e0a09986ba7b44dc828d061118cb30c0fc9c4d64cd790e78",
+    "research/structured-advice-v5/experiment-02/results.json": "a39629af9fa8d7a831884fb15404414a1c1f47d59f65c30c5951ae1091826a77",
+    "research/structured-advice-v5/experiment-02/candidate-predictions.jsonl": "6d59679eeed1098efa0b909304321d0bc5cb4cad39584e9ac567d91cc63db16b",
+    "research/structured-advice-v5/experiment-02/contract.json": "6c1717b5ff81f1eaa36b6f81387d14b2da1dd8cc26d58e0744f46af26ef3f4f4",
+    "research/structured-advice-v5/experiment-02/recipe.json": "17effa2fede2cb7780bb2f6ab70ce894c5160ef62227f610e46419a0c7ace85c"
+  },
+  "trainingBeforeRepair": {
+    "n": 132,
+    "category": {
+      "SERIES": 26,
+      "PERSON": 7,
+      "GOAL": 7,
+      "MOVIE": 18,
+      "BOOK": 18,
+      "NOTE": 17,
+      "LESSON": 12,
+      "MIXED": 5,
+      "WISHLIST": 7,
+      "MUSIC": 10,
+      "IDEA": 5
+    },
+    "intent": {
+      "reaction": 18,
+      "complete": 13,
+      "none": 30,
+      "progress": 16,
+      "null": 16,
+      "wishlist": 26,
+      "mixed": 5,
+      "start": 4,
+      "listen": 4
+    },
+    "reasonSet": {
+      "missing_identity": 28,
+      "none": 88,
+      "missing_action": 5,
+      "unresolved_reference": 6,
+      "missing_action|missing_identity": 5
+    },
+    "lexicalSearchAids": {
+      "rating_language": {
+        "count": 2,
+        "ids": [
+          "structured-v5-development-004",
+          "structured-v5-development-005"
+        ]
+      },
+      "restaurant_language": {
+        "count": 1,
+        "ids": [
+          "v5-train-088"
+        ]
+      },
+      "booking_table_language": {
+        "count": 0,
+        "ids": []
+      },
+      "numeric_rating_fraction": {
+        "count": 0,
+        "ids": []
+      },
+      "first_person_I": {
+        "count": 47,
+        "ids": [
+          "v5-train-085",
+          "structured-v5-development-010",
+          "v5-train-063",
+          "structured-v5-development-008",
+          "v5-train-073",
+          "v5-train-091",
+          "v5-train-012",
+          "v5-train-003",
+          "v5-train-000",
+          "v5-train-087",
+          "structured-v5-development-013",
+          "v5-train-027",
+          "structured-v5-development-026",
+          "structured-v5-development-030",
+          "v5-train-080",
+          "v5-train-052",
+          "v5-train-094",
+          "structured-v5-development-006",
+          "v5-train-090",
+          "v5-train-065",
+          "v5-train-016",
+          "v5-train-038",
+          "structured-v5-development-017",
+          "structured-v5-development-011",
+          "structured-v5-development-028",
+          "v5-train-059",
+          "v5-train-095",
+          "v5-train-031",
+          "v5-train-084",
+          "v5-train-005",
+          "v5-train-082",
+          "structured-v5-development-018",
+          "v5-train-008",
+          "v5-train-069",
+          "v5-train-013",
+          "structured-v5-development-012",
+          "v5-train-097",
+          "v5-train-007",
+          "v5-train-093",
+          "v5-train-032",
+          "v5-train-066",
+          "v5-train-043",
+          "v5-train-025",
+          "v5-train-086",
+          "v5-train-083",
+          "v5-train-014",
+          "v5-train-030"
+        ]
+      },
+      "question_mark": {
+        "count": 2,
+        "ids": [
+          "v5-train-093",
+          "v5-train-050"
+        ]
+      },
+      "explicit_please_or_could_or_can": {
+        "count": 3,
+        "ids": [
+          "v5-train-046",
+          "v5-train-095",
+          "v5-train-050"
+        ]
+      },
+      "book_series_phrase": {
+        "count": 0,
+        "ids": []
+      },
+      "course_subunit_words": {
+        "count": 3,
+        "ids": [
+          "v5-train-054",
+          "v5-train-098",
+          "v5-train-061"
+        ]
+      }
+    }
+  },
+  "repairOnly": {
+    "n": 64,
+    "category": {
+      "LESSON": 18,
+      "MIXED": 10,
+      "NOTE": 12,
+      "IDEA": 1,
+      "BOOK": 6,
+      "SERIES": 6,
+      "MOVIE": 6,
+      "GOAL": 1,
+      "PERSON": 1,
+      "MUSIC": 2,
+      "WISHLIST": 1
+    },
+    "intent": {
+      "progress": 12,
+      "mixed": 10,
+      "wishlist": 6,
+      "complete": 6,
+      "none": 7,
+      "null": 21,
+      "reaction": 2
+    },
+    "reasonSet": {
+      "none": 32,
+      "missing_identity": 11,
+      "unresolved_reference": 8,
+      "missing_action|missing_identity": 7,
+      "missing_action": 6
+    },
+    "lexicalSearchAids": {
+      "rating_language": {
+        "count": 0,
+        "ids": []
+      },
+      "restaurant_language": {
+        "count": 0,
+        "ids": []
+      },
+      "booking_table_language": {
+        "count": 0,
+        "ids": []
+      },
+      "numeric_rating_fraction": {
+        "count": 0,
+        "ids": []
+      },
+      "first_person_I": {
+        "count": 25,
+        "ids": [
+          "v5-r2-repair-033",
+          "v5-r2-repair-057",
+          "v5-r2-repair-061",
+          "v5-r2-repair-052",
+          "v5-r2-repair-038",
+          "v5-r2-repair-041",
+          "v5-r2-repair-021",
+          "v5-r2-repair-006",
+          "v5-r2-repair-009",
+          "v5-r2-repair-044",
+          "v5-r2-repair-045",
+          "v5-r2-repair-025",
+          "v5-r2-repair-032",
+          "v5-r2-repair-002",
+          "v5-r2-repair-059",
+          "v5-r2-repair-011",
+          "v5-r2-repair-031",
+          "v5-r2-repair-043",
+          "v5-r2-repair-035",
+          "v5-r2-repair-062",
+          "v5-r2-repair-060",
+          "v5-r2-repair-000",
+          "v5-r2-repair-050",
+          "v5-r2-repair-054",
+          "v5-r2-repair-004"
+        ]
+      },
+      "question_mark": {
+        "count": 1,
+        "ids": [
+          "v5-r2-repair-030"
+        ]
+      },
+      "explicit_please_or_could_or_can": {
+        "count": 3,
+        "ids": [
+          "v5-r2-repair-032",
+          "v5-r2-repair-062",
+          "v5-r2-repair-030"
+        ]
+      },
+      "book_series_phrase": {
+        "count": 0,
+        "ids": []
+      },
+      "course_subunit_words": {
+        "count": 12,
+        "ids": [
+          "v5-r2-repair-023",
+          "v5-r2-repair-027",
+          "v5-r2-repair-026",
+          "v5-r2-repair-019",
+          "v5-r2-repair-021",
+          "v5-r2-repair-018",
+          "v5-r2-repair-025",
+          "v5-r2-repair-024",
+          "v5-r2-repair-020",
+          "v5-r2-repair-022",
+          "v5-r2-repair-049",
+          "v5-r2-repair-028"
+        ]
+      }
+    }
+  },
+  "trainingAfterRepair": {
+    "n": 196,
+    "category": {
+      "MUSIC": 12,
+      "LESSON": 30,
+      "WISHLIST": 8,
+      "MOVIE": 24,
+      "GOAL": 8,
+      "MIXED": 15,
+      "SERIES": 32,
+      "PERSON": 8,
+      "NOTE": 29,
+      "BOOK": 24,
+      "IDEA": 6
+    },
+    "intent": {
+      "reaction": 20,
+      "progress": 28,
+      "complete": 19,
+      "wishlist": 32,
+      "listen": 4,
+      "none": 37,
+      "mixed": 15,
+      "null": 37,
+      "start": 4
+    },
+    "reasonSet": {
+      "missing_identity": 39,
+      "none": 120,
+      "missing_action|missing_identity": 12,
+      "unresolved_reference": 14,
+      "missing_action": 11
+    },
+    "lexicalSearchAids": {
+      "rating_language": {
+        "count": 2,
+        "ids": [
+          "structured-v5-development-004",
+          "structured-v5-development-005"
+        ]
+      },
+      "restaurant_language": {
+        "count": 1,
+        "ids": [
+          "v5-train-088"
+        ]
+      },
+      "booking_table_language": {
+        "count": 0,
+        "ids": []
+      },
+      "numeric_rating_fraction": {
+        "count": 0,
+        "ids": []
+      },
+      "first_person_I": {
+        "count": 72,
+        "ids": [
+          "v5-train-091",
+          "v5-train-084",
+          "v5-train-087",
+          "v5-r2-repair-033",
+          "v5-train-066",
+          "v5-train-083",
+          "v5-r2-repair-057",
+          "v5-r2-repair-061",
+          "v5-train-063",
+          "v5-r2-repair-052",
+          "v5-r2-repair-038",
+          "structured-v5-development-010",
+          "v5-train-043",
+          "v5-train-069",
+          "v5-r2-repair-041",
+          "v5-train-052",
+          "v5-r2-repair-021",
+          "v5-r2-repair-006",
+          "v5-train-090",
+          "v5-train-032",
+          "v5-train-059",
+          "v5-r2-repair-009",
+          "structured-v5-development-018",
+          "v5-r2-repair-044",
+          "structured-v5-development-006",
+          "v5-train-094",
+          "v5-train-080",
+          "structured-v5-development-030",
+          "structured-v5-development-008",
+          "v5-r2-repair-045",
+          "v5-r2-repair-025",
+          "v5-r2-repair-032",
+          "v5-r2-repair-002",
+          "v5-train-025",
+          "v5-train-007",
+          "v5-r2-repair-059",
+          "structured-v5-development-013",
+          "v5-train-003",
+          "v5-train-073",
+          "v5-r2-repair-011",
+          "v5-train-012",
+          "v5-r2-repair-031",
+          "v5-r2-repair-043",
+          "v5-train-005",
+          "v5-r2-repair-035",
+          "v5-train-014",
+          "v5-train-013",
+          "structured-v5-development-028",
+          "structured-v5-development-012",
+          "structured-v5-development-011",
+          "v5-train-038",
+          "v5-train-082",
+          "v5-r2-repair-062",
+          "structured-v5-development-026",
+          "v5-train-000",
+          "v5-r2-repair-060",
+          "v5-train-030",
+          "v5-train-097",
+          "v5-train-027",
+          "v5-train-086",
+          "v5-r2-repair-000",
+          "structured-v5-development-017",
+          "v5-train-031",
+          "v5-train-008",
+          "v5-train-016",
+          "v5-train-065",
+          "v5-train-093",
+          "v5-train-095",
+          "v5-r2-repair-050",
+          "v5-r2-repair-054",
+          "v5-train-085",
+          "v5-r2-repair-004"
+        ]
+      },
+      "question_mark": {
+        "count": 3,
+        "ids": [
+          "v5-train-050",
+          "v5-r2-repair-030",
+          "v5-train-093"
+        ]
+      },
+      "explicit_please_or_could_or_can": {
+        "count": 6,
+        "ids": [
+          "v5-train-046",
+          "v5-r2-repair-032",
+          "v5-train-050",
+          "v5-r2-repair-062",
+          "v5-r2-repair-030",
+          "v5-train-095"
+        ]
+      },
+      "book_series_phrase": {
+        "count": 0,
+        "ids": []
+      },
+      "course_subunit_words": {
+        "count": 15,
+        "ids": [
+          "v5-r2-repair-023",
+          "v5-train-098",
+          "v5-r2-repair-027",
+          "v5-r2-repair-026",
+          "v5-r2-repair-019",
+          "v5-r2-repair-021",
+          "v5-r2-repair-018",
+          "v5-r2-repair-025",
+          "v5-r2-repair-024",
+          "v5-r2-repair-020",
+          "v5-train-054",
+          "v5-r2-repair-022",
+          "v5-r2-repair-049",
+          "v5-train-061",
+          "v5-r2-repair-028"
+        ]
+      }
+    }
+  },
+  "syntheticQualification": {
+    "n": 48,
+    "category": {
+      "SERIES": 12,
+      "LESSON": 8,
+      "BOOK": 4,
+      "MOVIE": 4,
+      "MIXED": 4,
+      "NOTE": 4,
+      "MUSIC": 4,
+      "PERSON": 2,
+      "GOAL": 2,
+      "WISHLIST": 2,
+      "IDEA": 2
+    },
+    "intent": {
+      "wishlist": 7,
+      "start": 1,
+      "progress": 11,
+      "complete": 5,
+      "reaction": 5,
+      "null": 6,
+      "mixed": 4,
+      "none": 8,
+      "listen": 1
+    },
+    "reasonSet": {
+      "none": 32,
+      "missing_action": 3,
+      "missing_identity": 10,
+      "missing_action|missing_identity": 1,
+      "unresolved_reference": 2
+    },
+    "lexicalSearchAids": {
+      "rating_language": {
+        "count": 0,
+        "ids": []
+      },
+      "restaurant_language": {
+        "count": 0,
+        "ids": []
+      },
+      "booking_table_language": {
+        "count": 0,
+        "ids": []
+      },
+      "numeric_rating_fraction": {
+        "count": 0,
+        "ids": []
+      },
+      "first_person_I": {
+        "count": 21,
+        "ids": [
+          "v5-r2-qualification-000",
+          "v5-r2-qualification-002",
+          "v5-r2-qualification-006",
+          "v5-r2-qualification-007",
+          "v5-r2-qualification-008",
+          "v5-r2-qualification-012",
+          "v5-r2-qualification-016",
+          "v5-r2-qualification-018",
+          "v5-r2-qualification-019",
+          "v5-r2-qualification-020",
+          "v5-r2-qualification-024",
+          "v5-r2-qualification-027",
+          "v5-r2-qualification-028",
+          "v5-r2-qualification-030",
+          "v5-r2-qualification-031",
+          "v5-r2-qualification-032",
+          "v5-r2-qualification-035",
+          "v5-r2-qualification-042",
+          "v5-r2-qualification-044",
+          "v5-r2-qualification-045",
+          "v5-r2-qualification-047"
+        ]
+      },
+      "question_mark": {
+        "count": 1,
+        "ids": [
+          "v5-r2-qualification-038"
+        ]
+      },
+      "explicit_please_or_could_or_can": {
+        "count": 3,
+        "ids": [
+          "v5-r2-qualification-038",
+          "v5-r2-qualification-046",
+          "v5-r2-qualification-047"
+        ]
+      },
+      "book_series_phrase": {
+        "count": 0,
+        "ids": []
+      },
+      "course_subunit_words": {
+        "count": 7,
+        "ids": [
+          "v5-r2-qualification-012",
+          "v5-r2-qualification-013",
+          "v5-r2-qualification-014",
+          "v5-r2-qualification-015",
+          "v5-r2-qualification-016",
+          "v5-r2-qualification-017",
+          "v5-r2-qualification-029"
+        ]
+      }
+    }
+  },
+  "publicAll": {
+    "n": 24,
+    "lexicalSearchAids": {
+      "rating_language": {
+        "count": 7,
+        "ids": [
+          "snips:RateBook:train-full:619",
+          "snips:RateBook:train-full:183",
+          "snips:RateBook:train-full:1297",
+          "snips:RateBook:train-full:1609",
+          "snips:RateBook:train-full:315",
+          "snips:RateBook:train-full:574",
+          "snips:RateBook:train-full:1342"
+        ]
+      },
+      "restaurant_language": {
+        "count": 5,
+        "ids": [
+          "snips:BookRestaurant:train-full:572",
+          "snips:BookRestaurant:train-full:1591",
+          "snips:BookRestaurant:train-full:397",
+          "snips:BookRestaurant:train-full:1794",
+          "snips:BookRestaurant:train-full:159"
+        ]
+      },
+      "booking_table_language": {
+        "count": 5,
+        "ids": [
+          "snips:BookRestaurant:train-full:979",
+          "snips:BookRestaurant:train-full:811",
+          "snips:BookRestaurant:train-full:397",
+          "snips:BookRestaurant:train-full:159",
+          "snips:BookRestaurant:train-full:1627"
+        ]
+      },
+      "numeric_rating_fraction": {
+        "count": 2,
+        "ids": [
+          "snips:RateBook:train-full:1609",
+          "snips:RateBook:train-full:1787"
+        ]
+      },
+      "first_person_I": {
+        "count": 3,
+        "ids": [
+          "snips:RateBook:train-full:1342",
+          "snips:BookRestaurant:train-full:572",
+          "snips:BookRestaurant:train-full:159"
+        ]
+      },
+      "question_mark": {
+        "count": 1,
+        "ids": [
+          "snips:BookRestaurant:train-full:572"
+        ]
+      },
+      "explicit_please_or_could_or_can": {
+        "count": 3,
+        "ids": [
+          "snips:PlayMusic:train-full:46",
+          "snips:BookRestaurant:train-full:572",
+          "snips:BookRestaurant:train-full:1794"
+        ]
+      },
+      "book_series_phrase": {
+        "count": 1,
+        "ids": [
+          "snips:RateBook:train-full:1609"
+        ]
+      },
+      "course_subunit_words": {
+        "count": 0,
+        "ids": []
+      }
+    }
+  },
+  "publicCoverageBySource": {
+    "PlayMusic": {
+      "nominated": 8,
+      "scored": 3,
+      "unscored": 5,
+      "jointCorrect": 3,
+      "categoryCorrect": 3,
+      "intentCorrect": 3,
+      "failureIds": []
+    },
+    "RateBook": {
+      "nominated": 8,
+      "scored": 5,
+      "unscored": 3,
+      "jointCorrect": 1,
+      "categoryCorrect": 4,
+      "intentCorrect": 2,
+      "failureIds": [
+        "snips:RateBook:train-full:619",
+        "snips:RateBook:train-full:1609",
+        "snips:RateBook:train-full:574",
+        "snips:RateBook:train-full:1342"
+      ]
+    },
+    "BookRestaurant": {
+      "nominated": 8,
+      "scored": 8,
+      "unscored": 0,
+      "jointCorrect": 2,
+      "categoryCorrect": 8,
+      "intentCorrect": 8,
+      "failureIds": [
+        "snips:BookRestaurant:train-full:572",
+        "snips:BookRestaurant:train-full:979",
+        "snips:BookRestaurant:train-full:811",
+        "snips:BookRestaurant:train-full:397",
+        "snips:BookRestaurant:train-full:1794",
+        "snips:BookRestaurant:train-full:159"
+      ]
+    }
+  },
+  "publicCorrectCategoryAndIntentButWrongReasonsOrContract": [
+    "snips:BookRestaurant:train-full:572",
+    "snips:BookRestaurant:train-full:979",
+    "snips:BookRestaurant:train-full:811",
+    "snips:BookRestaurant:train-full:397",
+    "snips:BookRestaurant:train-full:1794",
+    "snips:BookRestaurant:train-full:159"
+  ],
+  "frozenScoresRetained": {
+    "base": {
+      "syntheticJoint": {
+        "correct": 31,
+        "n": 48,
+        "accuracy": 0.6458333333333334,
+        "wilson95": [
+          0.5044,
+          0.7657
+        ]
+      },
+      "publicScoredJoint": {
+        "correct": 3,
+        "n": 16,
+        "accuracy": 0.1875,
+        "wilson95": [
+          0.0659,
+          0.4301
+        ]
+      },
+      "publicCategory": {
+        "correct": 12,
+        "n": 16,
+        "accuracy": 0.75,
+        "wilson95": [
+          0.505,
+          0.8982
+        ]
+      }
+    },
+    "parent": {
+      "syntheticJoint": {
+        "correct": 34,
+        "n": 48,
+        "accuracy": 0.7083333333333334,
+        "wilson95": [
+          0.5682,
+          0.8176
+        ]
+      },
+      "publicScoredJoint": {
+        "correct": 8,
+        "n": 16,
+        "accuracy": 0.5,
+        "wilson95": [
+          0.28,
+          0.72
+        ]
+      },
+      "publicCategory": {
+        "correct": 15,
+        "n": 16,
+        "accuracy": 0.9375,
+        "wilson95": [
+          0.7167,
+          0.9889
+        ]
+      }
+    },
+    "candidate": {
+      "syntheticJoint": {
+        "correct": 40,
+        "n": 48,
+        "accuracy": 0.8333333333333334,
+        "wilson95": [
+          0.7042,
+          0.913
+        ]
+      },
+      "publicScoredJoint": {
+        "correct": 6,
+        "n": 16,
+        "accuracy": 0.375,
+        "wilson95": [
+          0.1848,
+          0.6136
+        ]
+      },
+      "publicCategory": {
+        "correct": 15,
+        "n": 16,
+        "accuracy": 0.9375,
+        "wilson95": [
+          0.7167,
+          0.9889
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Lexical searches are descriptive and cannot establish semantic coverage or author style. Counts are not classification rules.",
+    "The v5 mixture is 100% AI-authored fictional text. Human public wording is evaluation-only; its task labels are AI judgments.",
+    "No source author/worker/conversation IDs are available for stronger independence guarantees in the retained SNIPS sample.",
+    "Audit is performed after predictions; no audited example may be called a fresh final test.",
+    "Historical labels and predictions are unchanged. Policy concerns are prospective, not retrospective score repairs."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "audit-complete-no-training-or-promotion",
+  "historicalExperimentFilesEdited": false,
+  "artifactHashes": {
+    "audit.py": "9ef12ad144426cf3504ec87b16b60f376b1c1e81c1fcd3de7345159b5efd6b72",
+    "audit-results.json": "c22842ea9425ca0530a8c2c10ff7988fa5ce42790b0cbb4fbdd5e700d95bddfc",
+    "public-case-audit.json": "570e5ea6529bda6897bd765b881ab7a3fe5668cd4f55fafdbe3ce963946ce58d",
+    "policy-probes.json": "94969cf077eb1082a8b1a26b7d92e3c96257e524568127fcf65faea88446f07a",
+    "label-defect-ledger.json": "422e303c556ec2f8eff374ea3cc763f566487d665411eb75dd20cfdd699272e8",
+    "REPORT.md": "035c0b1a1697ebff327963281874158d5c68cd1510bc8c9babd97800f7200f63"
+  }
+}
