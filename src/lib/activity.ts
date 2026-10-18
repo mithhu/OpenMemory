@@ -5,6 +5,7 @@ const seriesPosition = {
   season: z.number().int().positive().max(10000).nullable().optional(),
   episode: z.number().int().positive().max(10000).nullable().optional(),
   seasonCompleted: z.boolean().optional(),
+  totalSeasons: z.number().int().positive().max(10000).nullable().optional(),
 };
 export const activityCommandSchema = z.object({
   ...seriesPosition,
@@ -97,7 +98,10 @@ export function applyActivity(
     );
   if (command.intent === "wishlist" && (command.progress !== null || command.lessonNumbers.length))
     throw new Error("A plan cannot record completed progress. Choose a progress action instead.");
-  if (command.kind !== "series" && (command.season || command.episode || command.seasonCompleted))
+  if (
+    command.kind !== "series" &&
+    (command.season || command.episode || command.seasonCompleted || command.totalSeasons)
+  )
     throw new Error("Season and episode details belong to TV series only.");
   if (command.kind === "series" && (command.episode || command.seasonCompleted) && !command.season)
     throw new Error("Choose the season for this episode or season completion.");
@@ -115,10 +119,17 @@ export function applyActivity(
     throw new Error(
       "TV series use whole episode counts, not course lessons or fractional episodes.",
     );
+  const totalSeasons = command.totalSeasons ?? previous?.totalSeasons ?? null;
+  const currentSeason = command.season ?? previous?.season;
+  if (command.kind === "series" && totalSeasons && currentSeason && currentSeason > totalSeasons)
+    throw new Error("Total seasons cannot be less than the current season.");
+  const changedSeason =
+    command.kind === "series" && Boolean(command.season && command.season !== previous?.season);
   const seriesState =
     command.kind === "series"
       ? {
           season: command.season ?? previous?.season ?? null,
+          totalSeasons,
           // A new season never inherits the previous season's episode position.
           episode:
             command.episode ??
@@ -134,7 +145,7 @@ export function applyActivity(
           ].sort((a, b) => a - b),
         }
       : {};
-  const total = command.total ?? previous?.total ?? null;
+  const total = command.total ?? (changedSeason ? null : previous?.total) ?? null;
   if (command.intent === "wishlist" && total && previous && total < previous.progress)
     throw new Error("The total cannot be less than your recorded progress.");
   if (command.intent === "reaction") {
@@ -177,7 +188,7 @@ export function applyActivity(
     throw new Error(
       "A lesson number exceeds the course total. Correct the total or lesson numbers.",
     );
-  let progress = previous?.progress ?? 0;
+  let progress = changedSeason ? 0 : (previous?.progress ?? 0);
   if (command.progress !== null)
     progress =
       command.progressMode === "increment" ? progress + command.progress : command.progress;
@@ -191,6 +202,10 @@ export function applyActivity(
     status = previous?.status === "unrecorded" ? "planned" : (previous?.status ?? "planned");
   else if (
     command.intent === "complete" ||
+    (command.kind === "series" &&
+      currentSeason &&
+      totalSeasons === currentSeason &&
+      (command.seasonCompleted || (command.progress !== null && total && progress >= total))) ||
     (command.kind !== "series" && total && progress >= total)
   )
     status = "completed";
@@ -219,7 +234,9 @@ export function applyActivity(
       (command.kind === "music" && command.intent === "listen") ||
       (command.intent === "complete" && total !== null)
         ? true
-        : (previous?.progressKnown ?? (previous ? true : false)),
+        : changedSeason
+          ? false
+          : (previous?.progressKnown ?? (previous ? true : false)),
     total,
     completedLessons,
     sentiment: command.sentiment ?? previous?.sentiment ?? null,
@@ -234,7 +251,13 @@ export function progressLabel(activity: Activity) {
   if (activity.status === "completed" && !activity.total && activity.kind !== "music")
     return "Completed";
   if (activity.kind === "series" && activity.status !== "completed" && activity.season) {
-    return `Season ${activity.season}${activity.episode ? ` · episode ${activity.episode}` : ""}${activity.completedSeasons?.includes(activity.season) ? " · season finished" : ""}`;
+    const episodes =
+      activity.progressKnown !== false && activity.progress > 0
+        ? ` · ${activity.progress}${activity.total ? ` / ${activity.total}` : ""} episodes watched`
+        : activity.episode
+          ? ` · episode ${activity.episode}`
+          : "";
+    return `Season ${activity.season}${activity.totalSeasons ? ` of ${activity.totalSeasons}` : ""}${episodes}${activity.completedSeasons?.includes(activity.season) ? " · season finished" : ""}`;
   }
   if (activity.progressKnown === false) return "Amount not recorded";
   return `${activity.progress}${activity.total ? ` / ${activity.total}` : ""} ${activityUnits[activity.kind]}`;

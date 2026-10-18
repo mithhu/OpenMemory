@@ -1009,27 +1009,51 @@ export function CaptureReview({
                           onChange={(e) =>
                             activityPatch(index, {
                               season: e.target.value ? Number(e.target.value) : null,
+                              totalSeasons:
+                                entry.activity!.season &&
+                                entry.activity!.totalSeasons === entry.activity!.season
+                                  ? e.target.value
+                                    ? Number(e.target.value)
+                                    : null
+                                  : entry.activity!.totalSeasons,
                               episode: null,
                               seasonCompleted: false,
                             })
                           }
                         />
                       </label>
-                      <label>
-                        Episode position in this season
+                      <label className="series-choice">
                         <input
-                          type="number"
-                          min={1}
-                          max={10000}
-                          value={entry.activity.episode ?? ""}
+                          type="checkbox"
+                          disabled={!entry.activity.season}
+                          checked={Boolean(
+                            entry.activity.season &&
+                            entry.activity.totalSeasons === entry.activity.season,
+                          )}
                           onChange={(e) =>
                             activityPatch(index, {
-                              episode: e.target.value ? Number(e.target.value) : null,
+                              totalSeasons: e.target.checked ? entry.activity!.season : null,
+                            })
+                          }
+                        />
+                        This is the final season
+                      </label>
+                      <label>
+                        Total seasons
+                        <input
+                          type="number"
+                          min={entry.activity.season ?? 1}
+                          max={10000}
+                          value={entry.activity.totalSeasons ?? ""}
+                          placeholder="Unknown"
+                          onChange={(e) =>
+                            activityPatch(index, {
+                              totalSeasons: e.target.value ? Number(e.target.value) : null,
                             })
                           }
                         />
                       </label>
-                      <label>
+                      <label className="series-choice">
                         <input
                           type="checkbox"
                           checked={entry.activity.seasonCompleted ?? false}
@@ -1037,11 +1061,11 @@ export function CaptureReview({
                             activityPatch(index, { seasonCompleted: e.target.checked })
                           }
                         />
-                        Finished this season only
+                        Finished this season
                       </label>
-                      <p>
-                        Episode position does not add watched episodes. Finishing a season does not
-                        finish the series.
+                      <p className="series-progress-help">
+                        Episodes are tracked within this season. Finishing the final season finishes
+                        the series.
                       </p>
                     </>
                   )}
@@ -1072,17 +1096,22 @@ export function CaptureReview({
                       <>
                         <label>
                           {entry.activity.kind === "series"
-                            ? "Episodes watched (count)"
+                            ? "Episodes watched"
                             : activityUnits[entry.activity.kind]}
                           <input
                             type="number"
                             min={0}
                             max={100000}
-                            value={entry.activity.progress ?? ""}
+                            value={
+                              entry.activity.progress ??
+                              (entry.activity.kind === "series" ? entry.activity.episode : null) ??
+                              ""
+                            }
                             placeholder="Unknown"
                             onChange={(e) =>
                               activityPatch(index, {
                                 progress: e.target.value ? Number(e.target.value) : null,
+                                ...(entry.activity!.kind === "series" ? { episode: null } : {}),
                               })
                             }
                           />
@@ -1110,6 +1139,7 @@ export function CaptureReview({
                   {entry.activity.kind !== "music" && (
                     <label>
                       Total {activityUnits[entry.activity.kind]}
+                      {entry.activity.kind === "series" ? " in this season" : ""}
                       <input
                         type="number"
                         min={1}

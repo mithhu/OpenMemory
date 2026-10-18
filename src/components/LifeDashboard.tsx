@@ -377,6 +377,8 @@ function ActivityCard({
   const [season, setSeason] = useState("");
   const [episode, setEpisode] = useState("");
   const [seasonFinished, setSeasonFinished] = useState(false);
+  const [totalSeasons, setTotalSeasons] = useState("");
+  const [finalSeason, setFinalSeason] = useState(false);
   const [total, setTotal] = useState("");
   const [working, setWorking] = useState(false);
   const update = async (changes: Partial<ActivityCommand>, text: string) => {
@@ -402,6 +404,8 @@ function ActivityCard({
         setSeason("");
         setEpisode("");
         setSeasonFinished(false);
+        setTotalSeasons("");
+        setFinalSeason(false);
         setTotal("");
       }
     } finally {
@@ -458,7 +462,14 @@ function ActivityCard({
       {activity.status === "in-progress" && (
         <p className="activity-next">
           {activity.kind === "series"
-            ? "Record a season and episode position, or finish a season below."
+            ? activity.completedSeasons?.includes(activity.season ?? 0) ||
+              (activity.total &&
+                activity.progressKnown !== false &&
+                activity.progress >= activity.total)
+              ? "Season finished. Update your season when you start the next one."
+              : (activity.progressKnown !== false && activity.progress > 0) || activity.episode
+                ? `Up next: episode ${(activity.progressKnown !== false && activity.progress > 0 ? activity.progress : (activity.episode ?? 0)) + 1}`
+                : "Add your episode progress below."
             : activity.progressKnown === false
               ? "Add your current position when you know it."
               : activity.kind === "course"
@@ -520,10 +531,16 @@ function ActivityCard({
                     void update(
                       {
                         season: currentSeason,
-                        episode: episode ? Number(episode) : null,
+                        progress: episode ? Number(episode) : null,
+                        episode: null,
+                        totalSeasons: finalSeason
+                          ? currentSeason
+                          : totalSeasons
+                            ? Number(totalSeasons)
+                            : activity.totalSeasons,
                         seasonCompleted: seasonFinished,
                       },
-                      `${seasonFinished ? "Finished" : "Recorded"} season ${currentSeason}${episode ? `, episode ${episode}` : ""} of ${memory.title}${seasonFinished ? "; season only, not the whole series" : ""}.`,
+                      `${seasonFinished ? "Finished" : "Recorded"} season ${currentSeason}${episode ? `, episode ${episode}` : ""} of ${memory.title}${seasonFinished ? "; season finished" : ""}.`,
                     );
                   }}
                 >
@@ -543,7 +560,7 @@ function ActivityCard({
                     />
                   </label>
                   <label className="series-position-field">
-                    Episode position
+                    Episodes watched
                     <input
                       type="number"
                       min={1}
@@ -552,8 +569,34 @@ function ActivityCard({
                       value={episode}
                       onChange={(e) => setEpisode(e.target.value)}
                       placeholder="Episode"
-                      aria-label={`${memory.title} episode position`}
+                      aria-label={`${memory.title} episodes watched`}
                       disabled={disabled}
+                    />
+                  </label>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={finalSeason}
+                      onChange={(e) => setFinalSeason(e.target.checked)}
+                      disabled={disabled || !(season || activity.season)}
+                    />{" "}
+                    This is the final season
+                  </label>
+                  <label className="series-position-field">
+                    Total seasons
+                    <input
+                      type="number"
+                      min={Number(season || activity.season) || 1}
+                      max={10000}
+                      value={
+                        finalSeason
+                          ? season || activity.season || ""
+                          : totalSeasons || activity.totalSeasons || ""
+                      }
+                      onChange={(e) => setTotalSeasons(e.target.value)}
+                      disabled={disabled || finalSeason}
+                      aria-label={`${memory.title} total seasons`}
+                      placeholder="Unknown"
                     />
                   </label>
                   <label>
@@ -563,7 +606,7 @@ function ActivityCard({
                       onChange={(e) => setSeasonFinished(e.target.checked)}
                       disabled={disabled}
                     />{" "}
-                    Finished this season only
+                    Finished this season
                   </label>
                   <button
                     type="submit"

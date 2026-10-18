@@ -33,7 +33,91 @@ const entry = (change: Partial<ActivityCommand> = {}): CaptureEntry => ({
 });
 afterEach(cleanup);
 describe("TV series tracking", () => {
-  it("updates dashboard episode positions and season completion without inventing counts or completing the series", async () => {
+  it("infers total seasons from the explicit final-season choice and persists it on save", async () => {
+    const save = vi.fn().mockResolvedValue(true);
+    render(
+      <CaptureReview
+        plan={{
+          entries: [entry({ season: 4, episode: null, progress: 6, progressMode: "absolute" })],
+        }}
+        text="Watched six episodes of Breaking Bad season four."
+        memories={[]}
+        onSave={save}
+        onCancel={vi.fn()}
+      />,
+    );
+    expect(screen.queryByLabelText("Episode position in this season")).not.toBeInTheDocument();
+    expect(screen.getByLabelText("Episodes watched")).toHaveValue(6);
+    expect(screen.getByLabelText("Total seasons")).toHaveValue(null);
+    fireEvent.click(screen.getByLabelText("This is the final season"));
+    expect(screen.getByLabelText("Total seasons")).toHaveValue(4);
+    fireEvent.click(screen.getByRole("button", { name: "Save 1 entry" }));
+    await waitFor(() => expect(save).toHaveBeenCalledOnce());
+    const saved = save.mock.calls[0]![0].entries[0].activity;
+    const result = applyActivity(undefined, saved, "2026-10-18", "note");
+    expect(result).toMatchObject({
+      season: 4,
+      totalSeasons: 4,
+      progress: 6,
+      status: "in-progress",
+    });
+    expect(
+      memorySchema.shape.activity.parse(JSON.parse(JSON.stringify(result)))?.totalSeasons,
+    ).toBe(4);
+  });
+  it("allows manual total seasons and clearing the final-season choice", () => {
+    render(
+      <CaptureReview
+        plan={{ entries: [entry({ season: 4 })] }}
+        text="Breaking Bad"
+        memories={[]}
+        onSave={vi.fn()}
+        onCancel={vi.fn()}
+      />,
+    );
+    fireEvent.click(screen.getByLabelText("This is the final season"));
+    fireEvent.click(screen.getByLabelText("This is the final season"));
+    expect(screen.getByLabelText("Total seasons")).toHaveValue(null);
+    fireEvent.change(screen.getByLabelText("Total seasons"), { target: { value: "5" } });
+    expect(screen.getByLabelText("Total seasons")).toHaveValue(5);
+    expect(screen.getByLabelText("This is the final season")).not.toBeChecked();
+  });
+  it("finishes the series only when its known final season is finished", () => {
+    const partial = applyActivity(
+      undefined,
+      command({ season: 4, episode: null, progress: 6, totalSeasons: 4 }),
+      "2026-10-18",
+      "six episodes",
+    );
+    expect(partial.status).toBe("in-progress");
+    const finished = applyActivity(
+      partial,
+      command({ season: 4, episode: null, totalSeasons: 4, seasonCompleted: true }),
+      "2026-10-18",
+      "finished final season",
+    );
+    expect(finished.status).toBe("completed");
+    expect(() =>
+      applyActivity(undefined, command({ season: 4, totalSeasons: 3 }), "2026-10-18", "bad total"),
+    ).toThrow("Total seasons");
+  });
+  it("resets per-season episode counts and totals when moving to another season", () => {
+    const previous = applyActivity(
+      undefined,
+      command({ season: 3, episode: null, progress: 8, total: 10 }),
+      "2026-10-17",
+      "season three",
+    );
+    const next = applyActivity(
+      previous,
+      command({ season: 4, episode: null, progress: 2 }),
+      "2026-10-18",
+      "two episodes",
+    );
+    expect(next).toMatchObject({ season: 4, progress: 2, total: null });
+  });
+
+  it("updates the single dashboard episode count and season completion", async () => {
     const activity = applyActivity(undefined, command(), "2026-10-17", "episode event");
     const memory = memorySchema.parse({
       id: "series-dashboard",
@@ -55,10 +139,10 @@ describe("TV series tracking", () => {
       const result = applyActivity(activity, change, "2026-10-18", "dashboard update");
       expect(result).toMatchObject({
         season: 3,
-        episode: 4,
+        episode: null,
         status: "in-progress",
-        progress: 0,
-        progressKnown: false,
+        progress: 4,
+        progressKnown: true,
       });
       expect(result.completedSeasons).toContain(3);
       return true;
@@ -75,18 +159,18 @@ describe("TV series tracking", () => {
     expect(screen.queryByPlaceholderText("Current minute")).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Update series" })).toBeDisabled();
     fireEvent.change(screen.getByLabelText("Breaking Bad season"), { target: { value: "3" } });
-    fireEvent.change(screen.getByLabelText("Breaking Bad episode position"), {
+    fireEvent.change(screen.getByLabelText("Breaking Bad episodes watched"), {
       target: { value: "4" },
     });
-    fireEvent.click(screen.getByLabelText("Finished this season only"));
+    fireEvent.click(screen.getByLabelText("Finished this season"));
     fireEvent.click(screen.getByRole("button", { name: "Update series" }));
     await waitFor(() => expect(onUpdate).toHaveBeenCalledOnce());
     expect(onUpdate.mock.calls[0]?.[1]).toMatchObject({
       kind: "series",
       intent: "progress",
-      progress: null,
+      progress: 4,
       season: 3,
-      episode: 4,
+      episode: null,
       seasonCompleted: true,
     });
     expect(screen.getByRole("button", { name: "Mark entire series finished" })).toBeInTheDocument();
@@ -216,7 +300,7 @@ describe("TV series tracking", () => {
     );
     expect(screen.getByLabelText("Entry 1 type")).toHaveValue("series");
     expect(screen.getByLabelText("Season")).toHaveValue(2);
-    expect(screen.getByLabelText("Episode position in this season")).toHaveValue(3);
+    expect(screen.getByLabelText("Episodes watched")).toHaveValue(3);
     fireEvent.change(screen.getByLabelText("This was"), { target: { value: "wishlist" } });
     expect(screen.queryByLabelText("Season")).not.toBeInTheDocument();
   });
