@@ -1,6 +1,6 @@
 # Next TV-series classifier experiment — 18 October 2026
 
-Status: preparation, not a training run. Installed reviewed730 adapter remains unchanged.
+Status: this historical plan was executed once as experiment-01. Candidate rejected for app promotion; installed reviewed730 remains unchanged. Read [the outcome](experiment-01/REPORT.md). Remaining text records the pre-experiment plan.
 
 ## Problem to test
 

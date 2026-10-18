@@ -1,0 +1,1547 @@
+[
+  {
+    "id": "structured-v5-development-021",
+    "note": "That series was great.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "v5-train-011",
+    "note": "Finished the entire series, all seasons.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-078",
+    "note": "My daughter is learning Spanish.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-085",
+    "note": "I need to stop staying up so late.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-020",
+    "note": "Finished every episode of every season of Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "v5-train-028",
+    "note": "Watched half of that film.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-010",
+    "note": "I read the novel Piranesi.",
+    "expected": {
+      "category": "BOOK",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-063",
+    "note": "I watched the birds outside my window.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-022",
+    "note": "Want to watch a TV series this weekend.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "v5-train-071",
+    "note": "Want to listen to that later.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-058",
+    "note": "Finished that entire course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-064",
+    "note": "Listened to my neighbour talk about her garden.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-075",
+    "note": "My brother loves horror films.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-054",
+    "note": "Finished lesson three of Introduction to Astronomy.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-008",
+    "note": "I want to watch a film.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-081",
+    "note": "My goal is to exercise three times a week.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-002",
+    "note": "This book is awful.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-098",
+    "note": "Listened to Dreams and completed lesson two of my astronomy course.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-073",
+    "note": "I'm halfway through it.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-091",
+    "note": "I'd like to try that new cafe.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-012",
+    "note": "My colleague keeps recommending the TV series Arcane; I want to watch it.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-003",
+    "note": "I watched four episodes of Severance season one.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-000",
+    "note": "That movie was great.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-072",
+    "note": "Started it this morning.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-021",
+    "note": "Started watching the movie Moonlight.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-056",
+    "note": "Finished the entire Introduction to Astronomy course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-046",
+    "note": "Please play the track Blue in Green.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-034",
+    "note": "Read twenty pages of The Overstory.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-040",
+    "note": "Read thirty pages of that book.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-000",
+    "note": "I'm finally going to start the TV series Severance.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-026",
+    "note": "That film was beautiful.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-087",
+    "note": "I want to buy a new bicycle.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-044",
+    "note": "Listened to the song Blue in Green.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-015",
+    "note": "Started that yesterday.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-024",
+    "note": "Played that song three times.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-062",
+    "note": "Read a letter from my sister this morning.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-036",
+    "note": "The Overstory is a wonderful novel.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-060",
+    "note": "Did that course yesterday.",
+    "expected": {
+      "category": "LESSON",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-013",
+    "note": "I finished the entire film Arrival.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-037",
+    "note": "Read the novel The Overstory today.",
+    "expected": {
+      "category": "BOOK",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-047",
+    "note": "Listened to a song on the bus.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-018",
+    "note": "Finished the whole miniseries Chernobyl.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-027",
+    "note": "I'd like a movie to watch tonight.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-026",
+    "note": "I like jazz.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-030",
+    "note": "I have an idea to create a TV series.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-080",
+    "note": "I want to run a half marathon this year.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-001",
+    "note": "The film Arrival was great.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-052",
+    "note": "I want to take the course Introduction to Astronomy.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-094",
+    "note": "I have an idea for a short story about a lost robot.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-006",
+    "note": "I finished that course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-049",
+    "note": "That song is awful.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-067",
+    "note": "Went to the bakery and bought lunch.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-090",
+    "note": "I want to go to a pottery workshop.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-065",
+    "note": "I usually watch television after dinner.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-016",
+    "note": "I've watched six eps of Abbott Elementary season two.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-038",
+    "note": "I want to read a book over the holidays.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-015",
+    "note": "Wanna watch the sitcom Abbott Elementary this weekend.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-017",
+    "note": "I watched birds by the river.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-009",
+    "note": "Watch a movie.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-074",
+    "note": "Nadia is my best friend.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-045",
+    "note": "The song Blue in Green sounds beautiful.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-011",
+    "note": "I read twenty pages of the novel Piranesi.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-028",
+    "note": "I want to visit Kyoto next spring.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-088",
+    "note": "Help me find a restaurant for dinner tomorrow.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-007",
+    "note": "Finished the entire Clay Foundations course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-004",
+    "note": "Finished season one of Severance.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-014",
+    "note": "Finished it.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-059",
+    "note": "I want to sign up for a course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-095",
+    "note": "I could make a website for local walking routes.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-004",
+    "note": "Rate this novel four stars.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-029",
+    "note": "My goal is to run a half marathon.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-031",
+    "note": "I haven't watched the movie Past Lives yet, but I plan to.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-006",
+    "note": "Severance is such a good TV show.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-079",
+    "note": "Sam's birthday is in June.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-084",
+    "note": "I want to build a consistent reading habit.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-005",
+    "note": "I've finished every season of the TV series Severance.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-023",
+    "note": "Watch a TV series.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "v5-train-029",
+    "note": "Finished that movie from start to finish.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-082",
+    "note": "I'm trying to improve my spoken French.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-025",
+    "note": "Play a song by that singer.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "structured-v5-development-005",
+    "note": "Give Piranesi four stars, the novel.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-070",
+    "note": "Finished it yesterday.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-018",
+    "note": "I want to start the TV series Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "v5-train-096",
+    "note": "Finished the movie Moonlight and started reading Beloved.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-099",
+    "note": "Finished season one of Severance and started the film Past Lives.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-077",
+    "note": "My friend Priya likes the TV show Arcane.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-008",
+    "note": "I want to start a new TV series this month.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-069",
+    "note": "I'm grateful for a quiet evening.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-092",
+    "note": "An idea: build an app that shares leftover food.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-027",
+    "note": "My friend likes jazz.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-013",
+    "note": "I'm halfway through the anime series Arcane.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-012",
+    "note": "I watched the film Arrival.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-097",
+    "note": "I want to visit Lisbon and buy a new bike.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-033",
+    "note": "Started reading The Overstory, the novel.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-019",
+    "note": "Finished season two of Breaking Bad.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "series"
+  },
+  {
+    "id": "structured-v5-development-016",
+    "note": "Reading letters from my grandmother made me smile.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-007",
+    "note": "I watched the series Severance yesterday.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-068",
+    "note": "It rained during my walk today.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-020",
+    "note": "Want to see the film Moonlight this Friday.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-039",
+    "note": "That novel was terrible.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-017",
+    "note": "Completed the final episode of season two of Abbott Elementary, but other seasons remain.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-093",
+    "note": "What if I created a board game about gardens?",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-055",
+    "note": "Halfway through the Introduction to Astronomy course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-051",
+    "note": "Played the track Dreams by Fleetwood Mac.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-050",
+    "note": "Could you play some jazz for me?",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-022",
+    "note": "Halfway through the film Moonlight.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-035",
+    "note": "Finished reading the whole novel The Overstory.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-024",
+    "note": "Moonlight is my favourite film.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-061",
+    "note": "Completed two lessons of that course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-032",
+    "note": "I'd like to read the novel The Overstory.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-066",
+    "note": "I enjoy science fiction and jazz.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-031",
+    "note": "Finished Arrival in full and started Breaking Bad, the show.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-043",
+    "note": "I'm not reading the novel Beloved yet; I want to start next week.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-042",
+    "note": "Read a novel on the train.",
+    "expected": {
+      "category": "BOOK",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-002",
+    "note": "Finished episode two of Severance, not the season.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-009",
+    "note": "Finished season three of that show.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "structured-v5-development-003",
+    "note": "The book Piranesi is awful.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "provenance": "AI-authored development label, often reusing known v1/v2 failures; not independent evaluation",
+    "slice": "retention"
+  },
+  {
+    "id": "v5-train-025",
+    "note": "I watched Moonlight, the film, yesterday.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-023",
+    "note": "Finished watching the entire movie Moonlight.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-086",
+    "note": "I'd love to visit Lisbon next spring.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-041",
+    "note": "Finished the whole book.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-083",
+    "note": "I aim to pass my driving test.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-053",
+    "note": "Started the Introduction to Astronomy course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-048",
+    "note": "Find me some calm music to listen to.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-014",
+    "note": "The TV show Arcane is brilliant, though I didn't watch any today.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-030",
+    "note": "I watched a movie last night.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-076",
+    "note": "Leo works at a hospital.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-001",
+    "note": "Started the show Severance tonight.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-089",
+    "note": "My goal is to visit Kyoto this autumn.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-057",
+    "note": "Introduction to Astronomy is a great course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-019",
+    "note": "The miniseries Chernobyl was incredible.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  },
+  {
+    "id": "v5-train-010",
+    "note": "That TV series was disappointing.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional note and policy label; reviewed before training; not human-independent"
+  }
+]

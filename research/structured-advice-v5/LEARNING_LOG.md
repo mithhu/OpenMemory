@@ -12,3 +12,7 @@
 10. Full checks: 535 app tests passed, two opt-in live tests skipped by default; separate four-case live handoff passed; 37 Python tests, TypeScript checking, changed-file lint and production build passed. The qualified adapter hash remains 8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01. No new training, model promotion, memory persistence, HF upload or deployment occurred.
 
 Next model work must qualify the structured contract and its labels before training, then use fresh evaluation notes. The old classifier's ambiguity is still honestly exposed; the independent extraction/review path now preserves a known action while resolving missing details.
+
+## 18 October follow-up
+
+Executed the bounded v5 experiment once. Candidate improved the new authored qualification task but failed the zero-invalid gate; app/public adapter unchanged. Full reproducible evidence and limitations: [experiment-01/REPORT.md](experiment-01/REPORT.md).

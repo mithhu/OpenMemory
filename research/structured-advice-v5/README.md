@@ -1,6 +1,6 @@
 # Known action and missing identity — structured advice v5 development
 
-This is a representation and app-flow correction, **not another fine-tuning run or a successful new model release**. The installed reviewed730 MLX/Ollama classifier, v3 prompt, decoder and v0.1.0 release stay unchanged. Rejected TV candidates and all their original gold/results stay unchanged.
+This folder began as a representation and app-flow correction. A subsequent bounded offline training attempt is documented in [experiment-01/REPORT.md](experiment-01/REPORT.md): 41/48 full correctness versus base 27/48, but the candidate failed its contract-validity gate and was not promoted. No new model release is qualified. The installed reviewed730 MLX/Ollama classifier, v3 prompt, decoder and v0.1.0 release stay unchanged. Rejected TV candidates and all their original gold/results stay unchanged.
 
 ## The distinction
 
@@ -27,7 +27,7 @@ These typed reasons are review-only and never create titles, match IDs, amounts 
 
 ## Versioned labels, not rewritten history
 
-`development.json` contains 32 AI-authored examples, often reused from known failures, with explicit v5 labels. `classification_advice_v5.json` and a CPU-only validator specify the future output contract. Known `reaction` plus `missing_identity` is a **new representation**, not an excuse to change old benchmark gold after seeing errors. None of these 32 cases can be called an independent final test. No bulk regex conversion of historical clarify labels was attempted.
+`development.json` contains 32 AI-authored examples, often reused from known failures, with explicit v5 labels. `classification_advice_v5.json` and a CPU-only validator specify the future output contract. Known `reaction` plus `missing_identity` is a **new representation**, not an excuse to change old benchmark gold after seeing errors. None of these 32 cases can be called an independent final test. No bulk regex conversion of historical clarify labels was attempted. See experiment-01 for separately versioned training labels and newly held-out, AI-authored qualification notes; these are not independent human gold.
 
 Before more training: audit labels and reason consistency under this contract, expand development coverage, reserve fresh evaluation and compare schema-qualified model outputs under the same policy. Report category, action and missing-detail scores separately and jointly. Never compare v3 two-field exact-match rates directly with v5 three-field rates.
 

@@ -1,0 +1,12 @@
+{
+  "python": "3.12.9",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.32.0",
+    "transformers": "5.19.0",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0"
+  }
+}

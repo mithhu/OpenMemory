@@ -1,0 +1,37 @@
+{
+  "status": "frozen-before-training-and-predictions",
+  "base": "mlx-community/Qwen3.5-9B-4bit",
+  "parent_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "updates": 132,
+  "epochs": 1,
+  "batch_size": 1,
+  "seed": 2026101801,
+  "learning_rate": 1e-05,
+  "max_sequence_tokens": 3072,
+  "response_window": 128,
+  "lora": {
+    "rank": 8,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "layers": 1
+  },
+  "limits": {
+    "total_seconds": 2340,
+    "training_seconds": 900,
+    "each_evaluation_seconds": 480,
+    "observed_mlx_allocation_bytes": 8000000000
+  },
+  "qualification": "48 AI-authored fictional policy notes reserved before training; 16 series, 32 retention. Same-author labels; not independent human gold. No cloud inference. No automatic promotion.",
+  "gates": "Series joint improves parent; retention and uncertainty joint do not decline versus parent; overall joint improves unadapted base; no season-only completion errors; zero schema-invalid outputs. One attempt, no test-guided retraining.",
+  "files_sha256": {
+    "prepare.py": "e0f75c3b782f40e19c801bbf00bcd488761c9df0f8d5b2d2f1c95fc5f6e8cf2e",
+    "train.json": "05b453fbf05c947bdd787847563cf1fe6234ef23d3f6c9c0c813c9110f5b5d70",
+    "qualification.json": "80a5100ebd600c66717c8c53efa81baf7ce4218fe0005a8a2f2fcebbbe559107",
+    "contract.json": "6c1717b5ff81f1eaa36b6f81387d14b2da1dd8cc26d58e0744f46af26ef3f4f4",
+    "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+    "run.py": "142c709e9efba21b2f0c8eb2217ecbb29517aafe17eddd9ca8e85959fd6990cb",
+    "supervise.py": "c4f40443ac1b52fbf5c0a6d831cdebe5632ebe4afa8fc5fb2b4becbc28e4ff4b",
+    "summarize.py": "201412c08bdd1b2970df36a33ed7c5388600770f75c082e76c800aba12d2533c",
+    "test_experiment.py": "dc24689fde55b562e120321736161f1242318bb3aa3e15863af9375c632e7e6b"
+  }
+}

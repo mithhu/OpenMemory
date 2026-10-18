@@ -1,0 +1,89 @@
+{
+  "baseUnchanged": true,
+  "parentUnchanged": true,
+  "candidateSha256": "243dc736f8310359ed862b8c042d5f10e0e6b2b8913a346816aaeaa50b10dec1",
+  "parentSha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "steps": 132,
+  "trainableParameters": 638976,
+  "changedParameters": 638975,
+  "perTensor": {
+    "language_model.model.layers.31.mlp.up_proj.lora_b": {
+      "parameters": 98304,
+      "changed": 98304,
+      "l2": 0.18082470407196533
+    },
+    "language_model.model.layers.31.mlp.up_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.10426990779347525
+    },
+    "language_model.model.layers.31.mlp.down_proj.lora_a": {
+      "parameters": 98304,
+      "changed": 98304,
+      "l2": 0.1734796376053689
+    },
+    "language_model.model.layers.31.mlp.gate_proj.lora_b": {
+      "parameters": 98304,
+      "changed": 98304,
+      "l2": 0.19858376222747015
+    },
+    "language_model.model.layers.31.mlp.gate_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.1120750510873998
+    },
+    "language_model.model.layers.31.self_attn.o_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.10536612704906814
+    },
+    "language_model.model.layers.31.self_attn.v_proj.lora_b": {
+      "parameters": 8192,
+      "changed": 8192,
+      "l2": 0.048814008069795314
+    },
+    "language_model.model.layers.31.self_attn.k_proj.lora_b": {
+      "parameters": 8192,
+      "changed": 8192,
+      "l2": 0.05866501728933035
+    },
+    "language_model.model.layers.31.self_attn.k_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.11911597489763553
+    },
+    "language_model.model.layers.31.mlp.down_proj.lora_b": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.10585219064664282
+    },
+    "language_model.model.layers.31.self_attn.o_proj.lora_b": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.08956717236678814
+    },
+    "language_model.model.layers.31.self_attn.v_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32768,
+      "l2": 0.10841217757530626
+    },
+    "language_model.model.layers.31.self_attn.q_proj.lora_b": {
+      "parameters": 65536,
+      "changed": 65536,
+      "l2": 0.1767203046067901
+    },
+    "language_model.model.layers.31.self_attn.q_proj.lora_a": {
+      "parameters": 32768,
+      "changed": 32767,
+      "l2": 0.1202821428546272
+    }
+  },
+  "firstTenMeanLoss": 0.11389299700967967,
+  "lastTenMeanLoss": 0.03794058635248802,
+  "predictionHashes": {
+    "base": "77d9f07200c71f6ca0eb625d2c27b0e736bff0da59bfdc4a9190a3ac4e5845c4",
+    "parent": "13b23c789b55504379730ea6d9025cc59165e575619e3a1c8f31e5435df76029",
+    "candidate": "cfa54dce58b544fec10a8ba6d9071e1ff57854b88f35b727c06e31bd9b6fd3e2"
+  },
+  "installed": false
+}
