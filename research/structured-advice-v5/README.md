@@ -2,6 +2,9 @@
 
 This folder began as a representation and app-flow correction. A subsequent bounded offline training attempt is documented in [experiment-01/REPORT.md](experiment-01/REPORT.md): 41/48 full correctness versus base 27/48, but the candidate failed its contract-validity gate and was not promoted. No new model release is qualified. The installed reviewed730 MLX/Ollama classifier, v3 prompt, decoder and v0.1.0 release stay unchanged. Rejected TV candidates and all their original gold/results stay unchanged.
 
+A subsequent [focused repair (experiment-02)](experiment-02/REPORT.md) improved a new authored set to 40/48 but regressed on the separately scored public-wording diagnostic (6/16 vs previous 8/16), retained a lesson-completion mistake and failed contract validity. It was also rejected. Neither result is an independent human gold benchmark; the app/public adapter is unchanged.
+
+
 ## The distinction
 
 | Original words                                     | Category | Known action | Still missing                |

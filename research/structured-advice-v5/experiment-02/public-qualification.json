@@ -1,0 +1,320 @@
+[
+  {
+    "id": "snips:PlayMusic:train-full:893",
+    "note": "play Wolves by Larry Gatlin",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:180",
+    "note": "Play a movement from 1974.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:46",
+    "note": "Can you play a top 5 song by Manos Hadjidakis",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:93",
+    "note": "Play something by Brian Chase.",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1401",
+    "note": "Play March Of The Soviet Tankmen from Gloria Gaither",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1098",
+    "note": "Play Jono El Grande from the thirties",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:150",
+    "note": "Play Tomorrow",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1484",
+    "note": "Use Spotify to play music",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "PlayMusic",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:RateBook:train-full:619",
+    "note": "give two points out of 6 to this novel",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:RateBook:train-full:183",
+    "note": "Rate this essay with three of 6.",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:RateBook:train-full:1297",
+    "note": "Rate this chronicle one of 6 points",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:RateBook:train-full:1609",
+    "note": "rate the current book series 4 out of 6",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:RateBook:train-full:1787",
+    "note": "give 2 out of 6 to Smoke in the Forest",
+    "expected": null,
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "ambiguous-unscored-before-inference",
+    "labelReason": "Medium absent or requested work type (essay/chronicle) outside the explicit v5 book/novel definition. Source intent/slots are unavailable to the classifier; do not force a gold label from them."
+  },
+  {
+    "id": "snips:RateBook:train-full:315",
+    "note": "Rate the current book a zero.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:RateBook:train-full:574",
+    "note": "This current book deserves 1 points",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:RateBook:train-full:1342",
+    "note": "I'd give the Mandaean Book of John 4 points",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "RateBook",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:572",
+    "note": "Can I get some russian cuisine at a restaurant with shari and I?",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:979",
+    "note": "book a spot for 3 in MT",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:811",
+    "note": "Book a table for a party of 7 next year in ID.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1591",
+    "note": "Book a restaurant with pool facility at East Gillespie",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:397",
+    "note": "book me a table at a bistro that serves maple syrup for a party of 10",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1794",
+    "note": "Please find me a table at a place that serves glace, has room for six and a pub atmosphere",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:159",
+    "note": "I need a party of two reservation faraway from Atlantic Av-Barclays Ctr at a spa for fast food",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1627",
+    "note": "Book a table for one at the Bear Hotel in Peru",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "public",
+    "sourceIntent": "BookRestaurant",
+    "provenance": "Original crowdsourced SNIPS wording (CC0); OpenMemory gold authored by AI before inference, not independent human adjudication.",
+    "labelStatus": "scored",
+    "labelReason": "Literal requested action and medium are sufficiently explicit for the v5 policy."
+  }
+]

@@ -1,0 +1,563 @@
+[
+  {
+    "id": "v5-r2-qualification-000",
+    "note": "I'm planning to watch the TV show The Glass Orchard next weekend.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-001",
+    "note": "Began the TV series The Glass Orchard last night.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-002",
+    "note": "I've seen five episodes of The Glass Orchard season three.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-003",
+    "note": "Finished episode seven of season two of the show The Glass Orchard.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-004",
+    "note": "Season three of the show The Glass Orchard is finished, not the entire series.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-005",
+    "note": "Every season of the TV show The Glass Orchard is finished now.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-006",
+    "note": "The Glass Orchard is a wonderful series, even though I didn't watch any today.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-007",
+    "note": "I watched the show The Glass Orchard on Friday.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-008",
+    "note": "I'd like a TV series to watch after work.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-009",
+    "note": "Finished season five of that TV show.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-010",
+    "note": "That miniseries was amazing.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-011",
+    "note": "Caught up with three episodes of the anime The Silver Ferry.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-012",
+    "note": "I've completed lecture nine in Soil Ecology.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-013",
+    "note": "Finished the first module of the Soil Ecology course; the rest is still ahead.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-014",
+    "note": "Lesson twelve is done in my Soil Ecology course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-015",
+    "note": "Completed the sixth lecture in that course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-016",
+    "note": "I've completed every module of the Soil Ecology course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-017",
+    "note": "That entire course is now finished, all lessons.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-018",
+    "note": "I'm looking for an online course to enroll in over the summer.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-019",
+    "note": "I did a course on Sunday.",
+    "expected": {
+      "category": "LESSON",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-020",
+    "note": "I read the novel The Amber Atlas over breakfast.",
+    "expected": {
+      "category": "BOOK",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-021",
+    "note": "Read fifteen pages from the novel The Amber Atlas.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-022",
+    "note": "Finished the book The Amber Atlas, every page.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-023",
+    "note": "That book was a disappointment.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-024",
+    "note": "I watched the film Paper Satellites on Saturday.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-025",
+    "note": "Twenty minutes into the movie Paper Satellites.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-026",
+    "note": "Watched Paper Satellites, the movie, all the way through to the end.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-027",
+    "note": "I'd like to watch a film on my day off.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-028",
+    "note": "I want to visit Ljubljana and take up daily jogging.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-029",
+    "note": "Finished lesson nine of Soil Ecology and started the film Paper Satellites.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-030",
+    "note": "I'd like to buy a lamp and read the novel The Amber Atlas.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-031",
+    "note": "I'm planning a trip to Riga and want to learn to swim.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-032",
+    "note": "I'll give it a try when the weekend comes.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-033",
+    "note": "Finally got that finished.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-034",
+    "note": "Read a message from my uncle while waiting for the bus.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-035",
+    "note": "I love old sitcoms and instrumental music.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-036",
+    "note": "Listened to the song Lanterns at Noon.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-037",
+    "note": "The track Lanterns at Noon is beautiful.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-038",
+    "note": "Can you play some peaceful piano music for me?",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-039",
+    "note": "That song has a wonderful melody.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-040",
+    "note": "My neighbour's favourite novel is The Amber Atlas.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-041",
+    "note": "Alina is my closest friend.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-042",
+    "note": "I want to become confident speaking Portuguese.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-043",
+    "note": "My aim is to walk for half an hour every day.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-044",
+    "note": "I'd like to take a holiday in Ljubljana.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-045",
+    "note": "I want to buy a new kitchen table.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-046",
+    "note": "An idea: make a website where neighbours can share seeds.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  },
+  {
+    "id": "v5-r2-qualification-047",
+    "note": "I could create a podcast about the history of local bridges.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "provenance": "AI-authored fictional policy label, same-author review; not human-independent"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "status": "frozen-before-training-and-predictions",
+  "base": "mlx-community/Qwen3.5-9B-4bit",
+  "parent_adapter_sha256": "243dc736f8310359ed862b8c042d5f10e0e6b2b8913a346816aaeaa50b10dec1",
+  "parent_meaning": "Previous rejected v5 experiment-01, not the installed adapter.",
+  "installed_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "updates": 196,
+  "epochs": 1,
+  "batch_size": 1,
+  "seed": 2026101802,
+  "learning_rate": 5e-06,
+  "max_sequence_tokens": 3072,
+  "response_window": 128,
+  "lora": {
+    "rank": 8,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "layers": 1
+  },
+  "limits": {
+    "total_seconds": 2340,
+    "training_seconds": 900,
+    "each_evaluation_seconds": 480,
+    "observed_mlx_allocation_bytes": 8000000000
+  },
+  "training": "Previous 132 rows replayed plus 64 explicit repair examples; old qualification cases are exposed feedback, not reused as a fresh test.",
+  "qualification": "48 new fictional AI-authored notes plus 24 original crowdsourced SNIPS queries. Sixteen public notes scored; eight predeclared ambiguous/unscored. Human wording but AI task labels, not independently human adjudicated. Public source used previously; not globally source-heldout.",
+  "gates": "Synthetic joint >= previous v5 and > base; series/uncertainty joint >= previous v5; public scored joint >= previous v5; no partial-course/series false complete; zero contract-invalid outputs across all 72. One attempt only. Passing permits compatibility checks, never automatic promotion.",
+  "files_sha256": {
+    "prepare.py": "0bc9b793633744a8262bc28ca1379c43b8dc3302e7c7d2f57fe1911ffd86013b",
+    "collect_public.py": "70281ddc767c62d8db1984d87455a75ad9d1b02e9fbd3cf4226dd89565e23936",
+    "label_public.py": "f3ba6344d0e2423b93164e252e68f8f09195139ef4ab3d2440ae28490890f057",
+    "train.json": "6a69be7c101ebf8f5b951fe5ce22813c6b1e8100aaad636b78c9b64a2ef82d1d",
+    "qualification.json": "cbf12080fb7f64d0095be0a87fbee1f45f6589ffc4e631099f72a0c8dc79ea96",
+    "public-nominations.json": "cc9aa9706f9509c0e0a09986ba7b44dc828d061118cb30c0fc9c4d64cd790e78",
+    "public-qualification.json": "07adbd89225ad9bdea33f01eee33b4ef3d94ccf080be301aa202f225112c93d1",
+    "public-screening.json": "a5943873de8510e3020de064350939010a02db19d717a07a393a1d782402b5af",
+    "public-source-manifest.json": "0be4c72f8efd53e17421502aa6c9eaffe87f97034eeec9e411a2f924c69d7945",
+    "contract.json": "6c1717b5ff81f1eaa36b6f81387d14b2da1dd8cc26d58e0744f46af26ef3f4f4",
+    "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+    "run.py": "7e05599483afa448dce5ba19924570ea22151739f0621402cfc7668984da58fa",
+    "supervise.py": "c4f40443ac1b52fbf5c0a6d831cdebe5632ebe4afa8fc5fb2b4becbc28e4ff4b",
+    "summarize.py": "c9a3bf44717f342538d3d5e3156495966bd959a0d222b95458dc99d4731068d6",
+    "test_experiment.py": "79ddd6fc9a2049ce7d40860c0ccd100f3bdc6ab7f6981e4dadaf7499c146049f",
+    "verify_artifacts.py": "4d19a70f313b6a510952bf71ed945d920cda5ddf346396934eece76fee9c2f5f",
+    "../../../scripts/app-mlx/structured_advice_v5.py": "54fec27c4eca8bffe877550f51f292d39b8dad62657561b92c7089090b39622b",
+    "../../../scripts/app-mlx/classification_advice_v5.json": "6c1717b5ff81f1eaa36b6f81387d14b2da1dd8cc26d58e0744f46af26ef3f4f4"
+  }
+}

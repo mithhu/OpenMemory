@@ -1,0 +1,739 @@
+[
+  {
+    "id": "snips:PlayMusic:train-full:893",
+    "note": "play Wolves by Larry Gatlin",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 893,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "play "
+      },
+      {
+        "text": "Wolves",
+        "entity": "track"
+      },
+      {
+        "text": " by "
+      },
+      {
+        "text": "Larry Gatlin",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:180",
+    "note": "Play a movement from 1974.",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 180,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Play a "
+      },
+      {
+        "text": "movement",
+        "entity": "music_item"
+      },
+      {
+        "text": " from "
+      },
+      {
+        "text": "1974",
+        "entity": "year"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:46",
+    "note": "Can you play a top 5 song by Manos Hadjidakis",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 46,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Can you play a "
+      },
+      {
+        "text": "top 5",
+        "entity": "sort"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "song",
+        "entity": "music_item"
+      },
+      {
+        "text": " by "
+      },
+      {
+        "text": "Manos Hadjidakis",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:93",
+    "note": "Play something by Brian Chase.",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 93,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Play something by "
+      },
+      {
+        "text": "Brian Chase",
+        "entity": "artist"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1401",
+    "note": "Play March Of The Soviet Tankmen from Gloria Gaither",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1401,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Play "
+      },
+      {
+        "text": "March Of The Soviet Tankmen",
+        "entity": "track"
+      },
+      {
+        "text": " from "
+      },
+      {
+        "text": "Gloria Gaither",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1098",
+    "note": "Play Jono El Grande from the thirties",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1098,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Play "
+      },
+      {
+        "text": "Jono El Grande",
+        "entity": "artist"
+      },
+      {
+        "text": " from the "
+      },
+      {
+        "text": "thirties",
+        "entity": "year"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:150",
+    "note": "Play Tomorrow",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 150,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Play "
+      },
+      {
+        "text": "Tomorrow",
+        "entity": "track"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1484",
+    "note": "Use Spotify to play music",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1484,
+    "sourceFileSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceSlots": [
+      {
+        "text": "Use "
+      },
+      {
+        "text": "Spotify",
+        "entity": "service"
+      },
+      {
+        "text": " to play music"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:619",
+    "note": "give two points out of 6 to this novel",
+    "sourceIntent": "RateBook",
+    "recordIndex": 619,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "give "
+      },
+      {
+        "text": "two",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "novel",
+        "entity": "object_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:183",
+    "note": "Rate this essay with three of 6.",
+    "sourceIntent": "RateBook",
+    "recordIndex": 183,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "essay",
+        "entity": "object_type"
+      },
+      {
+        "text": " with "
+      },
+      {
+        "text": "three",
+        "entity": "rating_value"
+      },
+      {
+        "text": " of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1297",
+    "note": "Rate this chronicle one of 6 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1297,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "chronicle",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "one",
+        "entity": "rating_value"
+      },
+      {
+        "text": " of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1609",
+    "note": "rate the current book series 4 out of 6",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1609,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "series",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "4",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1787",
+    "note": "give 2 out of 6 to Smoke in the Forest",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1787,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "give "
+      },
+      {
+        "text": "2",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "Smoke in the Forest",
+        "entity": "object_name"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:315",
+    "note": "Rate the current book a zero.",
+    "sourceIntent": "RateBook",
+    "recordIndex": 315,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " a "
+      },
+      {
+        "text": "zero",
+        "entity": "rating_value"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:574",
+    "note": "This current book deserves 1 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 574,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "This "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " deserves "
+      },
+      {
+        "text": "1",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1342",
+    "note": "I'd give the Mandaean Book of John 4 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1342,
+    "sourceFileSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "I'd give the "
+      },
+      {
+        "text": "Mandaean Book of John",
+        "entity": "object_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "4",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:572",
+    "note": "Can I get some russian cuisine at a restaurant with shari and I?",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 572,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Can I get some "
+      },
+      {
+        "text": "russian",
+        "entity": "cuisine"
+      },
+      {
+        "text": " cuisine at a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " with "
+      },
+      {
+        "text": "shari and I",
+        "entity": "party_size_description"
+      },
+      {
+        "text": "?"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:979",
+    "note": "book a spot for 3 in MT",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 979,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "book a spot for "
+      },
+      {
+        "text": "3",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "MT",
+        "entity": "state"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:811",
+    "note": "Book a table for a party of 7 next year in ID.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 811,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book a table for a party of "
+      },
+      {
+        "text": "7",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "next year",
+        "entity": "timeRange"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "ID",
+        "entity": "state"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1591",
+    "note": "Book a restaurant with pool facility at East Gillespie",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1591,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " with "
+      },
+      {
+        "text": "pool",
+        "entity": "facility"
+      },
+      {
+        "text": " facility at "
+      },
+      {
+        "text": "East Gillespie",
+        "entity": "city"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:397",
+    "note": "book me a table at a bistro that serves maple syrup for a party of 10",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 397,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "book me a table at a "
+      },
+      {
+        "text": "bistro",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " that serves "
+      },
+      {
+        "text": "maple syrup",
+        "entity": "served_dish"
+      },
+      {
+        "text": " for a party of "
+      },
+      {
+        "text": "10",
+        "entity": "party_size_number"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1794",
+    "note": "Please find me a table at a place that serves glace, has room for six and a pub atmosphere",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1794,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Please find me a table at a place that serves "
+      },
+      {
+        "text": "glace",
+        "entity": "served_dish"
+      },
+      {
+        "text": ", has room for "
+      },
+      {
+        "text": "six",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " and a "
+      },
+      {
+        "text": "pub",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " atmosphere"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:159",
+    "note": "I need a party of two reservation faraway from Atlantic Av-Barclays Ctr at a spa for fast food",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 159,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "I need a party of "
+      },
+      {
+        "text": "two",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " reservation "
+      },
+      {
+        "text": "faraway",
+        "entity": "spatial_relation"
+      },
+      {
+        "text": " from "
+      },
+      {
+        "text": "Atlantic Av-Barclays Ctr",
+        "entity": "poi"
+      },
+      {
+        "text": " at a "
+      },
+      {
+        "text": "spa",
+        "entity": "facility"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "fast food",
+        "entity": "restaurant_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1627",
+    "note": "Book a table for one at the Bear Hotel in Peru",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1627,
+    "sourceFileSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book a table for "
+      },
+      {
+        "text": "one",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " at the "
+      },
+      {
+        "text": "Bear Hotel",
+        "entity": "restaurant_name"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Peru",
+        "entity": "country"
+      }
+    ]
+  }
+]

@@ -16,3 +16,7 @@ Next model work must qualify the structured contract and its labels before train
 ## 18 October follow-up
 
 Executed the bounded v5 experiment once. Candidate improved the new authored qualification task but failed the zero-invalid gate; app/public adapter unchanged. Full reproducible evidence and limitations: [experiment-01/REPORT.md](experiment-01/REPORT.md).
+
+## Focused repair follow-up
+
+Completed experiment-02 once, with 196 training rows and fresh authored/public diagnostics. Authored gains did not generalize reliably to public wording; rejected without deployment. Read [experiment-02/REPORT.md](experiment-02/REPORT.md) and its source/label audit. No further small repair run started.

@@ -1,0 +1,21 @@
+{
+  "priorArtifacts": 662,
+  "priorOriginalExpressions": 14967,
+  "excluded": [
+    {
+      "id": "snips:RateBook:train-full:1449",
+      "reason": "normalized-exact-prior-input-or-id"
+    },
+    {
+      "id": "snips:RateBook:train-full:1203",
+      "reason": "normalized-exact-prior-input-or-id"
+    },
+    {
+      "id": "snips:RateBook:train-full:1329",
+      "reason": "normalized-exact-prior-input-or-id"
+    }
+  ],
+  "seed": "v5-r2-public-20261018",
+  "normalization": "casefold+whitespace",
+  "limits": "Exact screening is not semantic, source-family or pretraining independence. SNIPS was used in earlier project work; source is not globally held out."
+}

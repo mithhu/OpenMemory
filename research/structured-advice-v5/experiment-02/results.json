@@ -1,0 +1,929 @@
+{
+  "status": "one-bounded-repair-attempt-no-automatic-promotion",
+  "parentMeaning": "Parent is previous rejected v5 experiment-01 candidate, not the installed reviewed730 adapter.",
+  "sourceLimit": "48 new AI-authored fictional qualification notes; 24 original crowdsourced SNIPS queries, 16 scored and 8 predeclared ambiguous/unscored. Public wording is human-authored but OpenMemory labels are same-author AI judgments; SNIPS appeared in older project work and is not a globally unseen source.",
+  "models": {
+    "base": {
+      "synthetic": {
+        "components": {
+          "category": {
+            "correct": 48,
+            "n": 48,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.9259,
+              1.0
+            ]
+          },
+          "intent": {
+            "correct": 35,
+            "n": 48,
+            "accuracy": 0.7291666666666666,
+            "wilson95": [
+              0.59,
+              0.8343
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 35,
+            "n": 48,
+            "accuracy": 0.7291666666666666,
+            "wilson95": [
+              0.59,
+              0.8343
+            ]
+          },
+          "joint": {
+            "correct": 31,
+            "n": 48,
+            "accuracy": 0.6458333333333334,
+            "wilson95": [
+              0.5044,
+              0.7657
+            ]
+          }
+        },
+        "schemaInvalid": 3,
+        "slices": {
+          "series": {
+            "correct": 8,
+            "n": 12,
+            "accuracy": 0.6666666666666666,
+            "wilson95": [
+              0.3906,
+              0.8619
+            ]
+          },
+          "retention": {
+            "correct": 23,
+            "n": 36,
+            "accuracy": 0.6388888888888888,
+            "wilson95": [
+              0.4757,
+              0.7752
+            ]
+          }
+        },
+        "uncertainty": {
+          "correct": 10,
+          "n": 16,
+          "accuracy": 0.625,
+          "wilson95": [
+            0.3864,
+            0.8152
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "GOAL": {
+            "correct": 1,
+            "n": 2,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.0945,
+              0.9055
+            ]
+          },
+          "IDEA": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "LESSON": {
+            "correct": 5,
+            "n": 8,
+            "accuracy": 0.625,
+            "wilson95": [
+              0.3057,
+              0.8632
+            ]
+          },
+          "MIXED": {
+            "correct": 0,
+            "n": 4,
+            "accuracy": 0.0,
+            "wilson95": [
+              0.0,
+              0.4899
+            ]
+          },
+          "MOVIE": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "MUSIC": {
+            "correct": 4,
+            "n": 4,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.5101,
+              1.0
+            ]
+          },
+          "NOTE": {
+            "correct": 2,
+            "n": 4,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.15,
+              0.85
+            ]
+          },
+          "PERSON": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "SERIES": {
+            "correct": 8,
+            "n": 12,
+            "accuracy": 0.6666666666666666,
+            "wilson95": [
+              0.3906,
+              0.8619
+            ]
+          },
+          "WISHLIST": {
+            "correct": 1,
+            "n": 2,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.0945,
+              0.9055
+            ]
+          }
+        },
+        "firstRequestSeconds": 4.720811125007458,
+        "warmMedianSeconds": 4.045354957983363,
+        "warmP95Seconds": 4.391979541978799
+      },
+      "publicScored": {
+        "components": {
+          "category": {
+            "correct": 12,
+            "n": 16,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.505,
+              0.8982
+            ]
+          },
+          "intent": {
+            "correct": 11,
+            "n": 16,
+            "accuracy": 0.6875,
+            "wilson95": [
+              0.444,
+              0.8584
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 4,
+            "n": 16,
+            "accuracy": 0.25,
+            "wilson95": [
+              0.1018,
+              0.495
+            ]
+          },
+          "joint": {
+            "correct": 3,
+            "n": 16,
+            "accuracy": 0.1875,
+            "wilson95": [
+              0.0659,
+              0.4301
+            ]
+          }
+        },
+        "schemaInvalid": 2,
+        "slices": {
+          "series": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          },
+          "retention": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          }
+        },
+        "uncertainty": {
+          "correct": 3,
+          "n": 7,
+          "accuracy": 0.42857142857142855,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0,
+            "wilson95": [
+              -0.0,
+              0.4345
+            ]
+          },
+          "MUSIC": {
+            "correct": 3,
+            "n": 3,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "WISHLIST": {
+            "correct": 0,
+            "n": 8,
+            "accuracy": 0.0,
+            "wilson95": [
+              0.0,
+              0.3244
+            ]
+          }
+        },
+        "firstRequestSeconds": 4.37426641699858,
+        "warmMedianSeconds": 4.502210000006016,
+        "warmP95Seconds": 4.797763084003236
+      },
+      "allOutputContractInvalid": 5,
+      "publicAllRows": 24,
+      "publicUnscored": 8
+    },
+    "parent": {
+      "synthetic": {
+        "components": {
+          "category": {
+            "correct": 47,
+            "n": 48,
+            "accuracy": 0.9791666666666666,
+            "wilson95": [
+              0.891,
+              0.9963
+            ]
+          },
+          "intent": {
+            "correct": 41,
+            "n": 48,
+            "accuracy": 0.8541666666666666,
+            "wilson95": [
+              0.7283,
+              0.9275
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 35,
+            "n": 48,
+            "accuracy": 0.7291666666666666,
+            "wilson95": [
+              0.59,
+              0.8343
+            ]
+          },
+          "joint": {
+            "correct": 34,
+            "n": 48,
+            "accuracy": 0.7083333333333334,
+            "wilson95": [
+              0.5682,
+              0.8176
+            ]
+          }
+        },
+        "schemaInvalid": 5,
+        "slices": {
+          "series": {
+            "correct": 10,
+            "n": 12,
+            "accuracy": 0.8333333333333334,
+            "wilson95": [
+              0.552,
+              0.953
+            ]
+          },
+          "retention": {
+            "correct": 24,
+            "n": 36,
+            "accuracy": 0.6666666666666666,
+            "wilson95": [
+              0.5033,
+              0.7979
+            ]
+          }
+        },
+        "uncertainty": {
+          "correct": 6,
+          "n": 16,
+          "accuracy": 0.375,
+          "wilson95": [
+            0.1848,
+            0.6136
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "GOAL": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "IDEA": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "LESSON": {
+            "correct": 4,
+            "n": 8,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.2152,
+              0.7848
+            ]
+          },
+          "MIXED": {
+            "correct": 1,
+            "n": 4,
+            "accuracy": 0.25,
+            "wilson95": [
+              0.0456,
+              0.6994
+            ]
+          },
+          "MOVIE": {
+            "correct": 2,
+            "n": 4,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.15,
+              0.85
+            ]
+          },
+          "MUSIC": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "NOTE": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "PERSON": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "SERIES": {
+            "correct": 10,
+            "n": 12,
+            "accuracy": 0.8333333333333334,
+            "wilson95": [
+              0.552,
+              0.953
+            ]
+          },
+          "WISHLIST": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          }
+        },
+        "firstRequestSeconds": 4.279689290968236,
+        "warmMedianSeconds": 3.5774499170365743,
+        "warmP95Seconds": 3.65401420800481
+      },
+      "publicScored": {
+        "components": {
+          "category": {
+            "correct": 15,
+            "n": 16,
+            "accuracy": 0.9375,
+            "wilson95": [
+              0.7167,
+              0.9889
+            ]
+          },
+          "intent": {
+            "correct": 12,
+            "n": 16,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.505,
+              0.8982
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 8,
+            "n": 16,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.28,
+              0.72
+            ]
+          },
+          "joint": {
+            "correct": 8,
+            "n": 16,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.28,
+              0.72
+            ]
+          }
+        },
+        "schemaInvalid": 2,
+        "slices": {
+          "series": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          },
+          "retention": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          }
+        },
+        "uncertainty": {
+          "correct": 3,
+          "n": 7,
+          "accuracy": 0.42857142857142855,
+          "wilson95": [
+            0.1582,
+            0.7495
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 0,
+            "n": 5,
+            "accuracy": 0.0,
+            "wilson95": [
+              -0.0,
+              0.4345
+            ]
+          },
+          "MUSIC": {
+            "correct": 3,
+            "n": 3,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "WISHLIST": {
+            "correct": 5,
+            "n": 8,
+            "accuracy": 0.625,
+            "wilson95": [
+              0.3057,
+              0.8632
+            ]
+          }
+        },
+        "firstRequestSeconds": 3.6682520830072463,
+        "warmMedianSeconds": 3.601866749988403,
+        "warmP95Seconds": 3.7907672080327757
+      },
+      "allOutputContractInvalid": 8,
+      "publicAllRows": 24,
+      "publicUnscored": 8
+    },
+    "candidate": {
+      "synthetic": {
+        "components": {
+          "category": {
+            "correct": 48,
+            "n": 48,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.9259,
+              1.0
+            ]
+          },
+          "intent": {
+            "correct": 40,
+            "n": 48,
+            "accuracy": 0.8333333333333334,
+            "wilson95": [
+              0.7042,
+              0.913
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 42,
+            "n": 48,
+            "accuracy": 0.875,
+            "wilson95": [
+              0.753,
+              0.9414
+            ]
+          },
+          "joint": {
+            "correct": 40,
+            "n": 48,
+            "accuracy": 0.8333333333333334,
+            "wilson95": [
+              0.7042,
+              0.913
+            ]
+          }
+        },
+        "schemaInvalid": 1,
+        "slices": {
+          "series": {
+            "correct": 11,
+            "n": 12,
+            "accuracy": 0.9166666666666666,
+            "wilson95": [
+              0.6461,
+              0.9851
+            ]
+          },
+          "retention": {
+            "correct": 29,
+            "n": 36,
+            "accuracy": 0.8055555555555556,
+            "wilson95": [
+              0.6497,
+              0.9025
+            ]
+          }
+        },
+        "uncertainty": {
+          "correct": 10,
+          "n": 16,
+          "accuracy": 0.625,
+          "wilson95": [
+            0.3864,
+            0.8152
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "GOAL": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "IDEA": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "LESSON": {
+            "correct": 6,
+            "n": 8,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.4093,
+              0.9285
+            ]
+          },
+          "MIXED": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "MOVIE": {
+            "correct": 3,
+            "n": 4,
+            "accuracy": 0.75,
+            "wilson95": [
+              0.3006,
+              0.9544
+            ]
+          },
+          "MUSIC": {
+            "correct": 4,
+            "n": 4,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.5101,
+              1.0
+            ]
+          },
+          "NOTE": {
+            "correct": 2,
+            "n": 4,
+            "accuracy": 0.5,
+            "wilson95": [
+              0.15,
+              0.85
+            ]
+          },
+          "PERSON": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          },
+          "SERIES": {
+            "correct": 11,
+            "n": 12,
+            "accuracy": 0.9166666666666666,
+            "wilson95": [
+              0.6461,
+              0.9851
+            ]
+          },
+          "WISHLIST": {
+            "correct": 2,
+            "n": 2,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.3424,
+              1.0
+            ]
+          }
+        },
+        "firstRequestSeconds": 4.152087250025943,
+        "warmMedianSeconds": 3.5272610840038396,
+        "warmP95Seconds": 3.617070792010054
+      },
+      "publicScored": {
+        "components": {
+          "category": {
+            "correct": 15,
+            "n": 16,
+            "accuracy": 0.9375,
+            "wilson95": [
+              0.7167,
+              0.9889
+            ]
+          },
+          "intent": {
+            "correct": 13,
+            "n": 16,
+            "accuracy": 0.8125,
+            "wilson95": [
+              0.5699,
+              0.9341
+            ]
+          },
+          "clarificationReasons": {
+            "correct": 7,
+            "n": 16,
+            "accuracy": 0.4375,
+            "wilson95": [
+              0.231,
+              0.6682
+            ]
+          },
+          "joint": {
+            "correct": 6,
+            "n": 16,
+            "accuracy": 0.375,
+            "wilson95": [
+              0.1848,
+              0.6136
+            ]
+          }
+        },
+        "schemaInvalid": 3,
+        "slices": {
+          "series": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          },
+          "retention": {
+            "correct": 0,
+            "n": 0,
+            "accuracy": null,
+            "wilson95": null
+          }
+        },
+        "uncertainty": {
+          "correct": 4,
+          "n": 7,
+          "accuracy": 0.5714285714285714,
+          "wilson95": [
+            0.2505,
+            0.8418
+          ]
+        },
+        "perCategory": {
+          "BOOK": {
+            "correct": 1,
+            "n": 5,
+            "accuracy": 0.2,
+            "wilson95": [
+              0.0362,
+              0.6245
+            ]
+          },
+          "MUSIC": {
+            "correct": 3,
+            "n": 3,
+            "accuracy": 1.0,
+            "wilson95": [
+              0.4385,
+              1.0
+            ]
+          },
+          "WISHLIST": {
+            "correct": 2,
+            "n": 8,
+            "accuracy": 0.25,
+            "wilson95": [
+              0.0715,
+              0.5907
+            ]
+          }
+        },
+        "firstRequestSeconds": 3.6013563749729656,
+        "warmMedianSeconds": 3.60936662502354,
+        "warmP95Seconds": 3.8112024999572895
+      },
+      "allOutputContractInvalid": 4,
+      "publicAllRows": 24,
+      "publicUnscored": 8
+    }
+  },
+  "paired": {
+    "synthetic": {
+      "baseToCandidate": {
+        "gains": [
+          "v5-r2-qualification-001",
+          "v5-r2-qualification-004",
+          "v5-r2-qualification-006",
+          "v5-r2-qualification-012",
+          "v5-r2-qualification-028",
+          "v5-r2-qualification-029",
+          "v5-r2-qualification-031",
+          "v5-r2-qualification-042",
+          "v5-r2-qualification-045"
+        ],
+        "losses": [],
+        "net": 9
+      },
+      "previousToCandidate": {
+        "gains": [
+          "v5-r2-qualification-008",
+          "v5-r2-qualification-017",
+          "v5-r2-qualification-018",
+          "v5-r2-qualification-027",
+          "v5-r2-qualification-028",
+          "v5-r2-qualification-031",
+          "v5-r2-qualification-039"
+        ],
+        "losses": [
+          "v5-r2-qualification-033"
+        ],
+        "net": 6
+      }
+    },
+    "publicScored": {
+      "baseToCandidate": {
+        "gains": [
+          "snips:RateBook:train-full:315",
+          "snips:BookRestaurant:train-full:1591",
+          "snips:BookRestaurant:train-full:1627"
+        ],
+        "losses": [],
+        "net": 3
+      },
+      "previousToCandidate": {
+        "gains": [
+          "snips:RateBook:train-full:315"
+        ],
+        "losses": [
+          "snips:BookRestaurant:train-full:572",
+          "snips:BookRestaurant:train-full:397",
+          "snips:BookRestaurant:train-full:1794"
+        ],
+        "net": -2
+      }
+    }
+  },
+  "baselines": {
+    "category": {
+      "trainMajority": "SERIES",
+      "syntheticCorrect": 12,
+      "publicScoredCorrect": 0
+    },
+    "intent": {
+      "trainMajority": "none",
+      "syntheticCorrect": 8,
+      "publicScoredCorrect": 0
+    },
+    "clarificationReasons": {
+      "trainMajority": [],
+      "syntheticCorrect": 32,
+      "publicScoredCorrect": 9
+    },
+    "joint": {
+      "trainMajority": [
+        "MIXED",
+        "mixed",
+        []
+      ],
+      "syntheticCorrect": 4,
+      "publicScoredCorrect": 0
+    }
+  },
+  "falseCompletionIds": [
+    "v5-r2-qualification-014"
+  ],
+  "gates": {
+    "synthetic_joint_not_below_previous_candidate": true,
+    "synthetic_joint_improves_base": true,
+    "series_joint_not_below_previous_candidate": true,
+    "uncertainty_not_below_previous_candidate": true,
+    "public_scored_joint_not_below_previous_candidate": false,
+    "no_partial_course_or_series_false_completion": false,
+    "zero_contract_invalid_all_72": false
+  },
+  "qualifiedForAppCompatibilityChecks": false,
+  "installed": false,
+  "interpretation": "Same v5 contract for all three models. No pooling synthetic and public accuracy, no scoring ambiguous rows, no inference from hidden source slots, no JSON repair or post-prediction label changes. Wilson intervals are descriptive for selected notes, not representative population inference."
+}
