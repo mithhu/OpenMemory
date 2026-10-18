@@ -1,0 +1,33 @@
+{
+  "status": "policy-and-provisional-data-prepared-no-model-trained",
+  "version": 6,
+  "migratedRows": 196,
+  "explicitLabelChanges": 23,
+  "provisionalPublicRows": 15,
+  "quarantinedPublicRows": 9,
+  "provisionalMixture": 211,
+  "independentHumanLabels": false,
+  "modelTrainingExecuted": false,
+  "appActivated": false,
+  "artifactHashes": {
+    "research/structured-advice-v6/verify_schema.py": "daa81153feffe2cb2d32785d5d624943dc4eb284ed6c2768003850098765faf4",
+    "research/structured-advice-v6/train-provisional-mixture-v6.json": "908dfc463b4b6a4bb425afa06fadfd0ba0c91d765e9e675b8ce4782287908990",
+    "research/structured-advice-v6/label_public.py": "d3c5b4ede7d657413a52d6f0f924dc29f1f28e919c0a814096fcd84f1139f704",
+    "research/structured-advice-v6/nominate_public.py": "db06be2f9514ef4950b014a53f129db22409d8026729c8eb4c305575ef1bc4f4",
+    "research/structured-advice-v6/README.md": "b44088037ebe8bd0757312dce732f51736111247eeaf563465beeb7ca7e4b393",
+    "research/structured-advice-v6/public-development-screening.json": "5b3d076ca58fd64f2aaafa9f66b87322b3215ccb0ef1d1cfbf5b76e56a1f07a5",
+    "research/structured-advice-v6/prepare_labels.py": "fc2cb35baf1c30da1a42e9d2a3692e9a992da3663070b873a6f7a9c4b37fdff5",
+    "research/structured-advice-v6/label-migration.json": "6ece303d8b45d29034585db8615b49c30fb16a54f1a5ad7bb0bd59b33a512f9b",
+    "research/structured-advice-v6/schema-verification.json": "eafb08e798615bdf6ef4af664cd06c77dfb32529c28eed362f9ebb3ae396c4b1",
+    "research/structured-advice-v6/public-development-nominations.json": "dba3e96a1838b79693d93bcfeb93c29e42faf7c23f0316f6f1636ded1ba91d6b",
+    "research/structured-advice-v6/coverage-comparison.json": "adae100159c2a09db9a73eb35da9c146fcf6f063e682ec965f1c50ef7eb750db",
+    "research/structured-advice-v6/train-reviewed-v6.json": "72f599d045877a45b7d3c643b29de2ee21c5f309beb4e90f8f49db0c237d7e5c",
+    "research/structured-advice-v6/public-development-labels.json": "df3ba5ac700d3a872daab79c07b0dc8ad5eac7bca02dd28933f9cdb1fc535c26",
+    "research/structured-advice-v6/DECISION_TABLE.md": "b1659e07bff9db40cc5284ef55b7e9bc11ce677f74e6158966a139ee9ae9ac6b",
+    "research/structured-advice-v6/LEARNING_LOG.md": "919fe95da92954bd810b7d12d8cdd6d0ab5301944fd0493cf584a39538c17db0",
+    "research/structured-advice-v6/source-encoding-verification.json": "781568be08619fa54f396925f9f6ce55358a89a081f6867bc15e001ebdccdbca",
+    "scripts/app-mlx/classification_advice_v6.json": "4de42a2e9927239e0cd262a6ad3ff3d4936817821176dfd7a4acdcebb378c307",
+    "scripts/app-mlx/structured_advice_v6.py": "b8eb57f1a47bc609038242333ec4b91657b5ab00cfae40063cd05bd5b8788a8a",
+    "scripts/app-mlx/structured_advice_v6_test.py": "68a84b18bd5dc2c71b0b47f7dc117427e128166a988ed662273ad1306c99e0b1"
+  }
+}

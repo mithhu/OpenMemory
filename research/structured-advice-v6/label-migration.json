@@ -1,0 +1,440 @@
+{
+  "source": "research/structured-advice-v5/experiment-02/train.json",
+  "sourceSha256": "6a69be7c101ebf8f5b951fe5ce22813c6b1e8100aaad636b78c9b64a2ef82d1d",
+  "rows": 196,
+  "changed": 23,
+  "changes": [
+    {
+      "id": "v5-r2-repair-033",
+      "note": "I want a course to work through on holiday.",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "structured-v5-development-022",
+      "note": "Want to watch a TV series this weekend.",
+      "v5Expected": {
+        "category": "SERIES",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "SERIES",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-059",
+      "note": "I want to sign up for a course.",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "structured-v5-development-008",
+      "note": "I want to watch a film.",
+      "v5Expected": {
+        "category": "MOVIE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MOVIE",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-032",
+      "note": "Find me a class I can study next month.",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-031",
+      "note": "I'd like to enroll in an online course.",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-050",
+      "note": "Could you play some jazz for me?",
+      "v5Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-038",
+      "note": "I want to read a book over the holidays.",
+      "v5Expected": {
+        "category": "BOOK",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "BOOK",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-062",
+      "note": "Please find me a song to play while I cook.",
+      "v5Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-030",
+      "note": "Could you recommend a course for me to take?",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-027",
+      "note": "I'd like a movie to watch tonight.",
+      "v5Expected": {
+        "category": "MOVIE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MOVIE",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-048",
+      "note": "Find me some calm music to listen to.",
+      "v5Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-008",
+      "note": "I want to start a new TV series this month.",
+      "v5Expected": {
+        "category": "SERIES",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "SERIES",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "structured-v5-development-009",
+      "note": "Watch a movie.",
+      "v5Expected": {
+        "category": "MOVIE",
+        "intent": null,
+        "clarificationReasons": [
+          "missing_identity",
+          "missing_action"
+        ]
+      },
+      "v6Expected": {
+        "category": "MOVIE",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "structured-v5-development-023",
+      "note": "Watch a TV series.",
+      "v5Expected": {
+        "category": "SERIES",
+        "intent": null,
+        "clarificationReasons": [
+          "missing_identity",
+          "missing_action"
+        ]
+      },
+      "v6Expected": {
+        "category": "SERIES",
+        "intent": "wishlist",
+        "clarificationReasons": []
+      },
+      "rationale": "A generic media wish/request is meaningful without selecting a work. Imperatives follow the same prospective-wish rule as polite requests.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "structured-v5-development-025",
+      "note": "Play a song by that singer.",
+      "v5Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "v6Expected": {
+        "category": "MUSIC",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "A song need not already be selected, but that singer is an unresolved artist constraint; keep the known wish.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-037",
+      "note": "Thinking of starting it soon.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-038",
+      "note": "I'll try that when I have time.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-041",
+      "note": "I want to finish it.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-042",
+      "note": "Planning to try it on Saturday.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-train-071",
+      "note": "Want to listen to that later.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-036",
+      "note": "Want to give that a go next week.",
+      "v5Expected": {
+        "category": "NOTE",
+        "intent": null,
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "v6Expected": {
+        "category": "NOTE",
+        "intent": "wishlist",
+        "clarificationReasons": [
+          "unresolved_reference"
+        ]
+      },
+      "rationale": "Preserve an explicit future wish while its referent/medium remains unresolved; this does not mark any activity as started or complete.",
+      "changesHistoricalFile": false
+    },
+    {
+      "id": "v5-r2-repair-023",
+      "note": "Done with lecture four in that course.",
+      "v5Expected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": []
+      },
+      "v6Expected": {
+        "category": "LESSON",
+        "intent": "progress",
+        "clarificationReasons": [
+          "missing_identity"
+        ]
+      },
+      "rationale": "Confirmed v5 label defect: that course is unnamed, so the known lesson-progress action retains a missing_identity reason.",
+      "changesHistoricalFile": false
+    }
+  ],
+  "evaluationGoldMigrated": false,
+  "trainingExecuted": false
+}

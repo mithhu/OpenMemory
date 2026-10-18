@@ -44,3 +44,8 @@ This is prompt/schema/review development, not fine-tuned model accuracy. No new 
 ## Human-language coverage audit
 
 [Post-result audit](language-coverage-audit-01/REPORT.md): the current v5 mixture has only two rating examples and one restaurant request; six public restaurant failures retain correct category/action but add unnecessary questions. A confirmed repair-label error and written-policy/validator gaps are recorded without editing historical gold. No third training run started.
+
+
+## Prospective policy repair
+
+The audited policy, validation and label fixes are prepared separately in [structured-advice-v6](../structured-advice-v6/README.md). V5 frozen data/results are preserved. V6 has no trained adapter or app activation; its new public development labels remain provisional pending separate review and fresh evaluation.

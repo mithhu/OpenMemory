@@ -1,0 +1,15 @@
+{
+  "codecs": {
+    "PlayMusic": "latin-1",
+    "RateBook": "utf-8",
+    "BookRestaurant": "utf-8"
+  },
+  "v6Sources": [
+    "RateBook",
+    "BookRestaurant"
+  ],
+  "v6StrictUtf8": true,
+  "earlier24PublicTextsUnchanged": true,
+  "auxiliaryCheckFailure": "Initial attempt to decode every earlier source as UTF-8 failed on PlayMusic. Explicit per-file codecs used for verification; old ASCII samples unchanged.",
+  "sourceContentRewritten": false
+}

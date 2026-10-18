@@ -1,0 +1,21 @@
+{
+  "seed": "v6-human-development-20261018",
+  "priorArtifacts": 736,
+  "exclusions": [
+    {
+      "id": "snips:RateBook:train-full:1844",
+      "reason": "prior-original-text-or-id"
+    },
+    {
+      "id": "snips:RateBook:train-full:937",
+      "reason": "prior-original-text-or-id"
+    },
+    {
+      "id": "snips:RateBook:train-full:1275",
+      "reason": "prior-original-text-or-id"
+    }
+  ],
+  "nominated": 24,
+  "sourceEncoding": "strict UTF-8 (verified against original bytes)",
+  "scope": "Development wording only; no source-family/pretraining independence claim; no predictions used."
+}

@@ -1,0 +1,24 @@
+{
+  "v5LatestMixture": {
+    "rating_language": 2,
+    "restaurant_language": 1,
+    "booking_table_language": 0,
+    "numeric_rating_fraction": 0,
+    "first_person_I": 72,
+    "question_mark": 3,
+    "explicit_please_or_could_or_can": 6,
+    "book_series_phrase": 0,
+    "course_subunit_words": 15
+  },
+  "v6ProvisionalMixture": {
+    "rating_language": 6,
+    "restaurant_language": 7,
+    "booking_table_language": 1,
+    "numeric_rating_fraction": 1,
+    "first_person_I": 75,
+    "question_mark": 3,
+    "explicit_please_or_could_or_can": 7,
+    "book_series_phrase": 1,
+    "course_subunit_words": 15
+  }
+}

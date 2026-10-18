@@ -1,0 +1,1106 @@
+[
+  {
+    "id": "snips:RateBook:train-full:597",
+    "note": "Rate the current novel a 3 ",
+    "sourceIntent": "RateBook",
+    "recordIndex": 597,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "novel",
+        "entity": "object_type"
+      },
+      {
+        "text": " a "
+      },
+      {
+        "text": "3",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit book/novel rating: reaction, not progress; unnamed specific work retains missing_identity.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:66",
+    "note": "rate the current chronicle book three points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 66,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "chronicle",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "three",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit book/novel rating: reaction, not progress; unnamed specific work retains missing_identity.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1484",
+    "note": "Rate this current essay five stars out of 6 total",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1484,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate this "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "essay",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "five",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "stars",
+        "entity": "rating_unit"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " total"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:56",
+    "note": "rate Call for the Saint 1 out 6 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 56,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate "
+      },
+      {
+        "text": "Call for the Saint",
+        "entity": "object_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "1",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:331",
+    "note": "rate the previous essay four of 6 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 331,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate the "
+      },
+      {
+        "text": "previous",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "essay",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "four",
+        "entity": "rating_value"
+      },
+      {
+        "text": " of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:117",
+    "note": "rate Of Old Hearts and Swords a 0\n",
+    "sourceIntent": "RateBook",
+    "recordIndex": 117,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate "
+      },
+      {
+        "text": "Of Old Hearts and Swords",
+        "entity": "object_name"
+      },
+      {
+        "text": " a "
+      },
+      {
+        "text": "0",
+        "entity": "rating_value"
+      },
+      {
+        "text": "\n"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1734",
+    "note": "Rate The Crossroads 4 of 6 stars",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1734,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Rate "
+      },
+      {
+        "text": "The Crossroads",
+        "entity": "object_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "4",
+        "entity": "rating_value"
+      },
+      {
+        "text": " of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "stars",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:560",
+    "note": "I rate Vivian Grey three.",
+    "sourceIntent": "RateBook",
+    "recordIndex": 560,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "I rate "
+      },
+      {
+        "text": "Vivian Grey",
+        "entity": "object_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "three",
+        "entity": "rating_value"
+      },
+      {
+        "text": "."
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:531",
+    "note": "The Mad Scientist Hall of Fame gets only a two out of 6",
+    "sourceIntent": "RateBook",
+    "recordIndex": 531,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "The Mad Scientist Hall of Fame",
+        "entity": "object_name"
+      },
+      {
+        "text": " gets only a "
+      },
+      {
+        "text": "two",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:546",
+    "note": "rate the current book 3 out of 6 stars",
+    "sourceIntent": "RateBook",
+    "recordIndex": 546,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "3",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "stars",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit book/novel rating: reaction, not progress; unnamed specific work retains missing_identity.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:397",
+    "note": "Give two points to One Virgin Too Many",
+    "sourceIntent": "RateBook",
+    "recordIndex": 397,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "Give "
+      },
+      {
+        "text": "two",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "One Virgin Too Many",
+        "entity": "object_name"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:RateBook:train-full:1862",
+    "note": "rate this book series zero out of 6 points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1862,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceSlots": [
+      {
+        "text": "rate "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "series",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "zero",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit book/novel rating: reaction, not progress; unnamed specific work retains missing_identity.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1903",
+    "note": "I'm looking for the best bistro that serves mongolian food that has room for two people in Marshall Islands.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1903,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "I'm looking for the "
+      },
+      {
+        "text": "best",
+        "entity": "sort"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "bistro",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " that serves "
+      },
+      {
+        "text": "mongolian",
+        "entity": "cuisine"
+      },
+      {
+        "text": " food that has room for "
+      },
+      {
+        "text": "two",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " people in "
+      },
+      {
+        "text": "Marshall Islands",
+        "entity": "country"
+      },
+      {
+        "text": "."
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:141",
+    "note": "Book a restaurant not far in Milladore for 6 people.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 141,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "not far",
+        "entity": "spatial_relation"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Milladore",
+        "entity": "city"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "6",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " people."
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1404",
+    "note": "Reserve a table at a top-rated restaurant for dinner in twelve hours .",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1404,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Reserve a table at a "
+      },
+      {
+        "text": "top-rated",
+        "entity": "sort"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " for dinner "
+      },
+      {
+        "text": "in twelve hours",
+        "entity": "timeRange"
+      },
+      {
+        "text": " ."
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1522",
+    "note": "Please book a room in The River Café restaurant  to accommodate eight members in Andorra",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1522,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Please book a room in "
+      },
+      {
+        "text": "The River Café",
+        "entity": "restaurant_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": "  to accommodate "
+      },
+      {
+        "text": "eight",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " members in "
+      },
+      {
+        "text": "Andorra",
+        "entity": "country"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1034",
+    "note": "I want to eat at a bakery with deidre and rosa in Jersey.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1034,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "I want to eat at a "
+      },
+      {
+        "text": "bakery",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " with "
+      },
+      {
+        "text": "deidre and rosa",
+        "entity": "party_size_description"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Jersey",
+        "entity": "country"
+      },
+      {
+        "text": "."
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1070",
+    "note": "book in Romania for christian and susana at David Carpenter House",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1070,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "book in "
+      },
+      {
+        "text": "Romania",
+        "entity": "country"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "christian and susana",
+        "entity": "party_size_description"
+      },
+      {
+        "text": " at "
+      },
+      {
+        "text": "David Carpenter House",
+        "entity": "restaurant_name"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1835",
+    "note": "Book reservations at a restaurant with vickie and caitlin on February the second, 2018",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1835,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book reservations at a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " with "
+      },
+      {
+        "text": "vickie and caitlin",
+        "entity": "party_size_description"
+      },
+      {
+        "text": " on "
+      },
+      {
+        "text": "February the second, 2018",
+        "entity": "timeRange"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:192",
+    "note": "21 weeks from now elinor, crystal turner and nita want to eat german food at a bar in distant California",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 192,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "21 weeks from now",
+        "entity": "timeRange"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "elinor, crystal turner and nita",
+        "entity": "party_size_description"
+      },
+      {
+        "text": " want to eat "
+      },
+      {
+        "text": "german",
+        "entity": "cuisine"
+      },
+      {
+        "text": " food at a "
+      },
+      {
+        "text": "bar",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "distant",
+        "entity": "spatial_relation"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "California",
+        "entity": "state"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": null,
+    "labelVersion": 6,
+    "labelStatus": "quarantined-ambiguous-not-training",
+    "rationale": "Unsupported essay type, insufficient explicit medium for a named rated work, or unclear ownership of a third-party plan. Requires separate review; hidden source intent is not enough.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1426",
+    "note": "book me a restaurant that is close for four people in Enid",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1426,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "book me a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " that is "
+      },
+      {
+        "text": "close",
+        "entity": "spatial_relation"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "four",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " people in "
+      },
+      {
+        "text": "Enid",
+        "entity": "city"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1624",
+    "note": "I need a table right now for four in ME",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1624,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "I need a table right "
+      },
+      {
+        "text": "now",
+        "entity": "timeRange"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "four",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "ME",
+        "entity": "state"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:907",
+    "note": "Book a tavern in Colorado for two",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 907,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "Book a "
+      },
+      {
+        "text": "tavern",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Colorado",
+        "entity": "state"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "two",
+        "entity": "party_size_number"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1359",
+    "note": "book a joint for Feb. the seventh in Oklahoma within walking distance for six that is highly rated",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1359,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceSlots": [
+      {
+        "text": "book a "
+      },
+      {
+        "text": "joint",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "Feb. the seventh",
+        "entity": "timeRange"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Oklahoma",
+        "entity": "state"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "within walking distance",
+        "entity": "spatial_relation"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "six",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " that is "
+      },
+      {
+        "text": "highly rated",
+        "entity": "sort"
+      }
+    ],
+    "scope": "Public development candidate, not final evaluation; task label not inferred from source intent.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "labelVersion": 6,
+    "labelStatus": "provisional-development-label-needs-separate-review",
+    "rationale": "Explicit nonmedia booking/search/dining wish; venue identity is not required.",
+    "independentHumanLabel": false
+  }
+]
