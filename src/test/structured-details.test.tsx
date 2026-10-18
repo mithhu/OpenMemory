@@ -26,6 +26,82 @@ const entry = (overrides: Partial<CaptureEntry> = {}): CaptureEntry => ({
   ...overrides,
 });
 afterEach(cleanup);
+it("lets a user confirm a source-present series title without retyping it or discarding episode counts", async () => {
+  const text = "I watched six episodes of Ted Lasso Season 4";
+  const proposal = entry({
+    title: "Ted Lasso",
+    category: "SERIES",
+    summary: text,
+    titleReviewRequired: true,
+    activity: {
+      kind: "series",
+      intent: "progress",
+      progress: 6,
+      progressMode: "increment",
+      total: 10,
+      season: 4,
+      episode: null,
+      seasonCompleted: false,
+      lessonNumbers: [],
+      sentiment: null,
+      creator: null,
+    },
+  });
+  const save = vi.fn().mockResolvedValue(true);
+  render(
+    <CaptureReview
+      plan={{ entries: [proposal] }}
+      text={text}
+      memories={[]}
+      onSave={save}
+      onCancel={vi.fn()}
+    />,
+  );
+  expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeDisabled();
+  fireEvent.click(screen.getByRole("button", { name: "Confirm “Ted Lasso”" }));
+  fireEvent.click(screen.getByRole("button", { name: "Save 1 entry" }));
+  await waitFor(() => expect(save).toHaveBeenCalledOnce());
+  const plan = save.mock.calls[0]![0];
+  expect(plan.entries[0]).toMatchObject({
+    title: "Ted Lasso",
+    clarificationReasons: [],
+    titleReviewRequired: false,
+  });
+  expect(applyCapturePlan([], plan, text)[0]?.activity).toMatchObject({
+    kind: "series",
+    status: "in-progress",
+    season: 4,
+    episode: null,
+    progress: 6,
+    total: 10,
+  });
+});
+it("confirming a source-present title keeps a separate unknown-action decision", () => {
+  render(
+    <CaptureReview
+      plan={{
+        entries: [
+          entry({
+            title: "Ted Lasso",
+            category: "SERIES",
+            activity: null,
+            titleReviewRequired: true,
+            clarificationReasons: ["missing_identity", "missing_action"],
+          }),
+        ],
+      }}
+      text="Ted Lasso"
+      memories={[]}
+      onSave={vi.fn()}
+      onCancel={vi.fn()}
+    />,
+  );
+  fireEvent.click(screen.getByRole("button", { name: "Confirm “Ted Lasso”" }));
+  expect(screen.getByRole("button", { name: "Save 1 entry" })).toBeDisabled();
+  expect(
+    screen.getByRole("button", { name: /Entry 1: What happened: planned/ }),
+  ).toBeInTheDocument();
+});
 it("retains the known reaction while requiring a title, without allowing a placeholder confirmation", async () => {
   const save = vi.fn().mockResolvedValue(true);
   render(

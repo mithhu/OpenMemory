@@ -6,6 +6,14 @@ it.skipIf(process.env["OPENMEMORY_LIVE_SERIES"] !== "1")(
   async () => {
     const cases = [
       {
+        note: "I watched six episodes of Ted Lasso Season 4",
+        intent: "progress",
+        season: 4,
+        episode: null,
+        seasonCompleted: false,
+        progress: 6,
+      },
+      {
         note: "I'm planning to watch Breaking Bad because my friends have recommended the series for years.",
         intent: "wishlist",
         season: null,
@@ -65,10 +73,10 @@ it.skipIf(process.env["OPENMEMORY_LIVE_SERIES"] !== "1")(
           season: c.season,
           episode: c.episode,
           seasonCompleted: c.seasonCompleted,
-          progress: null,
+          progress: "progress" in c ? c.progress : null,
         },
       });
     }
   },
-  380000,
+  470000,
 );

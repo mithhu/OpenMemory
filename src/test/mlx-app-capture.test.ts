@@ -19,6 +19,15 @@ beforeEach(() => {
   mocks.plan.mockResolvedValue({ entries: [] });
 });
 const data = (text: string) => ({ text, today: "2026-10-12", memories: [] });
+it("sends identical extraction inputs and pins for native and hosted MLX when context and advice match", async () => {
+  const input = data("I watched six episodes of Ted Lasso Season 4");
+  const advice = { category: "MOVIE", intent: "progress" };
+  mocks.classify.mockResolvedValue({ advice });
+  mocks.companion.mockResolvedValue({ advice, captureId: "parity-test" });
+  await captureWithLocalMlx(input, undefined, false);
+  await captureWithLocalMlx(input, undefined, true);
+  expect(mocks.plan.mock.calls[0]).toEqual(mocks.plan.mock.calls[1]);
+});
 it("keeps exact source and binds classifier advice to the review", async () => {
   mocks.classify.mockResolvedValue({ advice: { category: "MOVIE", intent: "wishlist" } });
   const input = data("  I want to wacth Arrival.  ");

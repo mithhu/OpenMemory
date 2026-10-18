@@ -22,6 +22,7 @@ import { TitleCatalog } from "./TitleCatalog";
 import { ReminderFields } from "./ReminderFields";
 import { localReminder } from "@/lib/reminders";
 import type { CatalogTitle } from "@/lib/title-catalog";
+import { hasOriginalTitleSpan } from "@/lib/title-evidence";
 import {
   assessClassification,
   recordClassificationReview,
@@ -727,7 +728,8 @@ export function CaptureReview({
                   The proposed media title could not be matched to your words. Edit it above or
                   confirm that it is the work you mean.
                 </p>
-                {hasIdentityQuestion(entry.clarificationReasons) ? (
+                {hasIdentityQuestion(entry.clarificationReasons) &&
+                !hasOriginalTitleSpan(text, entry.title) ? (
                   <p>
                     Enter the work or subject above, or choose an existing item. Your known action
                     is kept.
@@ -737,7 +739,10 @@ export function CaptureReview({
                     type="button"
                     className="text-button"
                     onClick={() =>
-                      patch(index, { titleReviewRequired: false, clarificationQuestion: null })
+                      patch(index, { titleReviewRequired: false, clarificationQuestion: null }, [
+                        "missing_identity",
+                        "unresolved_reference",
+                      ])
                     }
                   >
                     Confirm “{entry.title}”
@@ -1065,7 +1070,9 @@ export function CaptureReview({
                     ) : (
                       <>
                         <label>
-                          {activityUnits[entry.activity.kind]}
+                          {entry.activity.kind === "series"
+                            ? "Episodes watched (count)"
+                            : activityUnits[entry.activity.kind]}
                           <input
                             type="number"
                             min={0}
@@ -1089,7 +1096,11 @@ export function CaptureReview({
                               })
                             }
                           >
-                            <option value="absolute">Current position / total count</option>
+                            <option value="absolute">
+                              {entry.activity.kind === "series"
+                                ? "Total watched count"
+                                : "Current position / total count"}
+                            </option>
                             <option value="increment">Add this amount</option>
                           </select>
                         </label>
