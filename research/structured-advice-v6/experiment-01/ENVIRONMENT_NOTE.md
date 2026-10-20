@@ -1,0 +1,1 @@
+The first launcher could not import mlx.core because the sandbox exposed no Metal GPU. It failed before loading model weights, creating an adapter output directory, or performing any training updates/inference. Preserve the error logs. Retry the identical frozen recipe with host GPU access; this is an environment retry, not a second model experiment or test-guided change.

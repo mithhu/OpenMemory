@@ -1,0 +1,11 @@
+{
+  "seed": "v6-e1-fresh-public-20261019",
+  "priorArtifacts": 744,
+  "priorExpressions": 15176,
+  "excludedIds": [
+    "snips:RateBook:train-full:66",
+    "snips:PlayMusic:train-full:1196"
+  ],
+  "nominated": 24,
+  "limits": "Exact wording/ID exclusion only. SNIPS source family used before, not globally source-heldout; task labels remain AI judgments. No pretraining exclusion claim."
+}

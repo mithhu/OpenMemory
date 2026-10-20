@@ -1,0 +1,727 @@
+[
+  {
+    "id": "snips:RateBook:train-full:1393",
+    "note": "I want to give The Garin Death Ray series 1 stars",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1393,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "I want to give "
+      },
+      {
+        "text": "The Garin Death Ray",
+        "entity": "object_name"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "series",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "1",
+        "entity": "rating_value"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "stars",
+        "entity": "rating_unit"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1405",
+    "note": "rate the following series five  points",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1405,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "rate the "
+      },
+      {
+        "text": "following",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "series",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "five",
+        "entity": "rating_value"
+      },
+      {
+        "text": "  "
+      },
+      {
+        "text": "points",
+        "entity": "rating_unit"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:27",
+    "note": "Rate the current book a zero of 6",
+    "sourceIntent": "RateBook",
+    "recordIndex": 27,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "Rate the "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "book",
+        "entity": "object_type"
+      },
+      {
+        "text": " a "
+      },
+      {
+        "text": "zero",
+        "entity": "rating_value"
+      },
+      {
+        "text": " of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:423",
+    "note": "I would give Basic Battle Skills a rating of four",
+    "sourceIntent": "RateBook",
+    "recordIndex": 423,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "I would give "
+      },
+      {
+        "text": "Basic Battle Skills",
+        "entity": "object_name"
+      },
+      {
+        "text": " a rating of "
+      },
+      {
+        "text": "four",
+        "entity": "rating_value"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:588",
+    "note": "I'd like to rate this textbook 4 out of 6",
+    "sourceIntent": "RateBook",
+    "recordIndex": 588,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "I'd like to rate "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "textbook",
+        "entity": "object_type"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "4",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:640",
+    "note": "Give this saga a 5 out of 6 rating.",
+    "sourceIntent": "RateBook",
+    "recordIndex": 640,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "Give "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "saga",
+        "entity": "object_part_of_series_type"
+      },
+      {
+        "text": " a "
+      },
+      {
+        "text": "5",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " rating."
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1706",
+    "note": "give zero star for current album",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1706,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "give "
+      },
+      {
+        "text": "zero",
+        "entity": "rating_value"
+      },
+      {
+        "text": " star for "
+      },
+      {
+        "text": "current",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "album",
+        "entity": "object_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:RateBook:train-full:1714",
+    "note": "give 5 out of 6 to this album",
+    "sourceIntent": "RateBook",
+    "recordIndex": 1714,
+    "sourceSha256": "bb43e4b74134300d5766f6b420d0357a63402987a225f6dc92c806c9c040ce04",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "give "
+      },
+      {
+        "text": "5",
+        "entity": "rating_value"
+      },
+      {
+        "text": " out of "
+      },
+      {
+        "text": "6",
+        "entity": "best_rating"
+      },
+      {
+        "text": " to "
+      },
+      {
+        "text": "this",
+        "entity": "object_select"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "album",
+        "entity": "object_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1723",
+    "note": "table at Nankin Cafe fr one",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1723,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "table at "
+      },
+      {
+        "text": "Nankin Cafe",
+        "entity": "restaurant_name"
+      },
+      {
+        "text": " fr "
+      },
+      {
+        "text": "one",
+        "entity": "party_size_number"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1581",
+    "note": "book a brasserie for 3",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1581,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "book a "
+      },
+      {
+        "text": "brasserie",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "3",
+        "entity": "party_size_number"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:556",
+    "note": "I need a table for 10 at the best gastropub",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 556,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "I need a table for "
+      },
+      {
+        "text": "10",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " at the "
+      },
+      {
+        "text": "best",
+        "entity": "sort"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "gastropub",
+        "entity": "restaurant_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:365",
+    "note": "charlene and I and are are in Liechtenstein and want restaurant reservations at midnight.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 365,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "charlene and I",
+        "entity": "party_size_description"
+      },
+      {
+        "text": " and are are in "
+      },
+      {
+        "text": "Liechtenstein",
+        "entity": "country"
+      },
+      {
+        "text": " and want "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " reservations at "
+      },
+      {
+        "text": "midnight",
+        "entity": "timeRange"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:965",
+    "note": "I need a table somewhere in Culver City WA",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 965,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "I need a table somewhere in "
+      },
+      {
+        "text": "Culver City",
+        "entity": "city"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "WA",
+        "entity": "state"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:124",
+    "note": "Book a reservation for nine at an outdoor restaurant",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 124,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "Book a reservation for "
+      },
+      {
+        "text": "nine",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " at an "
+      },
+      {
+        "text": "outdoor",
+        "entity": "facility"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:771",
+    "note": "Get me reservations for seven at a restaurant in PW that serves tourte.",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 771,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "Get me reservations for "
+      },
+      {
+        "text": "seven",
+        "entity": "party_size_number"
+      },
+      {
+        "text": " at a "
+      },
+      {
+        "text": "restaurant",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "PW",
+        "entity": "state"
+      },
+      {
+        "text": " that serves "
+      },
+      {
+        "text": "tourte",
+        "entity": "served_dish"
+      },
+      {
+        "text": "."
+      }
+    ]
+  },
+  {
+    "id": "snips:BookRestaurant:train-full:1935",
+    "note": "book a spot at a sushis diner in Minnesota",
+    "sourceIntent": "BookRestaurant",
+    "recordIndex": 1935,
+    "sourceSha256": "7677e82cd6e9a8191f0a4502568c786278c984900b4796d3628e46f1abf73ef4",
+    "sourceEncoding": "utf-8",
+    "sourceSlots": [
+      {
+        "text": "book a spot at a "
+      },
+      {
+        "text": "sushis",
+        "entity": "served_dish"
+      },
+      {
+        "text": " "
+      },
+      {
+        "text": "diner",
+        "entity": "restaurant_type"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "Minnesota",
+        "entity": "state"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1551",
+    "note": "Play Chad I Ginsburg",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1551,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "Play "
+      },
+      {
+        "text": "Chad I Ginsburg",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:141",
+    "note": "play some nineties music",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 141,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "play some "
+      },
+      {
+        "text": "nineties",
+        "entity": "year"
+      },
+      {
+        "text": " music"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:843",
+    "note": "Play music by Keren Woodward",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 843,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "Play music by "
+      },
+      {
+        "text": "Keren Woodward",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:604",
+    "note": "I want to hear a track by Ryohei Yamamoto on Vimeo",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 604,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "I want to hear a "
+      },
+      {
+        "text": "track",
+        "entity": "music_item"
+      },
+      {
+        "text": " by "
+      },
+      {
+        "text": "Ryohei Yamamoto",
+        "entity": "artist"
+      },
+      {
+        "text": " on "
+      },
+      {
+        "text": "Vimeo",
+        "entity": "service"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1004",
+    "note": "play Slacker tunes by Smog from movement in 2015",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1004,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "play "
+      },
+      {
+        "text": "Slacker",
+        "entity": "service"
+      },
+      {
+        "text": " tunes by "
+      },
+      {
+        "text": "Smog",
+        "entity": "artist"
+      },
+      {
+        "text": " from "
+      },
+      {
+        "text": "movement",
+        "entity": "music_item"
+      },
+      {
+        "text": " in "
+      },
+      {
+        "text": "2015",
+        "entity": "year"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:847",
+    "note": "Play music from the artist Irma Pane",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 847,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "Play music from the artist "
+      },
+      {
+        "text": "Irma Pane",
+        "entity": "artist"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:413",
+    "note": "Play Shaina Magdayao's music on Iheart",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 413,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "Play "
+      },
+      {
+        "text": "Shaina Magdayao",
+        "entity": "artist"
+      },
+      {
+        "text": "'s music on "
+      },
+      {
+        "text": "Iheart",
+        "entity": "service"
+      }
+    ]
+  },
+  {
+    "id": "snips:PlayMusic:train-full:1198",
+    "note": "Play a melody from the nineties on Google Music",
+    "sourceIntent": "PlayMusic",
+    "recordIndex": 1198,
+    "sourceSha256": "901ddbe9781d1fdb8196e789c543f80df3d29ca6e237da64947905adcc0312e4",
+    "sourceEncoding": "latin-1",
+    "sourceSlots": [
+      {
+        "text": "Play a "
+      },
+      {
+        "text": "melody",
+        "entity": "music_item"
+      },
+      {
+        "text": " from the "
+      },
+      {
+        "text": "nineties",
+        "entity": "year"
+      },
+      {
+        "text": " on "
+      },
+      {
+        "text": "Google Music",
+        "entity": "service"
+      }
+    ]
+  }
+]

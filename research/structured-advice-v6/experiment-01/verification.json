@@ -1,0 +1,90 @@
+{
+  "baseUnchanged": true,
+  "parentUnchanged": true,
+  "installedAppAdapterUnchanged": true,
+  "candidateSha256": "0b9ed48cbecd0366a8514c1f1ee54ac2124dc0b79333a33e2226b8090d2a540f",
+  "steps": 211,
+  "trainableParameters": 638976,
+  "changedParameters": 638974,
+  "perTensor": {
+    "language_model.model.layers.31.mlp.up_proj.lora_b": {
+      "changed": 98304,
+      "parameters": 98304,
+      "l2": 0.14370928700620209
+    },
+    "language_model.model.layers.31.mlp.up_proj.lora_a": {
+      "changed": 32767,
+      "parameters": 32768,
+      "l2": 0.06977747099791143
+    },
+    "language_model.model.layers.31.mlp.down_proj.lora_a": {
+      "changed": 98304,
+      "parameters": 98304,
+      "l2": 0.1339496220152659
+    },
+    "language_model.model.layers.31.mlp.gate_proj.lora_b": {
+      "changed": 98304,
+      "parameters": 98304,
+      "l2": 0.15707158653845935
+    },
+    "language_model.model.layers.31.mlp.gate_proj.lora_a": {
+      "changed": 32767,
+      "parameters": 32768,
+      "l2": 0.07611506899076892
+    },
+    "language_model.model.layers.31.self_attn.o_proj.lora_a": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.08410033742320731
+    },
+    "language_model.model.layers.31.self_attn.v_proj.lora_b": {
+      "changed": 8192,
+      "parameters": 8192,
+      "l2": 0.04314777689082819
+    },
+    "language_model.model.layers.31.self_attn.k_proj.lora_b": {
+      "changed": 8192,
+      "parameters": 8192,
+      "l2": 0.04276248368910805
+    },
+    "language_model.model.layers.31.self_attn.k_proj.lora_a": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.08353391946383706
+    },
+    "language_model.model.layers.31.mlp.down_proj.lora_b": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.08102008106122445
+    },
+    "language_model.model.layers.31.self_attn.o_proj.lora_b": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.08601538912286073
+    },
+    "language_model.model.layers.31.self_attn.v_proj.lora_a": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.07588005765941483
+    },
+    "language_model.model.layers.31.self_attn.q_proj.lora_b": {
+      "changed": 65536,
+      "parameters": 65536,
+      "l2": 0.11560008487439057
+    },
+    "language_model.model.layers.31.self_attn.q_proj.lora_a": {
+      "changed": 32768,
+      "parameters": 32768,
+      "l2": 0.09614277876928642
+    }
+  },
+  "firstTenMeanLoss": 0.2870010036509484,
+  "lastTenMeanLoss": 0.05437049340689555,
+  "predictionHashes": {
+    "base": "f6a8bbb8af6cf3d65d88cb14da73369c4de7871366e88cddee917507eb870d81",
+    "installed": "3b9338bb04ea82d5569bbc366c7970c61723096fc09981c8ccdd2809b025c418",
+    "parent": "3ae0d548427743c20a505a689c3d5729652795579b23f53f011db539712064f3",
+    "candidate": "6b9bfbc31da43bbe4134e505f07185bbd6f4e6fcca7e13c626793909f7727b94"
+  },
+  "installed": false
+}

@@ -1,0 +1,49 @@
+{
+  "status": "frozen-before-training-and-predictions",
+  "base": "mlx-community/Qwen3.5-9B-4bit",
+  "parent_adapter_sha256": "a352d4fd5800d986d600b0567196dce41ef67b12d9569330b311e911408bb383",
+  "parent_meaning": "Rejected v5 experiment-02 used for warm-start and as a new-prompt comparator.",
+  "installed_adapter_sha256": "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01",
+  "updates": 211,
+  "epochs": 1,
+  "batch_size": 1,
+  "seed": 2026101901,
+  "learning_rate": 5e-06,
+  "max_sequence_tokens": 3072,
+  "response_window": 128,
+  "lora": {
+    "rank": 8,
+    "scale": 20.0,
+    "dropout": 0.0,
+    "layers": 1
+  },
+  "limits": {
+    "total_seconds": 3600,
+    "training_seconds": 1200,
+    "each_evaluation_seconds": 600,
+    "observed_mlx_allocation_bytes": 8000000000
+  },
+  "qualification": "48 fresh fictional AI-authored notes and 24 exact-original SNIPS queries (19 scored; 5 predeclared unscored). No independent human-label or source-family-heldout claim.",
+  "gates": "Frozen in summarize.py. Compare identical raw v6-prompt responses from base, installed adapter transfer probe, previous v5 candidate and new v6 candidate. Require joint improvement over base, no previous-candidate regression overall/series/movie/book/lesson/uncertainty/public, zero invalid outputs and zero partial-series/course false completion. Passing only permits compatibility checks. One candidate; no test-guided rerun.",
+  "files_sha256": {
+    "LABEL_REVIEW.md": "ddc02274a6c4cc0012145cc1b3e106a41535364742e522cf5dfd63d16176738f",
+    "LEARNING_LOG.md": "7ef169ff89e2f0162ee3c41068f285acdfb1e1604c6e8b423a08d59a68d40124",
+    "README.md": "4acb52b3336d701fecca5ebbd3e09aaec5b157804a434b48385777ca776c2b53",
+    "base-manifest.json": "b763acbbd2f8309cd9387da869ac8e26539c091a248d3ae2aa845d15ba84f235",
+    "contract.json": "4de42a2e9927239e0cd262a6ad3ff3d4936817821176dfd7a4acdcebb378c307",
+    "freeze.py": "0303a5477172d977f9568d96a79a2d2a102ea6a6181bca3a0031cb818e425eb3",
+    "label_public.py": "5992f8e58d343859999cefd1f0b1a8b1c23f7ebd2f7f82b9f62c36bf84a38c00",
+    "prepare.py": "9ec5a9c011bf40eee78c24e4bb93bfcd619ef1266d4334355cd9ae4ea56771d0",
+    "public-nominations.json": "9668a42aae5e8e286d1df5012219ce27f4b97700b2a0ee283b91d978fbef3a8b",
+    "public-qualification.json": "c9e3d41ed8d5c17e40ff426167c782d9f719d7f6dde1b7d25a609bd3caadf0eb",
+    "public-screening.json": "bdf897d8ab5f0b2772f9ceb7d29866aed96a06c142a4cdf0864136260998d1de",
+    "qualification.json": "0c66c346703bff8cf137ba5bb08307fcde188ccd1cd0226c9b15da55013587ae",
+    "run.py": "89513f1c12d1bba60052e8633adb0dd5b108eeecca768cd2afb1cb7efbc2e9aa",
+    "summarize.py": "3a68d25ed69387e532042d11f39166f51b6cf397b0cba96e6cc12e5549d50c73",
+    "supervise.py": "5855cec09ad9dd83f82a66e02b17cd0862f4393dcde6ffae5da0cf07963dd487",
+    "test_experiment.py": "2a011084ed4abc78480f15f0bdc369676abd54093baa593b956ac15e4632f10d",
+    "train.json": "7f58a231bca817d62d0ce42178b02fc3b8b3b6eceae8ccf84190393b7b06e367",
+    "../../../scripts/app-mlx/classification_advice_v6.json": "4de42a2e9927239e0cd262a6ad3ff3d4936817821176dfd7a4acdcebb378c307",
+    "../../../scripts/app-mlx/structured_advice_v6.py": "b8eb57f1a47bc609038242333ec4b91657b5ab00cfae40063cd05bd5b8788a8a"
+  }
+}

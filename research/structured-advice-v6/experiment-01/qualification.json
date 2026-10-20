@@ -1,0 +1,561 @@
+[
+  {
+    "id": "v6-e1-qualification-000",
+    "note": "My friends say the TV series Lantern Street is worth it; I'd like to give it a go.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-001",
+    "note": "I've just begun the television drama Lantern Street tonight.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-002",
+    "note": "Six eps into season four of the sitcom Lantern Street now.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-003",
+    "note": "Season three of the TV show Copper Valley is done; I haven't finished the show.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-004",
+    "note": "Just wrapped episode eight of the television series Copper Valley.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-005",
+    "note": "The season finale of Copper Valley is over, but I have more seasons left.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-006",
+    "note": "I've completed the whole miniseries Winter Harbour, every episode.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-007",
+    "note": "All seasons of the TV drama Winter Harbour are finished now.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-008",
+    "note": "The TV show Lantern Street is easily my favourite this year.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-009",
+    "note": "Watched the television drama Copper Valley during the flight.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-010",
+    "note": "Three episodes into that sitcom and enjoying it.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-011",
+    "note": "Find me a television series for my next holiday.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-012",
+    "note": "I want to catch up with that TV show you mentioned.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-013",
+    "note": "We watched a miniseries after tea yesterday.",
+    "expected": {
+      "category": "SERIES",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_identity",
+        "missing_action"
+      ]
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-014",
+    "note": "I finished the fourth season of the anime series Blue Orchard.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-015",
+    "note": "Saw episode one of the show Blue Orchard; the rest is still unwatched.",
+    "expected": {
+      "category": "SERIES",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "series",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-016",
+    "note": "I'd like to watch the film Velvet Bridge next Sunday.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-017",
+    "note": "Twenty minutes into the film Velvet Bridge; I'll finish it tomorrow.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-018",
+    "note": "I watched the entire film Paper Lighthouse right through the credits.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-019",
+    "note": "I watched the film Paper Lighthouse earlier this week.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-020",
+    "note": "That movie gets a one-star rating from me.",
+    "expected": {
+      "category": "MOVIE",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-021",
+    "note": "Find me a novel to read on my commute next week.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-022",
+    "note": "I've begun reading the novel The Glass Orchard today.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "start",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-023",
+    "note": "I finished chapter nine of the novel The Glass Orchard; several chapters remain.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-024",
+    "note": "Read every last page of the novel The Salt Atlas, and finished the book.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-025",
+    "note": "This book series deserves zero stars out of five.",
+    "expected": {
+      "category": "BOOK",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-026",
+    "note": "Completed lecture seven in the course Ceramic Chemistry; the course continues.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-027",
+    "note": "Module three of Ceramic Chemistry is complete, not the whole course.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-028",
+    "note": "Finished two lectures in that online course this afternoon.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-029",
+    "note": "Lesson one of the Harbour Navigation course is done.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "progress",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-030",
+    "note": "Finished the entire Harbour Navigation course, including all its modules.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "complete",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-031",
+    "note": "I did the course Orchard Design on Monday.",
+    "expected": {
+      "category": "LESSON",
+      "intent": null,
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-032",
+    "note": "Could you find an online class for me to study during the break?",
+    "expected": {
+      "category": "LESSON",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-033",
+    "note": "That training course was genuinely useful.",
+    "expected": {
+      "category": "LESSON",
+      "intent": "reaction",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-034",
+    "note": "Play some gentle music for my evening walk.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-035",
+    "note": "I played the song Silver Windows on the bus home.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "listen",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-036",
+    "note": "The song Silver Windows deserves five stars.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "reaction",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-037",
+    "note": "Find a song from that musician we talked about.",
+    "expected": {
+      "category": "MUSIC",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-038",
+    "note": "Read my gas meter and wrote the number down.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-039",
+    "note": "Got it finished this afternoon.",
+    "expected": {
+      "category": "NOTE",
+      "intent": null,
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-040",
+    "note": "I'd like to give it another try next month.",
+    "expected": {
+      "category": "NOTE",
+      "intent": "wishlist",
+      "clarificationReasons": [
+        "unresolved_reference"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-041",
+    "note": "My cousin Noor has started learning Portuguese.",
+    "expected": {
+      "category": "PERSON",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-042",
+    "note": "I want to make stretching a daily habit.",
+    "expected": {
+      "category": "GOAL",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-043",
+    "note": "Please find a cafe for brunch near the station on Friday.",
+    "expected": {
+      "category": "WISHLIST",
+      "intent": "wishlist",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-044",
+    "note": "An idea for a browser app that shares surplus vegetables.",
+    "expected": {
+      "category": "IDEA",
+      "intent": "none",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-045",
+    "note": "Started the novel The Salt Atlas and completed lesson two of Ceramic Chemistry.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": []
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-046",
+    "note": "Read the novel The Salt Atlas yesterday and booked a trip to Bergen.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": [
+        "missing_action"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  },
+  {
+    "id": "v6-e1-qualification-047",
+    "note": "Finished an episode of that TV show and want to buy a tent.",
+    "expected": {
+      "category": "MIXED",
+      "intent": "mixed",
+      "clarificationReasons": [
+        "missing_identity"
+      ]
+    },
+    "slice": "retention",
+    "labelProvenance": "AI-authored fictional note and AI task judgment; not independent human gold."
+  }
+]
