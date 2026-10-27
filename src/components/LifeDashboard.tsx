@@ -47,7 +47,7 @@ export function LifeHero({
         </h1>
         <p>
           {library
-            ? "The books, films, music, and learning that become part of your story."
+            ? "The books, films, learning and saved links that become part of your story."
             : "A thought, a good film, a new beginning. Give it a place to stay."}
         </p>
       </div>

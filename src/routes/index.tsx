@@ -1,3 +1,12 @@
+import { mlxPairingStorageKey } from "@/lib/mlx-companion";
+import { BookmarkCapture } from "@/components/BookmarkCapture";
+import { BookmarkLibrary } from "@/components/BookmarkLibrary";
+import {
+  createBookmark,
+  findBookmark,
+  readBookmarkHandoff,
+  type BookmarkHandoff,
+} from "@/lib/bookmarks";
 import { DemoWelcome } from "@/components/DemoWelcome";
 import { RemindersPanel } from "@/components/RemindersPanel";
 import { createFileRoute } from "@tanstack/react-router";
@@ -133,6 +142,8 @@ function OpenMemory() {
   const [configured, setConfigured] = useState<boolean | null>(null);
   const [view, setView] = useState<View>("today");
   const [draft, setDraft] = useState("");
+  const [sharedLink, setSharedLink] = useState<BookmarkHandoff | null>(null);
+  const [sharedLinkError, setSharedLinkError] = useState("");
   const [captureError, setCaptureError] = useState("");
   const [captureReceipt, setCaptureReceipt] = useState<{ count: number; ids: string[] } | null>(
     null,
@@ -252,6 +263,29 @@ function OpenMemory() {
     };
   }, []);
   useEffect(() => {
+    const refreshChoice = () => {
+      setSettings(loadAISettings());
+      setConsentRequired(isHostedApp() && !hasHostedAIConsent());
+    };
+    const onStorage = (event: StorageEvent) => {
+      if (event.storageArea && event.storageArea !== localStorage) return;
+      if (
+        event.key === null ||
+        event.key === "openmemory.ai.v2" ||
+        event.key === mlxPairingStorageKey
+      )
+        refreshChoice();
+    };
+    // Existing tabs notice pairing/provider changes made by another tab, and
+    // re-check expiry when the user returns. Neither path probes the network.
+    window.addEventListener("storage", onStorage);
+    window.addEventListener("focus", refreshChoice);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener("focus", refreshChoice);
+    };
+  }, []);
+  useEffect(() => {
     if (!busy) {
       setElapsed(0);
       return;
@@ -289,6 +323,46 @@ function OpenMemory() {
     };
   }, [selectedId, menuOpen]);
 
+  useEffect(() => {
+    if (!loaded || locked || storageError) return;
+    const receive = () => {
+      try {
+        const incoming = readBookmarkHandoff(window.location.hash);
+        if (incoming) {
+          setSharedLink(incoming);
+          setSharedLinkError("");
+          setView("library");
+        }
+      } catch (error) {
+        setSharedLinkError(
+          error instanceof Error ? error.message : "Could not read this shared link.",
+        );
+      }
+    };
+    receive();
+    window.addEventListener("hashchange", receive);
+    return () => window.removeEventListener("hashchange", receive);
+  }, [loaded, locked, storageError]);
+  const dismissSharedLink = () => {
+    setSharedLink(null);
+    setSharedLinkError("");
+    if (window.location.hash.startsWith("#save-link="))
+      window.history.replaceState(
+        window.history.state,
+        "",
+        window.location.pathname + window.location.search,
+      );
+  };
+  const saveSharedLink = async (input: BookmarkHandoff) => {
+    if (busy || !loaded || findBookmark(memoryRef.current, input.url)) return false;
+    const memory = createBookmark({ ...input, id: crypto.randomUUID() });
+    if (!(await persist([memory, ...memoryRef.current]))) return false;
+    dismissSharedLink();
+    setView("library");
+    setCaptureReceipt({ count: 1, ids: [memory.id] });
+    toast.success("Link saved to your library on this device.");
+    return true;
+  };
   const persist = async (next: Memory[]) => {
     if (savingRef.current || locked || storageError) return false;
     savingRef.current = true;
@@ -752,7 +826,7 @@ function OpenMemory() {
   const filtered = memories.filter(
     (m) =>
       (category === "ALL" || m.category === category) &&
-      `${m.title} ${m.summary} ${m.tags?.join(" ") || ""} ${m.answers.map((a) => a.value).join(" ")}`
+      `${m.title} ${m.summary} ${m.bookmark?.url || ""} ${m.tags?.join(" ") || ""} ${m.answers.map((a) => a.value).join(" ")}`
         .toLowerCase()
         .includes(search.toLowerCase()),
   );
@@ -847,7 +921,9 @@ function OpenMemory() {
           >
             <Library size={18} />
             Your library
-            <span className="nav-count">{memories.filter((m) => m.activity).length}</span>
+            <span className="nav-count">
+              {memories.filter((m) => m.activity || m.bookmark).length}
+            </span>
           </button>
           <button
             aria-current={view === "constellation" ? "page" : undefined}
@@ -1004,6 +1080,28 @@ function OpenMemory() {
           </div>
         </header>
         <main className="workspace">
+          {sharedLinkError && (
+            <section className="bookmark-capture" role="alert">
+              <p>{sharedLinkError}</p>
+              <button className="text-button" onClick={dismissSharedLink}>
+                Dismiss shared link
+              </button>
+            </section>
+          )}
+          {sharedLink && (
+            <BookmarkCapture
+              key={sharedLink.id}
+              input={sharedLink}
+              memories={memories}
+              disabled={busy || !loaded || Boolean(storageError)}
+              onSave={saveSharedLink}
+              onCancel={dismissSharedLink}
+              onOpen={(id) => {
+                dismissSharedLink();
+                setSelectedId(id);
+              }}
+            />
+          )}
           {loaded && !locked && consentRequired && (
             <section className="hosted-welcome" aria-label="Choose AI processing">
               <span className="eyebrow">YOUR MEMORIES, YOUR CHOICE</span>
@@ -1301,6 +1399,26 @@ function OpenMemory() {
                   memories={memories}
                   onSave={confirmCapture}
                   onCancel={() => setPending(null)}
+                />
+              )}
+              {view === "library" && (
+                <BookmarkLibrary
+                  memories={memories}
+                  disabled={busy || !loaded || Boolean(storageError)}
+                  onOpen={setSelectedId}
+                  onStatus={(id, status) => {
+                    void persist(
+                      memoryRef.current.map((memory) =>
+                        memory.id === id && memory.bookmark
+                          ? {
+                              ...memory,
+                              bookmark: { ...memory.bookmark, status },
+                              updatedAt: new Date().toISOString(),
+                            }
+                          : memory,
+                      ),
+                    );
+                  }}
                 />
               )}
               {view !== "constellation" && (

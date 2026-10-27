@@ -165,3 +165,92 @@ it("keeps hosted capture usable when the server has no AI credentials", async ()
   expect(screen.getByLabelText("Entry 1 details")).toHaveValue("A fictional quiet evening");
   expect(api.plan).not.toHaveBeenCalled();
 });
+
+it("restores an explicitly selected MLX choice in a new tab without tab-local credentials", async () => {
+  sessionStorage.clear();
+  localStorage.setItem(
+    "openmemory.mlx.companion.v1",
+    JSON.stringify({
+      token: "fictional-shared-browser-token",
+      expiresAt: Math.floor(Date.now() / 1000) + 3600,
+    }),
+  );
+  localStorage.setItem(
+    "openmemory.ai.v2",
+    JSON.stringify({
+      provider: "ollama",
+      model: "qwen3.5:9b",
+      captureEngine: "mlx",
+      cloudOptIn: false,
+    }),
+  );
+  render(<Page />);
+  await screen.findByText("Local MLX", { exact: true });
+  expect(screen.queryByRole("region", { name: "Choose AI processing" })).not.toBeInTheDocument();
+  expect(sessionStorage.getItem("openmemory.mlx.companion.v1")).toBeNull();
+  expect(api.plan).not.toHaveBeenCalled();
+});
+it("updates an existing tab when local pairing and provider choice arrive from another tab", async () => {
+  await start();
+  act(() => {
+    localStorage.setItem(
+      "openmemory.mlx.companion.v1",
+      JSON.stringify({
+        token: "fictional-shared-browser-token",
+        expiresAt: Math.floor(Date.now() / 1000) + 3600,
+      }),
+    );
+    localStorage.setItem(
+      "openmemory.ai.v2",
+      JSON.stringify({
+        provider: "ollama",
+        model: "qwen3.5:9b",
+        captureEngine: "mlx",
+        cloudOptIn: false,
+      }),
+    );
+    window.dispatchEvent(
+      new StorageEvent("storage", { key: "openmemory.ai.v2", storageArea: localStorage }),
+    );
+  });
+  await screen.findByText("Local MLX", { exact: true });
+  expect(screen.queryByRole("region", { name: "Choose AI processing" })).not.toBeInTheDocument();
+  act(() => {
+    localStorage.setItem("openmemory.mlx.companion.v1", "null");
+    window.dispatchEvent(
+      new StorageEvent("storage", {
+        key: "openmemory.mlx.companion.v1",
+        storageArea: localStorage,
+      }),
+    );
+  });
+  await screen.findByRole("region", { name: "Choose AI processing" });
+  expect(api.plan).not.toHaveBeenCalled();
+});
+it("reviews and saves a shared YouTube bookmark without AI consent or an MLX pairing", async () => {
+  sessionStorage.clear();
+  const payload = {
+    version: 1,
+    id: "f43a23ec-08dd-4ebf-ad76-6cc4f5541c38",
+    url: "https://www.youtube.com/watch?v=xUSznTR2cwc",
+    title: "Steven Strogatz on the Humanity of Math - YouTube",
+    note: "Motivation and inspiration",
+  };
+  window.history.replaceState({}, "", `/#save-link=${encodeURIComponent(JSON.stringify(payload))}`);
+  try {
+    render(<Page />);
+    await screen.findByLabelText("Saved link title");
+    expect(screen.getByLabelText("Saved link title")).toHaveValue(payload.title);
+    fireEvent.click(screen.getByRole("button", { name: "Save link" }));
+    await waitFor(() => expect(api.save).toHaveBeenCalledOnce());
+    expect(api.save.mock.calls[0]![0][0]).toMatchObject({
+      title: payload.title,
+      summary: payload.note,
+      bookmark: { url: payload.url, status: "saved" },
+    });
+    expect(api.plan).not.toHaveBeenCalled();
+    expect(window.location.hash).toBe("");
+  } finally {
+    window.history.replaceState({}, "", "/");
+  }
+});

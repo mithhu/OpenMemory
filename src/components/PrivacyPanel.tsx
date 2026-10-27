@@ -155,8 +155,8 @@ export function PrivacyPanel({
               <a href="http://127.0.0.1:8765/" target="_blank" rel="noopener noreferrer">
                 the local pairing page
               </a>
-              , reveal its code, then paste it here. This pairs only this website for one hour.
-              Allow browser local network access if prompted.
+              , reveal its code, then paste it here. This pairs this website across tabs in this
+              browser profile for one hour. Allow browser local network access if prompted.
             </p>
             <label className="privacy-label">
               Local MLX pairing code

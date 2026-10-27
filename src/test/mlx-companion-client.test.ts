@@ -51,21 +51,24 @@ afterEach(() => {
 });
 
 describe("MLX companion boundary", () => {
-  it("does not send any request or note without an unexpired session pairing", async () => {
-    localStorage.setItem(key, JSON.stringify({ token, expiresAt: 9999999999 }));
+  it("does not send any request or note without an unexpired browser pairing", async () => {
+    localStorage.setItem(key, JSON.stringify({ token, expiresAt: 1 }));
     await expect(classifyWithMlxCompanion("I want to visit Bangladesh")).rejects.toThrow(
       "Pair this browser",
     );
     expect(fetchMock).not.toHaveBeenCalled();
     expect(hasMlxCompanionPairing()).toBe(false);
   });
-  it("pairs only after verifying adapter identity and stores only in session storage", async () => {
+  it("pairs only after verifying adapter identity and shares the same expiring grant across tabs", async () => {
     fetchMock
       .mockResolvedValueOnce(response(status))
       .mockResolvedValueOnce(response({ token, expiresAt: Math.floor(Date.now() / 1000) + 3600 }));
     await pairMlxCompanion(" 123456 ");
     expect(hasMlxCompanionPairing()).toBe(true);
-    expect(localStorage.getItem(key)).toBeNull();
+    expect(JSON.parse(localStorage.getItem(key)!)).toMatchObject({ token });
+    expect(sessionStorage.getItem(key)).toBeNull();
+    sessionStorage.clear();
+    expect(hasMlxCompanionPairing()).toBe(true);
     expect(fetchMock.mock.calls[1]![1].body).toBe(JSON.stringify({ code: "123456" }));
     expect(fetchMock.mock.calls[1]![1]).toMatchObject({
       credentials: "omit",
@@ -240,4 +243,54 @@ it("bounds connection checks and explains browser permission failures without cl
   await check;
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(fetchMock.mock.calls[0]![0]).toMatch(/\/status$/);
+});
+
+it("migrates an existing tab grant without extending expiry and restores it with empty session storage", () => {
+  paired();
+  const legacy = sessionStorage.getItem(key);
+  expect(hasMlxCompanionPairing()).toBe(true);
+  expect(localStorage.getItem(key)).toBe(legacy);
+  expect(sessionStorage.getItem(key)).toBeNull();
+  // A separately opened tab has no sessionStorage, but sees the same-origin store.
+  sessionStorage.clear();
+  expect(hasMlxCompanionPairing()).toBe(true);
+  expect(fetchMock).not.toHaveBeenCalled();
+});
+it("does not resurrect a disconnected grant from another tab's legacy session", () => {
+  paired();
+  const staleTab = sessionStorage.getItem(key)!;
+  expect(hasMlxCompanionPairing()).toBe(true);
+  clearMlxCompanionPairing();
+  sessionStorage.setItem(key, staleTab);
+  expect(hasMlxCompanionPairing()).toBe(false);
+  expect(sessionStorage.getItem(key)).toBeNull();
+});
+it("keeps a new shared pairing when an old tab receives a late unpaired status", async () => {
+  paired();
+  const newGrant = {
+    token: "different-new-browser-pairing-token",
+    expiresAt: Math.floor(Date.now() / 1000) + 3600,
+  };
+  fetchMock.mockImplementationOnce(async () => {
+    localStorage.setItem(key, JSON.stringify(newGrant));
+    return response({ ...status, paired: false });
+  });
+  expect((await getMlxCompanionStatus()).paired).toBe(false);
+  expect(JSON.parse(localStorage.getItem(key)!)).toEqual(newGrant);
+  expect(hasMlxCompanionPairing()).toBe(true);
+});
+it("expires a shared grant before sending any note", async () => {
+  localStorage.setItem(
+    key,
+    JSON.stringify({ token, expiresAt: Math.floor(Date.now() / 1000) - 1 }),
+  );
+  await expect(classifyWithMlxCompanion("private note")).rejects.toThrow("Pair this browser");
+  expect(fetchMock).not.toHaveBeenCalled();
+});
+
+it("a new unpaired tab does not block migration from the previously paired tab", () => {
+  expect(hasMlxCompanionPairing()).toBe(false);
+  expect(localStorage.getItem(key)).toBeNull();
+  paired();
+  expect(hasMlxCompanionPairing()).toBe(true);
 });

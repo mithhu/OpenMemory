@@ -8,7 +8,8 @@ import {
 export const mlxCompanionOrigin = "http://127.0.0.1:8765";
 export const mlxCompanionAdapterSha256 =
   "8724245782e5c709bf7ccd7b3631a944472bfb071d6cc659a9bcc5cb51143f01";
-const pairingKey = "openmemory.mlx.companion.v1";
+export const mlxPairingStorageKey = "openmemory.mlx.companion.v1";
+const pairingKey = mlxPairingStorageKey;
 const pairingSchema = z
   .object({ token: z.string().min(16).max(512), expiresAt: z.number().int().positive() })
   .strict();
@@ -32,17 +33,42 @@ const resultSchema = z
   })
   .strict();
 
-export function clearMlxCompanionPairing() {
+// The server binds this short-lived token to the exact website origin. Share
+// that same grant across its tabs; never extend the server-issued expiry.
+// A null tombstone prevents another tab's legacy sessionStorage from restoring
+// authorization after Disconnect or server rejection.
+export function clearMlxCompanionPairing(expectedToken?: string) {
+  try {
+    if (expectedToken) {
+      const current = pairingSchema.safeParse(
+        JSON.parse(localStorage.getItem(pairingKey) || "null"),
+      );
+      if (current.success && current.data.token !== expectedToken) return;
+    }
+    localStorage.setItem(pairingKey, "null");
+  } catch {
+    /* Storage may be disabled. */
+  }
   try {
     sessionStorage.removeItem(pairingKey);
   } catch {
-    /* Storage may be disabled. */
+    /* Legacy storage may be disabled. */
   }
 }
 function loadPairing() {
   try {
-    const pairing = pairingSchema.parse(JSON.parse(sessionStorage.getItem(pairingKey) || "null"));
-    if (pairing.expiresAt * 1000 > Date.now()) return pairing;
+    const shared = localStorage.getItem(pairingKey);
+    // Migration happens only before a shared grant/revocation has been recorded.
+    const raw = shared ?? sessionStorage.getItem(pairingKey);
+    if (raw === null) return null;
+    const pairing = pairingSchema.safeParse(JSON.parse(raw || "null"));
+    if (pairing.success && pairing.data.expiresAt * 1000 > Date.now()) {
+      if (shared === null) {
+        localStorage.setItem(pairingKey, JSON.stringify(pairing.data));
+        sessionStorage.removeItem(pairingKey);
+      }
+      return pairing.data;
+    }
   } catch {
     /* Missing, invalid, or inaccessible pairing is not authorization. */
   }
@@ -81,7 +107,8 @@ async function request(
       signal: controller.signal,
     });
     if (response.status === 401 || response.status === 403) {
-      clearMlxCompanionPairing();
+      const authorization = (init.headers as Record<string, string> | undefined)?.["Authorization"];
+      if (authorization?.startsWith("Bearer ")) clearMlxCompanionPairing(authorization.slice(7));
       throw new Error(
         "Local MLX pairing was rejected. Pair this browser again with the code shown on your Mac.",
       );
@@ -125,13 +152,17 @@ export async function getMlxCompanionStatus(signal?: AbortSignal) {
     ),
   );
   if (!parsed.success) {
-    clearMlxCompanionPairing();
+    if (pairing) clearMlxCompanionPairing(pairing.token);
     throw new Error(
       "The local MLX service does not match our verified adapter and classification contract. No note was sent.",
     );
   }
-  if (!parsed.data.paired) clearMlxCompanionPairing();
-  return { ...parsed.data, paired: parsed.data.paired && hasMlxCompanionPairing() };
+  if (!parsed.data.paired && pairing) clearMlxCompanionPairing(pairing.token);
+  const current = loadPairing();
+  return {
+    ...parsed.data,
+    paired: parsed.data.paired && current?.token === pairing?.token && Boolean(current),
+  };
 }
 export async function pairMlxCompanion(code: string, signal?: AbortSignal) {
   const status = await getMlxCompanionStatus(signal);
@@ -159,10 +190,11 @@ export async function pairMlxCompanion(code: string, signal?: AbortSignal) {
     );
   }
   try {
-    sessionStorage.setItem(pairingKey, JSON.stringify(parsed.data));
+    localStorage.setItem(pairingKey, JSON.stringify(parsed.data));
+    sessionStorage.removeItem(pairingKey);
   } catch {
     throw new Error(
-      "This browser cannot keep the local MLX pairing in session storage. Allow browser storage or use the local app.",
+      "This browser cannot keep the local MLX pairing across tabs. Allow browser storage or use the local app.",
     );
   }
   return parsed.data;

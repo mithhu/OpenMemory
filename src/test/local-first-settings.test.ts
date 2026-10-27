@@ -67,8 +67,8 @@ it("does not persist a remote model as local", () => {
   expect(loadAISettings()).toEqual(defaultAISettings);
 });
 
-it("restores hosted MLX only with an unexpired session pairing and explicit local choice", () => {
-  sessionStorage.setItem(
+it("restores hosted MLX across tabs only with an unexpired pairing and explicit local choice", () => {
+  localStorage.setItem(
     "openmemory.mlx.companion.v1",
     JSON.stringify({
       token: "fictional-session-token",
@@ -79,7 +79,7 @@ it("restores hosted MLX only with an unexpired session pairing and explicit loca
   saveAISettings(defaultAISettings);
   expect(loadAISettings(true)).toEqual(defaultAISettings);
   expect(hasHostedAIConsent()).toBe(true);
-  sessionStorage.setItem(
+  localStorage.setItem(
     "openmemory.mlx.companion.v1",
     JSON.stringify({ token: "fictional-session-token", expiresAt: 1 }),
   );

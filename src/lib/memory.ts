@@ -54,6 +54,23 @@ export const memorySchema = z.object({
   relatedMemoryIds: z.array(z.string().max(100)).max(10).optional(),
   completionFor: z.string().max(200).optional(),
   completionStatus: z.enum(["completed", "reopened"]).optional(),
+  bookmark: z
+    .object({
+      url: z
+        .string()
+        .max(4096)
+        .url()
+        .refine((value) => {
+          try {
+            const url = new URL(value);
+            return ["http:", "https:"].includes(url.protocol) && !url.username && !url.password;
+          } catch {
+            return false;
+          }
+        }),
+      status: z.enum(["saved", "in-progress", "done"]),
+    })
+    .optional(),
   activity: activitySchema.optional(),
   createdAt: z.string(),
   updatedAt: z.string(),
@@ -147,6 +164,7 @@ export function fingerprint(memories: Memory[]) {
       m.completionFor,
       m.completionStatus,
       m.activity,
+      m.bookmark,
     ]),
   );
 }

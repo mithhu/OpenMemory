@@ -747,3 +747,141 @@ select:focus-visible {
     padding: 14px;
   }
 }
+
+/* Shared-link capture and the local saved-links shelf. */
+.bookmark-capture,
+.bookmark-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+}
+.bookmark-capture {
+  margin: 24px 0;
+  box-shadow: 0 4px 18px #30372f05;
+}
+.bookmark-heading,
+.bookmark-actions,
+.bookmark-filters {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.bookmark-heading {
+  justify-content: space-between;
+}
+.bookmark-heading .eyebrow,
+.bookmark-library .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bookmark-capture h2,
+.bookmark-library h2 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+.bookmark-capture > p,
+.bookmark-library > p,
+.bookmark-card > p {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.bookmark-capture label,
+.bookmark-card label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 18px 0 8px;
+}
+.bookmark-capture input,
+.bookmark-capture textarea,
+.bookmark-card select,
+.bookmark-filters input,
+.bookmark-filters select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  font: inherit;
+}
+.bookmark-optional,
+.bookmark-privacy,
+.bookmark-source {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+.bookmark-capture .bookmark-actions {
+  margin-top: 20px;
+}
+.bookmark-privacy {
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
+.bookmark-error {
+  color: #922e24;
+}
+.bookmark-library {
+  margin: 38px 0;
+}
+.bookmark-filters {
+  margin: 20px 0;
+}
+.bookmark-filters input {
+  flex: 1;
+  min-width: 180px;
+}
+.bookmark-filters select {
+  width: auto;
+  max-width: 100%;
+}
+.bookmark-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+  gap: 18px;
+}
+.bookmark-card {
+  min-width: 0;
+}
+.bookmark-card h3 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+.bookmark-card > p {
+  white-space: pre-wrap;
+  max-height: 12em;
+  overflow: auto;
+}
+.bookmark-card .bookmark-actions {
+  margin-top: 18px;
+}
+.bookmark-capture input:focus-visible,
+.bookmark-capture textarea:focus-visible,
+.bookmark-card select:focus-visible,
+.bookmark-filters input:focus-visible,
+.bookmark-filters select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .bookmark-capture,
+  .bookmark-card {
+    padding: 18px;
+  }
+  .bookmark-capture h2,
+  .bookmark-library h2 {
+    font-size: 25px;
+  }
+}

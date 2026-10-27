@@ -35,7 +35,7 @@ On this Mac, where the pinned model and adapter are already installed:
 4. On the deployed site, open **Privacy & AI**, paste the code, and select **Pair local MLX**. Allow Chrome's local-network access prompt if shown.
 5. Select the now-enabled **Local MLX** card. Classification runs in native MLX on your Mac; extraction then runs in local Ollama. Nothing falls back to cloud.
 
-The token stays in this tab's session storage and expires after one hour. A service restart requires pairing again. **Check local MLX** verifies an existing pairing; **Disconnect MLX** removes it from this browser. The site does not automatically probe localhost, download weights, install Python, or start a native service. Other computers need the pinned runtime/base model/adapter assets, which are excluded from this product repository. In-app browsers may block local connections even when Chrome works.
+The token is shared across this website’s tabs in this browser profile using local storage and expires after one hour. It is never shared with other website origins or browser profiles; existing tab-only pairings migrate without extending their expiry. A service restart requires pairing again. **Check local MLX** verifies an existing pairing; **Disconnect MLX** removes it from this browser. The site does not automatically probe localhost, download weights, install Python, or start a native service. Other computers need the pinned runtime/base model/adapter assets, which are excluded from this product repository. In-app browsers may block local connections even when Chrome works.
 
 The companion holds a capture reservation through classification and extraction. This coordinates OpenMemory workers; unrelated Ollama tabs or CLI commands do not obey this lock, so avoid starting other GPU jobs during a review. If a tab disappears or loses the connection before releasing its reservation, restart the service and pair again. This favors preventing overlapping GPU jobs over automatically retrying an uncertain request.
 
@@ -90,7 +90,7 @@ These are integration checks, not an independent model accuracy benchmark. The d
 ## Deployed user flow
 
 1. First visit starts in manual review. OpenAI requires explicit **Enable AI review** or selection in Privacy & AI; no installation or visitor API key is required for that cloud route.
-2. Local MLX requires the Mac's native runtime, trained adapter, companion service and Ollama. Pair the current browser tab, then select Local MLX. Local Ollama requires the imported trained classifier and a general extractor model, plus website/local-network permission; it does not require the MLX pairing service.
+2. Local MLX requires the Mac's native runtime, trained adapter, companion service and Ollama. Pair this website in your browser, then select Local MLX. Local Ollama requires the imported trained classifier and a general extractor model, plus website/local-network permission; it does not require the MLX pairing service.
 3. Type a note, or explicitly transcribe recorded speech through ElevenLabs. The editable transcript uses the selected processing option.
 4. **Review memory** runs trained local classification first in either local mode, then base-model detail extraction. OpenAI uses the server-side cloud capture route. Models never save automatically.
 5. Review category, action, title and other details; resolve any flagged ambiguity; choose **Save**. Memories stay in that browser's vault on the deployed origin.

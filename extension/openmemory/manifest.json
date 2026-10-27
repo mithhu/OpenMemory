@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Save to OpenMemory",
+  "version": "0.1.0",
+  "description": "Keep a page, post, thread or video in your OpenMemory library.",
+  "permissions": ["activeTab", "contextMenus", "storage"],
+  "action": { "default_title": "Save to OpenMemory", "default_popup": "popup.html" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "icons": { "128": "icon.png" }
+}

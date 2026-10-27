@@ -44,6 +44,17 @@ export function MemoryCard({
       </div>
       <h3>{m.title}</h3>
       <p className="journal-summary">{m.summary}</p>
+      {m.bookmark && (
+        <a
+          className="text-button"
+          href={m.bookmark.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          referrerPolicy="no-referrer"
+        >
+          Open saved link <ArrowUpRight size={14} />
+        </a>
+      )}
       {!!m.tags?.length && (
         <div className="memory-tags">
           {m.tags.map((tag) => (

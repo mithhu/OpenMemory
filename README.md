@@ -96,3 +96,7 @@ Tests cover classification correction, review boundaries, mixed atomic updates, 
 The [fine-tuning case study](docs/FINE_TUNING_CASE_STUDY.md) documents the current experimental MLX adapter, development results, rejected extension and app failure cases. Complete experiment scripts, data and learning logs are preserved in a separate local research archive rather than bundled with the product. The [portfolio guide](docs/PORTFOLIO.md) connects the published research repository, Hugging Face adapter, demo and interview material. Local base/adapter weights in `.local-runtime/` and `artifacts/fine-tuning/` are excluded from Git.
 
 For the separate trained classifier package, see the [consumer setup guide](docs/LOCAL_MODEL_SETUP.md) and [speech-to-memory demo](docs/LOCAL_MODEL_DEMO.md). Model weights are kept outside this application repository; the native MLX research adapter is now public on Hugging Face. The app-specific Ollama installation package remains separate.
+
+## Browser extension: Save to OpenMemory
+
+Save pages, links, selected text and YouTube links to the same browser vault. The toolbar popup opens an editable review before anything is saved. See [installation, local development and privacy](extension/README.md). Requires the bookmark-enabled app version; the extension is loaded unpacked during development.

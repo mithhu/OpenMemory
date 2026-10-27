@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Save to OpenMemory</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header><img src="icon.png" width="28" height="28" alt="" /><span>OpenMemory</span></header>
+    <h1>Keep this for later.</h1>
+    <p class="muted">A good read, a useful thread, your next watch.</p>
+    <form id="capture">
+      <label for="title">Title</label
+      ><input id="title" maxlength="300" placeholder="Give this link a name" />
+      <label for="url">Link</label><input id="url" type="url" required maxlength="4096" />
+      <label for="note">Why are you keeping it? <span class="muted">Optional</span></label
+      ><textarea
+        id="note"
+        maxlength="4000"
+        rows="3"
+        placeholder="What caught your attention?"
+      ></textarea>
+      <details>
+        <summary>Where to save</summary>
+        <label for="destination">OpenMemory address</label
+        ><input id="destination" type="url" required />
+        <p class="muted">
+          Use the hosted site or your localhost app. Each address has its own library.
+        </p>
+      </details>
+      <p id="error" role="alert" hidden></p>
+      <button id="save" type="submit">Review in OpenMemory →</button>
+      <p class="muted foot">Saved only after you confirm in OpenMemory. No AI or page scraping.</p>
+    </form>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
