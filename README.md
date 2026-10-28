@@ -100,3 +100,7 @@ For the separate trained classifier package, see the [consumer setup guide](docs
 ## Browser extension: Save to OpenMemory
 
 Save pages, links, selected text and YouTube links to the same browser vault. The toolbar popup opens an editable review before anything is saved. See [installation, local development and privacy](extension/README.md). Requires the bookmark-enabled app version; the extension is loaded unpacked during development.
+
+## Shared local SQLite storage
+
+For one library across browsers on the same Mac, run `npm run storage:serve`, then connect in **Privacy & AI → Where your library lives**. The app previews a copy/switch before using the Mac database; existing browser data is retained. Storage is independent of MLX and cloud AI. See [setup, transfer, encryption and backups](scripts/local-store/README.md).

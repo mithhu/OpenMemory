@@ -786,3 +786,45 @@ textarea:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 3px;
 }
+
+.local-storage-panel {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.local-storage-panel h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.local-storage-panel p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+.local-storage-panel > button {
+  margin: 10px 16px 10px 0;
+}
+.local-storage-panel [role="alert"] {
+  color: #922e24;
+}
+.storage-review {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+.storage-review h4 {
+  font-weight: 600;
+}
+.storage-review > label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+.storage-review input[type="checkbox"] {
+  margin-top: 4px;
+}

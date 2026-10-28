@@ -1,3 +1,5 @@
+import { vaultBackend } from "@/lib/local-store";
+import { StoragePanel } from "./StoragePanel";
 import { useState } from "react";
 import { LockKeyhole, ShieldCheck, Loader2, HardDrive, Cloud, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
@@ -23,6 +25,7 @@ export function PrivacyPanel({
   settings,
   hosted = false,
   onDisableAI,
+  onExport,
   onSettings,
   encrypted,
   onEncrypt,
@@ -34,6 +37,7 @@ export function PrivacyPanel({
   settings: AISettings;
   hosted?: boolean;
   onDisableAI?: () => void;
+  onExport?: () => void;
   onSettings: (settings: AISettings) => void;
   encrypted: boolean;
   onEncrypt: (passphrase: string) => Promise<void>;
@@ -77,6 +81,7 @@ export function PrivacyPanel({
             Choose where your memories are processed and how they are saved.
           </DialogDescription>
         </DialogHeader>
+        <StoragePanel disabled={busy || working} onExport={onExport} onWorking={setWorking} />
         <div className="provider-options">
           <button
             disabled={busy || working || (hosted && !companionReady)}
@@ -437,11 +442,18 @@ export function PrivacyPanel({
         <div className="vault-settings">
           <h3>
             <LockKeyhole size={16} />{" "}
-            {encrypted ? "Your vault is encrypted" : "Protect this browser’s vault"}
+            {encrypted
+              ? "Your vault is encrypted"
+              : vaultBackend() === "sqlite"
+                ? "Protect the Mac library"
+                : "Protect this browser’s vault"}
           </h3>
           <p>
-            Memories live in a browser database. A passphrase encrypts the stored memories and
-            exported backups. Keep it safe: it cannot be recovered.
+            {vaultBackend() === "sqlite"
+              ? "Memories live in SQLite on your Mac. "
+              : "Memories live in a browser database. "}
+            A passphrase encrypts the active library and exported backups. Other library copies stay
+            unchanged. Keep it safe: it cannot be recovered.
           </p>
           {encrypted ? (
             <button className="primary-button" disabled={busy || working} onClick={onLock}>
@@ -517,12 +529,14 @@ export function VaultUnlock({
   title = "Welcome back to your space.",
   description = "Your memories are encrypted. Unlock them with your passphrase.",
   onCancel,
+  cancelLabel = "Cancel import",
 }: {
   onUnlock: (passphrase: string) => Promise<void>;
   onExport?: () => void;
   title?: string;
   description?: string;
   onCancel?: () => void;
+  cancelLabel?: string;
 }) {
   const [password, setPassword] = useState("");
   const [working, setWorking] = useState(false);
@@ -577,7 +591,7 @@ export function VaultUnlock({
         )}
         {onCancel && (
           <button type="button" className="text-button" onClick={onCancel}>
-            Cancel import
+            {cancelLabel}
           </button>
         )}
       </form>

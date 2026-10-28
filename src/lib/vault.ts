@@ -1,3 +1,4 @@
+import { vaultBackend, readLocalVault, writeLocalVault } from "./local-store";
 import { z } from "zod";
 
 const envelopeSchema = z.discriminatedUnion("encrypted", [
@@ -17,6 +18,7 @@ const envelopeSchema = z.discriminatedUnion("encrypted", [
   }),
 ]);
 export type VaultEnvelope = z.infer<typeof envelopeSchema>;
+export const parseVaultEnvelope = (value: unknown) => envelopeSchema.parse(value);
 let key: CryptoKey | null = null;
 let salt: string | null = null;
 let privateMode = false;
@@ -110,6 +112,10 @@ function database(): Promise<IDBDatabase> {
   });
 }
 export async function readRawVault(): Promise<unknown> {
+  if (vaultBackend() === "sqlite") return readLocalVault();
+  return readBrowserVault();
+}
+export async function readBrowserVault(): Promise<unknown> {
   const db = await database();
   try {
     return await new Promise((resolve, reject) => {
@@ -132,6 +138,10 @@ export async function readVault(): Promise<VaultEnvelope | null> {
   }
 }
 async function writeVault(envelope: VaultEnvelope) {
+  if (vaultBackend() === "sqlite") {
+    revision = await writeLocalVault(envelope, revision);
+    return;
+  }
   const db = await database();
   try {
     await new Promise<void>((resolve, reject) => {
@@ -190,8 +200,11 @@ export function clearPrivateCaches() {
     "openmemory.graph.v1",
     "openmemory.constellation.v1",
     "openmemory.actions.v1",
-  ])
+  ]) {
+    // The legacy browser collection belongs to a different storage backend.
+    if (name === "echo.memories.v1" && vaultBackend() === "sqlite") continue;
     localStorage.removeItem(name);
+  }
 }
 export function saveVault(data: unknown): Promise<void> {
   const snapshot = structuredClone(data);

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "mlx:serve": "python3 scripts/app-mlx/companion.py",
+    "storage:serve": "python3 scripts/local-store/server.py",
+    "storage:test": "python3 -m unittest discover -s scripts/local-store -p 'test_*.py'",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",

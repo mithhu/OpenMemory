@@ -68,3 +68,9 @@ scripts/*
 
 # Curated portfolio documentation and demo provenance.
 !docs/portfolio/
+
+# Optional local SQLite storage service (source only).
+!scripts/local-store/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm

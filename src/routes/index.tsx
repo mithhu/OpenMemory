@@ -1,3 +1,9 @@
+import {
+  initializeVaultBackend,
+  chooseVaultBackend,
+  vaultBackend,
+  localStoreModeKey,
+} from "@/lib/local-store";
 import { mlxPairingStorageKey } from "@/lib/mlx-companion";
 import { BookmarkCapture } from "@/components/BookmarkCapture";
 import { BookmarkLibrary } from "@/components/BookmarkLibrary";
@@ -220,6 +226,7 @@ function OpenMemory() {
     setConsentRequired(isHostedApp() && !hasHostedAIConsent());
     void (async () => {
       try {
+        initializeVaultBackend();
         const envelope = await readVault();
         if (cancelled) return;
         if (envelope?.encrypted) {
@@ -231,13 +238,15 @@ function OpenMemory() {
         const session = envelope ? await openEnvelope(envelope) : null;
         const saved = session
           ? memorySchema.array().max(200).parse(session.data)
-          : loadMemories(!isHostedApp());
+          : vaultBackend() === "sqlite"
+            ? []
+            : loadMemories(!isHostedApp());
         if (cancelled) return;
         setVaultSession(session ?? { key: null, salt: null });
         if (!envelope) {
           await saveVault(saved);
           // Migration is durable before the legacy copy is removed.
-          localStorage.removeItem("echo.memories.v1");
+          if (vaultBackend() === "browser") localStorage.removeItem("echo.memories.v1");
         }
         if (!cancelled) installWorkspace(saved);
       } catch (error) {
@@ -269,6 +278,15 @@ function OpenMemory() {
     };
     const onStorage = (event: StorageEvent) => {
       if (event.storageArea && event.storageArea !== localStorage) return;
+      if (event.key === localStoreModeKey || event.key === null) {
+        if (
+          (localStorage.getItem(localStoreModeKey) === "sqlite" ? "sqlite" : "browser") !==
+          vaultBackend()
+        )
+          setStorageError(
+            "Storage choice changed in another tab. Reload before saving so you use the intended library.",
+          );
+      }
       if (
         event.key === null ||
         event.key === "openmemory.ai.v2" ||
@@ -630,7 +648,8 @@ function OpenMemory() {
     if (storageError) {
       try {
         const raw = await readRawVault();
-        const legacy = localStorage.getItem("echo.memories.v1");
+        const legacy =
+          vaultBackend() === "browser" ? localStorage.getItem("echo.memories.v1") : null;
         if (raw === null && !legacy)
           throw new Error("The saved data is unavailable. No empty backup was generated.");
         downloadBackup(
@@ -844,7 +863,22 @@ function OpenMemory() {
               ? "Looking for the threads between them…"
               : "Giving the bigger picture a little thought…";
 
-  if (locked) return <VaultUnlock onUnlock={unlock} onExport={() => void exportMemories()} />;
+  if (locked)
+    return (
+      <VaultUnlock
+        onUnlock={unlock}
+        onExport={() => void exportMemories()}
+        {...(vaultBackend() === "sqlite"
+          ? {
+              cancelLabel: "Return to this browser’s library",
+              onCancel: () => {
+                chooseVaultBackend("browser");
+                window.location.reload();
+              },
+            }
+          : {})}
+      />
+    );
   if (!loaded)
     return (
       <div className="vault-unlock">
@@ -1008,7 +1042,13 @@ function OpenMemory() {
             }
           >
             <LockKeyhole size={12} />
-            {encrypted ? "Encrypted in this browser." : "Saved on this device."}
+            {vaultBackend() === "sqlite"
+              ? encrypted
+                ? "Encrypted on this Mac."
+                : "Shared library on this Mac."
+              : encrypted
+                ? "Encrypted in this browser."
+                : "Saved on this device."}
           </div>
         </div>
       </aside>
@@ -1107,9 +1147,11 @@ function OpenMemory() {
               <span className="eyebrow">YOUR MEMORIES, YOUR CHOICE</span>
               <h2>A little help making sense of your day.</h2>
               <p>
-                Save memories in this browser. Enable OpenAI to turn your words into suggestions you
-                can review. AI features send your note and relevant library context to OpenAI. No
-                installation or API key needed.
+                {vaultBackend() === "sqlite"
+                  ? "Save memories in your Mac library. "
+                  : "Save memories in this browser. "}{" "}
+                Enable OpenAI to turn your words into suggestions you can review. AI features send
+                your note and relevant library context to OpenAI. No installation or API key needed.
               </p>
               <p>
                 Voice is optional: audio goes to ElevenLabs only when you choose Transcribe. You can
@@ -1866,6 +1908,7 @@ function OpenMemory() {
         onSettings={changeSettings}
         encrypted={encrypted}
         busy={busy || mapping || !loaded}
+        onExport={() => void exportMemories()}
         onEncrypt={async (passphrase) => {
           await encryptVault(memoryRef.current, passphrase);
           setEncrypted(true);

@@ -10,7 +10,7 @@ A Manifest V3 extension for Chrome and Edge. It opens a review in your existing 
 4. Pin **Save to OpenMemory** in the toolbar.
 5. Open a normal web page, click the icon, optionally add a note, and choose **Review in OpenMemory**. Confirm **Save link** in the app.
 
-For a local app, expand **Where to save** in the popup and enter `http://localhost:3001` (or your actual local port). Hosted default: `https://open-memory-ai.vercel.app`. Each origin/browser profile has its own vault. Set the destination to the same origin you already use; localhost, 127.0.0.1, and the deployed site have separate libraries.
+For a local app, expand **Where to save** in the popup and enter `http://localhost:3001` (or your actual local port). Hosted default: `https://open-memory-ai.vercel.app`. By default each origin/browser profile has its own browser vault. With **Store on this Mac**, separately connected browsers/origins can use the same local SQLite library. Set the destination to the same origin you already use; localhost, 127.0.0.1, and the deployed site have separate libraries.
 
 You can also right-click a page, hyperlink or selected text and choose **Save to OpenMemory**. Linked pages use the link as the source; selected text is kept as a draft note. A selected-text save uses the current page title. The popup lets you edit an unavailable title.
 
@@ -27,7 +27,7 @@ You can also right-click a page, hyperlink or selected text and choose **Save to
 
 No host permissions, content scripts, scraping, browsing-history access, remote code, analytics or AI calls in the extension. Permissions: `activeTab`, `contextMenus`, and `storage` (destination preference only). No `tabs` permission: current-tab access is granted by the user's action. Destination is restricted to the fixed hosted OpenMemory origin or loopback development origins, without credentials, paths, queries or fragments. Source links allow HTTP(S) only and reject embedded credentials.
 
-This saves **bookmarks**, not full posts, videos, transcripts or offline copies. Private/deleted posts may become unavailable. YouTube URLs, including manually shared timestamps, are preserved; automatic playback-timestamp capture and buttons injected into YouTube aren't in v0.1. Mobile share sheets, browser-store publication and cross-device sync are separate work. This extension does not make separate browser profiles share a library.
+This saves **bookmarks**, not full posts, videos, transcripts or offline copies. Private/deleted posts may become unavailable. YouTube URLs, including manually shared timestamps, are preserved; automatic playback-timestamp capture and buttons injected into YouTube aren't in v0.1. Mobile share sheets, browser-store publication and cross-device sync are separate work. The extension follows the destination app’s selected storage mode. To share a library across browsers on the same Mac, enable **Store on this Mac** in each browser; browser-only mode stays isolated.
 
 ## Verification
 
