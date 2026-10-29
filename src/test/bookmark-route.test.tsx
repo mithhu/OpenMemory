@@ -100,3 +100,45 @@ it("waits for vault unlock and saves the shared bookmark encrypted", async () =>
   const saved = memorySchema.array().parse((await openEnvelope(raw, passphrase)).data);
   expect(saved[0]?.bookmark?.url).toBe(input.url);
 });
+
+it("reviews an iPhone share, saves to the phone/browser vault and clears the handoff fragment", async () => {
+  localStorage.removeItem(demoDismissalKey);
+  const url = "https://www.youtube.com/watch?v=xUSznTR2cwc&t=93";
+  window.history.replaceState({}, "", `/#save-url=${encodeURIComponent(url)}`);
+  const Component = Route.options.component!;
+  render(<Component />);
+  await screen.findByLabelText("Saved link URL");
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(screen.getByLabelText("Saved link URL")).toHaveValue(url);
+  expect((await openEnvelope(await readVault())).data).toEqual([]);
+  fireEvent.change(screen.getByLabelText("Saved link title"), {
+    target: { value: "Steven Strogatz on the Humanity of Math" },
+  });
+  fireEvent.change(screen.getByLabelText(/Why I’m saving this/), {
+    target: { value: "Motivation and inspiration" },
+  });
+  fireEvent.click(screen.getByRole("button", { name: "Save link" }));
+  await screen.findByRole("heading", { name: "Steven Strogatz on the Humanity of Math" });
+  expect(window.location.hash).toBe("");
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  const saved = memorySchema.array().parse((await openEnvelope(await readVault())).data);
+  expect(saved).toHaveLength(1);
+  expect(saved[0]).toMatchObject({
+    title: "Steven Strogatz on the Humanity of Math",
+    summary: "Motivation and inspiration",
+    bookmark: { url, status: "saved" },
+  });
+});
+it("cancels an iPhone share without saving and removes its fragment", async () => {
+  window.history.replaceState(
+    {},
+    "",
+    `/#save-url=${encodeURIComponent("https://example.org/post")}`,
+  );
+  const Component = Route.options.component!;
+  render(<Component />);
+  await screen.findByLabelText("Saved link URL");
+  fireEvent.click(screen.getByRole("button", { name: "Dismiss shared link" }));
+  expect(window.location.hash).toBe("");
+  expect((await openEnvelope(await readVault())).data).toEqual([]);
+});

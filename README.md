@@ -104,3 +104,7 @@ Save pages, links, selected text and YouTube links to the same browser vault. Th
 ## Shared local SQLite storage
 
 For one library across browsers on the same Mac, run `npm run storage:serve`, then connect in **Privacy & AI → Where your library lives**. The app previews a copy/switch before using the Mac database; existing browser data is retained. Storage is independent of MLX and cloud AI. See [setup, transfer, encryption and backups](scripts/local-store/README.md).
+
+## Save links from iPhone
+
+Open `/iphone` on the deployed app to install the Apple Shortcuts Share Sheet action. It opens a shared HTTP(S) link for review and saves through the phone browser's existing vault. See [capture behavior and verification limits](iphone/README.md). Phone-to-Mac QR sync is separate future work.

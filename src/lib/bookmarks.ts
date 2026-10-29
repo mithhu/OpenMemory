@@ -22,14 +22,37 @@ export const bookmarkHandoffSchema = z.object({
 });
 export type BookmarkHandoff = z.infer<typeof bookmarkHandoffSchema>;
 
+export function isBookmarkHandoff(hash: string) {
+  return hash.startsWith("#save-link=") || hash.startsWith("#save-url=");
+}
 export function readBookmarkHandoff(hash: string): BookmarkHandoff | null {
-  if (!hash.startsWith("#save-link=")) return null;
+  if (!isBookmarkHandoff(hash)) return null;
   if (hash.length > 32000)
     throw new Error("This shared link is too large. Try saving a shorter note.");
   try {
+    if (hash.startsWith("#save-url=")) {
+      const decoded = decodeURIComponent(hash.slice(10));
+      // A Shortcut shares one encoded URL, never arbitrary text, HTML or a
+      // nested redirect. Keep query parameters and timestamps unchanged.
+      if (
+        [...decoded].some(
+          (character) => character.charCodeAt(0) <= 32 || character.charCodeAt(0) === 127,
+        )
+      )
+        throw new Error("Share one web link at a time.");
+      return bookmarkHandoffSchema.parse({
+        version: 1,
+        id: crypto.randomUUID(),
+        url: bookmarkUrl.parse(decoded),
+        title: "",
+        note: "",
+      });
+    }
     return bookmarkHandoffSchema.parse(JSON.parse(decodeURIComponent(hash.slice(11))));
   } catch {
-    throw new Error("This shared link could not be read. Try saving it again from the extension.");
+    throw new Error(
+      "This shared link could not be read. Share a single HTTP or HTTPS link and try again.",
+    );
   }
 }
 export function createBookmark(input: BookmarkHandoff, now = new Date().toISOString()): Memory {

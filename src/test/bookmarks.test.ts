@@ -63,3 +63,36 @@ describe("extension to app handoff", () => {
       expect(() => readBookmarkHandoff(hash)).toThrow();
   });
 });
+
+describe("iPhone Shortcut URL handoff", () => {
+  it.each([
+    "https://www.youtube.com/watch?v=xUSznTR2cwc&t=93",
+    "https://youtu.be/example?t=12",
+    "https://www.facebook.com/share/p/example/?mibextid=abc",
+    "https://x.com/example/status/123?ref=a+b#part-2",
+    "https://example.com/article?q=%E2%9C%93&name=one%20two",
+  ])("preserves the shared URL exactly: %s", (url) => {
+    const data = readBookmarkHandoff(`#save-url=${encodeURIComponent(url)}`)!;
+    expect(data.url).toBe(url);
+    expect(data.title).toBe("");
+    expect(data.note).toBe("");
+    expect(createBookmark(data).bookmark?.url).toBe(url);
+  });
+  it.each([
+    "",
+    "javascript:alert(1)",
+    "data:text/html,test",
+    "file:///private/note",
+    "https://user:password@example.com",
+    "https://example.com/one\nhttps://example.com/two",
+    "https%3A%2F%2Fexample.com",
+    "https://example.com/has a space",
+  ])("rejects unsafe or ambiguous shared input: %s", (url) => {
+    expect(() => readBookmarkHandoff(`#save-url=${encodeURIComponent(url)}`)).toThrow(
+      "single HTTP or HTTPS",
+    );
+  });
+  it("rejects malformed encoded input", () => {
+    expect(() => readBookmarkHandoff("#save-url=%not-encoded")).toThrow();
+  });
+});

@@ -11,6 +11,7 @@ import {
   createBookmark,
   findBookmark,
   readBookmarkHandoff,
+  isBookmarkHandoff,
   type BookmarkHandoff,
 } from "@/lib/bookmarks";
 import { DemoWelcome } from "@/components/DemoWelcome";
@@ -364,7 +365,7 @@ function OpenMemory() {
   const dismissSharedLink = () => {
     setSharedLink(null);
     setSharedLinkError("");
-    if (window.location.hash.startsWith("#save-link="))
+    if (isBookmarkHandoff(window.location.hash))
       window.history.replaceState(
         window.history.state,
         "",
@@ -1029,6 +1030,9 @@ function OpenMemory() {
               Import
             </button>
           </div>
+          <a className="privacy-nav" href="/iphone">
+            Save from iPhone <ArrowUpRight size={14} />
+          </a>
           <button className="privacy-nav" onClick={() => setPrivacyOpen(true)}>
             <Settings2 size={14} />
             Privacy & AI
@@ -1085,6 +1089,11 @@ function OpenMemory() {
           </div>
           <div className="topbar-right">
             <DemoWelcome
+              suppressAutoOpen={
+                !!sharedLink ||
+                !!sharedLinkError ||
+                (typeof window !== "undefined" && isBookmarkHandoff(window.location.hash))
+              }
               ready={
                 loaded &&
                 !locked &&

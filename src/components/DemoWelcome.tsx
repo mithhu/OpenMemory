@@ -11,7 +11,13 @@ import {
 export const demoDismissalKey = "openmemory.demo-welcome.v1";
 const videoUrl = "/demo/openmemory-intro-v1.mp4";
 
-export function DemoWelcome({ ready }: { ready: boolean }) {
+export function DemoWelcome({
+  ready,
+  suppressAutoOpen = false,
+}: {
+  ready: boolean;
+  suppressAutoOpen?: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [started, setStarted] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -21,13 +27,14 @@ export function DemoWelcome({ ready }: { ready: boolean }) {
   useEffect(() => {
     if (!ready || checked.current) return;
     checked.current = true;
+    if (suppressAutoOpen) return;
     try {
       setOpen(localStorage.getItem(demoDismissalKey) !== "dismissed");
     } catch {
       // Still offer the introduction if preferences cannot be persisted.
       setOpen(true);
     }
-  }, [ready]);
+  }, [ready, suppressAutoOpen]);
 
   useEffect(() => {
     if (!open) return;

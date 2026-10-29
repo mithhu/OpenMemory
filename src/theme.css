@@ -828,3 +828,92 @@ textarea:focus-visible {
 .storage-review input[type="checkbox"] {
   margin-top: 4px;
 }
+
+.iphone-setup {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 24px 70px;
+  color: var(--foreground);
+}
+.iphone-setup header {
+  padding: 54px 0 32px;
+}
+.iphone-setup .eyebrow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.iphone-setup h1 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(42px, 8vw, 70px);
+  line-height: 1.05;
+  margin: 20px 0;
+}
+.iphone-setup h1 em {
+  color: var(--primary);
+}
+.iphone-setup h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 29px;
+  margin-bottom: 14px;
+}
+.iphone-setup p,
+.iphone-setup li {
+  line-height: 1.7;
+  margin: 12px 0;
+  color: var(--muted-foreground);
+}
+.iphone-setup section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px;
+  margin: 20px 0;
+}
+.iphone-setup .primary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  text-decoration: none;
+}
+.iphone-setup ol {
+  padding-left: 24px;
+  list-style: decimal;
+}
+.iphone-setup .iphone-callout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--foreground);
+}
+.iphone-setup details {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.iphone-setup summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.iphone-setup code {
+  overflow-wrap: anywhere;
+}
+.iphone-setup a:focus-visible,
+.iphone-setup summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+@media (max-width: 500px) {
+  .iphone-setup {
+    padding: 24px 18px 48px;
+  }
+  .iphone-setup header {
+    padding-top: 36px;
+  }
+  .iphone-setup section {
+    padding: 20px;
+  }
+}
